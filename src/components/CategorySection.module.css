@@ -8,7 +8,10 @@
   display: flex;
   gap: 14px;
   overflow-x: auto;
+  overflow-y: hidden;
   overscroll-behavior-x: contain;
+  touch-action: pan-x pan-y;
+  -webkit-overflow-scrolling: touch;
   scroll-snap-type: x proximity;
   scrollbar-width: none;
   /* alignement sur le container + débord jusqu'au bord de l'écran */
@@ -20,8 +23,16 @@
   display: none;
 }
 .item {
-  flex: 0 0 100px;
+  flex: 0 0 62vw;
+  max-width: 260px;
   scroll-snap-align: start;
+}
+
+@media (min-width: 480px) {
+  .item {
+    flex-basis: 100px;
+    max-width: none;
+  }
 }
 
 @media (min-width: 768px) {

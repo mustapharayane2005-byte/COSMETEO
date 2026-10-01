@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "lenis/dist/lenis.css";
 
 @theme {
   /* Identité « Rhode » : neutres chauds. Le vert COSMÉTÉO n'existe que dans le logo. */
@@ -160,24 +159,24 @@ ul {
 /* ---- apparition progressive (voir RevealObserver) ---- */
 .reveal-ready [data-reveal] {
   opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   transition-delay: var(--d, 0ms);
+  /* will-change uniquement tant que l'élément n'est pas apparu */
+  will-change: opacity, transform;
+}
+.reveal-ready [data-reveal="fade"] {
+  transform: none;
 }
 .reveal-ready [data-reveal].is-in {
   opacity: 1;
   transform: none;
+  will-change: auto;
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-  /* <Reveal> / <ClipReveal> : contenu visible tout de suite */
-  [data-m-reveal] {
-    opacity: 1 !important;
-    transform: none !important;
-    clip-path: none !important;
   }
   .pill-fill,
   .pill-fill::before {
@@ -207,11 +206,6 @@ ul {
 @keyframes heroMask {
   from {
     transform: translateY(105%);
-  }
-}
-@keyframes heroZoom {
-  from {
-    transform: scale(1.08);
   }
 }
 @keyframes pageFade {
@@ -273,4 +267,10 @@ ul {
   to {
     transform: translateX(-50%);
   }
+}
+
+/* Carrousels : images non glissables */
+img {
+  -webkit-user-drag: none;
+  user-select: none;
 }
