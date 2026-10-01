@@ -1,0 +1,19 @@
+.section {
+  padding-block: clamp(24px, 4vw, 56px);
+}
+.grid {
+  display: grid;
+  gap: 16px;
+}
+.grid > li {
+  display: flex;
+}
+.grid > li > * {
+  flex: 1;
+}
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+}

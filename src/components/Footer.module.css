@@ -1,0 +1,116 @@
+.footer {
+  margin: 8px var(--page-m) var(--page-m);
+  border-radius: 24px;
+  background: var(--green-deep);
+  color: rgb(237 236 232 / 0.78);
+  font-size: 0.875rem;
+}
+.footer :focus-visible {
+  outline-color: var(--ivory);
+}
+.news {
+  display: grid;
+  gap: 24px;
+  padding-block: clamp(40px, 6vw, 72px);
+  border-bottom: 1px solid rgb(248 246 241 / 0.14);
+}
+.newsTitle {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(1.625rem, 1.2rem + 1.5vw, 2.25rem);
+  line-height: 1.2;
+  color: var(--ivory);
+}
+.newsText {
+  margin-top: 8px;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 36px 20px;
+  padding-block: clamp(36px, 5vw, 64px);
+}
+.brand {
+  grid-column: 1 / -1;
+}
+.about {
+  max-width: 24rem;
+  margin-top: 16px;
+  line-height: 1.7;
+}
+.socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+.socials a {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgb(248 246 241 / 0.25);
+  border-radius: 50%;
+  color: var(--ivory);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.socials a:hover {
+  background: var(--ivory);
+  color: var(--brown);
+}
+.colTitle {
+  margin-bottom: 14px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--champagne);
+}
+.col li a {
+  display: inline-block;
+  padding: 6px 0;
+  transition: color 0.2s ease;
+}
+.col li a:hover {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.legal {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-block: 22px 28px;
+  border-top: 1px solid rgb(248 246 241 / 0.14);
+  font-size: 0.8125rem;
+}
+.legal ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+}
+.legal a:hover {
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .news {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 48px;
+  }
+  .legal {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 1024px) {
+  .main {
+    grid-template-columns: 1.5fr repeat(3, minmax(0, 1fr));
+    gap: 48px;
+  }
+  .brand {
+    grid-column: auto;
+  }
+}

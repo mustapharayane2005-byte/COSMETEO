@@ -1,0 +1,56 @@
+.form {
+  margin-top: 40px;
+}
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.input {
+  min-width: 0;
+  height: 56px;
+  padding: 0 24px;
+  border: 1.5px solid #5a534e;
+  border-radius: 999px;
+  background: transparent;
+  color: #5a534e;
+  font-size: 1rem;
+}
+.input::placeholder {
+  color: rgb(90 83 78 / 0.6);
+}
+.input:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid #5a534e;
+  outline-offset: 2px;
+}
+.btn {
+  height: 56px;
+  padding: 0 32px;
+  border: 0;
+  border-radius: 999px;
+  background: #5a534e;
+  color: #faf9f4;
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.btn:hover {
+  opacity: 0.9;
+}
+.status {
+  margin-top: 16px;
+  font-size: 0.875rem;
+  opacity: 0.85;
+}
+@media (min-width: 560px) {
+  .row {
+    flex-direction: row;
+  }
+  .input {
+    flex: 1;
+  }
+}

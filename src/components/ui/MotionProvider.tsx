@@ -1,0 +1,8 @@
+"use client";
+
+import { domAnimation, LazyMotion } from "framer-motion";
+
+/** Charge uniquement les fonctionnalités DOM de framer-motion (composants `m`) : bundle allégé. */
+export default function MotionProvider({ children }: { children: React.ReactNode }) {
+  return <LazyMotion features={domAnimation}>{children}</LazyMotion>;
+}

@@ -1,0 +1,36 @@
+.tinted {
+  margin-inline: var(--page-m);
+  border-radius: 24px;
+  background: var(--surface);
+}
+.head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: clamp(28px, 4vw, 48px);
+}
+.sub {
+  margin-top: 10px;
+}
+.more {
+  flex: none;
+  padding: 8px 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green);
+  border-bottom: 1px solid var(--champagne);
+  transition: border-color 0.2s ease;
+}
+.more:hover {
+  border-color: var(--green);
+}
+@media (max-width: 480px) {
+  .head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+}

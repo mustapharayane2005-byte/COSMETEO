@@ -1,0 +1,33 @@
+/* Wordmark : minuscules, Inter Tight 700, serré. Aucune icône, aucune couleur d'accent. */
+.logo {
+  display: inline-block;
+  font-family: var(--font-logo), var(--font-sans);
+  font-size: 32px;
+  font-weight: 800;
+  white-space: nowrap;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: #5a534e;
+  text-transform: none;
+}
+.light {
+  color: #faf9f4;
+}
+@media (min-width: 1280px) {
+  .logo {
+    font-size: 56px;
+  }
+}
+/* Header desktop : 72 px, 52 px une fois le header collé. */
+@media (min-width: 1024px) {
+  .header,
+  .headerCompact {
+    transition: font-size 0.3s ease;
+  }
+  .header {
+    font-size: clamp(40px, 3.6vw, 56px);
+  }
+  .headerCompact {
+    font-size: 44px;
+  }
+}
