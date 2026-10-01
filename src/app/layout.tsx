@@ -33,12 +33,7 @@ const nunito = Nunito({
 const title = "COSMÉTÉO – Boutique beauté et soins au Bénin";
 const description =
   "Soins et produits de beauté authentiques pour toutes les peaux. Livraison au Bénin et à l'international.";
-const ogImage = {
-  url: "/opengraph-image",
-  width: 1200,
-  height: 630,
-  alt: "COSMÉTÉO, boutique beauté et soins au Bénin",
-};
+const ogImage = { url: "/og-cosmeteo.png", width: 1200, height: 630, alt: "COSMÉTÉO" };
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://cosmeteo.vercel.app"),
