@@ -22,7 +22,9 @@ export default function Header() {
   const lastY = useRef(0);
 
   useEffect(() => {
-    const onScroll = () => {
+    let ticking = false;
+    const update = () => {
+      ticking = false;
       const y = window.scrollY;
       setScrolled(y > 80);
       // se cache en descendant, réapparaît dès qu'on remonte
@@ -31,7 +33,13 @@ export default function Header() {
         lastY.current = y;
       }
     };
-    onScroll();
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    };
+    update();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -71,12 +79,12 @@ export default function Header() {
       {/* réserve la place du header : il est dans le flux, puis passe en sticky (fixed) après 80 px de scroll */}
       <div className="mx-4 mb-4 h-[72px] lg:h-[100px]">
         <header
-          className={`z-50 w-full rounded-3xl font-ui text-[#5A534E] transition-[transform,background-color,box-shadow,backdrop-filter] duration-[350ms] ease-out ${
+          className={`z-50 w-full rounded-3xl font-ui text-[#5A534E] transition-[transform,background-color,box-shadow] duration-[350ms] ease-out ${
             scrolled
               ? `fixed inset-x-4 top-3 w-auto ${
                   solid
                     ? "bg-[#EDECE8]"
-                    : "bg-[rgba(237,236,232,0.82)] shadow-[0_1px_0_#D9D6D0] backdrop-blur-[14px]"
+                    : "bg-[rgba(237,236,232,0.95)] shadow-[0_1px_0_#D9D6D0]"
                 } ${hidden && !solid ? "-translate-y-[120%]" : ""}`
               : "relative bg-[#EDECE8]"
           }`}

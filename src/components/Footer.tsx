@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Icon from "@/components/ui/Icon";
+import Reveal from "@/components/ui/Reveal";
 import Logo from "@/components/ui/Logo";
 import { footerColumns, socials } from "@/data/site";
 import s from "./Footer.module.css";
@@ -9,7 +10,9 @@ export default function Footer() {
     <footer className={s.footer}>
       <div className={`container ${s.main}`}>
         <div className={s.brand}>
-          <Logo tone="light" animated />
+          <Reveal>
+            <Logo tone="light" />
+          </Reveal>
           <p className={s.about}>
             Soins, beauté et bien-être, sélectionnés avec exigence. Livraison au Bénin et à l&apos;international.
           </p>

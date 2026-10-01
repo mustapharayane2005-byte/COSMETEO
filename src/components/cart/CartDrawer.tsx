@@ -42,7 +42,6 @@ export default function CartDrawer() {
             role="dialog"
             aria-modal="true"
             aria-label="Panier"
-            data-lenis-prevent
             className="fixed right-0 top-0 z-[61] flex h-dvh w-full max-w-[440px] flex-col bg-ivory font-ui shadow-2xl"
             initial={{ x: "100%" }}
             animate={{ x: 0 }}

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import MaskTitle from "@/components/ui/MaskTitle";
 import ProductCard from "@/components/ProductCard";
 import ProductCarousel from "@/components/ProductCarousel";
 import ProductGrid from "@/components/ProductGrid";
@@ -25,7 +24,7 @@ export default function ProductSection({ id, title, subtitle, link, products, la
         <header className={s.head} data-reveal>
           <div>
             <h2 id={id} className="h2">
-              <MaskTitle>{title}</MaskTitle>
+              {title}
             </h2>
             {subtitle && <p className={`lead ${s.sub}`}>{subtitle}</p>}
           </div>

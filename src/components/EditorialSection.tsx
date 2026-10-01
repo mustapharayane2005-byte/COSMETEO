@@ -1,5 +1,4 @@
 import Button from "@/components/ui/Button";
-import MaskTitle from "@/components/ui/MaskTitle";
 import RevealImage from "@/components/ui/RevealImage";
 import Reveal from "@/components/ui/Reveal";
 import Link from "next/link";
@@ -15,7 +14,7 @@ export default function EditorialSection() {
             src={editorial.image}
             alt={editorial.imageAlt}
             sizes="50vw"
-            reveal="iris"
+            fade={false}
             imgClassName="object-[center_30%]"
             className={s.arch}
           />
@@ -45,7 +44,7 @@ export default function EditorialSection() {
         <Reveal className={s.copy} delay={0.12}>
           <p className={s.eyebrow}>{editorial.eyebrow}</p>
           <h2 id="edito-title" className={s.title}>
-            <MaskTitle>{editorial.title}</MaskTitle>
+            {editorial.title}
           </h2>
           <p className={s.text}>{editorial.text}</p>
           <ul className={s.tags}>

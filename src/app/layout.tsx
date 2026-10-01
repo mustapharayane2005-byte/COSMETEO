@@ -4,10 +4,7 @@ import { CartProvider } from "@/components/cart/CartContext";
 import CartDrawer from "@/components/cart/CartDrawer";
 import ChatBubble from "@/components/ChatBubble";
 import MobileDock from "@/components/MobileDock";
-import MarqueeBoost from "@/components/ui/MarqueeBoost";
 import MotionProvider from "@/components/ui/MotionProvider";
-import ReadingProgress from "@/components/ui/ReadingProgress";
-import SmoothScroll from "@/components/ui/SmoothScroll";
 import "./globals.css";
 
 const interTight = Inter_Tight({
@@ -49,10 +46,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="fr" className={`${interTight.variable} ${nunito.variable} ${instrumentSerif.variable}`}>
       <body>
-        <SmoothScroll />
         <MotionProvider>
-        <ReadingProgress />
-        <MarqueeBoost />
         <CartProvider>
           {children}
           <CartDrawer />

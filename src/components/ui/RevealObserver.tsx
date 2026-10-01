@@ -3,12 +3,14 @@
 import { useEffect } from "react";
 
 /**
- * Apparition progressive des sections : ~20 lignes, pas de bibliothèque.
- * Sans JS (ou avec prefers-reduced-motion) tout reste visible : la classe
- * `reveal-ready` n'est ajoutée qu'une fois les éléments déjà à l'écran marqués.
+ * Apparition au scroll : un seul IntersectionObserver partagé, aucune lib.
+ * Sans JS, sur mobile (< 768 px) ou avec prefers-reduced-motion, la classe `reveal-ready` n'est jamais
+ * ajoutée : tout le contenu reste visible directement.
  */
 export default function RevealObserver() {
   useEffect(() => {
+    if (window.matchMedia("(max-width: 767px), (prefers-reduced-motion: reduce)").matches) return;
+
     const els = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"));
     const vh = window.innerHeight;
     for (const el of els) {
