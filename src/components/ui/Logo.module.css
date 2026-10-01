@@ -9,6 +9,27 @@
   line-height: 1;
   color: #5a534e;
   text-transform: none;
+  /* halo derrière le dernier « o » : le pseudo-élément suit la taille du logo (em) */
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+}
+.logo::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: -0.25em;
+  top: 50%;
+  width: 1.9em;
+  height: 1.9em;
+  transform: translateY(-52%);
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 32%, #faf6ef 0%, #e6d6c4 55%, #d2b196 100%);
+  pointer-events: none;
+}
+/* fond sombre (footer) : halo discret pour garder les lettres claires lisibles */
+.light::before {
+  background: radial-gradient(circle at 38% 32%, rgb(210 177 150 / 0.35) 0%, rgb(210 177 150 / 0.2) 55%, rgb(210 177 150 / 0.1) 100%);
 }
 .light {
   color: #faf9f4;
@@ -29,5 +50,11 @@
   }
   .headerCompact {
     font-size: 44px;
+  }
+}
+@media (min-width: 1024px) {
+  .logo::before {
+    width: 2.1em;
+    height: 2.1em;
   }
 }
