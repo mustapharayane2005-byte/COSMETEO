@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import CatalogPage from "@/components/CatalogPage";
 import { promoProducts } from "@/data/products";
 
-export const metadata: Metadata = { title: "Promotions — COSMÉTÉO" };
+export const metadata: Metadata = { title: "Promotions" };
 
 export default function PromotionsPage() {
   return (

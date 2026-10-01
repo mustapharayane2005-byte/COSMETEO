@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import CartView from "@/components/cart/CartView";
 import PageShell from "@/components/PageShell";
 
-export const metadata: Metadata = { title: "Panier — COSMÉTÉO" };
+export const metadata: Metadata = { title: "Panier" };
 
 export default function CartPage() {
   return (

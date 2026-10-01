@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import CatalogPage from "@/components/CatalogPage";
 import { allProducts } from "@/data/products";
 
-export const metadata: Metadata = { title: "Boutique — COSMÉTÉO" };
+export const metadata: Metadata = { title: "Boutique" };
 
 export default function ShopPage() {
   return (

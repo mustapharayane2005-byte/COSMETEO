@@ -30,10 +30,31 @@ const nunito = Nunito({
   display: "swap",
 });
 
+const title = "COSMÉTÉO – Boutique beauté et soins au Bénin";
+const description =
+  "Soins et produits de beauté authentiques pour toutes les peaux. Livraison au Bénin et à l'international.";
+const ogImage = {
+  url: "/opengraph-image",
+  width: 1200,
+  height: 630,
+  alt: "COSMÉTÉO, boutique beauté et soins au Bénin",
+};
+
 export const metadata: Metadata = {
-  title: "COSMÉTÉO — Beauté, soins & bien-être",
-  description:
-    "Une sélection de soins et de produits de beauté choisis pour accompagner votre quotidien. Livraison au Bénin et à l'international.",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://cosmeteo.vercel.app"),
+  title: { default: title, template: "%s | COSMÉTÉO" },
+  description,
+  openGraph: {
+    type: "website",
+    locale: "fr_BJ",
+    alternateLocale: ["fr_FR"],
+    siteName: "COSMÉTÉO",
+    url: "/",
+    title,
+    description,
+    images: [ogImage],
+  },
+  twitter: { card: "summary_large_image", title, description, images: [ogImage.url] },
 };
 
 export const viewport: Viewport = {
