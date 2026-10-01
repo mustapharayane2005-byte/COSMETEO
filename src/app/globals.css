@@ -190,9 +190,9 @@ ul {
 }
 
 /* mobile : place pour la barre d'achat fixe */
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   body {
-    padding-bottom: 64px;
+    padding-bottom: 88px;
   }
 }
 
@@ -273,4 +273,18 @@ ul {
 img {
   -webkit-user-drag: none;
   user-select: none;
+}
+
+/* ---- mobile (<1024px) : espacement aéré ---- */
+@media (max-width: 1023px) {
+  :root {
+    --gutter: 20px;
+  }
+  .section {
+    padding-block: 72px 0;
+  }
+  .h2 {
+    font-size: 2rem;
+    line-height: 1.1;
+  }
 }

@@ -99,3 +99,16 @@
     transform: none;
   }
 }
+
+@media (max-width: 1023px) {
+  .section {
+    margin-top: 72px;
+    padding-block: 40px;
+  }
+  .head {
+    margin-bottom: 24px;
+  }
+  .grid {
+    gap: 16px;
+  }
+}

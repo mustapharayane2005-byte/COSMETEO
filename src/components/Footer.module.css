@@ -114,3 +114,10 @@
     grid-column: auto;
   }
 }
+
+@media (max-width: 1023px) {
+  .main {
+    padding-block: 48px;
+    gap: 32px 20px;
+  }
+}

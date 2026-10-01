@@ -105,3 +105,22 @@
     padding: clamp(48px, 7vw, 104px) clamp(32px, 6vw, 96px) clamp(48px, 7vw, 104px) clamp(72px, 8vw, 120px);
   }
 }
+
+@media (max-width: 1023px) {
+  .section {
+    margin-top: 72px;
+  }
+  .copy {
+    padding: 40px 20px;
+  }
+  .title {
+    margin-top: 24px;
+  }
+  .text {
+    margin-top: 24px;
+    line-height: 1.5;
+  }
+  .tags {
+    margin-block: 24px;
+  }
+}

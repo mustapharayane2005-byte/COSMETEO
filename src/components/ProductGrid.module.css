@@ -24,3 +24,9 @@
     gap: 48px 20px;
   }
 }
+
+@media (max-width: 767px) {
+  .grid {
+    gap: 16px;
+  }
+}

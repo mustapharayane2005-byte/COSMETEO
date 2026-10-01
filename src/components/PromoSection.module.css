@@ -17,3 +17,9 @@
     gap: 24px;
   }
 }
+
+@media (max-width: 1023px) {
+  .section {
+    padding-block: 72px 0;
+  }
+}

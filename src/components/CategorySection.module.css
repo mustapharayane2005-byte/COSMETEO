@@ -58,3 +58,12 @@
     flex: none;
   }
 }
+
+@media (max-width: 1023px) {
+  .section {
+    padding-block: 56px 0;
+  }
+  .title {
+    margin-bottom: 24px;
+  }
+}
