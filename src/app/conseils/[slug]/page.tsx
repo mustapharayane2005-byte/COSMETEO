@@ -30,7 +30,7 @@ export default async function ArticlePage({ params }: Props) {
   return (
     <PageShell>
       <article className="container pb-[clamp(56px,8vw,112px)]">
-        <header className="max-w-2xl py-8 md:py-14">
+        <header className="mx-auto max-w-2xl py-8 text-center md:py-14">
           <nav aria-label="Fil d'Ariane" className="mb-4 text-xs text-[var(--muted)]">
             <Link href="/conseils" className="hover:underline">
               Conseils
@@ -41,7 +41,7 @@ export default async function ArticlePage({ params }: Props) {
           <p className="lead mt-4">{article.summary}</p>
         </header>
 
-        <div className="max-w-2xl">
+        <div className="mx-auto max-w-2xl">
           {article.sections.map((s) => (
             <section key={s.heading} className="mb-8">
               <h2 className="font-display text-2xl text-green">{s.heading}</h2>

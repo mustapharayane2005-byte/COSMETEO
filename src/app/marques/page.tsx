@@ -9,9 +9,9 @@ export default function BrandsPage() {
   return (
     <PageShell>
       <section className="container pb-[clamp(56px,8vw,112px)]">
-        <header className="py-8 md:py-14">
+        <header className="py-8 text-center md:py-14">
           <h1 className="h2 !text-[clamp(2.25rem,1.2rem+3.4vw,4rem)]">Nos marques</h1>
-          <p className="lead mt-3 max-w-xl">Parcourez les marques de A à Z.</p>
+          <p className="lead mx-auto mt-3 max-w-xl">Parcourez les marques de A à Z.</p>
         </header>
         <BrandIndex brands={brandsAZ} />
       </section>

@@ -12,7 +12,7 @@ export default function ShopPage() {
     <PageShell>
       <div className="container pt-8 md:pt-14">
         <h1 className="h2 !text-[clamp(2.25rem,1.2rem+3.4vw,4rem)]">Boutique</h1>
-        <p className="lead mt-3 max-w-xl">Tous nos soins et produits de beauté.</p>
+        <p className="lead mx-auto mt-3 max-w-xl">Tous nos soins et produits de beauté.</p>
       </div>
       <BesoinsBlock />
       <section className="container pb-10" aria-label="Familles de produits">

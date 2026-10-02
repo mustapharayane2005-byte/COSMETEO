@@ -6,7 +6,7 @@ import { sections } from "@/data/home";
 export default function ConseilsHighlights() {
   return (
     <section className="container pt-14 lg:pt-20" aria-labelledby="conseils-title">
-      <header className="mb-8 flex items-end justify-between gap-4" data-reveal>
+      <header className="mb-8 flex flex-col items-center gap-3 text-center" data-reveal>
         <h2 id="conseils-title" className="h2">
           {sections.conseils.title}
         </h2>

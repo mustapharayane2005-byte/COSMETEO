@@ -29,7 +29,7 @@ export default function ProductPurchase({ product }: { product: Product }) {
   return (
     <div>
       <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">{product.brand}</p>
-      <h1 className="h2 mt-3">{product.name}</h1>
+      <h1 className="h2 mt-3 !text-left">{product.name}</h1>
       <p className="mt-5 flex flex-wrap items-baseline gap-x-3 gap-y-1">
         <span className="text-2xl">{formatPrice(product.price)}</span>
         {product.oldPrice && (

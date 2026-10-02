@@ -16,11 +16,11 @@ export default function AboutPage() {
   return (
     <PageShell>
       <section className="container pb-[clamp(56px,8vw,112px)]">
-        <header className="max-w-2xl py-8 md:py-14">
+        <header className="mx-auto max-w-2xl py-8 text-center md:py-14">
           <h1 className="h2 !text-[clamp(2.25rem,1.2rem+3.4vw,4rem)]">À propos</h1>
         </header>
 
-        <div className="max-w-2xl">
+        <div className="mx-auto max-w-2xl">
           <h2 className="font-display text-2xl text-green">Notre histoire</h2>
           <p className="mt-3 leading-relaxed">
             COSMÉTÉO est née d&apos;une envie simple : rendre accessibles des soins et des produits de beauté de

@@ -2,6 +2,7 @@ import type { NavItem } from "@/types/catalog";
 
 export const announcements = [
   "Livraison au Bénin & à l'international",
+  "Paiement par Mobile Money et carte bancaire",
   "Produits authentiques",
   "Conseils d'experts",
 ];

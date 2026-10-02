@@ -8,7 +8,7 @@ export default function BesoinsBlock() {
       <h2 id="besoins-title" className="h2">
         Que recherchez-vous ?
       </h2>
-      <ul className="mt-6 flex flex-wrap gap-2.5">
+      <ul className="mt-6 flex flex-wrap justify-center gap-2.5">
         {besoins.map((b, i) => (
           <li key={b.slug}>
             <Link

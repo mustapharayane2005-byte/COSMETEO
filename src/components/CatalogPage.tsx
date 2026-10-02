@@ -26,9 +26,9 @@ export default function CatalogPage({ title, intro, products, chips, crumbs, chi
   return (
     <PageShell>
       <section className="container pb-[clamp(56px,8vw,112px)]">
-        <header className="py-8 md:py-14" data-reveal>
+        <header className="py-8 text-center md:py-14" data-reveal>
           {crumbs && (
-            <nav aria-label="Fil d'Ariane" className="mb-4 flex flex-wrap gap-x-2 text-xs text-[var(--muted)]">
+            <nav aria-label="Fil d'Ariane" className="mb-4 flex flex-wrap justify-center gap-x-2 text-xs text-[var(--muted)]">
               {crumbs.map((c) => (
                 <span key={c.href}>
                   <Link href={c.href} className="hover:underline">
@@ -41,7 +41,7 @@ export default function CatalogPage({ title, intro, products, chips, crumbs, chi
             </nav>
           )}
           <h1 className="h2 !text-[clamp(2.25rem,1.2rem+3.4vw,4rem)]">{title}</h1>
-          {intro && <p className="lead mt-3 max-w-xl">{intro}</p>}
+          {intro && <p className="lead mx-auto mt-3 max-w-xl">{intro}</p>}
         </header>
 
         {chips && chips.length > 0 && (

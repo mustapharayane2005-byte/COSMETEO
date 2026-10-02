@@ -13,9 +13,9 @@ export default function ContactPage() {
   return (
     <PageShell>
       <section className="container pb-[clamp(56px,8vw,112px)]">
-        <header className="py-8 md:py-14">
+        <header className="py-8 text-center md:py-14">
           <h1 className="h2 !text-[clamp(2.25rem,1.2rem+3.4vw,4rem)]">Contact</h1>
-          <p className="lead mt-3 max-w-xl">Une question sur un produit ou une commande ? Écrivez-nous.</p>
+          <p className="lead mx-auto mt-3 max-w-xl">Une question sur un produit ou une commande ? Écrivez-nous.</p>
         </header>
         <div className="grid gap-10 lg:grid-cols-[1fr_380px] lg:gap-16">
           <div className="max-w-xl">

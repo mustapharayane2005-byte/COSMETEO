@@ -1,0 +1,110 @@
+.bar {
+  position: relative;
+  height: 40px;
+  overflow: hidden;
+  background: #173c32;
+  color: #fff;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  touch-action: pan-y;
+}
+.viewport {
+  height: 100%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 32px, #000 calc(100% - 32px), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 32px, #000 calc(100% - 32px), transparent 100%);
+}
+.track {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  width: max-content;
+  height: 100%;
+  will-change: transform;
+  animation: annonce 26s linear infinite;
+}
+.group {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.msg {
+  white-space: nowrap;
+}
+.dot {
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #d99a9a;
+}
+.links {
+  display: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@keyframes annonce {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 20px));
+  }
+}
+
+@media (min-width: 1024px) {
+  .track {
+    animation-duration: 32s;
+  }
+  /* la zone de défilement s'arrête avant les liens fixes */
+  .viewport {
+    margin-right: 200px;
+  }
+  .links {
+    position: absolute;
+    top: 0;
+    right: 24px;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-left: 24px;
+    background: linear-gradient(to right, transparent, #173c32 24px);
+  }
+  .links a {
+    color: #fff;
+    font-size: 13px;
+  }
+  .links a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+}
+
+@media (hover: hover) {
+  .bar:hover .track {
+    animation-play-state: paused;
+  }
+}
+
+/* mouvement réduit : aucun défilement, seul le premier message, centré */
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    width: 100%;
+    justify-content: center;
+    animation: none;
+    will-change: auto;
+  }
+  .group:nth-child(2),
+  .dot,
+  .extra,
+  .group > .msg:not(:first-child) {
+    display: none;
+  }
+}

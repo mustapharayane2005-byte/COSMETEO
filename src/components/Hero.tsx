@@ -38,8 +38,8 @@ export default function Hero() {
         />
       </div>
 
-      <div className="p-5 lg:absolute lg:inset-y-0 lg:right-0 lg:flex lg:w-[34%] lg:flex-col lg:justify-center lg:py-0 lg:pl-6 lg:pr-12">
-        <p className="flex items-center gap-2.5 whitespace-nowrap font-ui text-xs font-medium uppercase tracking-[0.2em] text-[#D99A9A]">
+      <div className="p-5 text-center lg:absolute lg:inset-y-0 lg:right-0 lg:flex lg:w-[34%] lg:flex-col lg:items-center lg:justify-center lg:py-0 lg:pl-6 lg:pr-12">
+        <p className="flex items-center justify-center gap-2.5 whitespace-nowrap font-ui text-xs font-medium uppercase tracking-[0.2em] text-[#D99A9A]">
           <span aria-hidden="true" className="h-px w-5 bg-[#D99A9A]" />
           {hero.label.replace(/^—\s*/, "")}
         </p>
