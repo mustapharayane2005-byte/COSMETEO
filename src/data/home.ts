@@ -4,15 +4,15 @@ import type { ArtShape } from "@/types/catalog";
 
 export const hero = {
   label: "— VOTRE PARAPHARMACIE BEAUTÉ",
-  title: "Des soins experts pour une beauté au quotidien",
+  title: "Le meilleur du soin au quotidien",
   subtitle: "Parapharmacie, dermatologie, beauté et bien-être, au service de toute la famille.",
   subtitleMobile: "Beauté, santé, hygiène et bien-être au quotidien.",
   primary: { label: "DÉCOUVRIR NOS PRODUITS →", href: "/boutique" },
   chips: ["Produits authentiques", "Conseils d'experts", "Livraison rapide", "Paiement sécurisé"],
   /** Images actuelles, conservées comme placeholders. */
-  imageDesktop: "/images/hero-desktop.jpg",
-  imageMobile: "/images/hero-mobile.jpg",
-  imageAlt: "Portrait en gros plan d'une femme à la peau lumineuse",
+  imageDesktop: "/images/hero-famille-desktop.jpg",
+  imageMobile: "/images/hero-famille-desktop.jpg",
+  imageAlt: "Famille réunie sur un lit blanc",
 };
 
 export const banners = [
