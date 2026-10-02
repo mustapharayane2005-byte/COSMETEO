@@ -16,7 +16,7 @@ const delay = (s: number) => ({ animationDelay: `${s}s` }) as React.CSSPropertie
 /** Image plein cadre (femme à droite) ; texte à gauche sur desktop, sous l'image sur mobile. */
 export default function Hero() {
   return (
-    <section className="relative mx-4 text-[#FAF9F4] lg:text-[#5A534E]" aria-labelledby="hero-title">
+    <section className="relative mx-4 text-[#F8F5F0] lg:text-[#173C32]" aria-labelledby="hero-title">
       <div className="relative aspect-[5/6] max-h-[560px] overflow-hidden rounded-3xl bg-[#E2DCD4] lg:aspect-auto lg:h-[calc(100svh-56px-100px-48px)] lg:max-h-[820px] lg:min-h-[640px]">
         <div className="absolute left-0 top-0 h-[126.5%] w-full lg:inset-0 lg:h-full">
         {/* mobile : la bande blanche du bas (≈ 20 %) est exclue par le cadrage 15/16 aligné en haut */}
@@ -50,13 +50,13 @@ export default function Hero() {
         <p className="flex items-center gap-4 font-ui text-xs font-semibold lg:text-sm uppercase tracking-[0.18em]">
           <span
             aria-hidden="true"
-            className="block h-[1.5px] w-12 origin-left bg-[#FAF9F4] lg:bg-[#5A534E] motion-safe:animate-[heroLine_0.6s_cubic-bezier(0.22,1,0.36,1)_both]"
+            className="block h-[1.5px] w-12 origin-left bg-[#F8F5F0] lg:bg-[#173C32] motion-safe:animate-[heroLine_0.6s_cubic-bezier(0.22,1,0.36,1)_both]"
           />
           {hero.label}
         </p>
         <h1
           id="hero-title"
-          className="mt-3 font-[family-name:var(--font-hero)] text-[clamp(2rem,9vw,2.6rem)] font-normal leading-none max-lg:flex max-lg:flex-wrap max-lg:gap-x-[0.25em] lg:mt-7 lg:leading-[0.98] tracking-[-0.01em] lg:text-[clamp(3.5rem,6vw,6.5rem)]"
+          className="mt-3 font-display text-[clamp(2rem,9vw,2.6rem)] font-normal leading-none max-lg:flex max-lg:flex-wrap max-lg:gap-x-[0.25em] lg:mt-7 lg:leading-[0.98] tracking-[-0.01em] lg:text-[clamp(3.5rem,6vw,6.5rem)]"
         >
           {lines.map((l, i) => (
             <span key={l} className={`block overflow-hidden pb-[0.08em] ${i === 0 ? "max-lg:basis-full" : ""}`}>
@@ -71,7 +71,7 @@ export default function Hero() {
         </h1>
         <Link
           href={hero.primary.href}
-          className="pill-fill mt-3 inline-flex h-12 w-full items-center justify-center gap-3 whitespace-nowrap rounded-full border-[1.5px] border-[#FAF9F4] bg-[#FAF9F4] px-9 font-ui text-base font-semibold uppercase tracking-[0.08em] text-[#5A534E] lg:mt-10 lg:h-auto lg:border-[#5A534E] lg:bg-transparent lg:py-4 [--fill:#5A534E] [--on-fill:#FAF9F4] motion-safe:animate-[heroFade_0.6s_ease-out_both] lg:w-fit"
+          className="pill-fill mt-3 inline-flex h-12 w-full items-center justify-center gap-3 whitespace-nowrap rounded-full border-[1.5px] border-[#F8F5F0] bg-[#F8F5F0] px-9 font-ui text-sm font-semibold uppercase tracking-[0.04em] text-[#173C32] lg:mt-10 lg:h-auto lg:border-[#173C32] lg:bg-transparent lg:py-4 [--fill:#173C32] [--on-fill:#F8F5F0] motion-safe:animate-[heroFade_0.6s_ease-out_both] lg:w-fit"
           style={delay(BUTTON_AT)}
         >
           {hero.primary.label}

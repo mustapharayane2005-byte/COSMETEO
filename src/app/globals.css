@@ -1,36 +1,41 @@
 @import "tailwindcss";
 
 @theme {
-  /* Identité « Rhode » : neutres chauds. Le vert COSMÉTÉO n'existe que dans le logo. */
-  --color-ivory: #edece8;
-  --color-sage: #d9d6d0;
-  --color-green: #5a534e; /* nom hérité : = brun-gris des textes et boutons */
-  --color-beige: #f2f0eb;
-  --color-brown: #5a534e;
-  --color-coral: #d96f55;
-  --font-display: var(--font-sans);
+  /* Parapharmacie premium : ivoire, vert profond, rose poudré. */
+  --color-ivory: #f8f5f0;
+  --color-green: #173c32;
+  --color-rose: #d99a9a;
+  --color-ink: #252525;
+  --color-line: #e8e2d9;
+  --color-sage: #e3ebe4;
+  --color-blush: #f5e4e2;
+  --color-brown: #252525; /* nom hérité : = anthracite */
+  --font-display: var(--font-heading);
   --font-ui: var(--font-sans);
 }
 
 :root {
-  --ivory: #edece8; /* fond de page */
-  --surface: #f7f6f3; /* cartes flottantes */
-  --sage: #d9d6d0;
-  --sage-soft: #f7f6f3;
-  --green: #5a534e; /* nom hérité : brun-gris (texte / boutons) */
-  --green-deep: #433d39;
-  --brown: #5a534e;
-  --coral: #d96f55;
-  /* corail assombri pour le texte blanc / petits textes (contraste AA) */
-  --coral-deep: #b4492f;
-  --champagne: #d9d6d0;
-  --beige: #f2f0eb;
-  --muted: #6f6862;
-  --line: #d9d6d0;
-  --line-strong: #c4c0b8;
+  --ivory: #f8f5f0; /* fond de page */
+  --surface: #ffffff; /* cartes produit */
+  --green: #173c32;
+  --green-deep: #173c32;
+  --rose: #d99a9a;
+  --ink: #252525;
+  --brown: #252525; /* nom hérité : = anthracite */
+  --sage: #e3ebe4;
+  --blush: #f5e4e2;
+  --coral: #d99a9a; /* nom hérité : = rose poudré */
+  --coral-deep: #d99a9a;
+  --champagne: #e8e2d9;
+  --coral: #d99a9a; /* nom hérité : = rose poudré */
+  --coral-deep: #d99a9a;
+  --champagne: #e8e2d9;
+  --muted: #5f5f5c;
+  --line: #e8e2d9;
+  --line-strong: #d6cfc3;
   --page-m: 16px;
 
-  --font-serif: var(--font-sans);
+  --font-serif: var(--font-heading);
 
   --gutter: 20px;
   --maxw: 1320px;
@@ -79,7 +84,7 @@ html {
 body {
   margin: 0;
   background: var(--ivory);
-  color: var(--brown);
+  color: var(--ink);
   font-family: var(--font-sans);
   font-size: 1rem;
   line-height: 1.6;
@@ -107,6 +112,13 @@ h3,
 p {
   margin: 0;
 }
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading), Georgia, serif;
+  font-weight: 400;
+  line-height: 1.1;
+}
 ul {
   margin: 0;
   padding: 0;
@@ -130,10 +142,10 @@ ul {
 /* ---- typographie ---- */
 .h2 {
   font-family: var(--font-serif);
-  font-weight: 500;
+  font-weight: 400;
   font-size: clamp(1.75rem, 1.25rem + 1.8vw, 2.75rem);
   line-height: 1.1;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
   color: var(--green);
 }
 .eyebrow {
@@ -242,15 +254,15 @@ ul {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: var(--fill, #5a534e);
+  background: var(--fill, #173c32);
   transform: scaleY(0);
   transform-origin: bottom;
   transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .pill-fill:hover,
 .pill-fill:focus-visible {
-  color: var(--on-fill, #faf9f4);
-  border-color: var(--fill, #5a534e);
+  color: var(--on-fill, #f8f5f0);
+  border-color: var(--fill, #173c32);
 }
 .pill-fill:hover::before,
 .pill-fill:focus-visible::before {

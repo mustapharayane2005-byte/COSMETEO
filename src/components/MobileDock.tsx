@@ -5,40 +5,47 @@ import { usePathname } from "next/navigation";
 import { useCart } from "@/components/cart/CartContext";
 import Icon, { type IconName } from "@/components/ui/Icon";
 
-const items: { label: string; href: string; icon: IconName }[] = [
+const links: { label: string; href: string; icon: IconName }[] = [
   { label: "Accueil", href: "/", icon: "home" },
   { label: "Boutique", href: "/boutique", icon: "grid" },
   { label: "Favoris", href: "/favoris", icon: "heart" },
 ];
 
-/** Barre d'achat fixe en bas, à portée de pouce (mobile uniquement). */
+/** Barre du bas (mobile uniquement) : Accueil | Boutique | Favoris | Panier | Compte. */
 export default function MobileDock() {
   const { count, openCart } = useCart();
+  const pathname = usePathname();
   // la fiche produit a sa propre barre d'ajout au panier
-  if (usePathname().startsWith("/produit/")) return null;
-  const cls = "relative flex flex-1 flex-col items-center justify-center gap-0.5 text-[0.625rem] font-medium tracking-wide";
+  if (pathname.startsWith("/produit/")) return null;
+  const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
+  const cls = (active: boolean) =>
+    `relative flex flex-1 flex-col items-center justify-center gap-0.5 text-[11px] font-medium ${
+      active ? "text-green" : "text-ink/60"
+    }`;
+  const item = (l: { label: string; href: string; icon: IconName }) => (
+    <Link key={l.label} href={l.href} className={cls(isActive(l.href))} aria-current={isActive(l.href) ? "page" : undefined}>
+      <Icon name={l.icon} size={22} strokeWidth={1.25} />
+      {l.label}
+    </Link>
+  );
   return (
     <nav
       aria-label="Accès rapide"
-      className="fixed inset-x-0 bottom-0 z-40 flex h-16 border-t border-brown/10 bg-ivory/95 pb-[env(safe-area-inset-bottom)] font-ui backdrop-blur-md md:hidden"
+      className="fixed inset-x-0 bottom-0 z-40 flex h-16 border-t border-line bg-ivory pb-[env(safe-area-inset-bottom)] font-ui md:hidden"
     >
-      {items.map((i) => (
-        <Link key={i.label} href={i.href} className={cls}>
-          <Icon name={i.icon} size={22} />
-          {i.label}
-        </Link>
-      ))}
-      <button type="button" onClick={openCart} className={cls} aria-label={`Panier, ${count} article${count > 1 ? "s" : ""}`}>
+      {links.map(item)}
+      <button type="button" onClick={openCart} className={cls(false)} aria-label={`Panier, ${count} article${count > 1 ? "s" : ""}`}>
         <span className="relative">
-          <Icon name="bag" size={22} />
+          <Icon name="bag" size={22} strokeWidth={1.25} />
           {count > 0 && (
-            <span className="absolute -right-2 -top-1.5 grid min-w-4 place-items-center rounded-full bg-green px-1 text-[0.625rem] font-semibold leading-4 text-ivory">
+            <span className="absolute -right-2.5 -top-1.5 grid min-w-4 place-items-center rounded-full bg-rose px-1 text-[10px] font-semibold leading-4 text-green">
               {count}
             </span>
           )}
         </span>
         Panier
       </button>
+      {item({ label: "Compte", href: "/compte", icon: "user" })}
     </nav>
   );
 }

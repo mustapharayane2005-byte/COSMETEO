@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter_Tight, Instrument_Serif, Nunito } from "next/font/google";
+import { Cormorant_Garamond, Fraunces, Inter } from "next/font/google";
 import { CartProvider } from "@/components/cart/CartContext";
 import CartDrawer from "@/components/cart/CartDrawer";
 import ChatBubble from "@/components/ChatBubble";
@@ -7,26 +7,26 @@ import MobileDock from "@/components/MobileDock";
 import MotionProvider from "@/components/ui/MotionProvider";
 import "./globals.css";
 
-const interTight = Inter_Tight({
+const inter = Inter({
   variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
-// Uniquement pour le titre du hero (variable dédiée : --font-serif sert déjà à Inter Tight dans le thème).
-const instrumentSerif = Instrument_Serif({
-  variable: "--font-hero",
+// Titres.
+const fraunces = Fraunces({
+  variable: "--font-heading",
   subsets: ["latin"],
   weight: "400",
   display: "swap",
 });
 
-// Uniquement pour le wordmark « cosméteo ».
-const nunito = Nunito({
+// Uniquement pour le wordmark du logo.
+const cormorant = Cormorant_Garamond({
   variable: "--font-logo",
   subsets: ["latin"],
-  weight: ["800", "900"],
+  weight: "600",
   display: "swap",
 });
 
@@ -53,14 +53,14 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#EDECE8",
+  themeColor: "#F8F5F0",
   width: "device-width",
   initialScale: 1,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="fr" className={`${interTight.variable} ${nunito.variable} ${instrumentSerif.variable}`}>
+    <html lang="fr" className={`${inter.variable} ${fraunces.variable} ${cormorant.variable}`}>
       <body>
         <MotionProvider>
         <CartProvider>

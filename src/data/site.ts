@@ -4,13 +4,16 @@ export const announcements = [
   "Livraison au Bénin & à l'international",
   "Produits authentiques",
   "Conseils d'experts",
-  "Paiement sécurisé",
 ];
 
 export const mainNav: NavItem[] = [
+  { label: "Accueil", href: "/" },
   { label: "Boutique", href: "/boutique" },
-  { label: "Nouveautés", href: "/nouveautes" },
   { label: "Promotions", href: "/promotions" },
+  { label: "Nos marques", href: "/marques" },
+  { label: "Conseils", href: "/conseils" },
+  { label: "À propos", href: "/a-propos" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const trustItems = [

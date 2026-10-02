@@ -1,4 +1,4 @@
-/* Boutons pill, contour fin ; au hover remplissage doux brun-gris. */
+/* Boutons pill, contour fin ; au hover remplissage doux vert profond. */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -10,9 +10,9 @@
   border-radius: 999px;
   background: transparent;
   font-family: var(--font-sans);
-  font-size: 1.125rem;
+  font-size: 0.875rem;
   font-weight: 600;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   white-space: nowrap;
   cursor: pointer;
@@ -44,7 +44,7 @@
 .sm {
   min-height: 44px;
   padding: 0 20px;
-  font-size: 0.6875rem;
+  font-size: 0.8125rem;
 }
 .block {
   width: 100%;
@@ -73,7 +73,7 @@
 .ghost-light {
   --fill: var(--ivory);
   color: var(--ivory);
-  border-color: rgb(237 236 232 / 0.55);
+  border-color: rgb(248 245 240 / 0.55);
 }
 .ghost-light:hover {
   border-color: var(--ivory);

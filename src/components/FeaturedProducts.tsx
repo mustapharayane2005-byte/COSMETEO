@@ -20,7 +20,7 @@ function Block({ product, index }: { product: Product; index: number }) {
   return (
     <article className="flex flex-col lg:grid lg:overflow-hidden lg:rounded-3xl lg:h-[min(calc(100svh-120px),820px)] lg:min-h-[600px] lg:grid-cols-2">
       {/* mobile : label + titre au-dessus de la photo (la version desktop est dans le bloc texte) */}
-      <div className="mb-5 font-ui text-[#5A534E] lg:hidden">
+      <div className="mb-5 font-ui text-[#173C32] lg:hidden">
         {label && <p className="mb-4 text-sm font-semibold uppercase tracking-[0.02em]">{label}</p>}
         <h3 className="text-[32px] font-bold leading-[1.1] tracking-[-0.02em]">{title}</h3>
       </div>
@@ -38,7 +38,7 @@ function Block({ product, index }: { product: Product; index: number }) {
         </div>
       )}
       <Reveal
-        className={`flex flex-col justify-end pt-5 font-ui text-[#5A534E] lg:bg-[#F2F0EB] lg:p-12 ${
+        className={`flex flex-col justify-end pt-5 font-ui text-[#173C32] lg:bg-[#FFFFFF] lg:p-12 ${
           imageLeft ? "lg:order-2" : "lg:order-1"
         }`}
       >
@@ -49,7 +49,7 @@ function Block({ product, index }: { product: Product; index: number }) {
         <p className="max-w-[520px] text-[17px] leading-[1.5] lg:mt-6 lg:text-lg">{product.featuredText ?? product.shortDescription}</p>
         <Link
           href={`/produit/${product.slug}`}
-          className="pill-fill mt-6 inline-flex lg:mt-8 w-fit items-center justify-center whitespace-nowrap rounded-full border-[1.5px] border-[#5A534E] px-8 py-[14px] text-lg font-semibold uppercase [--fill:#5A534E] [--on-fill:#FAF9F4]"
+          className="pill-fill mt-6 inline-flex lg:mt-8 w-fit items-center justify-center whitespace-nowrap rounded-full border-[1.5px] border-[#173C32] px-8 py-[14px] text-sm font-semibold uppercase tracking-[0.04em] [--fill:#173C32] [--on-fill:#F8F5F0]"
         >
           {product.featuredCta ?? "DÉCOUVRIR"}
         </Link>

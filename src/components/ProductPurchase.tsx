@@ -37,7 +37,7 @@ export default function ProductPurchase({ product }: { product: Product }) {
             <span className="sr-only">Ancien prix :</span>
             <s className="text-[var(--muted)]">{formatPrice(product.oldPrice)}</s>
             {discount && (
-              <span className="rounded-full bg-[var(--coral-deep)] px-2.5 py-1 text-[0.625rem] font-bold uppercase tracking-[0.1em] text-white">
+              <span className="rounded-full bg-rose px-2.5 py-1 text-[0.625rem] font-bold uppercase tracking-[0.1em] text-green">
                 -{discount}%
               </span>
             )}

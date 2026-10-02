@@ -25,7 +25,7 @@ export default function EditorialSection() {
               <defs>
                 <path id="seal-circle" d="M60 60 m-43 0 a43 43 0 1 1 86 0 a43 43 0 1 1 -86 0" />
               </defs>
-              <text fill="#5A534E" fontSize="10" fontWeight="600" letterSpacing="1.4">
+              <text fill="#173C32" fontSize="10" fontWeight="600" letterSpacing="1.4">
                 <textPath href="#seal-circle" textLength="266" lengthAdjust="spacing">
                   POUR TOUTES LES PEAUX ·{"\u00A0"}
                 </textPath>
@@ -34,7 +34,7 @@ export default function EditorialSection() {
             <path
               d="M60 74c-9-6-12-16-8-26 8 3 14 11 14 20 0 2-1 4-2 6-1 0-3 0-4 0Zm0 0V52"
               fill="none"
-              stroke="#5A534E"
+              stroke="#173C32"
               strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"

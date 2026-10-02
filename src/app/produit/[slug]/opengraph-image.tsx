@@ -21,8 +21,8 @@ export default async function OgImage({ params }: { params: Promise<{ slug: stri
           flexDirection: "column",
           justifyContent: "space-between",
           padding: 72,
-          background: "#EDECE8",
-          color: "#5A534E",
+          background: "#F8F5F0",
+          color: "#173C32",
         }}
       >
         <div style={{ display: "flex", fontSize: 30, letterSpacing: 8, fontWeight: 600, color: "#173B25" }}>COSMÉTÉO</div>

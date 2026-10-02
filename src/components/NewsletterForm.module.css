@@ -10,10 +10,10 @@
   min-width: 0;
   height: 56px;
   padding: 0 24px;
-  border: 1.5px solid #5a534e;
+  border: 1.5px solid #173c32;
   border-radius: 999px;
   background: transparent;
-  color: #5a534e;
+  color: #173c32;
   font-size: 1rem;
 }
 .input::placeholder {
@@ -21,7 +21,7 @@
 }
 .input:focus-visible,
 .btn:focus-visible {
-  outline: 2px solid #5a534e;
+  outline: 2px solid #173c32;
   outline-offset: 2px;
 }
 .btn {
@@ -29,7 +29,7 @@
   padding: 0 32px;
   border: 0;
   border-radius: 999px;
-  background: #5a534e;
+  background: #173c32;
   color: #faf9f4;
   font-size: 1.125rem;
   font-weight: 600;

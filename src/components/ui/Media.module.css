@@ -7,7 +7,7 @@
   background: var(--art-bg);
   /* palette par défaut */
   --art-bg: #e4e3dd;
-  --art-body: #5a534e;
+  --art-body: #173c32;
   --art-cap: #b8b2a7;
   --art-label: #f7f6f3;
   --art-leaf: #cfcdc4;
@@ -18,8 +18,8 @@
 .media[data-tone="sand"] {
   --art-bg: #efebe3;
   --art-body: #f7f6f3;
-  --art-cap: #5a534e;
-  --art-label: #5a534e;
+  --art-cap: #173c32;
+  --art-label: #173c32;
   --art-leaf: #ddd6c8;
   --art-sun: #fff;
   --art-ground: #e4ddce;
@@ -27,7 +27,7 @@
 .media[data-tone="coral"] {
   --art-bg: #e9e4dc;
   --art-body: #a89f94;
-  --art-cap: #5a534e;
+  --art-cap: #173c32;
   --art-label: #f7f6f3;
   --art-leaf: #d8d0c4;
   --art-sun: #fff;
@@ -36,7 +36,7 @@
 .media[data-tone="cream"] {
   --art-bg: #f0eee8;
   --art-body: #b8b2a7;
-  --art-cap: #5a534e;
+  --art-cap: #173c32;
   --art-label: #f7f6f3;
   --art-leaf: #e0dcd2;
   --art-sun: #fff;
@@ -45,15 +45,15 @@
 .media[data-tone="green"] {
   --art-bg: #cdc9c0;
   --art-body: #f7f6f3;
-  --art-cap: #5a534e;
-  --art-label: #5a534e;
+  --art-cap: #173c32;
+  --art-label: #173c32;
   --art-leaf: #b9b4a9;
-  --art-sun: #f2f0eb;
+  --art-sun: #f8f5f0;
   --art-ground: #bfbab0;
 }
 .media[data-tone="brown"] {
   --art-bg: #d9d5cc;
-  --art-body: #5a534e;
+  --art-body: #173c32;
   --art-cap: #d9d6d0;
   --art-label: #f7f6f3;
   --art-leaf: #c4bfb4;
@@ -63,7 +63,7 @@
 
 /* skeleton : shimmer visible tant que la photo n'est pas chargée */
 .skeleton {
-  background: linear-gradient(100deg, #e6e4de 30%, #f2f0eb 50%, #e6e4de 70%) 0 0 / 200% 100%;
+  background: linear-gradient(100deg, #e6e4de 30%, #f8f5f0 50%, #e6e4de 70%) 0 0 / 200% 100%;
   animation: shimmer 1.4s linear infinite;
 }
 @keyframes shimmer {

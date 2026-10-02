@@ -4,6 +4,7 @@ const paths = {
   search: <><circle cx="11" cy="11" r="6.5" /><path d="m16 16 4.5 4.5" /></>,
   heart: <path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.4a4.3 4.3 0 0 1 7.5 2.4C19.5 15.4 12 20 12 20Z" />,
   bag: <><path d="M5.5 8h13l-1 12h-11l-1-12Z" /><path d="M9 8V6.5a3 3 0 0 1 6 0V8" /></>,
+  user: <><circle cx="12" cy="8.5" r="3.8" /><path d="M4.5 20c.6-3.8 3.7-6 7.5-6s6.9 2.2 7.5 6" /></>,
   menu: <path d="M4 8h16M4 16h16" />,
   close: <path d="m6 6 12 12M18 6 6 18" />,
   arrow: <path d="M4 12h15m-5-5 5 5-5 5" />,
