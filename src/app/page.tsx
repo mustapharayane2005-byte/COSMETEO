@@ -1,19 +1,18 @@
+import BesoinsBlock from "@/components/BesoinsBlock";
 import BrandStrip from "@/components/BrandStrip";
-import CategorySection from "@/components/CategorySection";
-import EditorialSection from "@/components/EditorialSection";
-import FeaturedProducts from "@/components/FeaturedProducts";
+import ConseilsHighlights from "@/components/ConseilsHighlights";
+import FamilyPills from "@/components/FamilyPills";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import BesoinsBlock from "@/components/BesoinsBlock";
 import Hero from "@/components/Hero";
 import NewsletterSection from "@/components/NewsletterSection";
 import ProductSection from "@/components/ProductSection";
-import SkinTonesBanner from "@/components/SkinTonesBanner";
-import PromoSection from "@/components/PromoSection";
+import PromoBanners from "@/components/PromoBanners";
 import TrustSection from "@/components/TrustSection";
+import UniversCards from "@/components/UniversCards";
 import RevealObserver from "@/components/ui/RevealObserver";
 import { sections } from "@/data/home";
-import { newArrivals } from "@/data/products";
+import { allProducts } from "@/data/products";
 
 export default function HomePage() {
   return (
@@ -21,20 +20,20 @@ export default function HomePage() {
       <Header />
       <main>
         <Hero />
+        <FamilyPills />
         <BesoinsBlock />
-        <CategorySection />
-        <SkinTonesBanner />
-        <FeaturedProducts />
-        <PromoSection />
+        <PromoBanners />
         <ProductSection
-          id="new-title"
-          title={sections.newArrivals.title}
-          link={{ label: sections.newArrivals.cta, href: sections.newArrivals.href }}
-          products={newArrivals}
+          id="best-title"
+          title={sections.bestSellers.title}
+          subtitle={sections.bestSellers.subtitle}
+          link={{ label: "Voir tout →", href: "/boutique" }}
+          products={allProducts}
           layout="carousel"
         />
+        <UniversCards />
         <BrandStrip />
-        <EditorialSection />
+        <ConseilsHighlights />
         <TrustSection />
         <NewsletterSection />
       </main>
