@@ -38,8 +38,12 @@ export type Product = {
   slug: string;
   name: string;
   brand: string;
-  /** Slug de catégorie (voir data/categories.ts). */
-  category: string;
+  /** Slug de famille (voir data/categories.ts). */
+  famille: string;
+  /** Slug de sous-catégorie de la famille. */
+  sousCategorie: string;
+  /** Slugs des besoins (voir data/besoins.ts). */
+  besoins: string[];
   /** Prix en FCFA (entier). */
   price: number;
   /** Ancien prix en FCFA : présent uniquement en cas de promotion. */
@@ -69,6 +73,9 @@ export type Product = {
   featuredImage?: string;
 };
 
+export type SubCategory = { slug: string; name: string };
+
+/** Famille de produits (grande catégorie de la boutique). */
 export type Category = {
   id: string;
   slug: string;
@@ -77,17 +84,37 @@ export type Category = {
   image?: string;
   art: ArtShape;
   tone: Tone;
+  sousCategories: SubCategory[];
+};
+
+export type Besoin = {
+  slug: string;
+  name: string;
+  /** Deux phrases d'introduction (ton informatif, sans promesse médicale). */
+  intro: string;
 };
 
 export type Brand = {
   id: string;
+  /** URL : /marques/<slug>. */
+  slug: string;
   name: string;
-  href?: string;
-  /** Chemin d'un vrai logo (SVG/PNG). Sinon : wordmark typographique temporaire. */
-  logo?: string;
-  /** Style du wordmark temporaire. */
+  /** Marque à confirmer avec le client avant mise en ligne. */
+  confirmed: boolean;
+  /** Nom en texte uniquement : jamais de logo ni de packshot de marque. */
   wordmark?: "serif" | "sans" | "spaced" | "italic";
 };
+
+export type Article = {
+  slug: string;
+  title: string;
+  summary: string;
+  tone: Tone;
+  sections: { heading: string; text: string }[];
+  /** Slugs de produits recommandés. */
+  recommended: string[];
+};
+
 
 export type Promo = {
   id: string;

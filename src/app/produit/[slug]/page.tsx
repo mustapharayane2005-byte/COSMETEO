@@ -40,7 +40,7 @@ export default async function ProductPage({ params }: Props) {
   const p = getProduct(slug);
   if (!p) notFound();
 
-  const category = categories.find((c) => c.slug === p.category);
+  const category = categories.find((c) => c.slug === p.famille);
   const related = getRelated(p);
   const sections = [
     { title: "Description", body: p.description, open: true },

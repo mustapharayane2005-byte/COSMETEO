@@ -1,14 +1,20 @@
 import type { Metadata } from "next";
-import BrandStrip from "@/components/BrandStrip";
+import BrandIndex from "@/components/BrandIndex";
 import PageShell from "@/components/PageShell";
+import { brandsAZ } from "@/data/brands";
 
-export const metadata: Metadata = { title: "Marques" };
+export const metadata: Metadata = { title: "Nos marques" };
 
-/** Marques et logos factices : à remplacer par le vrai catalogue (data/brands.ts). */
 export default function BrandsPage() {
   return (
     <PageShell>
-      <BrandStrip />
+      <section className="container pb-[clamp(56px,8vw,112px)]">
+        <header className="py-8 md:py-14">
+          <h1 className="h2 !text-[clamp(2.25rem,1.2rem+3.4vw,4rem)]">Nos marques</h1>
+          <p className="lead mt-3 max-w-xl">Parcourez les marques de A à Z.</p>
+        </header>
+        <BrandIndex brands={brandsAZ} />
+      </section>
     </PageShell>
   );
 }

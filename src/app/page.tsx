@@ -4,6 +4,7 @@ import EditorialSection from "@/components/EditorialSection";
 import FeaturedProducts from "@/components/FeaturedProducts";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import BesoinsBlock from "@/components/BesoinsBlock";
 import Hero from "@/components/Hero";
 import NewsletterSection from "@/components/NewsletterSection";
 import ProductSection from "@/components/ProductSection";
@@ -20,6 +21,7 @@ export default function HomePage() {
       <Header />
       <main>
         <Hero />
+        <BesoinsBlock />
         <CategorySection />
         <SkinTonesBanner />
         <FeaturedProducts />

@@ -5,9 +5,6 @@
 export const placeholderPages: Record<string, string> = {
   compte: "Mon compte",
   favoris: "Mes favoris",
-  "a-propos": "À propos",
-  contact: "Contact",
-  conseils: "Conseils",
   faq: "FAQ",
   livraison: "Livraison",
   paiement: "Paiement",

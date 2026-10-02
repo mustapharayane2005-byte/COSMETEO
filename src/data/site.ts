@@ -29,6 +29,8 @@ export const footerColumns = [
     links: [
       { label: "À propos", href: "/a-propos" },
       { label: "Contact", href: "/contact" },
+      { label: "Conseils", href: "/conseils" },
+      { label: "Nos marques", href: "/marques" },
       { label: "FAQ", href: "/faq" },
     ],
   },
@@ -37,9 +39,10 @@ export const footerColumns = [
     links: [
       { label: "Visage", href: "/boutique/visage" },
       { label: "Corps", href: "/boutique/corps" },
+      { label: "Homme", href: "/boutique/homme" },
       { label: "Cheveux", href: "/boutique/cheveux" },
-      { label: "Maquillage", href: "/boutique/maquillage" },
-      { label: "Bien-être", href: "/boutique/complements" },
+      { label: "Promotions", href: "/promotions" },
+      { label: "Nouveautés", href: "/nouveautes" },
     ],
   },
   {
