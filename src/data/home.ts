@@ -6,6 +6,7 @@ export const hero = {
   label: "— VOTRE PARAPHARMACIE BEAUTÉ",
   title: "Des soins experts pour une beauté au quotidien",
   subtitle: "Parapharmacie, dermatologie, beauté et bien-être, au service de toute la famille.",
+  subtitleMobile: "Beauté, santé, hygiène et bien-être au quotidien.",
   primary: { label: "DÉCOUVRIR NOS PRODUITS →", href: "/boutique" },
   chips: ["Produits authentiques", "Conseils d'experts", "Livraison rapide", "Paiement sécurisé"],
   /** Images actuelles, conservées comme placeholders. */
