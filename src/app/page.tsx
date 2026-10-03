@@ -10,6 +10,7 @@ import ProductSection from "@/components/ProductSection";
 import PromoBanners from "@/components/PromoBanners";
 import TrustSection from "@/components/TrustSection";
 import UniversCards from "@/components/UniversCards";
+import GrandesMarques from "@/components/GrandesMarques";
 import RevealObserver from "@/components/ui/RevealObserver";
 import { sections } from "@/data/home";
 import { allProducts } from "@/data/products";
@@ -21,6 +22,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <FamilyPills />
+        <GrandesMarques />
         <BesoinsBlock />
         <PromoBanners />
         <ProductSection

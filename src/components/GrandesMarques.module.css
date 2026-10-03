@@ -1,0 +1,103 @@
+/* Bannière « Les grandes marques » : les produits sont dans l'image, rien n'est superposé. */
+.banner {
+  --bg: #dddde2; /* mobile : couleur mesurée sur le bord bas de l'image, jointure invisible avec le texte */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #ede8e0;
+  border-radius: 1rem;
+  background: var(--bg);
+  box-shadow: 0 6px 18px rgb(23 60 50 / 0.06);
+}
+.media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+  padding: 20px 20px 24px;
+}
+.label {
+  margin: 0;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: rgb(23 60 50 / 0.7);
+}
+.title {
+  margin: 0;
+  font-family: var(--font-heading), Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #173c32;
+}
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  margin-top: 8px;
+  padding: 0 32px;
+  border-radius: 999px;
+  background: #173c32;
+  color: #fff;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+}
+.cta:hover {
+  background: #0f2a22;
+}
+.note {
+  margin: 12px 0 0;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 11px;
+  line-height: 1.4;
+  color: rgb(37 37 37 / 0.6);
+}
+
+@media (min-width: 1024px) {
+  .banner {
+    --bg: #f4f4f4; /* couleur mesurée sur le bord gauche de l'image desktop */
+    display: block;
+    height: 360px;
+    border-radius: 1.5rem;
+  }
+  /* image à sa proportion native, ancrée à droite : produits entiers, jamais recadrés */
+  .media {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: auto;
+    height: 100%;
+    aspect-ratio: 2000 / 1116;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 24%);
+    mask-image: linear-gradient(to right, transparent 0%, #000 24%);
+  }
+  .text {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    max-width: 40%;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 0 0 0 56px;
+  }
+  .title {
+    font-size: clamp(1.9rem, 2.8vw, 2.8rem);
+  }
+  .cta {
+    margin-top: 10px;
+  }
+}
