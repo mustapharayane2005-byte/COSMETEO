@@ -390,3 +390,8 @@ html.splash-on {
   .splash-logo .logo-leaf,
   .splash-fill { animation: none; }
 }
+
+/* Les éléments absolus des carrousels ne doivent pas élargir la page. */
+main {
+  overflow-x: clip;
+}
