@@ -75,8 +75,8 @@ export const articles: Article[] = [
     summary: "Trois gestes simples pour une routine efficace, sans y passer des heures.",
     tone: "cream",
     image: "/images/conseils/skincare-homme.webp",
-    imageAlt: "Homme qui applique un soin nettoyant sur son visage",
-    imagePosition: "center 25%",
+    imageAlt: "Homme appliquant une crème sur la joue",
+    imagePosition: "right center",
     sections: [
       { heading: "Nettoyer", text: "Un nettoyant doux le matin et le soir retire la transpiration, la poussière et l'excès de sébum." },
       { heading: "Hydrater", text: "Une crème légère aide à garder la peau confortable, surtout après le rasage." },
