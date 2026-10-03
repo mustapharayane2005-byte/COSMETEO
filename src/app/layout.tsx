@@ -1,9 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Fraunces, Inter } from "next/font/google";
+import { Fraunces, Inter } from "next/font/google";
 import { CartProvider } from "@/components/cart/CartContext";
 import CartDrawer from "@/components/cart/CartDrawer";
 import ChatBubble from "@/components/ChatBubble";
 import MobileDock from "@/components/MobileDock";
+import SplashScreen, { splashScript } from "@/components/SplashScreen";
 import MotionProvider from "@/components/ui/MotionProvider";
 import "./globals.css";
 
@@ -20,14 +21,6 @@ const fraunces = Fraunces({
   subsets: ["latin"],
   weight: "400",
   style: ["normal", "italic"],
-  display: "swap",
-});
-
-// Uniquement pour le wordmark du logo.
-const cormorant = Cormorant_Garamond({
-  variable: "--font-logo",
-  subsets: ["latin"],
-  weight: "600",
   display: "swap",
 });
 
@@ -61,8 +54,12 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="fr" className={`${inter.variable} ${fraunces.variable} ${cormorant.variable}`}>
+    <html lang="fr" className={`${inter.variable} ${fraunces.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: splashScript }} />
+      </head>
       <body>
+        <SplashScreen />
         <MotionProvider>
         <CartProvider>
           {children}

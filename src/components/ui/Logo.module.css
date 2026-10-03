@@ -1,75 +1,18 @@
-/* Wordmark Cormorant Garamond 600 + sous-titre Inter. --w = taille du wordmark. */
 .logo {
-  --w: 40px;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  gap: calc(var(--w) * 0.16);
-  line-height: 1;
-  white-space: nowrap;
-  color: var(--green);
-}
-.word {
-  font-family: var(--font-logo), Georgia, serif;
-  font-size: var(--w);
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  line-height: 0.9;
-}
-.o {
-  position: relative;
+  --w: 210px;
   display: inline-block;
+  line-height: 0;
 }
-.leaves {
-  position: absolute;
-  left: 50%;
-  bottom: 88%;
-  width: 0.5em;
-  height: 0.33em;
-  transform: translateX(-50%);
-  overflow: visible;
+.mark {
+  display: block;
+  width: var(--w);
+  height: auto;
 }
-.leafRose {
-  fill: var(--rose);
-  transform-box: fill-box;
-  transform-origin: bottom right;
-  transform: rotate(-12deg);
-}
-.leafGreen {
-  fill: var(--green);
-  transform-box: fill-box;
-  transform-origin: bottom left;
-  transform: rotate(12deg);
-}
-.sub {
-  font-family: var(--font-sans), system-ui, sans-serif;
-  /* 0.62em du logo de référence (wordmark ≈ 5× plus grand que la base) */
-  font-size: calc(var(--w) * 0.195);
-  font-weight: 500;
-  letter-spacing: 0.32em;
-  margin-right: -0.32em;
-  color: var(--rose);
-}
-.light {
-  color: var(--ivory);
-}
-.light .leafGreen {
-  fill: var(--ivory);
-}
-
-/* Header : compact 28 px sans sous-titre (mobile), complet sur desktop */
 .header {
-  --w: 28px;
-}
-.header .sub {
-  display: none;
+  --w: 132px;
 }
 @media (min-width: 1024px) {
   .header {
-    --w: 34px;
-  }
-  .header .sub {
-    display: block;
+    --w: 190px;
   }
 }
