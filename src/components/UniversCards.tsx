@@ -15,7 +15,15 @@ export default function UniversCards() {
           <li key={u.name} data-reveal>
             <Link href={u.href} className="group relative block aspect-[4/5] overflow-hidden rounded-3xl bg-sage">
               {"image" in u ? (
-                <Image src={u.image} alt="" fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover" />
+                <Image
+                  src={u.image}
+                  alt={u.imageAlt}
+                  fill
+                  quality={85}
+                  sizes="(min-width:1024px) 33vw, 100vw"
+                  className="object-cover transition-transform duration-[400ms] ease-out motion-reduce:transition-none lg:group-hover:scale-[1.03]"
+                  style={{ objectPosition: u.imagePosition }}
+                />
               ) : (
                 <Media alt="" art={u.art} tone={u.tone} variant="scene" sizes="(min-width: 768px) 33vw, 100vw" />
               )}

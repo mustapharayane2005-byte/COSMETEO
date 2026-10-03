@@ -36,11 +36,35 @@ export const banners = [
   },
 ] as const;
 
-/** Grandes cartes « Par univers » (images actuelles / visuels de substitution). */
+/** Grandes cartes « Par univers ». `art` / `tone` : visuel de secours si l'image manque. */
 export const univers = [
-  { name: "Soins visage", href: "/boutique/visage", image: "/images/routine-soin.jpg", art: "dropper", tone: "sage" },
-  { name: "Soins homme", href: "/boutique/homme", art: "tube", tone: "cream" },
-  { name: "Bébé & enfant", href: "/boutique/bebe-enfant", art: "pump", tone: "sand" },
+  {
+    name: "Soins visage",
+    href: "/boutique/visage",
+    image: "/images/routine-soin.jpg",
+    imageAlt: "",
+    imagePosition: "center",
+    art: "dropper",
+    tone: "sage",
+  },
+  {
+    name: "Soins homme",
+    href: "/boutique/homme",
+    image: "/images/univers/soins-homme.webp",
+    imageAlt: "Homme au visage serein appliquant un soin",
+    imagePosition: "center 30%",
+    art: "tube",
+    tone: "cream",
+  },
+  {
+    name: "Bébé & enfant",
+    href: "/boutique/bebe-enfant",
+    image: "/images/univers/bebe-enfant.webp",
+    imageAlt: "Bébé souriant dans une serviette à capuche",
+    imagePosition: "center 30%",
+    art: "pump",
+    tone: "sand",
+  },
 ] as const;
 
 /** Bande de réassurance (le seuil de livraison est un exemple à valider avec le client). */
