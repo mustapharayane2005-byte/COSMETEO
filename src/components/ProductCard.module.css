@@ -5,7 +5,17 @@
   overflow: hidden;
   border-radius: 16px;
   background: #fff;
-  box-shadow: 0 1px 3px rgb(23 60 50 / 0.06);
+  border: 1px solid #ede8e0;
+  box-shadow: 0 1px 2px rgba(23, 60, 50, 0.06), 0 6px 18px rgba(23, 60, 50, 0.05);
+}
+@media (hover: hover) and (min-width: 1024px) {
+  .card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(23, 60, 50, 0.08), 0 12px 28px rgba(23, 60, 50, 0.09);
+  }
 }
 .media {
   position: relative;

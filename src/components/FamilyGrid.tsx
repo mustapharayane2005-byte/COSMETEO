@@ -10,7 +10,7 @@ export default function FamilyGrid() {
         <li key={c.slug}>
           <Link
             href={c.href}
-            className="group block overflow-hidden rounded-2xl bg-white shadow-[0_1px_3px_rgb(23_60_50/0.06)]"
+            className="card-lift group block overflow-hidden rounded-2xl bg-white border border-line shadow-[0_1px_2px_rgba(23,60,50,0.06),0_6px_18px_rgba(23,60,50,0.05)]"
           >
             <div className="relative aspect-[4/5] overflow-hidden">
               <Media

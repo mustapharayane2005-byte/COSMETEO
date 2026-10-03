@@ -36,7 +36,7 @@ export default function AboutPage() {
         <h2 className="mb-6 mt-14 font-display text-2xl text-green">Nos valeurs</h2>
         <ul className="grid gap-4 md:grid-cols-3">
           {values.map((v) => (
-            <li key={v.title} className="rounded-2xl bg-white p-6 shadow-[0_1px_3px_rgb(23_60_50/0.06)]">
+            <li key={v.title} className="rounded-2xl bg-white p-6 border border-line shadow-[0_1px_2px_rgba(23,60,50,0.06),0_6px_18px_rgba(23,60,50,0.05)]">
               <span className="grid size-11 place-items-center rounded-full bg-sage text-green">
                 <Icon name={v.icon} />
               </span>

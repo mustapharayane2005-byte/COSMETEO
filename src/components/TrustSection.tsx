@@ -5,7 +5,7 @@ import { trustStrip } from "@/data/home";
 export default function TrustSection() {
   return (
     <section className="container pt-14 lg:pt-20" aria-label="Nos engagements">
-      <ul className="grid gap-5 rounded-3xl bg-sage p-6 md:grid-cols-3 md:p-8" data-reveal>
+      <ul className="grid gap-5 rounded-3xl bg-[#FAF8F4] p-6 md:grid-cols-3 md:p-8" data-reveal>
         {trustStrip.map((item) => (
           <li key={item.title} className="flex items-center gap-4">
             <span className="grid size-12 shrink-0 place-items-center rounded-full bg-white text-green">

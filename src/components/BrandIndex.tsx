@@ -32,7 +32,7 @@ export default function BrandIndex({ brands }: { brands: Brand[] }) {
           value={q}
           onChange={(e) => setQ(e.target.value)}
           placeholder="Rechercher une marque…"
-          className="h-11 w-full rounded-full border border-line bg-white px-5 text-sm outline-none placeholder:text-ink/50 focus-visible:border-green"
+          className="h-11 w-full rounded-full border border-[#E3DDD3] bg-white px-5 text-sm outline-none placeholder:text-[#6B6B68] focus-visible:border-green"
         />
       </div>
       {groups.length === 0 ? (

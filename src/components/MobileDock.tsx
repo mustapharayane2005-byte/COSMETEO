@@ -20,7 +20,7 @@ export default function MobileDock() {
   const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
   const cls = (active: boolean) =>
     `relative flex flex-1 flex-col items-center justify-center gap-0.5 text-[11px] font-medium ${
-      active ? "text-green" : "text-ink/60"
+      active ? "text-green" : "text-[#5F5F5C]"
     }`;
   const item = (l: { label: string; href: string; icon: IconName }) => (
     <Link key={l.label} href={l.href} className={cls(isActive(l.href))} aria-current={isActive(l.href) ? "page" : undefined}>

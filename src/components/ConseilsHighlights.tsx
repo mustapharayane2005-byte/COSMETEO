@@ -5,7 +5,8 @@ import { sections } from "@/data/home";
 /** 3 articles à la une. */
 export default function ConseilsHighlights() {
   return (
-    <section className="container pt-14 lg:pt-20" aria-labelledby="conseils-title">
+    <section className="mt-14 bg-[#FAF8F4] py-14 lg:mt-20 lg:py-20" aria-labelledby="conseils-title">
+      <div className="container">
       <header className="mb-8 flex flex-col items-center gap-3 text-center" data-reveal>
         <h2 id="conseils-title" className="h2">
           {sections.conseils.title}
@@ -19,7 +20,7 @@ export default function ConseilsHighlights() {
           <li key={a.slug} data-reveal>
             <Link
               href={`/conseils/${a.slug}`}
-              className="flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-[0_1px_3px_rgb(23_60_50/0.06)] transition-shadow hover:shadow-md"
+              className="flex h-full flex-col overflow-hidden rounded-2xl bg-white border border-line shadow-[0_1px_2px_rgba(23,60,50,0.06),0_6px_18px_rgba(23,60,50,0.05)] card-lift"
             >
               <div className={`grid aspect-[16/9] place-items-center ${i % 2 ? "bg-blush" : "bg-sage"}`}>
                 <span className="font-display text-5xl text-green/40" aria-hidden="true">
@@ -34,6 +35,7 @@ export default function ConseilsHighlights() {
           </li>
         ))}
       </ul>
+      </div>
     </section>
   );
 }

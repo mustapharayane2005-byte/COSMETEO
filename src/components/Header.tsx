@@ -37,7 +37,7 @@ export default function Header() {
   const cartLabel = `Panier, ${cartCount} article${cartCount > 1 ? "s" : ""}`;
   const placeholder = "Rechercher un produit, une marque…";
   const searchBox =
-    "h-11 w-full rounded-full border border-line bg-white pl-11 pr-4 text-sm outline-none placeholder:text-ink/50 focus-visible:border-green";
+    "h-11 w-full rounded-full border border-[#E3DDD3] bg-white pl-11 pr-4 text-sm outline-none placeholder:text-[#6B6B68] focus-visible:border-green";
 
   const badge = (
     <m.span

@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 const field =
-  "w-full rounded-2xl border border-line bg-white px-4 py-3 text-sm outline-none placeholder:text-ink/50 focus-visible:border-green";
+  "w-full rounded-2xl border border-[#E3DDD3] bg-white px-4 py-3 text-sm outline-none placeholder:text-[#6B6B68] focus-visible:border-green";
 
 /** Formulaire visuel : aucun envoi réel tant que le service de messagerie n'est pas branché. */
 export default function ContactForm() {

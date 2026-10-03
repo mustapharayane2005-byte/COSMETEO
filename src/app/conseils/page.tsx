@@ -18,7 +18,7 @@ export default function ConseilsPage() {
             <li key={a.slug}>
               <Link
                 href={`/conseils/${a.slug}`}
-                className="flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-[0_1px_3px_rgb(23_60_50/0.06)] transition-shadow hover:shadow-md"
+                className="flex h-full flex-col overflow-hidden rounded-2xl bg-white border border-line shadow-[0_1px_2px_rgba(23,60,50,0.06),0_6px_18px_rgba(23,60,50,0.05)] card-lift"
               >
                 <div className={`grid aspect-[16/9] place-items-center ${i % 2 ? "bg-blush" : "bg-sage"}`}>
                   <span className="font-display text-5xl text-green/40" aria-hidden="true">

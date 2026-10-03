@@ -2,11 +2,11 @@
 
 @theme {
   /* Parapharmacie premium : ivoire, vert profond, rose poudré. */
-  --color-ivory: #f8f5f0;
+  --color-ivory: #ffffff;
   --color-green: #173c32;
   --color-rose: #d99a9a;
   --color-ink: #252525;
-  --color-line: #e8e2d9;
+  --color-line: #ede8e0;
   --color-sage: #e3ebe4;
   --color-blush: #f5e4e2;
   --color-brown: #252525; /* nom hérité : = anthracite */
@@ -15,7 +15,7 @@
 }
 
 :root {
-  --ivory: #f8f5f0; /* fond de page */
+  --ivory: #ffffff; /* fond de page */
   --surface: #ffffff; /* cartes produit */
   --green: #173c32;
   --green-deep: #173c32;
@@ -26,12 +26,12 @@
   --blush: #f5e4e2;
   --coral: #d99a9a; /* nom hérité : = rose poudré */
   --coral-deep: #d99a9a;
-  --champagne: #e8e2d9;
+  --champagne: #ede8e0;
   --coral: #d99a9a; /* nom hérité : = rose poudré */
   --coral-deep: #d99a9a;
-  --champagne: #e8e2d9;
+  --champagne: #ede8e0;
   --muted: #5f5f5c;
-  --line: #e8e2d9;
+  --line: #ede8e0;
   --line-strong: #d6cfc3;
   --page-m: 16px;
 
@@ -129,6 +129,17 @@ ul {
   outline-offset: 3px;
   border-radius: 4px;
 }
+}
+
+/* cartes cliquables : léger soulèvement (desktop avec souris uniquement) */
+@media (hover: hover) and (min-width: 1024px) {
+  .card-lift {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .card-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(23, 60, 50, 0.08), 0 12px 28px rgba(23, 60, 50, 0.09);
+  }
 }
 
 .container {

@@ -22,7 +22,7 @@ export default function ContactPage() {
             <ContactForm />
           </div>
           <ul className="grid content-start gap-4">
-            <li className="rounded-2xl bg-white p-6 shadow-[0_1px_3px_rgb(23_60_50/0.06)]">
+            <li className="rounded-2xl bg-white p-6 border border-line shadow-[0_1px_2px_rgba(23,60,50,0.06),0_6px_18px_rgba(23,60,50,0.05)]">
               <span className="grid size-11 place-items-center rounded-full bg-sage text-green">
                 <Icon name="whatsapp" />
               </span>
@@ -31,7 +31,7 @@ export default function ContactPage() {
                 {whatsapp.label}
               </a>
             </li>
-            <li className="rounded-2xl bg-white p-6 shadow-[0_1px_3px_rgb(23_60_50/0.06)]">
+            <li className="rounded-2xl bg-white p-6 border border-line shadow-[0_1px_2px_rgba(23,60,50,0.06),0_6px_18px_rgba(23,60,50,0.05)]">
               <span className="grid size-11 place-items-center rounded-full bg-blush text-green">
                 <Icon name="chat" />
               </span>
