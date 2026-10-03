@@ -1,4 +1,5 @@
 import type { ArtShape, Tone } from "@/types/catalog";
+import { seuilLivraisonTexte } from "./site";
 
 /** Textes et visuels éditoriaux de la homepage (hors catalogue). */
 
@@ -8,7 +9,7 @@ export const hero = {
   subtitle: "Soins, dermatologie, beauté et bien-être, au service de toute la famille.",
   subtitleMobile: "Beauté, santé, hygiène et bien-être au quotidien.",
   primary: { label: "DÉCOUVRIR NOS PRODUITS →", href: "/boutique" },
-  chips: ["Produits authentiques", "Conseils d'experts", "Livraison rapide", "Paiement sécurisé"],
+  chips: ["Produits authentiques", "Conseils d'experts", "Livraison gratuite", "Paiement sécurisé"],
   /** Images actuelles, conservées comme placeholders. */
   imageDesktop: "/images/hero-famille-desktop.jpg",
   imageMobile: "/images/hero-famille-desktop.jpg",
@@ -79,7 +80,7 @@ export const univers: Univers[] = [
 
 /** Bande de réassurance (le seuil de livraison est un exemple à valider avec le client). */
 export const trustStrip = [
-  { icon: "truck", title: "Livraison rapide", text: "Dès 25 000 FCFA d'achat" },
+  { icon: "truck", title: "Livraison gratuite", text: seuilLivraisonTexte },
   { icon: "lock", title: "Paiement sécurisé", text: "Mobile Money et carte bancaire" },
   { icon: "chat", title: "Conseils d'experts", text: "Une équipe à votre écoute" },
 ] as const;

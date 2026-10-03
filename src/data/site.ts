@@ -1,5 +1,9 @@
 import type { NavItem } from "@/types/catalog";
 
+/** Montant d'achat à partir duquel la livraison est gratuite : à changer ici uniquement. */
+export const seuilLivraisonGratuite = 25000;
+export const seuilLivraisonTexte = `À partir de ${seuilLivraisonGratuite.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} FCFA d'achat`;
+
 export const announcements = [
   "Livraison au Bénin & à l'international",
   "Paiement par Mobile Money et carte bancaire",
@@ -18,7 +22,7 @@ export const mainNav: NavItem[] = [
 ];
 
 export const trustItems = [
-  { icon: "truck", title: "Livraison rapide", text: "Au Bénin et à l'international." },
+  { icon: "truck", title: "Livraison gratuite", text: seuilLivraisonTexte },
   { icon: "badge", title: "Produits authentiques", text: "Une sélection vérifiée." },
   { icon: "chat", title: "Conseils & service client", text: "Une équipe à votre écoute." },
   { icon: "lock", title: "Paiement sécurisé", text: "Mobile Money et carte bancaire." },
