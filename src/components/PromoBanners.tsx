@@ -5,7 +5,7 @@ import { banners } from "@/data/home";
 /** Deux bannières côte à côte (empilées sur mobile). Images en lazy loading, sans parallax ni zoom. */
 export default function PromoBanners() {
   return (
-    <section className="container pt-14 lg:pt-20" aria-label="Offres et sélections">
+    <section className="container" aria-label="Offres et sélections">
       <ul className="grid gap-4 md:grid-cols-2 lg:gap-6">
         {banners.map((b) => (
           <li

@@ -7,7 +7,7 @@ const artVars = { "--art-body": "#173c32", "--art-cap": "#d99a9a", "--art-label"
 /** Pastilles rondes des familles. Rail horizontal natif (overflow-x, aucun JS de drag). */
 export default function FamilyPills() {
   return (
-    <section className="py-14 lg:py-16" aria-label="Familles de produits">
+    <section className="pt-14 lg:pt-16" aria-label="Familles de produits">
       <ul className="flex gap-4 overflow-x-auto overflow-y-hidden overscroll-x-contain px-[var(--gutter)] pb-2 [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [touch-action:pan-x_pan-y] md:justify-center md:gap-7 [&::-webkit-scrollbar]:hidden">
         {categories.map((c, i) => (
           <li key={c.slug} className="shrink-0">

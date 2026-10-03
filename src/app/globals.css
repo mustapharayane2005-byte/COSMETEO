@@ -39,7 +39,7 @@
 
   --gutter: 20px;
   --maxw: 1320px;
-  --section-y: clamp(56px, 8vw, 112px);
+  --section-y: clamp(56px, 6vw, 80px);
 }
 @media (min-width: 768px) {
   :root {
@@ -147,7 +147,7 @@ ul {
   margin-inline: auto;
 }
 .section {
-  padding-block: var(--section-y);
+  padding-block: var(--section-y) 0;
 }
 
 /* ---- typographie ---- */
@@ -304,7 +304,7 @@ img {
     --gutter: 20px;
   }
   .section {
-    padding-block: 72px 0;
+    padding-block: 56px 0;
   }
   .h2 {
     font-size: 2rem;

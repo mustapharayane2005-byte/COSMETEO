@@ -1,3 +1,5 @@
+import type { IconName } from "@/components/ui/Icon";
+
 /**
  * Contrats de données de la vitrine.
  * Quand le vrai catalogue (API / CMS / base) arrivera, il suffira de
@@ -90,8 +92,12 @@ export type Category = {
 export type Besoin = {
   slug: string;
   name: string;
-  /** Deux phrases d'introduction (ton informatif, sans promesse médicale). */
-  intro: string;
+  /** Une phrase (8 à 12 mots) : conseil cosmétique général, sans promesse médicale. */
+  resume: string;
+  icone: IconName;
+  couleur: "sage" | "blush";
+  /** 3 conseils courts, informatifs. */
+  conseils: [string, string, string];
 };
 
 export type Brand = {

@@ -6,7 +6,7 @@ import { sections } from "@/data/home";
 /** 3 articles à la une. */
 export default function ConseilsHighlights() {
   return (
-    <section className="mt-14 bg-[#FAF8F4] py-14 lg:mt-20 lg:py-20" aria-labelledby="conseils-title">
+    <section className="mt-14 bg-[#FAF8F4] pb-12 pt-12 lg:mt-20 lg:pb-14 lg:pt-16" aria-labelledby="conseils-title">
       <div className="container">
       <header className="mb-8 flex flex-col items-center gap-3 text-center" data-reveal>
         <h2 id="conseils-title" className="h2">

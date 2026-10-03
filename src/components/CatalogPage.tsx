@@ -16,13 +16,15 @@ type Props = {
   crumbs?: { label: string; href: string }[];
   /** Contenu libre entre l'en-tête et la liste. */
   children?: React.ReactNode;
+  /** Contenu libre après la liste. */
+  after?: React.ReactNode;
 };
 
 const chipCls =
   "inline-flex min-h-11 shrink-0 items-center rounded-full border px-5 text-sm font-medium transition-colors";
 
 /** Liste produits partagée par /boutique/…, /besoins/…, /marques/…, /promotions et /nouveautes. */
-export default function CatalogPage({ title, intro, products, chips, crumbs, children }: Props) {
+export default function CatalogPage({ title, intro, products, chips, crumbs, children, after }: Props) {
   return (
     <PageShell>
       <section className="container pb-[clamp(56px,8vw,112px)]">
@@ -82,6 +84,7 @@ export default function CatalogPage({ title, intro, products, chips, crumbs, chi
             </Button>
           </div>
         )}
+        {after}
       </section>
     </PageShell>
   );
