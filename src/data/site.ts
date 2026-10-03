@@ -67,7 +67,7 @@ export const socials = [
 
 // Passer actif à false pour un moyen de paiement tant qu'il ne fonctionne pas réellement sur le site.
 export const paiements = [
-  { nom: "Visa", fichier: "/images/paiement/visa.svg", alt: "Visa", actif: true },
-  { nom: "Mastercard", fichier: "/images/paiement/mastercard.png", alt: "Mastercard", actif: true },
-  { nom: "MTN MoMo", fichier: "/images/paiement/mtn-momo.png", alt: "MTN MoMo", actif: true },
+  { nom: "Visa", fichier: "/images/paiement/visa.svg", alt: "Visa", hauteur: 18, actif: true },
+  { nom: "Mastercard", fichier: "/images/paiement/mastercard-symbole.png", alt: "Mastercard", hauteur: 28, actif: true },
+  { nom: "MTN MoMo", fichier: "/images/paiement/mtn-momo.png", alt: "MTN MoMo", hauteur: 30, actif: true },
 ];

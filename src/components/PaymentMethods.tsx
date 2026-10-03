@@ -17,7 +17,7 @@ export default function PaymentMethods({ className = "" }: { className?: string 
           <li key={p.nom} className={s.tile}>
             {hasFile(p.fichier) ? (
               // eslint-disable-next-line @next/next/no-img-element -- petits logos (SVG/PNG), pas besoin de l'optimiseur
-              <img src={p.fichier} alt={p.alt} loading="lazy" decoding="async" className={s.logo} />
+              <img src={p.fichier} alt={p.alt} loading="lazy" decoding="async" className={s.logo} style={{ height: p.hauteur }} />
             ) : (
               <span className={s.text}>{p.nom}</span>
             )}
