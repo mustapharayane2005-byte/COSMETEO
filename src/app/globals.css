@@ -263,7 +263,7 @@ ul {
 /* mobile : place pour la barre d'achat fixe */
 @media (max-width: 1023px) {
   body {
-    padding-bottom: 88px;
+    padding-bottom: calc(72px + env(safe-area-inset-bottom) + 24px);
   }
 }
 

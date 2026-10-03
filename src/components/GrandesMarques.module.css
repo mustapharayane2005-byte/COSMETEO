@@ -1,6 +1,6 @@
 /* Bannière « Les grandes marques » : les produits sont dans l'image, rien n'est superposé. */
 .banner {
-  --bg: #dddde2; /* mobile : couleur mesurée sur le bord bas de l'image, jointure invisible avec le texte */
+  --bg: #fff;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -13,14 +13,14 @@
 .media {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1200 / 616; /* proportion du fichier mobile recadré (bande blanche du haut retirée) */
 }
 .text {
   display: flex;
   flex-direction: column;
   align-items: stretch;
   gap: 12px;
-  padding: 20px 20px 24px;
+  padding: 24px 20px 28px;
 }
 .label {
   margin: 0;
@@ -59,7 +59,8 @@
   background: #0f2a22;
 }
 .note {
-  margin: 12px 0 0;
+  margin: 14px 0 0;
+  padding: 0 4px;
   font-family: var(--font-sans), system-ui, sans-serif;
   font-size: 11px;
   line-height: 1.4;

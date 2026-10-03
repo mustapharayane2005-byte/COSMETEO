@@ -24,7 +24,7 @@ export default function GrandesMarques() {
             quality={90}
             loading="lazy"
             sizes="(min-width: 1024px) 0px, 100vw"
-            className="object-cover object-[center_bottom] lg:hidden"
+            className="object-cover object-center lg:hidden"
           />
         </div>
         <div className={s.text}>
