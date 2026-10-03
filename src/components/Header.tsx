@@ -3,6 +3,7 @@
 import { AnimatePresence, m } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useId, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import { useCart } from "@/components/cart/CartContext";
 import Icon from "@/components/ui/Icon";
@@ -12,8 +13,11 @@ import { mainNav } from "@/data/site";
 export default function Header() {
   const { count: cartCount, openCart } = useCart();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const mobileSearchRef = useRef<HTMLInputElement>(null);
   const searchId = useId();
+
+  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -128,7 +132,9 @@ export default function Header() {
         </div>
       </header>
 
-      {/* menu plein écran qui glisse (mobile / tablette) */}
+      {/* menu plein écran qui glisse (mobile / tablette), dans un portail : hors du contexte d'empilement de template.tsx, donc au-dessus de la barre du bas et du chat */}
+      {mounted &&
+        createPortal(
       <AnimatePresence>
         {menuOpen && (
           <m.div
@@ -168,7 +174,9 @@ export default function Header() {
             </nav>
           </m.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence>,
+          document.body,
+        )}
     </>
   );
 }
