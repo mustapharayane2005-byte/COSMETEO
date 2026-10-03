@@ -1,4 +1,4 @@
-import type { ArtShape } from "@/types/catalog";
+import type { ArtShape, Tone } from "@/types/catalog";
 
 /** Textes et visuels éditoriaux de la homepage (hors catalogue). */
 
@@ -37,7 +37,17 @@ export const banners = [
 ] as const;
 
 /** Grandes cartes « Par univers ». `art` / `tone` : visuel de secours si l'image manque. */
-export const univers = [
+export type Univers = {
+  name: string;
+  href: string;
+  image?: string;
+  imageAlt?: string;
+  imagePosition?: string;
+  art: ArtShape;
+  tone: Tone;
+};
+
+export const univers: Univers[] = [
   {
     name: "Soins visage",
     href: "/boutique/visage",
@@ -65,7 +75,7 @@ export const univers = [
     art: "pump",
     tone: "sand",
   },
-] as const;
+];
 
 /** Bande de réassurance (le seuil de livraison est un exemple à valider avec le client). */
 export const trustStrip = [

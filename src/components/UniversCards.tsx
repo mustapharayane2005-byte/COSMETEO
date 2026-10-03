@@ -14,10 +14,10 @@ export default function UniversCards() {
         {univers.map((u) => (
           <li key={u.name} data-reveal>
             <Link href={u.href} className="group relative block aspect-[4/5] overflow-hidden rounded-3xl bg-sage">
-              {"image" in u ? (
+              {u.image ? (
                 <Image
                   src={u.image}
-                  alt={u.imageAlt}
+                  alt={u.imageAlt ?? ""}
                   fill
                   quality={85}
                   sizes="(min-width:1024px) 33vw, 100vw"
