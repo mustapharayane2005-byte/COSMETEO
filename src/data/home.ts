@@ -22,6 +22,8 @@ export const banners = [
     cta: "DÉCOUVRIR",
     href: "/conseils",
     theme: "blush",
+    imageDesktop: "/images/banniere-octobre-rose-desktop.webp",
+    imageMobile: "/images/banniere-octobre-rose-mobile.webp",
   },
   {
     id: "dermo",
@@ -29,6 +31,8 @@ export const banners = [
     cta: "VOIR LA SÉLECTION",
     href: "/boutique/visage",
     theme: "sage",
+    imageDesktop: "/images/banniere-dermo-desktop.webp",
+    imageMobile: "/images/banniere-dermo-mobile.webp",
   },
 ] as const;
 
