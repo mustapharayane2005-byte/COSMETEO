@@ -24,7 +24,7 @@ export default function AboutPage() {
           <h2 className="font-display text-2xl text-green">Notre histoire</h2>
           <p className="mt-3 leading-relaxed">
             COSMÉTÉO est née d&apos;une envie simple : rendre accessibles des soins et des produits de beauté de
-            confiance, pensés pour toutes les peaux. Notre parapharmacie en ligne réunit des soins du visage, du corps
+            confiance, pensés pour toutes les peaux. Notre boutique en ligne réunit des soins du visage, du corps
             et des cheveux, ainsi que des produits de bien-être, sélectionnés un à un.
           </p>
           <p className="mt-3 leading-relaxed">

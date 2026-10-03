@@ -3,9 +3,9 @@ import type { ArtShape, Tone } from "@/types/catalog";
 /** Textes et visuels éditoriaux de la homepage (hors catalogue). */
 
 export const hero = {
-  label: "— VOTRE PARAPHARMACIE BEAUTÉ",
+  label: "— VOTRE BEAUTÉ AU QUOTIDIEN",
   title: "Le meilleur du soin au quotidien",
-  subtitle: "Parapharmacie, dermatologie, beauté et bien-être, au service de toute la famille.",
+  subtitle: "Soins, dermatologie, beauté et bien-être, au service de toute la famille.",
   subtitleMobile: "Beauté, santé, hygiène et bien-être au quotidien.",
   primary: { label: "DÉCOUVRIR NOS PRODUITS →", href: "/boutique" },
   chips: ["Produits authentiques", "Conseils d'experts", "Livraison rapide", "Paiement sécurisé"],
