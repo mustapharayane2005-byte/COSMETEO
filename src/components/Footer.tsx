@@ -3,6 +3,7 @@ import Icon from "@/components/ui/Icon";
 import Reveal from "@/components/ui/Reveal";
 import Logo from "@/components/ui/Logo";
 import { footerColumns, socials } from "@/data/site";
+import PaymentMethods from "@/components/PaymentMethods";
 import s from "./Footer.module.css";
 
 export default function Footer() {
@@ -16,6 +17,8 @@ export default function Footer() {
           <p className={s.about}>
             Soins, beauté et bien-être, sélectionnés avec exigence. Livraison au Bénin et à l&apos;international.
           </p>
+          <div className={s.brandRow}>
+            <PaymentMethods className={s.payDesktop} />
           <ul className={s.socials}>
             {socials.map((so) => (
               <li key={so.icon}>
@@ -25,6 +28,7 @@ export default function Footer() {
               </li>
             ))}
           </ul>
+          </div>
         </div>
 
         {footerColumns.map((col) => (
@@ -39,6 +43,7 @@ export default function Footer() {
             </ul>
           </nav>
         ))}
+        <PaymentMethods className={s.payMobile} />
       </div>
 
       <div className={`container ${s.legal}`}>

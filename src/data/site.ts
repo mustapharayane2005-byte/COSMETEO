@@ -64,3 +64,10 @@ export const socials = [
   { icon: "tiktok", label: "TikTok", href: "https://tiktok.com" },
   { icon: "whatsapp", label: "WhatsApp", href: "https://wa.me/" },
 ] as const;
+
+// Passer actif à false pour un moyen de paiement tant qu'il ne fonctionne pas réellement sur le site.
+export const paiements = [
+  { nom: "Visa", fichier: "/images/paiement/visa.svg", alt: "Visa", actif: true },
+  { nom: "Mastercard", fichier: "/images/paiement/mastercard.png", alt: "Mastercard", actif: true },
+  { nom: "MTN MoMo", fichier: "/images/paiement/mtn-momo.png", alt: "MTN MoMo", actif: true },
+];
