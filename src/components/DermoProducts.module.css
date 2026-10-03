@@ -1,0 +1,35 @@
+/* Calque des produits : même zone que l'image du décor (haut de la bannière en mobile, moitié droite en desktop). */
+.layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  pointer-events: none;
+}
+.item {
+  position: absolute;
+  left: var(--ml);
+  bottom: var(--mb);
+  width: auto;
+  height: var(--mh);
+  transform: translateX(-50%) rotate(var(--mr));
+  transform-origin: 50% 100%;
+  filter: drop-shadow(0 12px 16px rgb(23 60 50 / 0.22));
+}
+@media (min-width: 1024px) {
+  .layer {
+    left: auto;
+    right: 0;
+    width: 62%;
+    height: 100%;
+    aspect-ratio: auto;
+  }
+  .item {
+    left: var(--dl);
+    bottom: var(--db);
+    height: var(--dh);
+    transform: translateX(-50%) rotate(var(--dr));
+  }
+}

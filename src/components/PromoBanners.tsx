@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import DermoProducts from "@/components/DermoProducts";
 import { banners } from "@/data/home";
 
 /** Deux bannières côte à côte (empilées sur mobile). Images en lazy loading, sans parallax ni zoom. */
@@ -31,6 +32,8 @@ export default function PromoBanners() {
               />
             </div>
 
+            {b.id === "dermo" && <DermoProducts />}
+
             <div className="relative z-[2] flex flex-1 flex-col items-start justify-between gap-8 p-5 lg:max-w-[52%] lg:p-10">
               <h2 className="max-w-[18ch] font-display text-[clamp(1.625rem,1.2rem+1.6vw,2.5rem)] leading-[1.1] text-green">
                 {b.title}
@@ -45,6 +48,9 @@ export default function PromoBanners() {
           </li>
         ))}
       </ul>
+      <p className="mt-3 text-[11px] leading-snug text-brown/60">
+        Marques citées à titre d&apos;illustration. Les marques appartiennent à leurs propriétaires respectifs.
+      </p>
     </section>
   );
 }
