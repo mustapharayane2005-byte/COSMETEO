@@ -16,9 +16,9 @@ export default function ConseilsHighlights() {
           {sections.conseils.cta}
         </Link>
       </header>
-      <ul className="-mx-[var(--gutter)] flex snap-x snap-proximity gap-4 overflow-x-auto overflow-y-hidden overscroll-x-contain px-[var(--gutter)] pb-3 [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [touch-action:pan-x_pan-y] md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0 [&::-webkit-scrollbar]:hidden">
+      <ul data-reveal className="-mx-[var(--gutter)] flex snap-x snap-proximity gap-4 overflow-x-auto overflow-y-hidden overscroll-x-contain px-[var(--gutter)] pb-3 [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [touch-action:pan-x_pan-y] md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0 [&::-webkit-scrollbar]:hidden">
         {articles.slice(0, 3).map((a, i) => (
-          <li key={a.slug} data-reveal className="w-[78%] shrink-0 snap-start md:w-auto">
+          <li key={a.slug} className="w-[78%] shrink-0 snap-start md:w-auto">
             <ArticleCard article={a} index={i} />
           </li>
         ))}

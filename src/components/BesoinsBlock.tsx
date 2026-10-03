@@ -36,9 +36,9 @@ export default function BesoinsBlock() {
       <div className="container max-w-[1200px]">
         <BesoinsHeader />
       </div>
-      <ul className="grid auto-cols-[62vw] grid-flow-col grid-rows-[repeat(2,auto)] gap-3 overflow-x-auto overflow-y-hidden overscroll-x-contain scroll-px-5 snap-x snap-proximity px-5 pb-2 [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [touch-action:pan-x_pan-y] md:auto-cols-[34vw] lg:mx-auto lg:w-[min(100%-64px,1200px)] lg:auto-cols-auto lg:grid-flow-row lg:grid-cols-4 lg:grid-rows-none lg:gap-4 lg:overflow-visible lg:px-0 lg:pb-0 [&::-webkit-scrollbar]:hidden">
+      <ul data-reveal className="grid auto-cols-[62vw] grid-flow-col grid-rows-[repeat(2,auto)] gap-3 overflow-x-auto overflow-y-hidden overscroll-x-contain scroll-px-5 snap-x snap-proximity px-5 pb-2 [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [touch-action:pan-x_pan-y] md:auto-cols-[34vw] lg:mx-auto lg:w-[min(100%-64px,1200px)] lg:auto-cols-auto lg:grid-flow-row lg:grid-cols-4 lg:grid-rows-none lg:gap-4 lg:overflow-visible lg:px-0 lg:pb-0 [&::-webkit-scrollbar]:hidden">
         {besoins.map((b, i) => (
-          <li key={b.slug} data-reveal className={`snap-start ${i >= 8 ? "lg:hidden" : ""}`}>
+          <li key={b.slug} className={`snap-start ${i >= 8 ? "lg:hidden" : ""}`}>
             <BesoinCard besoin={b} />
           </li>
         ))}

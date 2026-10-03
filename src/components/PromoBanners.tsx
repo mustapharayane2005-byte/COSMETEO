@@ -16,11 +16,11 @@ export default function PromoBanners() {
             }`}
           >
             {/* mobile : image en haut */}
-            <div className="relative aspect-[4/3] w-full lg:hidden">
+            <div data-reveal="image" className="relative aspect-[4/3] w-full lg:hidden">
               <Image src={b.imageMobile} alt="" fill quality={90} sizes="100vw" className="object-cover object-[center_20%]" />
             </div>
             {/* desktop : image à droite, fondu à gauche */}
-            <div className="absolute right-0 top-0 hidden h-full w-[62%] [mask-image:linear-gradient(to_right,transparent_0%,#000_34%)] lg:block">
+            <div data-reveal="image" className="absolute right-0 top-0 hidden h-full w-[62%] [mask-image:linear-gradient(to_right,transparent_0%,#000_34%)] lg:block">
               <Image
                 src={b.imageDesktop}
                 alt=""

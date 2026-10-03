@@ -10,9 +10,9 @@ export default function UniversCards() {
       <h2 id="univers-title" className="h2 mb-8" data-reveal>
         {sections.univers.title}
       </h2>
-      <ul className="grid gap-4 md:grid-cols-3 lg:gap-6">
+      <ul data-reveal-stagger className="grid gap-4 md:grid-cols-3 lg:gap-6">
         {univers.map((u) => (
-          <li key={u.name} data-reveal>
+          <li key={u.name}>
             <Link href={u.href} className="group relative block aspect-[4/5] overflow-hidden rounded-3xl bg-sage">
               {u.image ? (
                 <Image

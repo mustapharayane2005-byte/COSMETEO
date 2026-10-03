@@ -9,7 +9,7 @@ import s from "./Footer.module.css";
 export default function Footer() {
   return (
     <footer className={s.footer}>
-      <div className={`container ${s.main}`}>
+      <div data-reveal className={`container ${s.main}`}>
         <div className={s.brand}>
           <Reveal>
             <Logo tone="light" />

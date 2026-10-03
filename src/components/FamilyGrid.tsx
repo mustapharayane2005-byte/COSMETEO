@@ -5,7 +5,7 @@ import { categories } from "@/data/categories";
 /** Grandes familles en cartes avec image (2 colonnes sur mobile). */
 export default function FamilyGrid() {
   return (
-    <ul className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5 lg:grid-cols-4">
+    <ul data-reveal-stagger className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5 lg:grid-cols-4">
       {categories.map((c) => (
         <li key={c.slug}>
           <Link

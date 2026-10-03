@@ -180,21 +180,74 @@ ul {
   white-space: nowrap;
 }
 
-/* ---- apparition progressive (voir RevealObserver) ---- */
-.reveal-ready [data-reveal] {
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  transition-delay: var(--d, 0ms);
-  /* will-change uniquement tant que l'élément n'est pas apparu */
-  will-change: opacity;
+/* ---- apparition au scroll (voir RevealObserver) : transform + opacity uniquement, une seule fois ---- */
+:root {
+  --ease-reveal: cubic-bezier(0.22, 1, 0.36, 1);
 }
-.reveal-ready [data-reveal="fade"] {
-  transform: none;
+@media (prefers-reduced-motion: no-preference) {
+  /* état initial : seulement si le script <head> a posé la classe js */
+  html.js [data-reveal]:not(.is-visible):not([data-reveal="image"]),
+  html.js [data-reveal-stagger]:not(.is-visible) > * {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  html.js [data-reveal="image"]:not(.is-visible) {
+    opacity: 0;
+  }
+  html.js [data-reveal="image"]:not(.is-visible) > img {
+    transform: scale(1.05);
+  }
+
+  /* `backwards` : l'animation ne laisse aucun style derrière elle (hover et transforms propres aux cartes intacts) */
+  html.js [data-reveal].is-visible:not([data-reveal="image"]) {
+    animation: revealIn 0.55s var(--ease-reveal) var(--d, 0ms) backwards;
+  }
+  html.js [data-reveal="image"].is-visible {
+    animation: revealFade 0.8s ease-out backwards;
+  }
+  html.js [data-reveal="image"].is-visible > img {
+    animation: revealZoom 0.8s ease-out backwards;
+  }
+  html.js [data-reveal-stagger].is-visible > * {
+    animation: revealIn 0.55s var(--ease-reveal) calc(var(--i, 5) * 70ms) backwards;
+  }
+  html.js [data-reveal-stagger] > :nth-child(1) { --i: 0; }
+  html.js [data-reveal-stagger] > :nth-child(2) { --i: 1; }
+  html.js [data-reveal-stagger] > :nth-child(3) { --i: 2; }
+  html.js [data-reveal-stagger] > :nth-child(4) { --i: 3; }
+  html.js [data-reveal-stagger] > :nth-child(5) { --i: 4; }
 }
-.reveal-ready [data-reveal].is-in {
-  opacity: 1;
-  transform: none;
-  will-change: auto;
+@media (prefers-reduced-motion: no-preference) and (min-width: 1024px) {
+  html.js [data-reveal].is-visible:not([data-reveal="image"]),
+  html.js [data-reveal-stagger].is-visible > * {
+    animation-duration: 0.7s;
+  }
+}
+/* très petits écrans : pas plus de 12 éléments animés d'une grille */
+@media (prefers-reduced-motion: no-preference) and (max-width: 639px) {
+  html.js [data-reveal-stagger]:not(.is-visible) > :nth-child(n + 13) {
+    opacity: 1;
+    transform: none;
+  }
+  html.js [data-reveal-stagger].is-visible > :nth-child(n + 13) {
+    animation: none;
+  }
+}
+@keyframes revealIn {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+}
+@keyframes revealFade {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes revealZoom {
+  from {
+    transform: scale(1.05);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -203,11 +256,6 @@ ul {
   }
   .pill-fill,
   .pill-fill::before {
-    transition: none;
-  }
-  .reveal-ready [data-reveal] {
-    opacity: 1;
-    transform: none;
     transition: none;
   }
 }

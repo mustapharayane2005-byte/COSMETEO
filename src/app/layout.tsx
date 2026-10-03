@@ -56,6 +56,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="fr" className={`${inter.variable} ${fraunces.variable}`} suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: `document.documentElement.classList.add("js")` }} />
         <script dangerouslySetInnerHTML={{ __html: splashScript }} />
       </head>
       <body>

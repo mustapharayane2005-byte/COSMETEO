@@ -1,7 +1,6 @@
 /**
- * Fade + translateY 24 px, 0.6 s, une seule fois. Aucun JS propre : l'attribut data-reveal est géré par
- * <RevealObserver /> (IntersectionObserver partagé) et par les règles CSS de globals.css.
- * Mobile et prefers-reduced-motion : contenu visible directement.
+ * Fondu + translateY 22 px, une seule fois (classe `is-visible` posée par <RevealObserver />, animation en CSS pur
+ * dans globals.css). Contenu visible sans JS et avec prefers-reduced-motion.
  */
 export default function Reveal({
   children,
@@ -9,7 +8,7 @@ export default function Reveal({
   className,
 }: {
   children: React.ReactNode;
-  /** Délai en secondes (stagger : index × 0.09 dans les grilles). */
+  /** Délai en secondes (stagger : 70 ms par rang dans les grilles). */
   delay?: number;
   className?: string;
 }) {
