@@ -13,6 +13,8 @@ export const articles: Article[] = [
     title: "Comment construire sa routine skincare ?",
     summary: "Les étapes de base pour prendre soin de sa peau, matin et soir, sans se compliquer la vie.",
     tone: "sage",
+    image: "/images/conseils/routine-skincare.webp",
+    imageAlt: "Femme souriante qui nettoie son visage avec une mousse nettoyante",
     sections: [
       { heading: "Commencer simple", text: "Une routine de base tient en trois gestes : nettoyer, hydrater, protéger. Inutile de multiplier les produits au départ." },
       { heading: "Le matin", text: "Nettoyez en douceur, appliquez une crème hydratante, puis terminez par une protection solaire si vous sortez." },
@@ -39,6 +41,8 @@ export const articles: Article[] = [
     title: "Comment choisir sa crème solaire ?",
     summary: "Indice, texture, application : les points à regarder pour bien choisir sa protection.",
     tone: "cream",
+    image: "/images/conseils/creme-solaire.webp",
+    imageAlt: "Femme qui applique de la crème solaire sur son épaule",
     sections: [
       { heading: "L'indice de protection", text: "Plus l'indice (SPF) est élevé, plus la protection contre les UVB est importante. Un SPF 50 est souvent recommandé pour le visage." },
       { heading: "La texture", text: "Fluide, crème ou lait : choisissez celle que vous aimerez porter chaque jour, c'est la clé de la régularité." },
@@ -52,6 +56,8 @@ export const articles: Article[] = [
     title: "Niacinamide : à quoi ça sert ?",
     summary: "Un actif cosmétique très répandu : ce qu'il est et comment l'intégrer à sa routine.",
     tone: "sage",
+    image: "/images/conseils/niacinamide.webp",
+    imageAlt: "Flacon de sérum à pipette laissant tomber une goutte",
     sections: [
       { heading: "De quoi s'agit-il ?", text: "La niacinamide est une forme de vitamine B3 utilisée dans de nombreux soins cosmétiques." },
       { heading: "Pourquoi on l'aime", text: "On la retrouve dans des soins visant à lisser le grain de peau et à uniformiser l'aspect du teint." },
@@ -65,6 +71,9 @@ export const articles: Article[] = [
     title: "Skincare homme : les essentiels",
     summary: "Trois gestes simples pour une routine efficace, sans y passer des heures.",
     tone: "cream",
+    image: "/images/conseils/skincare-homme.webp",
+    imageAlt: "Homme qui applique un soin nettoyant sur son visage",
+    imagePosition: "center 25%",
     sections: [
       { heading: "Nettoyer", text: "Un nettoyant doux le matin et le soir retire la transpiration, la poussière et l'excès de sébum." },
       { heading: "Hydrater", text: "Une crème légère aide à garder la peau confortable, surtout après le rasage." },
@@ -77,6 +86,9 @@ export const articles: Article[] = [
     title: "Les soins essentiels de bébé",
     summary: "Toilette, hydratation, protection : l'essentiel pour prendre soin de la peau des tout-petits.",
     tone: "sand",
+    image: "/images/conseils/soins-bebe.webp",
+    imageAlt: "Main d'adulte tenant le pied d'un bébé orné d'un cœur de crème",
+    imagePosition: "center 25%",
     sections: [
       { heading: "Une toilette douce", text: "Choisissez des produits conçus pour les bébés et rincez soigneusement, sans frotter." },
       { heading: "Hydrater", text: "Après le bain, appliquez un soin hydratant adapté en massant délicatement." },
@@ -90,6 +102,8 @@ export const articles: Article[] = [
     title: "Comprendre les actifs cosmétiques",
     summary: "Hydratants, antioxydants, exfoliants : un petit lexique pour lire les étiquettes.",
     tone: "green",
+    image: "/images/conseils/actifs-cosmetiques.webp",
+    imageAlt: "Flacon à pipette, pot de crème et tube de soin sur fond crème",
     sections: [
       { heading: "Les hydratants", text: "Glycérine ou acide hyaluronique, par exemple, aident à retenir l'eau dans la peau." },
       { heading: "Les antioxydants", text: "La vitamine C ou la vitamine E sont souvent utilisées dans des soins pensés pour les peaux ternes." },

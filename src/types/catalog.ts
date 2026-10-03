@@ -110,6 +110,11 @@ export type Article = {
   title: string;
   summary: string;
   tone: Tone;
+  /** Photo de la carte et de l'en-tête (absente : fond de couleur + numéro). */
+  image?: string;
+  imageAlt?: string;
+  /** object-position CSS pour le cadrage 16/10 (défaut : center). */
+  imagePosition?: string;
   sections: { heading: string; text: string }[];
   /** Slugs de produits recommandés. */
   recommended: string[];

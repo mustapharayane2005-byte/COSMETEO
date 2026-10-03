@@ -1,3 +1,4 @@
+import ArticleCard from "@/components/ArticleCard";
 import Link from "next/link";
 import { articles } from "@/data/conseils";
 import { sections } from "@/data/home";
@@ -15,23 +16,10 @@ export default function ConseilsHighlights() {
           {sections.conseils.cta}
         </Link>
       </header>
-      <ul className="grid gap-4 md:grid-cols-3 lg:gap-6">
+      <ul className="-mx-[var(--gutter)] flex snap-x snap-proximity gap-4 overflow-x-auto overflow-y-hidden overscroll-x-contain px-[var(--gutter)] pb-3 [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [touch-action:pan-x_pan-y] md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0 [&::-webkit-scrollbar]:hidden">
         {articles.slice(0, 3).map((a, i) => (
-          <li key={a.slug} data-reveal>
-            <Link
-              href={`/conseils/${a.slug}`}
-              className="flex h-full flex-col overflow-hidden rounded-2xl bg-white border border-line shadow-[0_1px_2px_rgba(23,60,50,0.06),0_6px_18px_rgba(23,60,50,0.05)] card-lift"
-            >
-              <div className={`grid aspect-[16/9] place-items-center ${i % 2 ? "bg-blush" : "bg-sage"}`}>
-                <span className="font-display text-5xl text-green/40" aria-hidden="true">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-              </div>
-              <div className="flex flex-1 flex-col p-5">
-                <h3 className="font-display text-xl leading-tight text-green">{a.title}</h3>
-                <p className="mt-2 text-sm text-[var(--muted)]">{a.summary}</p>
-              </div>
-            </Link>
+          <li key={a.slug} data-reveal className="w-[78%] shrink-0 snap-start md:w-auto">
+            <ArticleCard article={a} index={i} />
           </li>
         ))}
       </ul>

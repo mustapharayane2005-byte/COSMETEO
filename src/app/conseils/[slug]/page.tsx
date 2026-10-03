@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import PageShell from "@/components/PageShell";
@@ -40,6 +41,20 @@ export default async function ArticlePage({ params }: Props) {
           <h1 className="h2 !text-[clamp(2rem,1.2rem+3vw,3.5rem)]">{article.title}</h1>
           <p className="lead mt-4">{article.summary}</p>
         </header>
+
+        {article.image && (
+          <div className="relative mx-auto mb-10 aspect-[16/10] max-w-2xl overflow-hidden rounded-2xl bg-sage">
+            <Image
+              src={article.image}
+              alt={article.imageAlt ?? ""}
+              fill
+              quality={85}
+              sizes="(min-width:768px) 672px, 100vw"
+              className="object-cover"
+              style={{ objectPosition: article.imagePosition ?? "center" }}
+            />
+          </div>
+        )}
 
         <div className="mx-auto max-w-2xl">
           {article.sections.map((s) => (
