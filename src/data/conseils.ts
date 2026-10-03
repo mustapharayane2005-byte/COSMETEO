@@ -28,6 +28,9 @@ export const articles: Article[] = [
     title: "Quelle routine pour une peau acnéique ?",
     summary: "Des repères généraux pour les peaux sujettes aux imperfections, avec des gestes doux.",
     tone: "sand",
+    image: "/images/conseils/peau-acneique.webp",
+    imageAlt: "Femme en serviette rose appliquant une crème sur sa joue",
+    imagePosition: "center 48%",
     sections: [
       { heading: "Nettoyer sans agresser", text: "Privilégiez un nettoyant doux, matin et soir. Frotter trop fort ou multiplier les lavages peut fragiliser la peau." },
       { heading: "Hydrater quand même", text: "Une peau sujette aux imperfections a aussi besoin d'hydratation. Choisissez des textures légères." },
