@@ -24,13 +24,13 @@ export default function BrandTile({ brand }: { brand: BrandTileData }) {
       >
         {brand.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").charAt(0).toUpperCase()}
       </span>
-      <span className="relative font-ui text-[11px] font-medium uppercase leading-none tracking-[0.12em] text-[#173C32]/65">
+      <span className="relative whitespace-nowrap font-ui text-[10px] font-medium uppercase leading-none tracking-[0.07em] text-[#173C32]/65 lg:text-[11px] lg:tracking-[0.12em]">
         {brandTypeLabels[brand.type]}
       </span>
       <span className="relative my-auto font-display text-[clamp(1.4rem,2vw,1.9rem)] font-normal leading-[1.1] text-[#173C32]">
         {brand.name}
       </span>
-      <span className="relative flex items-end justify-between font-ui text-[13px] leading-none text-[#252525]/70">
+      <span className="relative flex items-end justify-between whitespace-nowrap font-ui text-xs leading-none text-[#252525]/70 lg:text-[13px]">
         {count}
         <span aria-hidden="true" className="text-base text-[#173C32] transition-transform duration-200 motion-reduce:transition-none lg:group-hover:translate-x-[3px]">
           →
