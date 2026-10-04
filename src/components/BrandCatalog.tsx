@@ -84,6 +84,7 @@ export default function BrandCatalog({ brands }: { brands: BrandTileData[] }) {
         </div>
       </div>
 
+      {/* grille rendue côté client (Suspense) : fondu en CSS pur, sans dépendre de RevealObserver */}
       {list.length === 0 ? (
         <div className="grid place-items-center gap-5 rounded-2xl border border-[#EDE8E0] bg-[#FAF8F4] px-6 py-16 text-center">
           <p className="font-display text-2xl text-[#173C32]">Aucune marque ne correspond à votre recherche.</p>
@@ -98,7 +99,7 @@ export default function BrandCatalog({ brands }: { brands: BrandTileData[] }) {
           </Link>
         </div>
       ) : (
-        <ul data-reveal-stagger className="mt-2 grid grid-cols-2 gap-3 lg:grid-cols-3 lg:gap-4 xl:grid-cols-4">
+        <ul className="mt-2 grid grid-cols-2 gap-3 motion-safe:animate-[revealFade_0.5s_ease-out] lg:grid-cols-3 lg:gap-4 xl:grid-cols-4">
           {list.map((b) => (
             <li key={b.slug}>
               <BrandTile brand={b} />
