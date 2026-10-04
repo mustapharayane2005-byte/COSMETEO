@@ -30,7 +30,7 @@ export default function BrandTile({ brand }: { brand: BrandTileData }) {
       <span className="relative my-auto font-display text-[clamp(1.4rem,2vw,1.9rem)] font-normal leading-[1.1] text-[#173C32]">
         {brand.name}
       </span>
-      <span className="relative flex items-end justify-between whitespace-nowrap font-ui text-xs leading-none text-[#252525]/70 lg:text-[13px]">
+      <span className="relative flex items-end justify-between gap-2 whitespace-nowrap font-ui text-xs leading-none text-[#252525]/70 lg:text-[13px]">
         {count}
         <span aria-hidden="true" className="text-base text-[#173C32] transition-transform duration-200 motion-reduce:transition-none lg:group-hover:translate-x-[3px]">
           →
