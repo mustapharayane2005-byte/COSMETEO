@@ -4,7 +4,8 @@ import { notFound } from "next/navigation";
 import PageShell from "@/components/PageShell";
 import ProductGrid from "@/components/ProductGrid";
 import Button from "@/components/ui/Button";
-import { allBrands, brandTypeLabels, getBrand } from "@/data/brands";
+import { brands, getBrand } from "@/data/brands";
+import { getBrandType } from "@/data/brandTypes";
 import { allProducts } from "@/data/products";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -12,7 +13,7 @@ type Props = { params: Promise<{ slug: string }> };
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return allBrands.map((b) => ({ slug: b.slug }));
+  return brands.map((b) => ({ slug: b.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -36,8 +37,10 @@ export default async function BrandPage({ params }: Props) {
             <span aria-hidden="true">/</span>
             <span aria-current="page">{brand.name}</span>
           </nav>
-          <p className="font-ui text-[11px] font-medium uppercase tracking-[0.12em] text-[#173C32]/65">
-            {brandTypeLabels[brand.type]}
+          <p className="flex flex-wrap gap-x-3 font-ui text-[11px] font-medium uppercase tracking-[0.12em] text-[#173C32]/65">
+            {brand.types.length > 0
+              ? brand.types.map((id) => <span key={id}>{getBrandType(id)?.label}</span>)
+              : <span>Sélection</span>}
           </p>
           <h1 className="mt-2 font-display text-[clamp(2.2rem,4vw,3.4rem)] font-normal leading-[1.1] text-[#173C32]">
             {brand.name}

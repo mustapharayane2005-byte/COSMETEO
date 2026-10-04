@@ -1,3 +1,5 @@
+import type { BrandTypeId } from "@/data/brandTypes";
+
 import type { IconName } from "@/components/ui/Icon";
 
 /**
@@ -100,8 +102,6 @@ export type Besoin = {
   conseils: [string, string, string];
 };
 
-export type BrandType = "dermo" | "coreen" | "grand-public";
-
 export type Brand = {
   id: string;
   /** URL : /marques/<slug>. */
@@ -109,8 +109,10 @@ export type Brand = {
   name: string;
   /** Marque à confirmer avec le client avant mise en ligne. */
   confirmed: boolean;
-  /** Univers : filtre de la page /marques. */
-  type: BrandType;
+  /** Univers de la marque (une marque peut en avoir plusieurs ; vide = à classer). */
+  types: BrandTypeId[];
+  /** Mise en avant dans « À la une ». */
+  featured: boolean;
   /** Nom en texte uniquement : jamais de logo ni de packshot de marque. */
   wordmark?: "serif" | "sans" | "spaced" | "italic";
 };

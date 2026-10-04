@@ -13,7 +13,8 @@ export default function BrandsPage() {
   const tiles = brandsAZ.map((b) => ({
     slug: b.slug,
     name: b.name,
-    type: b.type,
+    types: b.types,
+    featured: b.featured,
     count: allProducts.filter((p) => p.brand === b.name).length,
   }));
   return (
@@ -22,10 +23,10 @@ export default function BrandsPage() {
         <header className="pb-6 pt-10 lg:pb-8 lg:pt-14" data-reveal>
           <p className="font-ui text-xs font-medium tracking-[0.2em] text-[#D99A9A]">— NOS MARQUES</p>
           <h1 className="mt-3 font-display text-[clamp(2.2rem,4vw,3.4rem)] font-normal leading-[1.1] text-[#173C32]">
-            Les marques que nous aimons
+            Toutes nos marques, un seul endroit
           </h1>
-          <p className="mt-3 max-w-[520px] font-ui text-base text-[#252525]">
-            Cherchez par nom ou par univers, puis découvrez toute la sélection d&apos;une marque.
+          <p className="mt-3 max-w-[540px] font-ui text-base text-[#252525]">
+            Choisissez un univers ou cherchez une marque, puis découvrez toute sa sélection.
           </p>
         </header>
 

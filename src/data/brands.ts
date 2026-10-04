@@ -1,32 +1,39 @@
-import type { Brand, BrandType } from "@/types/catalog";
+import type { Brand } from "@/types/catalog";
+import type { BrandTypeId } from "@/data/brandTypes";
 
 /**
  * Marques affichées en TEXTE UNIQUEMENT : jamais de logos ni de packshots de marques.
- * ⚠️ Marques à confirmer avec le client avant mise en ligne (`confirmed: false`) : marque à confirmer avec le client avant mise en ligne.
  * Ne pas employer de formule laissant croire à un partenariat officiel.
  */
-const entries: [string, BrandType][] = [
-  ["CeraVe", "dermo"],
-  ["La Roche-Posay", "dermo"],
-  ["Bioderma", "dermo"],
-  ["Avène", "dermo"],
-  ["Anua", "coreen"],
-  ["COSRX", "coreen"],
-  ["Beauty of Joseon", "coreen"],
-  ["SKIN1004", "coreen"],
-  ["Isntree", "coreen"],
-  ["Medicube", "coreen"],
-  ["Some By Mi", "coreen"],
-  ["Garnier", "grand-public"],
-  ["L'Oréal Paris", "grand-public"],
-  ["Byphasse", "grand-public"],
+// Marques à confirmer avec le client avant mise en ligne. N'afficher que celles réellement vendues.
+const entries: { name: string; types: BrandTypeId[]; featured?: boolean }[] = [
+  // K-beauty
+  { name: "Anua", types: ["k-beauty"] },
+  { name: "Beauty of Joseon", types: ["k-beauty"] },
+  { name: "COSRX", types: ["k-beauty"] },
+  { name: "Isntree", types: ["k-beauty"] },
+  { name: "Medicube", types: ["k-beauty"] },
+  { name: "SKIN1004", types: ["k-beauty"] },
+  { name: "Some By Mi", types: ["k-beauty"] },
+  // US-beauty
+  { name: "CeraVe", types: ["us-beauty"], featured: true },
+  // French beauty
+  { name: "La Roche-Posay", types: ["french-beauty"], featured: true },
+  { name: "Avène", types: ["french-beauty"], featured: true },
+  { name: "ACM", types: ["french-beauty"] },
+  { name: "Ducray", types: ["french-beauty", "hair-care"] },
+  { name: "Mixa", types: ["french-beauty"], featured: true },
+  { name: "Garnier", types: ["french-beauty"], featured: true },
+  { name: "L'Oréal Paris", types: ["french-beauty"], featured: true },
+  { name: "Maison du Savon de Marseille", types: ["french-beauty"] },
+  { name: "Byphasse", types: ["french-beauty"] },
+  { name: "Blondépil", types: ["french-beauty"] },
+  { name: "Bioderma", types: ["french-beauty"] },
+  // À classer par univers avec le client
+  { name: "MAKARI", types: [] },
+  { name: "Keyla Beauty", types: [] },
+  { name: "SKIN BY ZARON", types: [] },
 ];
-
-export const brandTypeLabels: Record<BrandType, string> = {
-  dermo: "Dermo-cosmétique",
-  coreen: "Soins coréens",
-  "grand-public": "Grand public",
-};
 
 const slugify = (s: string) =>
   s
@@ -36,20 +43,17 @@ const slugify = (s: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
 
-/** Toutes les marques (page /marques, pages /marques/[slug], sitemap). */
-export const allBrands: Brand[] = entries.map(([name, type]) => ({
-  id: slugify(name),
-  slug: slugify(name),
-  name,
-  type,
+export const brands: Brand[] = entries.map((e) => ({
+  id: slugify(e.name),
+  slug: slugify(e.name),
+  name: e.name,
+  types: e.types,
+  featured: e.featured ?? false,
   confirmed: false,
   wordmark: "serif",
 }));
 
-/** Bande de l'accueil (BrandStrip) : sélection d'origine, inchangée (sans les marques grand public). */
-export const brands: Brand[] = allBrands.filter((b) => b.type !== "grand-public");
+/** Marques triées par ordre alphabétique (insensible à la casse et aux accents). */
+export const brandsAZ = [...brands].sort((a, b) => a.name.localeCompare(b.name, "fr", { sensitivity: "base" }));
 
-/** Marques triées par ordre alphabétique (insensible à la casse). */
-export const brandsAZ = [...allBrands].sort((a, b) => a.name.localeCompare(b.name, "fr", { sensitivity: "base" }));
-
-export const getBrand = (slug: string) => allBrands.find((b) => b.slug === slug);
+export const getBrand = (slug: string) => brands.find((b) => b.slug === slug);
