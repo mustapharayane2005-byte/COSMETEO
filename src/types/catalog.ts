@@ -100,6 +100,8 @@ export type Besoin = {
   conseils: [string, string, string];
 };
 
+export type BrandType = "dermo" | "coreen" | "grand-public";
+
 export type Brand = {
   id: string;
   /** URL : /marques/<slug>. */
@@ -107,6 +109,8 @@ export type Brand = {
   name: string;
   /** Marque à confirmer avec le client avant mise en ligne. */
   confirmed: boolean;
+  /** Univers : filtre de la page /marques. */
+  type: BrandType;
   /** Nom en texte uniquement : jamais de logo ni de packshot de marque. */
   wordmark?: "serif" | "sans" | "spaced" | "italic";
 };
