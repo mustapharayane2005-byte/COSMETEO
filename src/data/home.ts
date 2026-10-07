@@ -39,7 +39,7 @@ export type Univers = {
 
 export const univers: Univers[] = [
   {
-    name: "Soins visage",
+    name: "Soins visage et corps",
     href: "/boutique/visage",
     image: "/images/routine-soin.jpg",
     imageAlt: "",

@@ -30,7 +30,7 @@ export default function UniversCards() {
                 aria-hidden="true"
                 className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#173c32]/70 to-transparent"
               />
-              <span className="absolute inset-x-0 bottom-0 flex items-center justify-between p-4 font-display text-xl text-white lg:p-6 lg:text-2xl">
+              <span className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-2 p-4 font-display text-xl leading-tight text-white lg:p-6 lg:text-2xl">
                 {u.name}
                 <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">
                   →
