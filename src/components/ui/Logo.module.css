@@ -1,18 +1,53 @@
 .logo {
   --w: 168px;
-  display: inline-block;
-  line-height: 0;
+  --fs: 0.65rem;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: var(--w);
 }
 .mark {
   display: block;
-  width: var(--w);
+  width: 100%;
   height: auto;
+}
+/* Accroche : justifiée sur une seule ligne, donc exactement de la largeur du logo. */
+.tagline {
+  display: block;
+  margin-top: 6px;
+  overflow: hidden;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: var(--fs);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  text-align: justify;
+  text-align-last: justify;
+  text-justify: inter-character;
+  white-space: nowrap;
+  color: rgb(26 26 26 / 0.7);
+}
+.light .tagline {
+  color: rgb(255 255 255 / 0.75);
 }
 .header {
   --w: 108px;
+  --fs: 0.5rem;
+}
+.splash {
+  --w: 200px;
+  --fs: 0.8rem;
+}
+@media (min-width: 768px) {
+  .splash {
+    --w: 260px;
+    --fs: 1rem;
+  }
 }
 @media (min-width: 1024px) {
   .header {
     --w: 150px;
+    --fs: 0.58rem;
   }
 }

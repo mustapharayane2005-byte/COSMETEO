@@ -74,7 +74,7 @@ export default function Header() {
             >
               <Icon name="menu" />
             </button>
-            <Logo variant="header" priority />
+            <Logo variant="header" priority compact />
             <div className="-mr-2 flex items-center justify-self-end">
               <button type="button" className={iconBtn} aria-label="Rechercher" onClick={() => mobileSearchRef.current?.focus()}>
                 <Icon name="search" />
@@ -94,7 +94,7 @@ export default function Header() {
           </form>
 
           {/* desktop */}
-          <div className="hidden h-20 grid-cols-[1fr_minmax(0,560px)_1fr] items-center gap-8 lg:grid">
+          <div className="hidden min-h-20 py-3.5 grid-cols-[1fr_minmax(0,560px)_1fr] items-center gap-8 lg:grid">
             <div className="justify-self-start">
               <Logo variant="header" priority />
             </div>

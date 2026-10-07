@@ -1,6 +1,9 @@
 import type { NavItem } from "@/types/catalog";
 
 /** Montant d'achat à partir duquel la livraison est gratuite : à changer ici uniquement. */
+/** Accroche sous le logo (un seul endroit pour la changer). */
+export const accrocheLogo = "BEAUTÉ & SOINS";
+
 export const seuilLivraisonGratuite = 25000;
 export const seuilLivraisonTexte = `À partir de ${seuilLivraisonGratuite.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} FCFA d'achat`;
 

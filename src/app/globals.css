@@ -384,14 +384,7 @@ img {
   gap: 28px;
 }
 .splash-logo {
-  width: 200px;
-  height: auto;
   animation: splash-fade 0.5s ease both;
-}
-@media (min-width: 768px) {
-  .splash-logo {
-    width: 260px;
-  }
 }
 .splash-track {
   display: block;
