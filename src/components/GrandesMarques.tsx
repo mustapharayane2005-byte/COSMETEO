@@ -37,9 +37,6 @@ export default function GrandesMarques() {
           </Link>
         </div>
       </div>
-      <p className={s.note}>
-        Marques citées à titre d&apos;illustration. Les marques appartiennent à leurs propriétaires respectifs.
-      </p>
     </section>
   );
 }

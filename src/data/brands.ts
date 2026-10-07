@@ -31,7 +31,6 @@ const entries: { name: string; types: BrandTypeId[]; featured?: boolean }[] = [
   { name: "Bioderma", types: ["french-beauty"] },
   // À classer par univers avec le client
   { name: "MAKARI", types: [] },
-  { name: "Keyla Beauty", types: [] },
   { name: "SKIN BY ZARON", types: [] },
 ];
 
