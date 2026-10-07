@@ -1,4 +1,4 @@
-/* Bannière « Les grandes marques » : les produits sont dans l'image, rien n'est superposé. */
+/* Bannière « Les grandes marques » : cartes produits #F5F5F5 légèrement superposées, même hauteur. */
 .banner {
   --bg: #fff;
   position: relative;
@@ -11,9 +11,35 @@
   box-shadow: 0 6px 18px rgb(23 60 50 / 0.06);
 }
 .media {
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 24px 20px 0;
+  list-style: none;
+}
+.card {
+  flex: 0 0 auto;
+  width: 40vw;
+  max-width: 190px;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: #f5f5f5;
+  box-shadow: 0 6px 18px rgb(26 26 26 / 0.12);
+}
+.card + .card {
+  margin-left: -20px;
+}
+.img {
+  display: block;
   width: 100%;
-  aspect-ratio: 1200 / 616; /* proportion du fichier mobile recadré (bande blanche du haut retirée) */
+  height: 100%;
+  padding: 12px;
+  object-fit: contain;
+}
+.extra {
+  display: none;
 }
 .text {
   display: flex;
@@ -60,21 +86,27 @@
 }
 @media (min-width: 1024px) {
   .banner {
-    --bg: #f4f4f4; /* couleur mesurée sur le bord gauche de l'image desktop */
+    --bg: #fff;
     display: block;
     height: 300px;
     border-radius: 1.5rem;
   }
-  /* image à sa proportion native, ancrée à droite : produits entiers, jamais recadrés */
   .media {
     position: absolute;
     top: 0;
-    right: 0;
-    width: auto;
-    height: 100%;
-    aspect-ratio: 2000 / 1116;
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 24%);
-    mask-image: linear-gradient(to right, transparent 0%, #000 24%);
+    right: 40px;
+    bottom: 0;
+    padding: 0;
+  }
+  .card {
+    width: clamp(116px, 12vw, 168px);
+    max-width: none;
+  }
+  .card + .card {
+    margin-left: -18px;
+  }
+  .extra {
+    display: block;
   }
   .text {
     position: relative;
