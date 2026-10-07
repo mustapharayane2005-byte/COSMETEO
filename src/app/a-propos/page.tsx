@@ -21,7 +21,7 @@ export default function AboutPage() {
         </header>
 
         <div className="mx-auto max-w-2xl">
-          <h2 className="font-display text-2xl text-green">Notre histoire</h2>
+          <h2 className="font-display text-2xl text-[#1A1A1A]">Notre histoire</h2>
           <p className="mt-3 leading-relaxed">
             COSMÉTÉO est née d&apos;une envie simple : rendre accessibles des soins et des produits de beauté de
             confiance, pensés pour toutes les peaux. Notre boutique en ligne réunit des soins du visage, du corps
@@ -33,14 +33,14 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <h2 className="mb-6 mt-14 font-display text-2xl text-green">Nos valeurs</h2>
+        <h2 className="mb-6 mt-14 font-display text-2xl text-[#1A1A1A]">Nos valeurs</h2>
         <ul className="grid gap-4 md:grid-cols-3">
           {values.map((v) => (
             <li key={v.title} className="rounded-2xl bg-white p-6 border border-line shadow-[0_1px_2px_rgba(23,60,50,0.06),0_6px_18px_rgba(23,60,50,0.05)]">
-              <span className="grid size-11 place-items-center rounded-full bg-sage text-green">
+              <span className="grid size-11 place-items-center rounded-full bg-sage text-[#1A1A1A]">
                 <Icon name={v.icon} />
               </span>
-              <h3 className="mt-4 font-display text-xl text-green">{v.title}</h3>
+              <h3 className="mt-4 font-display text-xl text-[#1A1A1A]">{v.title}</h3>
               <p className="mt-1 text-sm text-[var(--muted)]">{v.text}</p>
             </li>
           ))}

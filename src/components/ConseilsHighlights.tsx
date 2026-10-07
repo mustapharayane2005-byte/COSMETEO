@@ -6,13 +6,13 @@ import { sections } from "@/data/home";
 /** 3 articles à la une. */
 export default function ConseilsHighlights() {
   return (
-    <section className="mt-14 bg-[#FAF8F4] pb-12 pt-12 lg:mt-20 lg:pb-14 lg:pt-16" aria-labelledby="conseils-title">
+    <section className="mt-11 bg-[var(--pastel-sable)] py-11 lg:mt-14 lg:py-14" aria-labelledby="conseils-title">
       <div className="container">
       <header className="mb-8 flex flex-col items-center gap-3 text-center" data-reveal>
         <h2 id="conseils-title" className="h2">
           {sections.conseils.title}
         </h2>
-        <Link href={sections.conseils.href} className="shrink-0 pb-1 text-sm font-semibold text-green hover:underline">
+        <Link href={sections.conseils.href} className="shrink-0 pb-1 text-sm font-semibold text-[#1A1A1A] hover:underline">
           {sections.conseils.cta}
         </Link>
       </header>

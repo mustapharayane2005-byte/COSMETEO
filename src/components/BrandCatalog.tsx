@@ -64,10 +64,10 @@ export default function BrandCatalog({ brands }: { brands: BrandTileData[] }) {
                     ✓
                   </span>
                 )}
-                <span className="font-display text-[1.35rem] font-normal leading-tight text-[#173C32]">{t.label}</span>
+                <span className="font-display text-[1.35rem] font-normal leading-tight text-[#1A1A1A]">{t.label}</span>
                 <span className="flex items-end justify-between font-ui text-[13px] leading-none text-[#252525]/70">
                   {n > 0 ? `${n} marque${n > 1 ? "s" : ""}` : "Bientôt"}
-                  <span aria-hidden="true" className="text-base text-[#173C32]">
+                  <span aria-hidden="true" className="text-base text-[#1A1A1A]">
                     →
                   </span>
                 </span>
@@ -83,7 +83,7 @@ export default function BrandCatalog({ brands }: { brands: BrandTileData[] }) {
           <label htmlFor="brand-search" className="sr-only">
             Rechercher une marque
           </label>
-          <Icon name="search" className="pointer-events-none absolute left-5 top-1/2 size-5 -translate-y-1/2 text-[#173C32]" />
+          <Icon name="search" className="pointer-events-none absolute left-5 top-1/2 size-5 -translate-y-1/2 text-[#1A1A1A]" />
           <input
             id="brand-search"
             type="search"
@@ -101,11 +101,11 @@ export default function BrandCatalog({ brands }: { brands: BrandTileData[] }) {
       {/* 3. À la une : seulement sans filtre ni recherche */}
       {showFeatured && featured.length > 0 && (
         <section aria-label="À la une" className={`mt-10 ${fade}`}>
-          <h2 className="mb-4 font-display text-[1.5rem] font-normal leading-tight text-[#173C32]">À la une</h2>
+          <h2 className="mb-4 font-display text-[1.5rem] font-normal leading-tight text-[#1A1A1A]">À la une</h2>
           <ul className="-mx-5 flex snap-x snap-proximity gap-3 overflow-x-auto overscroll-x-contain px-5 pb-2 [scrollbar-width:none] [touch-action:pan-x_pan-y] lg:mx-0 lg:grid lg:grid-cols-6 lg:gap-3 lg:overflow-visible lg:px-0 lg:pb-0 [&::-webkit-scrollbar]:hidden">
-            {featured.map((b) => (
+            {featured.map((b, i) => (
               <li key={b.slug} className="w-[60vw] shrink-0 snap-start sm:w-[36vw] lg:w-auto">
-                <BrandTile brand={b} large />
+                <BrandTile brand={b} index={i} large />
               </li>
             ))}
           </ul>
@@ -114,10 +114,10 @@ export default function BrandCatalog({ brands }: { brands: BrandTileData[] }) {
 
       {/* 4. Grille complète */}
       <section aria-label="Toutes les marques" className="mt-10">
-        {showFeatured && <h2 className="mb-4 font-display text-[1.5rem] font-normal leading-tight text-[#173C32]">Toutes les marques</h2>}
+        {showFeatured && <h2 className="mb-4 font-display text-[1.5rem] font-normal leading-tight text-[#1A1A1A]">Toutes les marques</h2>}
         {list.length === 0 ? (
           <div className="grid place-items-center gap-5 rounded-2xl border border-[#EDE8E0] bg-[#FAF8F4] px-6 py-16 text-center">
-            <p className="font-display text-2xl text-[#173C32]">
+            <p className="font-display text-2xl text-[#1A1A1A]">
               {active?.id === "nutribeauty" && !needle ? "Les marques Nutribeauty arrivent bientôt." : "Aucune marque ne correspond."}
             </p>
             <Link href="/marques" replace scroll={false} onClick={() => setQ("")} className={btn}>
@@ -126,9 +126,9 @@ export default function BrandCatalog({ brands }: { brands: BrandTileData[] }) {
           </div>
         ) : (
           <ul className={`grid grid-cols-2 gap-3 lg:grid-cols-3 lg:gap-4 xl:grid-cols-4 ${fade}`}>
-            {list.map((b) => (
+            {list.map((b, i) => (
               <li key={b.slug}>
-                <BrandTile brand={b} />
+                <BrandTile brand={b} index={i + 2} />
               </li>
             ))}
           </ul>

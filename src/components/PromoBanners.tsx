@@ -2,42 +2,30 @@ import Image from "next/image";
 import Link from "next/link";
 import { banners } from "@/data/home";
 
-/** Deux bannières côte à côte (empilées sur mobile). Images en lazy loading, sans parallax ni zoom. */
+/** Bandeau pleine largeur (max 1200 px, 260 px de haut) : texte à gauche, image à droite avec fondu. Même rendu sur mobile. */
 export default function PromoBanners() {
   return (
-    <section className="container" aria-label="Offres et sélections">
-      <ul className="grid gap-4 md:grid-cols-2 lg:gap-6">
+    <section className="mx-auto w-[min(100%-40px,1200px)] lg:w-[min(100%-64px,1200px)]" aria-label="Offres et sélections">
+      <ul>
         {banners.map((b) => (
           <li
             key={b.id}
             data-reveal
-            className={`relative flex flex-col overflow-hidden rounded-3xl lg:min-h-[280px] ${
-              b.theme === "blush" ? "bg-[#F5E4E2]" : "bg-[#E3EBE4]"
-            }`}
+            className="relative flex h-[260px] items-center overflow-hidden rounded-3xl bg-[var(--pastel-rose)]"
           >
-            {/* mobile : image en haut */}
-            <div data-reveal="image" className="relative aspect-[4/3] w-full lg:hidden">
-              <Image src={b.imageMobile} alt="" fill quality={90} sizes="100vw" className="object-cover object-[center_20%]" />
+            <div
+              data-reveal="image"
+              className="absolute right-0 top-0 h-full w-[62%] [mask-image:linear-gradient(to_right,transparent_0%,#000_34%)]"
+            >
+              <Image src={b.image} alt="" fill quality={90} sizes="(min-width: 1024px) 744px, 62vw" className="object-cover object-[right_center]" />
             </div>
-            {/* desktop : image à droite, fondu à gauche */}
-            <div data-reveal="image" className="absolute right-0 top-0 hidden h-full w-[62%] [mask-image:linear-gradient(to_right,transparent_0%,#000_34%)] lg:block">
-              <Image
-                src={b.imageDesktop}
-                alt=""
-                fill
-                quality={90}
-                sizes="40vw"
-                className="object-cover object-[right_center]"
-              />
-            </div>
-
-            <div className="relative z-[2] flex flex-1 flex-col items-start justify-between gap-8 p-5 lg:max-w-[52%] lg:p-10">
-              <h2 className="max-w-[18ch] font-display text-[clamp(1.625rem,1.2rem+1.6vw,2.5rem)] leading-[1.1] text-green">
+            <div className="relative z-[2] flex max-w-[58%] flex-col items-start gap-5 p-5 lg:max-w-[52%] lg:gap-6 lg:p-10">
+              <h2 className="max-w-[18ch] font-display text-[clamp(1.25rem,0.9rem+1.8vw,2.5rem)] leading-[1.1] text-[#1A1A1A]">
                 {b.title}
               </h2>
               <Link
                 href={b.href}
-                className="inline-flex min-h-12 items-center rounded-full bg-green px-8 font-ui text-sm font-semibold uppercase tracking-[0.04em] text-white transition-colors hover:bg-[#0f2a22]"
+                className="inline-flex min-h-11 items-center rounded-full bg-green px-6 font-ui text-sm font-semibold uppercase tracking-[0.04em] text-white transition-colors hover:bg-[#0f2a22] lg:min-h-12 lg:px-8"
               >
                 {b.cta}
               </Link>

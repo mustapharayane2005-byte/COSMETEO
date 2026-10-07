@@ -9,7 +9,7 @@ const chipIcons: IconName[] = ["leaf", "cross", "truck", "shield"];
 const lines = [
   <>Le meilleur</>,
   <>
-    du <em className="font-display italic text-[#B9777A]">soin</em>
+    du <em className="font-display italic text-[#1A1A1A]">soin</em>
   </>,
   <>au quotidien</>,
 ];
@@ -39,13 +39,13 @@ export default function Hero() {
       </div>
 
       <div className="p-5 text-center lg:absolute lg:inset-y-0 lg:right-0 lg:flex lg:w-[34%] lg:flex-col lg:items-center lg:justify-center lg:py-0 lg:pl-6 lg:pr-12">
-        <p className="flex items-center justify-center gap-2.5 whitespace-nowrap font-ui text-xs font-medium uppercase tracking-[0.2em] text-[#D99A9A]">
-          <span aria-hidden="true" className="h-px w-5 bg-[#D99A9A]" />
+        <p className="flex items-center justify-center gap-2.5 whitespace-nowrap font-ui text-xs font-medium uppercase tracking-[0.2em] text-[#1A1A1A]/70">
+          <span aria-hidden="true" className="h-px w-5 bg-[#1A1A1A]/70" />
           {hero.label.replace(/^—\s*/, "")}
         </p>
         <h1
           id="hero-title"
-          className="mt-4 font-display text-[2rem] font-normal leading-[1.08] tracking-[-0.01em] text-[#173C32] lg:text-[clamp(2rem,3.2vw,3.1rem)]"
+          className="mt-4 font-display text-[2rem] font-normal leading-[1.08] tracking-[-0.01em] text-[#1A1A1A] lg:text-[clamp(2rem,3.2vw,3.1rem)]"
         >
           {lines.map((l, i) => (
             <span key={i} className="block overflow-hidden pb-[0.06em]">
@@ -75,7 +75,7 @@ export default function Hero() {
         <ul className={`${fade} mt-6 hidden grid-cols-2 gap-x-4 gap-y-3 lg:grid`} style={delay(0.75)}>
           {hero.chips.map((c, i) => (
             <li key={c} className="flex items-center gap-2">
-              <span className="grid size-9 shrink-0 place-items-center rounded-full border border-[#E8E2D9] bg-white text-[#173C32]">
+              <span className="grid size-9 shrink-0 place-items-center rounded-full border border-[#E8E2D9] bg-white text-[#1A1A1A]">
                 <Icon name={chipIcons[i]} size={18} strokeWidth={1.25} />
               </span>
               <span className="font-ui text-[11px] leading-tight text-[#252525]">{c}</span>

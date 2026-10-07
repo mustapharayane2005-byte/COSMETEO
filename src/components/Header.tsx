@@ -49,7 +49,7 @@ export default function Header() {
       initial={{ scale: 1.25 }}
       animate={{ scale: 1 }}
       transition={{ type: "spring", stiffness: 500, damping: 18 }}
-      className="absolute right-0 top-0.5 grid min-w-[18px] place-items-center rounded-full bg-rose px-1 text-[0.6875rem] font-semibold leading-[18px] text-green"
+      className="absolute right-0 top-0.5 grid min-w-[18px] place-items-center rounded-full bg-[#1A1A1A] px-1 text-[0.6875rem] font-semibold leading-[18px] text-white"
       aria-hidden="true"
     >
       {cartCount}
@@ -123,7 +123,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="whitespace-nowrap py-1 text-sm font-medium transition-colors hover:text-green hover:underline hover:underline-offset-8"
+                className="whitespace-nowrap py-1 text-sm font-medium text-[#1A1A1A] transition-colors hover:text-green hover:underline hover:underline-offset-8"
               >
                 {item.label}
               </Link>
@@ -164,7 +164,7 @@ export default function Header() {
                     <Link
                       href={item.href}
                       onClick={() => setMenuOpen(false)}
-                      className="block py-4 font-display text-[28px] leading-tight text-green"
+                      className="block py-4 font-display text-[28px] leading-tight text-[#1A1A1A]"
                     >
                       {item.label}
                     </Link>

@@ -7,8 +7,8 @@ export function BesoinsHeader({ h = "h2", showLink = true }: { h?: "h1" | "h2"; 
   const H = h;
   return (
     <header className="relative mb-8 text-center" data-reveal>
-      <p className="flex items-center justify-center gap-2.5 font-ui text-xs font-medium uppercase tracking-[0.2em] text-[#D99A9A]">
-        <span aria-hidden="true" className="h-px w-5 bg-[#D99A9A]" />
+      <p className="flex items-center justify-center gap-2.5 font-ui text-xs font-medium uppercase tracking-[0.2em] text-[#1A1A1A]/70">
+        <span aria-hidden="true" className="h-px w-5 bg-[#1A1A1A]/70" />
         CONSEIL PERSONNALISÉ
       </p>
       <H id="besoins-title" className="h2 mt-3">
@@ -20,7 +20,7 @@ export function BesoinsHeader({ h = "h2", showLink = true }: { h?: "h1" | "h2"; 
       {showLink && (
         <Link
           href="/besoins"
-          className="absolute bottom-1 right-0 hidden font-ui text-sm font-semibold text-[#173C32] hover:underline lg:block"
+          className="absolute bottom-1 right-0 hidden font-ui text-sm font-semibold text-[#1A1A1A] hover:underline lg:block"
         >
           Voir tous les besoins →
         </Link>
@@ -32,14 +32,14 @@ export function BesoinsHeader({ h = "h2", showLink = true }: { h?: "h1" | "h2"; 
 /** Bloc « Que recherchez-vous ? » : accueil et tête de /boutique. Rail natif à 2 rangées sur mobile. */
 export default function BesoinsBlock() {
   return (
-    <section className="py-14 lg:py-[72px]" aria-labelledby="besoins-title">
+    <section className="py-11 lg:py-14" aria-labelledby="besoins-title">
       <div className="container max-w-[1200px]">
         <BesoinsHeader />
       </div>
       <ul data-reveal className="grid auto-cols-[62vw] grid-flow-col grid-rows-[repeat(2,auto)] gap-3 overflow-x-auto overflow-y-hidden overscroll-x-contain scroll-px-5 snap-x snap-proximity px-5 pb-2 [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [touch-action:pan-x_pan-y] md:auto-cols-[34vw] lg:mx-auto lg:w-[min(100%-64px,1200px)] lg:auto-cols-auto lg:grid-flow-row lg:grid-cols-4 lg:grid-rows-none lg:gap-4 lg:overflow-visible lg:px-0 lg:pb-0 [&::-webkit-scrollbar]:hidden">
         {besoins.map((b, i) => (
           <li key={b.slug} className={`snap-start ${i >= 8 ? "lg:hidden" : ""}`}>
-            <BesoinCard besoin={b} />
+            <BesoinCard besoin={b} index={i} />
           </li>
         ))}
       </ul>

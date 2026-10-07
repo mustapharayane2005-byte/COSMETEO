@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  /* Parapharmacie premium : ivoire, vert profond, rose poudré. */
+  /* Parapharmacie premium : ivoire, vert profond, textes noirs, pastels en fonds. */
   --color-ivory: #ffffff;
   --color-green: #173c32;
-  --color-rose: #d99a9a;
+  --color-rose: #1a1a1a; /* plus de rose en texte : nom hérité */
   --color-ink: #252525;
   --color-line: #ede8e0;
-  --color-sage: #e3ebe4;
-  --color-blush: #f5e4e2;
+  --color-sage: #e6ede6;
+  --color-blush: #f6e7e3;
   --color-brown: #252525; /* nom hérité : = anthracite */
   --font-display: var(--font-heading);
   --font-ui: var(--font-sans);
@@ -19,16 +19,23 @@
   --surface: #ffffff; /* cartes produit */
   --green: #173c32;
   --green-deep: #173c32;
-  --rose: #d99a9a;
-  --ink: #252525;
+  --rose: #1a1a1a; /* nom hérité */
+  --ink: #2b2b2b;
+  --title: #1a1a1a;
+  --pastel-sauge: #e6ede6;
+  --pastel-sable: #f1e8da;
+  --pastel-rose: #f6e7e3;
+  --pastel-bleu: #e4ebef;
+  --pastel-peche: #f6e4d6;
+  --pastel-vert: #dde8df;
   --brown: #252525; /* nom hérité : = anthracite */
-  --sage: #e3ebe4;
-  --blush: #f5e4e2;
-  --coral: #d99a9a; /* nom hérité : = rose poudré */
-  --coral-deep: #d99a9a;
+  --sage: #e6ede6;
+  --blush: #f6e7e3;
+  --coral: #1a1a1a; /* nom hérité */
+  --coral-deep: #1a1a1a;
   --champagne: #ede8e0;
-  --coral: #d99a9a; /* nom hérité : = rose poudré */
-  --coral-deep: #d99a9a;
+  --coral: #1a1a1a; /* nom hérité */
+  --coral-deep: #1a1a1a;
   --champagne: #ede8e0;
   --muted: #5f5f5c;
   --line: #ede8e0;
@@ -39,7 +46,7 @@
 
   --gutter: 20px;
   --maxw: 1320px;
-  --section-y: clamp(56px, 6vw, 80px);
+  --section-y: 56px;
 }
 @media (min-width: 768px) {
   :root {
@@ -158,7 +165,7 @@ ul {
   font-size: clamp(1.75rem, 1.25rem + 1.8vw, 2.75rem);
   line-height: 1.1;
   letter-spacing: -0.01em;
-  color: var(--green);
+  color: var(--title);
 }
 .eyebrow {
   font-size: 0.6875rem;
@@ -352,7 +359,7 @@ img {
     --gutter: 20px;
   }
   .section {
-    padding-block: 56px 0;
+    padding-block: 44px 0;
   }
   .h2 {
     font-size: 2rem;
@@ -402,7 +409,7 @@ img {
   display: block;
   width: 100%;
   height: 100%;
-  background: #d99a9a;
+  background: #f3efe8;
   transform-origin: left;
   animation: splash-line 1.4s linear 0.3s both;
 }

@@ -2,18 +2,19 @@ import Image from "next/image";
 import Link from "next/link";
 import Media from "@/components/ui/Media";
 import { sections, univers } from "@/data/home";
+import { pastel } from "@/data/pastels";
 
 /** « Par univers » : 3 grandes cartes photo (images actuelles ou visuels de substitution). */
 export default function UniversCards() {
   return (
-    <section className="container pt-14 lg:pt-20" aria-labelledby="univers-title">
+    <section className="container pt-11 lg:pt-14" aria-labelledby="univers-title">
       <h2 id="univers-title" className="h2 mb-8" data-reveal>
         {sections.univers.title}
       </h2>
       <ul data-reveal-stagger className="grid gap-4 md:grid-cols-3 lg:gap-6">
-        {univers.map((u) => (
+        {univers.map((u, i) => (
           <li key={u.name}>
-            <Link href={u.href} className="group relative block aspect-[4/5] overflow-hidden rounded-3xl bg-sage">
+            <Link href={u.href} style={{ backgroundColor: pastel(i + 2) }} className="group relative block aspect-[4/5] overflow-hidden rounded-3xl">
               {u.image ? (
                 <Image
                   src={u.image}

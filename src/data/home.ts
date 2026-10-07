@@ -22,18 +22,7 @@ export const banners = [
     title: "Octobre rose : Prévenir c'est prendre soin de soi",
     cta: "DÉCOUVRIR",
     href: "/conseils",
-    theme: "blush",
-    imageDesktop: "/images/banniere-octobre-rose-desktop.webp",
-    imageMobile: "/images/banniere-octobre-rose-mobile.webp",
-  },
-  {
-    id: "dermo",
-    title: "Les essentiels dermo-cosmétiques",
-    cta: "VOIR LA SÉLECTION",
-    href: "/boutique/visage",
-    theme: "sage",
-    imageDesktop: "/images/banniere-dermo-desktop.webp",
-    imageMobile: "/images/banniere-dermo-mobile.webp",
+    image: "/images/banniere-octobre-rose-desktop.webp",
   },
 ] as const;
 

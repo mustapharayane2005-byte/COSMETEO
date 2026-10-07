@@ -37,12 +37,12 @@ export default async function BrandPage({ params }: Props) {
             <span aria-hidden="true">/</span>
             <span aria-current="page">{brand.name}</span>
           </nav>
-          <p className="flex flex-wrap gap-x-3 font-ui text-[11px] font-medium uppercase tracking-[0.12em] text-[#173C32]/65">
+          <p className="flex flex-wrap gap-x-3 font-ui text-[11px] font-medium uppercase tracking-[0.12em] text-[#1A1A1A]/65">
             {brand.types.length > 0
               ? brand.types.map((id) => <span key={id}>{getBrandType(id)?.label}</span>)
               : <span>Sélection</span>}
           </p>
-          <h1 className="mt-2 font-display text-[clamp(2.2rem,4vw,3.4rem)] font-normal leading-[1.1] text-[#173C32]">
+          <h1 className="mt-2 font-display text-[clamp(2.2rem,4vw,3.4rem)] font-normal leading-[1.1] text-[#1A1A1A]">
             {brand.name}
           </h1>
           <p className="mt-3 font-ui text-sm text-[#252525]/70">
@@ -54,7 +54,7 @@ export default async function BrandPage({ params }: Props) {
           <ProductGrid products={products} columns={4} />
         ) : (
           <div className="grid place-items-center gap-5 rounded-2xl border border-[#EDE8E0] bg-[#FAF8F4] px-6 py-16 text-center">
-            <p className="font-display text-2xl text-[#173C32]">Les produits de cette marque arrivent bientôt.</p>
+            <p className="font-display text-2xl text-[#1A1A1A]">Les produits de cette marque arrivent bientôt.</p>
             <Button href="/boutique" variant="secondary">
               VOIR TOUTE LA BOUTIQUE
             </Button>

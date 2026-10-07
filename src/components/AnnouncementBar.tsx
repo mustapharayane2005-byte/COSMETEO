@@ -5,7 +5,7 @@ import s from "./AnnouncementBar.module.css";
 /** Répétitions de la liste dans un groupe : le groupe dépasse ainsi 2 fois la largeur d'un grand écran. */
 const REPEAT = 3;
 
-/** Un groupe = la liste répétée ; chaque message est suivi d'un point rose. */
+/** Un groupe = la liste répétée ; chaque message est suivi d'un point crème. */
 function Group({ hidden }: { hidden?: boolean }) {
   return (
     <ul className={s.group} aria-hidden={hidden || undefined}>

@@ -49,7 +49,7 @@ export default function CartDrawer() {
             transition={{ duration: 0.45, ease: [0.22, 0.8, 0.2, 1] }}
           >
             <header className="flex h-16 items-center justify-between border-b border-brown/10 px-5">
-              <h2 className="font-display text-2xl text-green">
+              <h2 className="font-display text-2xl text-[#1A1A1A]">
                 Panier <span className="font-ui text-sm text-brown/60">({count})</span>
               </h2>
               <button
@@ -65,7 +65,7 @@ export default function CartDrawer() {
 
             {lines.length === 0 ? (
               <div className="flex flex-1 flex-col items-center justify-center gap-5 px-8 text-center">
-                <p className="font-display text-2xl text-green">Votre panier est vide</p>
+                <p className="font-display text-2xl text-[#1A1A1A]">Votre panier est vide</p>
                 <p className="text-sm text-brown/70">Découvrez notre sélection de soins.</p>
                 <Link
                   href="/boutique"
@@ -89,7 +89,7 @@ export default function CartDrawer() {
                         </p>
                         <p className="mt-0.5 text-sm font-medium leading-snug">{l.name}</p>
                         {l.variant && <p className="text-xs text-brown/60">{l.variant}</p>}
-                        <p className="mt-1 text-sm font-bold text-green">{formatPrice(l.price)}</p>
+                        <p className="mt-1 text-sm font-bold text-[#1A1A1A]">{formatPrice(l.price)}</p>
                         <div className="mt-auto inline-flex w-fit items-center rounded-full border border-brown/20">
                           <button
                             type="button"
@@ -118,7 +118,7 @@ export default function CartDrawer() {
                 <footer className="border-t border-brown/10 p-5 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
                   <p className="flex items-baseline justify-between text-sm">
                     <span>Sous-total</span>
-                    <span className="text-lg font-bold text-green">{formatPrice(subtotal)}</span>
+                    <span className="text-lg font-bold text-[#1A1A1A]">{formatPrice(subtotal)}</span>
                   </p>
                   <p className="mt-1 text-xs text-brown/60">Livraison calculée à l&apos;étape suivante.</p>
                   {/* Checkout : à brancher (Mobile Money / carte). */}

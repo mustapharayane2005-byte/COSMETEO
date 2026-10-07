@@ -1,5 +1,5 @@
 .logo {
-  --w: 210px;
+  --w: 168px;
   display: inline-block;
   line-height: 0;
 }
@@ -9,10 +9,10 @@
   height: auto;
 }
 .header {
-  --w: 132px;
+  --w: 108px;
 }
 @media (min-width: 1024px) {
   .header {
-    --w: 190px;
+    --w: 150px;
   }
 }

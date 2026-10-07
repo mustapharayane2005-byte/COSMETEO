@@ -76,7 +76,7 @@
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--rose);
+  color: #f3efe8;
 }
 .col li a {
   display: inline-block;

@@ -38,7 +38,7 @@ export default function MobileDock() {
         <span className="relative">
           <Icon name="bag" size={22} strokeWidth={1.25} />
           {count > 0 && (
-            <span className="absolute -right-2.5 -top-1.5 grid min-w-4 place-items-center rounded-full bg-rose px-1 text-[10px] font-semibold leading-4 text-green">
+            <span className="absolute -right-2.5 -top-1.5 grid min-w-4 place-items-center rounded-full bg-[#1A1A1A] px-1 text-[10px] font-semibold leading-4 text-white">
               {count}
             </span>
           )}

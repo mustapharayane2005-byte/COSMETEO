@@ -23,19 +23,19 @@ export default function ContactPage() {
           </div>
           <ul className="grid content-start gap-4">
             <li className="rounded-2xl bg-white p-6 border border-line shadow-[0_1px_2px_rgba(23,60,50,0.06),0_6px_18px_rgba(23,60,50,0.05)]">
-              <span className="grid size-11 place-items-center rounded-full bg-sage text-green">
+              <span className="grid size-11 place-items-center rounded-full bg-sage text-[#1A1A1A]">
                 <Icon name="whatsapp" />
               </span>
-              <h2 className="mt-4 font-display text-xl text-green">WhatsApp</h2>
+              <h2 className="mt-4 font-display text-xl text-[#1A1A1A]">WhatsApp</h2>
               <a href={whatsapp.href} target="_blank" rel="noopener noreferrer" className="mt-1 block text-sm hover:underline">
                 {whatsapp.label}
               </a>
             </li>
             <li className="rounded-2xl bg-white p-6 border border-line shadow-[0_1px_2px_rgba(23,60,50,0.06),0_6px_18px_rgba(23,60,50,0.05)]">
-              <span className="grid size-11 place-items-center rounded-full bg-blush text-green">
+              <span className="grid size-11 place-items-center rounded-full bg-[var(--pastel-sable)] text-[#1A1A1A]">
                 <Icon name="chat" />
               </span>
-              <h2 className="mt-4 font-display text-xl text-green">Email</h2>
+              <h2 className="mt-4 font-display text-xl text-[#1A1A1A]">Email</h2>
               <a href={`mailto:${email}`} className="mt-1 block text-sm hover:underline">
                 {email}
               </a>

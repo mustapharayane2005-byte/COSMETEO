@@ -4,7 +4,7 @@ import NewsletterForm from "@/components/NewsletterForm";
 export default function NewsletterSection() {
   return (
     <section
-      className="mx-5 mb-[72px] mt-10 rounded-3xl bg-[#FAF8F4] px-6 py-[72px] text-[#173C32] lg:mt-12 lg:mx-4 lg:mb-20 lg:px-12 lg:py-[120px]"
+      className="mx-5 mb-11 mt-11 rounded-3xl bg-[var(--pastel-bleu)] px-6 py-11 text-[#1A1A1A] lg:mt-14 lg:mx-4 lg:mb-14 lg:px-12 lg:py-20"
       aria-labelledby="news-title"
      
     >

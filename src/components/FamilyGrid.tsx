@@ -23,7 +23,7 @@ export default function FamilyGrid() {
               />
             </div>
             <div className="p-4">
-              <h2 className="font-display text-xl leading-tight text-green">{c.name}</h2>
+              <h2 className="font-display text-xl leading-tight text-[#1A1A1A]">{c.name}</h2>
               <p className="mt-1 text-xs text-[var(--muted)]">{c.sousCategories.length} sous-catégories</p>
             </div>
           </Link>

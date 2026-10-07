@@ -59,7 +59,7 @@ export default async function ArticlePage({ params }: Props) {
         <div className="mx-auto max-w-2xl">
           {article.sections.map((s) => (
             <section key={s.heading} className="mb-8">
-              <h2 className="font-display text-2xl text-green">{s.heading}</h2>
+              <h2 className="font-display text-2xl text-[#1A1A1A]">{s.heading}</h2>
               <p className="mt-2 leading-relaxed">{s.text}</p>
             </section>
           ))}

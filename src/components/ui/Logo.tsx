@@ -4,7 +4,7 @@ import s from "./Logo.module.css";
 
 /**
  * Logo unique (SVG inline). `tone="light"` = version pour fonds verts (footer) ;
- * `variant="header"` = 132 px (190 px dès le desktop) ; sinon 210 px.
+ * `variant="header"` = 108 px (150 px dès le desktop) ; sinon 168 px.
  */
 export default function Logo({
   tone = "dark",

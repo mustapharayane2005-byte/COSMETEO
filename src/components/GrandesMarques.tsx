@@ -5,7 +5,7 @@ import s from "./GrandesMarques.module.css";
 /** Bannière « Les grandes marques » : image desktop / mobile avec les produits intégrés (rien n'est superposé). */
 export default function GrandesMarques() {
   return (
-    <section className="container my-14" aria-labelledby="grandes-marques-title">
+    <section className="container my-11 lg:my-14" aria-labelledby="grandes-marques-title">
       <div className={s.banner} data-reveal>
         <div className={s.media}>
           <Image

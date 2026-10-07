@@ -14,7 +14,7 @@ export default function ProductCarousel({ children, label }: { children: React.R
     el.scrollBy({ left: dir * step, behavior: "smooth" });
   };
   const arrow =
-    "absolute top-[34%] z-10 hidden size-12 -translate-y-1/2 place-items-center rounded-full bg-ivory/95 text-green shadow-md transition hover:bg-white lg:grid";
+    "absolute top-[34%] z-10 hidden size-12 -translate-y-1/2 place-items-center rounded-full bg-ivory/95 text-[#1A1A1A] shadow-md transition hover:bg-white lg:grid";
 
   return (
     <div className="relative" role="region" aria-roledescription="carrousel" aria-label={label}>

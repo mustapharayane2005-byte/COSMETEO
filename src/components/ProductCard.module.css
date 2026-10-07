@@ -53,8 +53,8 @@
   color: var(--ivory);
 }
 .promo {
-  background: var(--rose);
-  color: var(--green);
+  background: #1a1a1a;
+  color: #fff;
 }
 .highlight {
   background: var(--ivory);
@@ -109,7 +109,7 @@
 .price {
   font-size: 0.9375rem;
   font-weight: 400;
-  color: var(--green);
+  color: #1a1a1a;
 }
 .old {
   font-size: 0.8125rem;

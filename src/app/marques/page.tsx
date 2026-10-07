@@ -21,8 +21,8 @@ export default function BrandsPage() {
     <PageShell>
       <section className="container pb-[clamp(56px,8vw,112px)]">
         <header className="pb-6 pt-10 lg:pb-8 lg:pt-14" data-reveal>
-          <p className="font-ui text-xs font-medium tracking-[0.2em] text-[#D99A9A]">— NOS MARQUES</p>
-          <h1 className="mt-3 font-display text-[clamp(2.2rem,4vw,3.4rem)] font-normal leading-[1.1] text-[#173C32]">
+          <p className="font-ui text-xs font-medium tracking-[0.2em] text-[#1A1A1A]/70">— NOS MARQUES</p>
+          <h1 className="mt-3 font-display text-[clamp(2.2rem,4vw,3.4rem)] font-normal leading-[1.1] text-[#1A1A1A]">
             Toutes nos marques, un seul endroit
           </h1>
           <p className="mt-3 max-w-[540px] font-ui text-base text-[#252525]">
@@ -42,7 +42,7 @@ export default function BrandsPage() {
           className="mt-10 flex flex-col items-start justify-between gap-5 rounded-2xl bg-[#FAF8F4] p-7 sm:flex-row sm:items-center"
           data-reveal
         >
-          <p className="font-display text-[clamp(1.4rem,2vw,1.9rem)] leading-[1.1] text-[#173C32]">
+          <p className="font-display text-[clamp(1.4rem,2vw,1.9rem)] leading-[1.1] text-[#1A1A1A]">
             Une marque manque ? Dites-le-nous.
           </p>
           <Button href="/contact" variant="secondary">
