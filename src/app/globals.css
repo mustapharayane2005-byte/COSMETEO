@@ -393,11 +393,6 @@ img {
     width: 260px;
   }
 }
-.splash-logo .logo-leaf {
-  transform-box: fill-box;
-  transform-origin: 50% 100%;
-  animation: splash-leaf 0.6s ease 0.15s both;
-}
 .splash-track {
   display: block;
   width: 120px;
@@ -425,10 +420,6 @@ html.splash-on {
   from { opacity: 0; }
   to { opacity: 1; }
 }
-@keyframes splash-leaf {
-  from { opacity: 0; transform: translateY(8px) scale(0.6); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
-}
 @keyframes splash-line {
   from { transform: scaleX(0); }
   to { transform: scaleX(1); }
@@ -442,7 +433,6 @@ html.splash-on {
 @media (prefers-reduced-motion: reduce) {
   .splash { animation-delay: 0.8s; }
   .splash-logo,
-  .splash-logo .logo-leaf,
   .splash-fill { animation: none; }
 }
 

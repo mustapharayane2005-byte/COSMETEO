@@ -1,4 +1,4 @@
-import LogoMark from "@/components/ui/LogoMark";
+import Image from "next/image";
 
 /**
  * Lu avant le premier rendu : une seule fois par visite (sessionStorage « splash-vu »).
@@ -11,7 +11,7 @@ export default function SplashScreen() {
   return (
     <div id="splash" className="splash" role="status" aria-label="Chargement de COSMETEO">
       <div className="splash-inner">
-        <LogoMark background="dark" className="splash-logo" />
+        <Image src="/images/logo/cosmeteo-mono-blanc.svg" alt="cosméteo" width={3906} height={1501} unoptimized priority className="splash-logo" />
         <span className="splash-track" aria-hidden="true">
           <span className="splash-fill" />
         </span>

@@ -74,7 +74,7 @@ export default function Header() {
             >
               <Icon name="menu" />
             </button>
-            <Logo variant="header" />
+            <Logo variant="header" priority />
             <div className="-mr-2 flex items-center justify-self-end">
               <button type="button" className={iconBtn} aria-label="Rechercher" onClick={() => mobileSearchRef.current?.focus()}>
                 <Icon name="search" />
@@ -96,7 +96,7 @@ export default function Header() {
           {/* desktop */}
           <div className="hidden h-20 grid-cols-[1fr_minmax(0,560px)_1fr] items-center gap-8 lg:grid">
             <div className="justify-self-start">
-              <Logo variant="header" />
+              <Logo variant="header" priority />
             </div>
             <form role="search" onSubmit={onSearch} className="relative">
               <Icon name="search" size={18} className="pointer-events-none absolute left-4 top-[14px]" />
