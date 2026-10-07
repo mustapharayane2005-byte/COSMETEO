@@ -21,7 +21,7 @@
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--green);
+  color: #1a1a1a;
   border-bottom: 1px solid var(--champagne);
 }
 /* Bandeau défilant en CSS pur : aucun listener, aucun overflow scrollable, le scroll vertical reste libre. */
@@ -53,7 +53,7 @@
   border: 1px solid var(--line);
   border-radius: 16px;
   background: var(--ivory);
-  color: var(--green);
+  color: #1a1a1a;
   transition: border-color 0.25s ease;
 }
 @keyframes marquee {

@@ -21,7 +21,7 @@
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--green);
+  color: #1a1a1a;
   border-bottom: 1px solid var(--champagne);
   transition: border-color 0.2s ease;
 }
