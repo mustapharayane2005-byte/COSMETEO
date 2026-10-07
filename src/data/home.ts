@@ -47,15 +47,10 @@ export const univers: Univers[] = [
     art: "dropper",
     tone: "sage",
   },
-  {
-    name: "Soins homme",
-    href: "/boutique/homme",
-    image: "/images/univers/soins-homme.webp",
-    imageAlt: "Homme au visage serein appliquant un soin",
-    imagePosition: "center 30%",
-    art: "tube",
-    tone: "cream",
-  },
+  // Pas encore de photo : fond uni #2B2B2B. Fichier attendu : public/images/univers/cheveux.webp
+  { name: "Cheveux", href: "/boutique/cheveux", art: "bottle", tone: "sage" },
+  // Fichier attendu : public/images/univers/hygiene.webp
+  { name: "Hygiène", href: "/boutique/hygiene", art: "bottle", tone: "sand" },
   {
     name: "Bébé & enfant",
     href: "/boutique/bebe-enfant",
