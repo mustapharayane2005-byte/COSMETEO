@@ -47,10 +47,24 @@ export const univers: Univers[] = [
     art: "dropper",
     tone: "sage",
   },
-  // Pas encore de photo : fond uni #2B2B2B. Fichier attendu : public/images/univers/cheveux.webp
-  { name: "Cheveux", href: "/boutique/cheveux", art: "bottle", tone: "sage" },
-  // Fichier attendu : public/images/univers/hygiene.webp
-  { name: "Hygiène", href: "/boutique/hygiene", art: "bottle", tone: "sand" },
+  {
+    name: "Cheveux",
+    href: "/boutique/cheveux",
+    image: "/images/univers/cheveux.webp",
+    imageAlt: "Femme aux cheveux bouclés, les yeux fermés, pendant un massage du cuir chevelu",
+    imagePosition: "62% 35%",
+    art: "bottle",
+    tone: "sage",
+  },
+  {
+    name: "Hygiène",
+    href: "/boutique/hygiene",
+    image: "/images/univers/hygiene.webp",
+    imageAlt: "Dos d'une personne sous la douche, nettoyé avec une éponge naturelle et de la mousse",
+    imagePosition: "center 40%",
+    art: "bottle",
+    tone: "sand",
+  },
   {
     name: "Bébé & enfant",
     href: "/boutique/bebe-enfant",
