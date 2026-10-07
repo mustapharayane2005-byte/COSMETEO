@@ -88,6 +88,9 @@ export type Category = {
   image?: string;
   art: ArtShape;
   tone: Tone;
+  /** Pastille de l'accueil : fond pastel uni et couleur du trait de l'icône. */
+  fond: string;
+  trait: string;
   sousCategories: SubCategory[];
 };
 

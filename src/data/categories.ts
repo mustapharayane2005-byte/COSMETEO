@@ -13,6 +13,8 @@ export const categories: Category[] = [
     href: "/boutique/visage",
     art: "dropper",
     tone: "sage",
+    fond: "#E3EDE3",
+    trait: "#1F4D3A",
     sousCategories: [
       { slug: "nettoyants", name: "Nettoyants" },
       { slug: "hydratants", name: "Hydratants" },
@@ -30,6 +32,8 @@ export const categories: Category[] = [
     href: "/boutique/corps",
     art: "jar",
     tone: "sand",
+    fond: "#F6E1E1",
+    trait: "#B5646A",
     sousCategories: [
       { slug: "hydratation", name: "Hydratation" },
       { slug: "douche-et-bain", name: "Douche & bain" },
@@ -45,6 +49,8 @@ export const categories: Category[] = [
     href: "/boutique/homme",
     art: "tube",
     tone: "cream",
+    fond: "#DDE8DF",
+    trait: "#1F4D3A",
     sousCategories: [
       { slug: "visage", name: "Visage" },
       { slug: "rasage", name: "Rasage" },
@@ -60,6 +66,8 @@ export const categories: Category[] = [
     href: "/boutique/bebe-enfant",
     art: "pump",
     tone: "cream",
+    fond: "#F8E6D8",
+    trait: "#C0703A",
     sousCategories: [
       { slug: "toilette", name: "Toilette" },
       { slug: "hydratation", name: "Hydratation" },
@@ -75,6 +83,8 @@ export const categories: Category[] = [
     href: "/boutique/cheveux",
     art: "bottle",
     tone: "sage",
+    fond: "#E3EAF3",
+    trait: "#3B4A6B",
     sousCategories: [
       { slug: "shampoings", name: "Shampoings" },
       { slug: "apres-shampoings", name: "Après-shampoings" },
@@ -90,6 +100,8 @@ export const categories: Category[] = [
     href: "/boutique/hygiene",
     art: "bottle",
     tone: "sand",
+    fond: "#E1ECEF",
+    trait: "#3F6C7A",
     sousCategories: [
       { slug: "bucco-dentaire", name: "Bucco-dentaire" },
       { slug: "hygiene-intime", name: "Hygiène intime" },
@@ -104,6 +116,8 @@ export const categories: Category[] = [
     href: "/boutique/sante-bien-etre",
     art: "capsule",
     tone: "green",
+    fond: "#EFE6DA",
+    trait: "#8A6A4B",
     sousCategories: [
       { slug: "vitamines-et-mineraux", name: "Vitamines & minéraux" },
       { slug: "complements-alimentaires", name: "Compléments alimentaires" },
@@ -120,6 +134,8 @@ export const categories: Category[] = [
     href: "/boutique/beaute",
     art: "compact",
     tone: "coral",
+    fond: "#F1E8DA",
+    trait: "#7A5240",
     sousCategories: [
       { slug: "maquillage", name: "Maquillage" },
       { slug: "parfums", name: "Parfums" },
@@ -133,6 +149,8 @@ export const categories: Category[] = [
     href: "/boutique/solaire",
     art: "tube",
     tone: "sand",
+    fond: "#F7EBC8",
+    trait: "#B07A1E",
     sousCategories: [
       { slug: "visage", name: "Visage" },
       { slug: "corps", name: "Corps" },
