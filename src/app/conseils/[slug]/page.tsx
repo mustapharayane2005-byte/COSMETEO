@@ -5,8 +5,7 @@ import { notFound } from "next/navigation";
 import PageShell from "@/components/PageShell";
 import ProductGrid from "@/components/ProductGrid";
 import { articles, conseilsDisclaimer, getArticle } from "@/data/conseils";
-import { getProduct } from "@/data/products";
-import type { Product } from "@/types/catalog";
+import { byFamille } from "@/data/products";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -26,7 +25,7 @@ export default async function ArticlePage({ params }: Props) {
   const { slug } = await params;
   const article = getArticle(slug);
   if (!article) notFound();
-  const recommended = article.recommended.map(getProduct).filter((p): p is Product => Boolean(p));
+  const recommended = article.famille ? byFamille(article.famille).slice(0, 4) : [];
 
   return (
     <PageShell>

@@ -81,7 +81,7 @@ export default function CartDrawer() {
                   {lines.map((l) => (
                     <li key={l.id} className="flex gap-4 py-5">
                       <div className="size-24 shrink-0 overflow-hidden rounded-xl">
-                        <Media src={l.image} alt={l.name} art={l.art} tone={l.tone} sizes="96px" />
+                        <Media src={l.image} alt={l.name} art={l.art} tone={l.tone} placeholder={{ brand: l.brand, name: l.name }} sizes="96px" />
                       </div>
                       <div className="flex min-w-0 flex-1 flex-col">
                         <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-brown/60">

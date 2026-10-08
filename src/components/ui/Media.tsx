@@ -15,6 +15,8 @@ type Props = {
   sizes: string;
   priority?: boolean;
   className?: string;
+  /** Sans photo : visuel neutre #F5F5F5 avec la marque et le nom du produit (au lieu d'une silhouette). */
+  placeholder?: { brand: string; name: string };
 };
 
 const leaves = [
@@ -56,7 +58,16 @@ export default function Media({
   sizes,
   priority,
   className,
+  placeholder,
 }: Props) {
+  if (!src && placeholder) {
+    return (
+      <div className={`${s.neutral} ${className ?? ""}`} role="img" aria-label={`${placeholder.brand} ${placeholder.name}`}>
+        <span className={s.neutralBrand}>{placeholder.brand}</span>
+        <span className={s.neutralName}>{placeholder.name}</span>
+      </div>
+    );
+  }
   const shapes = Array.isArray(art) ? art : [art];
   return (
     <div className={`${s.media} ${src ? s.skeleton : ""} ${className ?? ""}`} data-tone={tone}>

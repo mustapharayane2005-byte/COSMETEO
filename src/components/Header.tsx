@@ -2,6 +2,7 @@
 
 import { AnimatePresence, m } from "framer-motion";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import AnnouncementBar from "@/components/AnnouncementBar";
@@ -16,6 +17,7 @@ export default function Header() {
   const [mounted, setMounted] = useState(false);
   const mobileSearchRef = useRef<HTMLInputElement>(null);
   const searchId = useId();
+  const router = useRouter();
 
   useEffect(() => setMounted(true), []);
 
@@ -34,8 +36,14 @@ export default function Header() {
     };
   }, [menuOpen]);
 
-  // Recherche : à brancher plus tard (route /recherche?q=…).
-  const onSearch = (e: React.FormEvent) => e.preventDefault();
+  // Recherche : /recherche?q=… (nom, marque, catégorie).
+  const onSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const q = String(new FormData(e.currentTarget).get("q") ?? "").trim();
+    if (!q) return;
+    setMenuOpen(false);
+    router.push(`/recherche?q=${encodeURIComponent(q)}`);
+  };
 
   const iconBtn = "relative grid size-11 place-items-center rounded-full transition-colors hover:bg-green/10";
   const cartLabel = `Panier, ${cartCount} article${cartCount > 1 ? "s" : ""}`;
@@ -90,7 +98,7 @@ export default function Header() {
             <label htmlFor={`${searchId}-m`} className="sr-only">
               Rechercher un produit
             </label>
-            <input ref={mobileSearchRef} id={`${searchId}-m`} type="search" placeholder={placeholder} className={searchBox} />
+            <input ref={mobileSearchRef} id={`${searchId}-m`} type="search" name="q" placeholder={placeholder} className={searchBox} />
           </form>
 
           {/* desktop */}
@@ -103,7 +111,7 @@ export default function Header() {
               <label htmlFor={`${searchId}-d`} className="sr-only">
                 Rechercher un produit
               </label>
-              <input id={`${searchId}-d`} type="search" placeholder={placeholder} className={searchBox} />
+              <input id={`${searchId}-d`} type="search" name="q" placeholder={placeholder} className={searchBox} />
             </form>
             <div className="flex items-center justify-end gap-1">
               <Link href="/favoris" className={iconBtn} aria-label="Favoris">

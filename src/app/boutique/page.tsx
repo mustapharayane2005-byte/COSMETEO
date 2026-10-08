@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import BesoinsBlock from "@/components/BesoinsBlock";
 import FamilyGrid from "@/components/FamilyGrid";
 import PageShell from "@/components/PageShell";
-import ProductGrid from "@/components/ProductGrid";
+import FilteredProductGrid from "@/components/FilteredProductGrid";
 import { allProducts } from "@/data/products";
 
 export const metadata: Metadata = { title: "Boutique" };
@@ -22,7 +22,7 @@ export default function ShopPage() {
         <h2 id="all-title" className="h2 mb-8">
           Tous nos produits
         </h2>
-        <ProductGrid products={allProducts} columns={4} />
+        <FilteredProductGrid products={allProducts} columns={4} />
       </section>
     </PageShell>
   );

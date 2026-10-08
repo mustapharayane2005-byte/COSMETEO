@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import CatalogPage from "@/components/CatalogPage";
 import { categories, getFamille, getSousCategorie } from "@/data/categories";
-import { allProducts } from "@/data/products";
+import { allProducts, inFamille } from "@/data/products";
 
 type Props = { params: Promise<{ famille: string; sousCategorie: string }> };
 
@@ -36,7 +36,7 @@ export default async function SousCategoriePage({ params }: Props) {
         href: `${fam.href}/${s.slug}`,
         active: s.slug === sub.slug,
       }))}
-      products={allProducts.filter((p) => p.famille === fam.slug && p.sousCategorie === sub.slug)}
+      products={allProducts.filter((p) => inFamille(p, fam.slug) && p.sousCategorie === sub.slug)}
     />
   );
 }

@@ -2,7 +2,7 @@ import type { Article } from "@/types/catalog";
 
 /**
  * Articles « Conseils ». Contenu généraliste et informatif : aucun diagnostic,
- * aucune promesse médicale. Les `recommended` sont des slugs de produits (data/products.ts).
+ * aucune promesse médicale. `famille` : les produits de cette famille (catalogue) sont recommandés sous l'article ; bloc masqué s'il n'y en a pas.
  */
 export const conseilsDisclaimer =
   "Ces conseils sont informatifs et ne remplacent pas l'avis d'un professionnel de santé.";
@@ -21,7 +21,7 @@ export const articles: Article[] = [
       { heading: "Le soir", text: "Retirez la journée avec un nettoyant adapté, puis appliquez votre soin hydratant. Vous pouvez y ajouter un sérum." },
       { heading: "Être régulier", text: "Introduisez un nouveau produit à la fois et laissez-lui un peu de temps. La régularité compte plus que le nombre d'étapes." },
     ],
-    recommended: ["gel-moussant-visage", "creme-hydratante-48h", "ecran-solaire-spf50"],
+    famille: "visage",
   },
   {
     slug: "routine-peau-acneique",
@@ -37,7 +37,7 @@ export const articles: Article[] = [
       { heading: "Ne pas toucher", text: "Évitez de percer les boutons : cela peut laisser des marques. Gardez vos mains propres." },
       { heading: "Demander conseil", text: "Si les imperfections persistent ou vous préoccupent, un dermatologue ou un pharmacien pourra vous orienter." },
     ],
-    recommended: ["gel-moussant-visage", "masque-purifiant-argile"],
+    famille: "visage",
   },
   {
     slug: "choisir-sa-creme-solaire",
@@ -52,7 +52,7 @@ export const articles: Article[] = [
       { heading: "La bonne quantité", text: "On applique généreusement et on renouvelle environ toutes les deux heures, et après la baignade." },
       { heading: "Au quotidien", text: "Le soleil agit aussi quand le ciel est couvert. Pensez à protéger visage, cou et mains." },
     ],
-    recommended: ["ecran-solaire-spf50"],
+    famille: "solaire",
   },
   {
     slug: "niacinamide-a-quoi-ca-sert",
@@ -67,7 +67,7 @@ export const articles: Article[] = [
       { heading: "Comment l'utiliser", text: "Elle s'applique en sérum ou en crème, après le nettoyage. Commencez par une utilisation par jour." },
       { heading: "Bon à savoir", text: "Faites un test sur une petite zone avant la première utilisation, surtout si votre peau est sensible." },
     ],
-    recommended: ["serum-eclat-vitamine-c", "creme-hydratante-48h"],
+    famille: "visage",
   },
   {
     slug: "skincare-homme-essentiels",
@@ -82,7 +82,7 @@ export const articles: Article[] = [
       { heading: "Hydrater", text: "Une crème légère aide à garder la peau confortable, surtout après le rasage." },
       { heading: "Protéger", text: "Un écran solaire au quotidien est le geste le plus simple pour prendre soin de sa peau sur la durée." },
     ],
-    recommended: ["gel-moussant-visage", "ecran-solaire-spf50", "masque-purifiant-argile"],
+    famille: "visage",
   },
   {
     slug: "soins-essentiels-de-bebe",
@@ -98,7 +98,7 @@ export const articles: Article[] = [
       { heading: "Protéger du soleil", text: "Les bébés ne doivent pas être exposés directement au soleil. Privilégiez l'ombre et les vêtements couvrants." },
       { heading: "En cas de doute", text: "Pour toute question sur la peau de votre enfant, demandez l'avis de votre pédiatre ou de votre pharmacien." },
     ],
-    recommended: ["beurre-corporel-karite"],
+    famille: "corps",
   },
   {
     slug: "comprendre-les-actifs-cosmetiques",
@@ -113,7 +113,7 @@ export const articles: Article[] = [
       { heading: "Les exfoliants", text: "Ils aident à éliminer les cellules mortes en surface. Utilisez-les avec modération." },
       { heading: "Lire l'étiquette", text: "Les ingrédients sont listés par quantité décroissante. Les premiers sont les plus présents dans la formule." },
     ],
-    recommended: ["serum-eclat-vitamine-c", "creme-hydratante-48h"],
+    famille: "visage",
   },
 ];
 

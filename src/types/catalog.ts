@@ -34,47 +34,43 @@ export type ProductVariants = {
 };
 
 /**
- * Un produit = UN objet dans data/products.ts : la fiche /produit/[slug],
- * les listes, le SEO et l'image de partage se génèrent automatiquement.
+ * Un produit = une ligne de products.csv (voir `npm run catalogue`, source : src/data/products.json) :
+ * la fiche /produit/[slug], les listes, la recherche, le SEO et l'image de partage s'en déduisent.
+ * Tous les champs éditoriaux sont facultatifs : un bloc sans contenu n'est pas affiché.
  */
 export type Product = {
   /** Identifiant unique et URL : /produit/<slug>. */
   slug: string;
   name: string;
   brand: string;
-  /** Slug de famille (voir data/categories.ts). */
+  /** Slug de famille principale (voir data/categories.ts). */
   famille: string;
+  /** Autres familles où le produit apparaît aussi. */
+  aussiDans: string[];
   /** Slug de sous-catégorie de la famille. */
-  sousCategorie: string;
+  sousCategorie?: string;
   /** Slugs des besoins (voir data/besoins.ts). */
-  besoins: string[];
+  besoins?: string[];
+  /** Contenance ou format (ex. « 400 ml »). */
+  format?: string;
   /** Prix en FCFA (entier). */
   price: number;
   /** Ancien prix en FCFA : présent uniquement en cas de promotion. */
   oldPrice?: number;
   badge?: Badge;
-  /** Photos (ex. /images/products/xxx.webp). [0] = carte, [1] = survol. Vide → visuels de substitution. */
+  /** Photos définitives (ex. /images/products/xxx.webp). [0] = carte, [1] = survol. Vide → visuel neutre (marque + nom). */
   images: string[];
-  shortDescription: string;
-  description: string;
-  ingredients: string;
-  howToUse: string;
+  shortDescription?: string;
+  description?: string;
+  ingredients?: string;
+  howToUse?: string;
   variants?: ProductVariants;
   inStock: boolean;
-  /** Slugs des produits « Vous aimerez aussi ». */
-  relatedSlugs: string[];
-  /** Visuel de substitution tant qu'il n'y a pas de photos. */
+  /** Slugs des produits « Vous aimerez aussi » (sinon : même famille). */
+  relatedSlugs?: string[];
+  /** Silhouette de secours du panier (non affichée tant que le visuel neutre est utilisé). */
   art: ArtShape;
   tone: Tone;
-  /** Mis en avant dans les grands blocs « Nos incontournables » de l'accueil. */
-  featured?: boolean;
-  /** Titre accrocheur (minuscules) du bloc mis en avant. */
-  featuredTitle?: string;
-  /** Texte et libellé du bouton du bloc mis en avant (sinon shortDescription / « DÉCOUVRIR »). */
-  featuredText?: string;
-  featuredCta?: string;
-  /** Photo du bloc mis en avant (/public). Absente ou introuvable → visuel de substitution. */
-  featuredImage?: string;
 };
 
 export type SubCategory = { slug: string; name: string };
@@ -131,8 +127,8 @@ export type Article = {
   /** object-position CSS pour le cadrage 16/10 (défaut : center). */
   imagePosition?: string;
   sections: { heading: string; text: string }[];
-  /** Slugs de produits recommandés. */
-  recommended: string[];
+  /** Famille de la boutique dont on recommande les produits (voir data/categories.ts). */
+  famille?: string;
 };
 
 

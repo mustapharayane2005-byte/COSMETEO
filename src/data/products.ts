@@ -1,240 +1,75 @@
-import type { Product } from "@/types/catalog";
+import type { Badge, Product } from "@/types/catalog";
+import { categories } from "@/data/categories";
+import raw from "./products.json";
 
 /**
- * ⚠️ DONNÉES DE DÉMONSTRATION (marques, produits, prix, compositions fictifs).
- * Ajouter un produit = ajouter UN objet à `products` : la fiche /produit/<slug>,
- * les listes, le SEO et l'image de partage sont générés automatiquement.
- * Plus tard : remplacer ce tableau par l'appel au vrai catalogue (API / CMS).
+ * Catalogue : généré depuis products.csv par `npm run catalogue` (src/data/products.json).
+ * Ne pas coder de produit ici.
  */
-const products: Product[] = [
-  {
-    slug: "gel-moussant-visage",
-    name: "Gel moussant visage",
-    brand: "Solenne",
-    famille: "visage",
-    sousCategorie: "nettoyants",
-    besoins: ["acne-imperfections", "peau-sensible", "peau-grasse-pores"],
-    price: 13900,
-    badge: { label: "Best-seller", kind: "highlight" },
-    images: [],
-    shortDescription: "Nettoie en douceur sans dessécher, dès le matin.",
-    description:
-      "Un gel nettoyant à la mousse légère qui retire l'excès de sébum et les impuretés sans abîmer le film hydrolipidique. La peau est propre, souple et confortable, sans sensation de tiraillement.",
-    ingredients: "Aqua, Glycerin, Coco-Glucoside, Aloe Barbadensis Leaf Juice, Panthenol, Sodium PCA, Citric Acid.",
-    howToUse: "Matin et soir, émulsionner une noisette sur peau humide, masser en évitant le contour des yeux, rincer à l'eau tiède.",
-    variants: { label: "Contenance", options: ["150 ml", "300 ml"] },
-    inStock: true,
-    relatedSlugs: ["creme-hydratante-48h", "serum-eclat-vitamine-c", "masque-purifiant-argile"],
-    art: "pump",
-    tone: "sage",
-  },
-  {
-    slug: "creme-hydratante-48h",
-    name: "Crème hydratante 48 h",
-    brand: "Aloé & Co",
-    famille: "visage",
-    sousCategorie: "hydratants",
-    besoins: ["peau-seche", "hydratation", "peau-sensible", "cernes-regard-fatigue"],
-    price: 18500,
-    images: [],
-    shortDescription: "Une texture fondante qui réconforte la peau toute la journée.",
-    description:
-      "Une crème riche et non grasse qui repulpe la peau et maintient son hydratation pendant 48 heures. Elle se fond instantanément et laisse un fini velouté.",
-    ingredients: "Aqua, Glycerin, Butyrospermum Parkii Butter, Squalane, Aloe Barbadensis Leaf Extract, Tocopherol, Hyaluronic Acid.",
-    howToUse: "Appliquer matin et soir sur visage et cou propres, en massant du centre vers l'extérieur.",
-    inStock: true,
-    relatedSlugs: ["gel-moussant-visage", "serum-eclat-vitamine-c", "beurre-corporel-karite"],
-    art: "jar",
-    tone: "sand",
-  },
-  {
-    slug: "serum-eclat-vitamine-c",
-    name: "Sérum éclat vitamine C",
-    brand: "Karelle",
-    famille: "visage",
-    sousCategorie: "serums",
-    besoins: ["taches-pigmentaires", "hydratation", "teint-terne-eclat"],
-    price: 24900,
-    oldPrice: 29900,
-    images: [],
-    shortDescription: "Unifie le teint et ravive l'éclat des peaux ternes.",
-    description:
-      "Un sérum concentré en vitamine C stabilisée qui estompe les taches, unifie le teint et redonne de la luminosité. Texture fluide, absorption rapide.",
-    ingredients: "Aqua, Ascorbyl Glucoside, Glycerin, Niacinamide, Sodium Hyaluronate, Ferulic Acid, Phenoxyethanol.",
-    howToUse: "Le matin, 3 à 4 gouttes sur peau propre avant la crème, puis une protection solaire.",
-    variants: { label: "Contenance", options: ["15 ml", "30 ml"] },
-    inStock: true,
-    relatedSlugs: ["creme-hydratante-48h", "ecran-solaire-spf50", "masque-purifiant-argile"],
-    art: "dropper",
-    tone: "coral",
-    featured: true,
-    featuredTitle: "le glow du quotidien",
-    featuredCta: "DÉCOUVRIR",
-    featuredImage: "/images/bb-natural.jpg",
-  },
-  {
-    slug: "huile-nourrissante-karite",
-    name: "Huile nourrissante au karité",
-    brand: "Verdelle",
-    famille: "corps",
-    sousCategorie: "hydratation",
-    besoins: ["peau-seche", "hydratation", "grossesse"],
-    price: 16500,
-    badge: { label: "Favori", kind: "highlight" },
-    images: [],
-    shortDescription: "Corps et cheveux : un soin sec, nourrissant, non gras.",
-    description:
-      "Une huile sèche au karité qui nourrit la peau et les longueurs sans film gras. Parfaite sur peau encore humide à la sortie de la douche.",
-    ingredients: "Caprylic/Capric Triglyceride, Butyrospermum Parkii Oil, Prunus Amygdalus Dulcis Oil, Tocopherol, Parfum.",
-    howToUse: "Quelques gouttes dans les paumes, à appliquer sur le corps ou sur les pointes des cheveux.",
-    inStock: true,
-    relatedSlugs: ["beurre-corporel-karite", "shampoing-doux-hydratant", "eau-parfumee-fleur-d-oranger"],
-    art: "bottle",
-    tone: "cream",
-    featured: true,
-    featuredTitle: "chaque goutte compte",
-    featuredCta: "AJOUTER AU PANIER",
-    featuredImage: "/images/routine-soin.jpg",
-  },
-  {
-    slug: "beurre-corporel-karite",
-    name: "Beurre corporel karité",
-    brand: "Iroko",
-    famille: "corps",
-    sousCategorie: "hydratation",
-    besoins: ["peau-seche", "hydratation", "bebe", "grossesse"],
-    price: 12900,
-    badge: { label: "Nouveauté", kind: "new" },
-    images: [],
-    shortDescription: "Un beurre riche pour les peaux sèches.",
-    description:
-      "Un beurre corporel onctueux qui nourrit intensément les peaux sèches et rugueuses. Il fond au contact de la peau et laisse un voile doux.",
-    ingredients: "Butyrospermum Parkii Butter, Cocos Nucifera Oil, Glycerin, Tocopherol, Parfum.",
-    howToUse: "Réchauffer une noix entre les mains et masser sur le corps, en insistant sur coudes et genoux.",
-    inStock: true,
-    relatedSlugs: ["huile-nourrissante-karite", "creme-hydratante-48h", "ecran-solaire-spf50"],
-    art: "jar",
-    tone: "sand",
-  },
-  {
-    slug: "eau-parfumee-fleur-d-oranger",
-    name: "Eau parfumée fleur d'oranger",
-    brand: "Hesper",
-    famille: "beaute",
-    sousCategorie: "parfums",
-    besoins: ["bien-etre"],
-    price: 27500,
-    badge: { label: "Nouveauté", kind: "new" },
-    images: [],
-    shortDescription: "Une fragrance lumineuse, fraîche et délicate.",
-    description:
-      "Une eau parfumée légère aux notes de fleur d'oranger, de bergamote et de musc blanc. Un sillage doux, pensé pour le quotidien.",
-    ingredients: "Alcohol Denat., Aqua, Parfum, Limonene, Linalool.",
-    howToUse: "Vaporiser à 20 cm sur le cou, les poignets et l'intérieur des coudes.",
-    variants: { label: "Contenance", options: ["50 ml", "100 ml"] },
-    inStock: true,
-    relatedSlugs: ["huile-nourrissante-karite", "beurre-corporel-karite", "gel-moussant-visage"],
-    art: "perfume",
-    tone: "brown",
-  },
-  {
-    slug: "ecran-solaire-spf50",
-    name: "Écran solaire SPF 50",
-    brand: "Solenne",
-    famille: "solaire",
-    sousCategorie: "visage",
-    besoins: ["protection-solaire", "taches-pigmentaires", "homme"],
-    price: 19900,
-    oldPrice: 23900,
-    badge: { label: "Nouveauté", kind: "new" },
-    images: [],
-    shortDescription: "Protection haute, fini invisible.",
-    description:
-      "Un écran solaire à très haute protection UVA/UVB, au fini invisible sur peau foncée. Texture fluide, sans traces blanches.",
-    ingredients: "Aqua, Ethylhexyl Triazone, Bis-Ethylhexyloxyphenol Methoxyphenyl Triazine, Glycerin, Niacinamide, Tocopherol.",
-    howToUse: "Appliquer généreusement 20 minutes avant l'exposition, renouveler toutes les 2 heures.",
-    inStock: true,
-    relatedSlugs: ["serum-eclat-vitamine-c", "creme-hydratante-48h", "beurre-corporel-karite"],
-    art: "tube",
-    tone: "coral",
-  },
-  {
-    slug: "masque-purifiant-argile",
-    name: "Masque purifiant à l'argile",
-    brand: "Karelle",
-    famille: "visage",
-    sousCategorie: "anti-imperfections",
-    besoins: ["acne-imperfections", "homme"],
-    price: 11500,
-    badge: { label: "Nouveauté", kind: "new" },
-    images: [],
-    shortDescription: "Désincruste et affine le grain de peau.",
-    description:
-      "Un masque à l'argile qui absorbe l'excès de sébum et désincruste les pores en 10 minutes, sans dessécher.",
-    ingredients: "Aqua, Kaolin, Glycerin, Bentonite, Aloe Barbadensis Leaf Juice, Panthenol.",
-    howToUse: "Une à deux fois par semaine, appliquer en couche fine, laisser poser 10 minutes, rincer.",
-    inStock: false,
-    relatedSlugs: ["gel-moussant-visage", "serum-eclat-vitamine-c", "creme-hydratante-48h"],
-    art: "tube",
-    tone: "sage",
-  },
-  {
-    slug: "shampoing-doux-hydratant",
-    name: "Shampoing doux hydratant",
-    brand: "Aloé & Co",
-    famille: "cheveux",
-    sousCategorie: "shampoings",
-    besoins: ["chute-de-cheveux", "hydratation", "cheveux-secs-abimes"],
-    price: 14200,
-    badge: { label: "Nouveauté", kind: "new" },
-    images: [],
-    shortDescription: "Lave sans agresser les cheveux texturés.",
-    description:
-      "Un shampoing sans sulfates qui nettoie en douceur et préserve l'hydratation des cheveux bouclés, frisés et crépus.",
-    ingredients: "Aqua, Coco-Glucoside, Glycerin, Aloe Barbadensis Leaf Juice, Panthenol, Butyrospermum Parkii Butter.",
-    howToUse: "Appliquer sur cheveux mouillés, masser le cuir chevelu, rincer abondamment.",
-    variants: { label: "Contenance", options: ["250 ml", "500 ml"] },
-    inStock: true,
-    relatedSlugs: ["huile-nourrissante-karite", "complement-cheveux-ongles", "beurre-corporel-karite"],
-    art: "bottle",
-    tone: "cream",
-  },
-  {
-    slug: "complement-cheveux-ongles",
-    name: "Complément cheveux & ongles",
-    brand: "Verdelle",
-    famille: "sante-bien-etre",
-    sousCategorie: "complements-alimentaires",
-    besoins: ["chute-de-cheveux", "bien-etre"],
-    price: 21000,
-    badge: { label: "Nouveauté", kind: "new" },
-    images: [],
-    shortDescription: "Cure de 30 jours pour la vitalité des cheveux.",
-    description:
-      "Une cure de 30 jours associant biotine, zinc et vitamines du groupe B pour soutenir la vitalité des cheveux et des ongles.",
-    ingredients: "Biotine, Zinc, Sélénium, Vitamine B6, Extrait de millet, Gélule d'origine végétale.",
-    howToUse: "1 gélule par jour avec un grand verre d'eau. Ne pas dépasser la dose recommandée. Ne remplace pas une alimentation variée.",
-    inStock: true,
-    relatedSlugs: ["shampoing-doux-hydratant", "huile-nourrissante-karite", "gel-moussant-visage"],
-    art: "capsule",
-    tone: "green",
-  },
-];
+type Entry = {
+  slug: string;
+  name: string;
+  brand: string;
+  famille: string;
+  aussiDans: string[];
+  format?: string;
+  price: number;
+  oldPrice?: number;
+  stock: string;
+  description?: string;
+  image?: string;
+  badge?: string;
+};
 
-const bySlugs = (slugs: string[]) =>
-  slugs.map((s) => products.find((p) => p.slug === s)).filter((p): p is Product => Boolean(p));
+const toBadge = (label?: string): Badge | undefined => {
+  if (!label) return undefined;
+  const n = label.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+  const kind = n.includes("nouv") ? "new" : n.includes("promo") || n.includes("%") ? "promo" : "highlight";
+  return { label, kind };
+};
+
+const products: Product[] = (raw as Entry[]).map((e) => ({
+  slug: e.slug,
+  name: e.name,
+  brand: e.brand,
+  famille: e.famille,
+  aussiDans: e.aussiDans,
+  format: e.format,
+  price: e.price,
+  oldPrice: e.oldPrice,
+  badge: toBadge(e.badge),
+  images: e.image ? [e.image] : [],
+  description: e.description,
+  inStock: e.stock !== "indisponible",
+  art: "bottle",
+  tone: "sage",
+}));
 
 export const allProducts: Product[] = products;
-export const featuredProducts = products.filter((p) => p.featured).slice(0, 2);
-export const newArrivals = bySlugs([
-  "beurre-corporel-karite",
-  "eau-parfumee-fleur-d-oranger",
-  "ecran-solaire-spf50",
-  "masque-purifiant-argile",
-  "shampoing-doux-hydratant",
-  "complement-cheveux-ongles",
-]);
 export const promoProducts = products.filter((p) => p.oldPrice);
 export const newProducts = products.filter((p) => p.badge?.kind === "new");
 export const getProduct = (slug: string) => products.find((p) => p.slug === slug);
-export const getRelated = (p: Product) => bySlugs(p.relatedSlugs);
+
+/** Un produit est dans sa famille principale ET dans celles de `aussiDans`. */
+export const inFamille = (p: Product, famille: string) => p.famille === famille || p.aussiDans.includes(famille);
+export const byFamille = (famille: string) => products.filter((p) => inFamille(p, famille));
+
+/** « Vous aimerez aussi » : liste explicite, sinon produits de la même famille. */
+export const getRelated = (p: Product) =>
+  (p.relatedSlugs
+    ? p.relatedSlugs.map(getProduct).filter((x): x is Product => Boolean(x))
+    : byFamille(p.famille).filter((x) => x.slug !== p.slug)
+  ).slice(0, 8);
+
+const norm = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+
+/** Recherche simple : nom, marque, catégorie(s). Tous les mots doivent être trouvés. */
+export const searchProducts = (query: string): Product[] => {
+  const words = norm(query).split(/\s+/).filter(Boolean);
+  if (words.length === 0) return [];
+  return products.filter((p) => {
+    const noms = [p.famille, ...p.aussiDans].map((slug) => categories.find((c) => c.slug === slug)?.name ?? slug);
+    const hay = norm([p.name, p.brand, ...noms].join(" "));
+    return words.every((w) => hay.includes(w));
+  });
+};

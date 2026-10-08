@@ -30,7 +30,7 @@ export default async function BesoinPage({ params }: Props) {
       crumbs={[
         { label: "Que recherchez-vous ?", href: "/besoins" },
       ]}
-      products={allProducts.filter((p) => p.besoins.includes(slug))}
+      products={allProducts.filter((p) => p.besoins?.includes(slug))}
       after={<p className="mt-12 border-t border-line pt-6 text-sm text-[var(--muted)]">{conseilsDisclaimer}</p>}
     >
       <section className="mx-auto mb-12 max-w-2xl rounded-2xl border border-line bg-[#FAF8F4] p-6" aria-labelledby="tips-title">

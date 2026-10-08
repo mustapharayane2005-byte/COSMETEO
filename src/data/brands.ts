@@ -21,6 +21,7 @@ const entries: { name: string; types: BrandTypeId[]; featured?: boolean }[] = [
   { name: "La Roche-Posay", types: ["french-beauty"], featured: true },
   { name: "Avène", types: ["french-beauty"], featured: true },
   { name: "ACM", types: ["french-beauty"] },
+  { name: "Eucerin", types: [] },
   { name: "Ducray", types: ["french-beauty", "hair-care"] },
   { name: "Mixa", types: ["french-beauty"], featured: true },
   { name: "Garnier", types: ["french-beauty"], featured: true },

@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: { canonical: `/produit/${p.slug}` },
     // l'image de partage est générée par ./opengraph-image.tsx
     openGraph: { title, description: p.shortDescription, type: "website", locale: "fr_FR", siteName: "COSMÉTÉO" },
-    twitter: { card: "summary_large_image", title, description: p.shortDescription },
+    twitter: { card: "summary_large_image", title, description: p.shortDescription ?? p.description },
   };
 }
 
@@ -51,15 +51,15 @@ export default async function ProductPage({ params }: Props) {
       // À valider avec les vraies conditions (délais, frais, politique de retour).
       body: "Livraison au Bénin et à l'international. Délais et frais calculés à l'étape suivante. Retrouvez nos conditions de retour sur la page Retours.",
     },
-  ];
+  ].filter((s): s is { title: string; body: string; open?: boolean } => Boolean(s.body));
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
     name: p.name,
     brand: { "@type": "Brand", name: p.brand },
-    description: p.shortDescription,
-    image: p.images,
+    description: p.shortDescription ?? p.description,
+    ...(p.images.length > 0 && { image: p.images }),
     offers: {
       "@type": "Offer",
       priceCurrency: "XOF",

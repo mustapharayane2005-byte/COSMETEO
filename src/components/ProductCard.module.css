@@ -202,3 +202,17 @@
     padding-top: 10px;
   }
 }
+
+/* Produit indisponible : carte grisée. */
+.off .media,
+.off .name,
+.off .price {
+  opacity: 0.55;
+  filter: grayscale(1);
+}
+.stock {
+  margin-bottom: 8px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #5f5f5c;
+}

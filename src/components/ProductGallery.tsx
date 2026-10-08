@@ -13,11 +13,7 @@ export default function ProductGallery({ product }: { product: Product }) {
 
   const frames: Frame[] = product.images.length
     ? product.images.map((src) => ({ src, variant: "packshot", art: [product.art] }))
-    : [
-        { variant: "packshot", art: [product.art] },
-        { variant: "scene", art: [product.art] },
-        { variant: "scene", art: [product.art, "jar"] },
-      ];
+    : [{ variant: "packshot", art: [product.art] }];
 
   return (
     <div>
@@ -36,6 +32,7 @@ export default function ProductGallery({ product }: { product: Product }) {
               alt={`${product.name} — vue ${i + 1}`}
               art={f.art}
               tone={product.tone}
+              placeholder={{ brand: product.brand, name: product.name }}
               variant={f.variant}
               priority={i === 0}
               sizes="(min-width: 768px) 50vw, 92vw"

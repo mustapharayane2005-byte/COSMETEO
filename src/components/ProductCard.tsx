@@ -18,7 +18,7 @@ export default function ProductCard({ product, compact }: Props) {
   const href = `/produit/${product.slug}`;
 
   return (
-    <article className={s.card}>
+    <article className={`${s.card} ${product.inStock ? "" : s.off}`}>
       <div className={s.media}>
         <Link href={href} tabIndex={-1} aria-hidden="true" className={s.mediaLink}>
           <Media
@@ -26,19 +26,15 @@ export default function ProductCard({ product, compact }: Props) {
             alt={product.name}
             art={product.art}
             tone={product.tone}
+            placeholder={{ brand: product.brand, name: product.name }}
             sizes="(min-width: 1280px) 300px, (min-width: 768px) 30vw, 46vw"
           />
-          {/* 2e image au survol (appareils avec souris) */}
-          <div className={s.alt}>
-            <Media
-              src={product.images[1]}
-              alt=""
-              art={product.art}
-              tone={product.tone}
-              variant="scene"
-              sizes="(min-width: 1280px) 300px, 30vw"
-            />
-          </div>
+          {/* 2e image au survol (appareils avec souris), seulement si elle existe */}
+          {product.images[1] && (
+            <div className={s.alt}>
+              <Media src={product.images[1]} alt="" sizes="(min-width: 1280px) 300px, 30vw" />
+            </div>
+          )}
         </Link>
         {badge && <span className={`${s.badge} ${s[badge.kind]}`}>{badge.label}</span>}
         <div className={s.wish}>
@@ -52,7 +48,9 @@ export default function ProductCard({ product, compact }: Props) {
         <h3 className={s.name}>
           <Link href={href}>{product.name}</Link>
         </h3>
-        {!compact && <p className={s.desc}>{product.shortDescription}</p>}
+        {!compact && (product.shortDescription ?? product.description) && (
+          <p className={s.desc}>{product.shortDescription ?? product.description}</p>
+        )}
         <p className={s.prices}>
           <span className={s.price}>{formatPrice(product.price)}</span>
           {product.oldPrice && (
@@ -62,6 +60,7 @@ export default function ProductCard({ product, compact }: Props) {
             </>
           )}
         </p>
+        {!product.inStock && <p className={s.stock}>Indisponible</p>}
         <AddToCartButton product={product} className={s.add} />
       </div>
     </article>

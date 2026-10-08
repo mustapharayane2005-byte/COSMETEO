@@ -1,6 +1,6 @@
 import Link from "next/link";
 import PageShell from "@/components/PageShell";
-import ProductGrid from "@/components/ProductGrid";
+import FilteredProductGrid from "@/components/FilteredProductGrid";
 import Button from "@/components/ui/Button";
 import type { Product } from "@/types/catalog";
 
@@ -69,12 +69,7 @@ export default function CatalogPage({ title, intro, products, chips, crumbs, chi
         {children}
 
         {products.length > 0 ? (
-          <>
-            <p className="mb-6 text-sm text-[var(--muted)]">
-              {products.length} produit{products.length > 1 ? "s" : ""}
-            </p>
-            <ProductGrid products={products} columns={4} />
-          </>
+          <FilteredProductGrid products={products} columns={4} />
         ) : (
           <div className="panel grid place-items-center gap-5 px-6 py-20 text-center">
             <p className="h2">Bientôt disponible</p>

@@ -44,7 +44,8 @@ export default function ProductPurchase({ product }: { product: Product }) {
           </>
         )}
       </p>
-      <p className="mt-4 max-w-md text-[var(--muted)]">{product.shortDescription}</p>
+      {product.format && <p className="mt-2 text-sm text-[var(--muted)]">{product.format}</p>}
+      {product.shortDescription && <p className="mt-4 max-w-md text-[var(--muted)]">{product.shortDescription}</p>}
 
       {product.variants && (
         <fieldset className="mt-7">
@@ -86,7 +87,7 @@ export default function ProductPurchase({ product }: { product: Product }) {
 
       <div className="mt-7 grid gap-3">
         <button type="button" className={primary} disabled={!product.inStock} onClick={add}>
-          {product.inStock ? "AJOUTER AU PANIER" : "RUPTURE DE STOCK"}
+          {product.inStock ? "AJOUTER AU PANIER" : "INDISPONIBLE"}
         </button>
         <button type="button" className={outline} disabled={!product.inStock} onClick={buyNow}>
           ACHETER MAINTENANT
@@ -100,7 +101,7 @@ export default function ProductPurchase({ product }: { product: Product }) {
           {product.oldPrice && <s className="text-xs text-[var(--muted)]">{formatPrice(product.oldPrice)}</s>}
         </p>
         <button type="button" className={primary} disabled={!product.inStock} onClick={add}>
-          {product.inStock ? "AJOUTER AU PANIER" : "RUPTURE DE STOCK"}
+          {product.inStock ? "AJOUTER AU PANIER" : "INDISPONIBLE"}
         </button>
       </div>
     </div>

@@ -1,0 +1,136 @@
+[
+  {
+    "id": "001",
+    "slug": "ducray-dexyane-gel-nettoyant-surgras",
+    "name": "Dexyane Gel nettoyant surgras",
+    "brand": "Ducray",
+    "famille": "corps",
+    "aussiDans": [
+      "visage"
+    ],
+    "format": "400 ml",
+    "price": 14000,
+    "stock": "disponible",
+    "description": "Gel nettoyant sans savon pour visage et corps, pour peaux très sèches à tendance atopique. Flacon pompe."
+  },
+  {
+    "id": "002",
+    "slug": "ducray-ictyane-creme-emolliente-nutritive",
+    "name": "Ictyane Crème émolliente nutritive",
+    "brand": "Ducray",
+    "famille": "corps",
+    "aussiDans": [
+      "visage"
+    ],
+    "format": "200 ml",
+    "price": 14000,
+    "stock": "disponible",
+    "description": "Crème émolliente nutritive visage et corps, pour peaux sèches à très sèches. Tube."
+  },
+  {
+    "id": "005",
+    "slug": "cerave-baume-hydratant",
+    "name": "Baume hydratant",
+    "brand": "CeraVe",
+    "famille": "corps",
+    "aussiDans": [
+      "visage"
+    ],
+    "format": "454 g",
+    "price": 17000,
+    "stock": "disponible",
+    "description": "Baume hydratant sans parfum visage et corps, aux 3 céramides essentiels et acide hyaluronique, pour peaux sèches à très sèches. Pot."
+  },
+  {
+    "id": "006",
+    "slug": "avene-xeracalm-nutrition-lait-hydratant",
+    "name": "Xeracalm Nutrition Lait hydratant",
+    "brand": "Avène",
+    "famille": "corps",
+    "aussiDans": [
+      "visage"
+    ],
+    "format": "400 ml",
+    "price": 14500,
+    "stock": "disponible",
+    "description": "Lait hydratant visage et corps pour peaux sensibles sèches. Flacon pompe."
+  },
+  {
+    "id": "007",
+    "slug": "mixa-lait-corps-nutritif-satinant",
+    "name": "Lait corps nutritif satinant",
+    "brand": "Mixa",
+    "famille": "corps",
+    "aussiDans": [],
+    "format": "400 ml",
+    "price": 9000,
+    "stock": "disponible",
+    "description": "Lait corps à l'huile et au beurre de karité, pour peaux très sèches et ternes. Hypoallergénique. Flacon pompe."
+  },
+  {
+    "id": "008",
+    "slug": "la-roche-posay-effaclar-gel-moussant-purifiant",
+    "name": "Effaclar Gel moussant purifiant",
+    "brand": "La Roche-Posay",
+    "famille": "visage",
+    "aussiDans": [],
+    "format": "300 ml",
+    "price": 20000,
+    "stock": "disponible",
+    "description": "Gel moussant purifiant, pour peaux grasses à tendance acnéique. Format économique."
+  },
+  {
+    "id": "009",
+    "slug": "la-roche-posay-mela-b3-soin-corps-double-action",
+    "name": "Mela B3 Soin corps double action",
+    "brand": "La Roche-Posay",
+    "famille": "corps",
+    "aussiDans": [],
+    "format": "200 ml",
+    "price": 18000,
+    "stock": "disponible",
+    "description": "Soin corps double action à la niacinamide et au LHA, technologie d'absorption en 1 seconde. Tube."
+  },
+  {
+    "id": "012",
+    "slug": "acm-sebionex-gel-nettoyant",
+    "name": "Sébionex Gel nettoyant",
+    "brand": "ACM",
+    "famille": "visage",
+    "aussiDans": [
+      "corps"
+    ],
+    "format": "200 ml",
+    "price": 10500,
+    "stock": "disponible",
+    "description": "Gel nettoyant doux sans savon, pour peaux grasses et à imperfections. Visage et corps. Flacon pompe."
+  },
+  {
+    "id": "013",
+    "slug": "cerave-moisturising-lotion-lait-hydratant",
+    "name": "Moisturising Lotion (Lait hydratant)",
+    "brand": "CeraVe",
+    "famille": "corps",
+    "aussiDans": [
+      "visage"
+    ],
+    "format": "473 ml",
+    "price": 17000,
+    "stock": "disponible",
+    "description": "Lait hydratant sans parfum visage et corps, aux 3 céramides essentiels et acide hyaluronique, pour peaux sèches à très sèches. Flacon pompe."
+  },
+  {
+    "id": "014",
+    "slug": "acm-sensitelial-soin-emollient",
+    "name": "Sensitélial Soin émollient",
+    "brand": "ACM",
+    "famille": "corps",
+    "aussiDans": [
+      "visage"
+    ],
+    "format": "500 ml",
+    "price": 13000,
+    "stock": "disponible",
+    "description": "Soin émollient pour peaux sèches ou à tendance atopique. Visage et corps. Flacon pompe."
+  }
+]
