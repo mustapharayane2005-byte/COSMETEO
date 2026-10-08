@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { existsSync } from "node:fs";
+import { join } from "node:path";
+import { Comfortaa } from "next/font/google";
 import { CartProvider } from "@/components/cart/CartContext";
 import CartDrawer from "@/components/cart/CartDrawer";
 import ChatBubble from "@/components/ChatBubble";
@@ -8,21 +10,25 @@ import SplashScreen, { splashScript } from "@/components/SplashScreen";
 import MotionProvider from "@/components/ui/MotionProvider";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-sans",
+// Interface et contenu : Comfortaa (variable, 300 à 700), auto-hébergée par next/font.
+const comfortaa = Comfortaa({
+  variable: "--font-comfortaa",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
   display: "swap",
 });
 
-// Titres.
-const fraunces = Fraunces({
-  variable: "--font-heading",
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
-  display: "swap",
-});
+// Surimi (titres) : fichiers officiels à déposer dans public/fonts/ (voir LISEZMOI.txt).
+// Détectés au build : sans fichier, aucune requête vers /fonts/ n'est émise (pas de 404).
+const surimiFiles = [
+  { file: "surimi-regular.woff2", weight: 400 },
+  { file: "surimi-bold.woff2", weight: 700 },
+].filter((f) => existsSync(join(process.cwd(), "public", "fonts", f.file)));
+const surimiCss = surimiFiles
+  .map(
+    (f) =>
+      `@font-face{font-family:"Surimi";font-style:normal;font-weight:${f.weight};font-display:swap;src:url("/fonts/${f.file}") format("woff2")}`,
+  )
+  .join("");
 
 const title = "COSMÉTÉO – Boutique beauté et soins au Bénin";
 const description =
@@ -54,8 +60,12 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="fr" className={`${inter.variable} ${fraunces.variable}`} suppressHydrationWarning>
+    <html lang="fr" className={`${comfortaa.variable}${surimiFiles.length ? " has-surimi" : ""}`} suppressHydrationWarning>
       <head>
+        {surimiFiles.length > 0 && <style dangerouslySetInnerHTML={{ __html: surimiCss }} />}
+        {surimiFiles.map((f) => (
+          <link key={f.file} rel="preload" href={`/fonts/${f.file}`} as="font" type="font/woff2" crossOrigin="anonymous" />
+        ))}
         <script dangerouslySetInnerHTML={{ __html: `document.documentElement.classList.add("js")` }} />
         <script dangerouslySetInnerHTML={{ __html: splashScript }} />
       </head>

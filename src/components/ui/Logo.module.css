@@ -35,6 +35,9 @@
   --w: 108px;
   --fs: 0.5rem;
 }
+.header .tagline {
+  letter-spacing: 0.2em; /* Comfortaa est plus large : tient dans les 108 px */
+}
 .splash {
   --w: 200px;
   --fs: 0.8rem;
@@ -49,5 +52,8 @@
   .header {
     --w: 150px;
     --fs: 0.58rem;
+  }
+  .header .tagline {
+    letter-spacing: 0.28em;
   }
 }

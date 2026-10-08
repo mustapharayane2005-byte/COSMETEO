@@ -10,8 +10,9 @@
   --color-sage: #e6ede6;
   --color-blush: #f6e7e3;
   --color-brown: #252525; /* nom hérité : = anthracite */
-  --font-display: var(--font-heading);
-  --font-ui: var(--font-sans);
+  /* Surimi = identité (titres) ; Comfortaa = interface et contenu. Sans fichier Surimi : Comfortaa en gras (voir html:not(.has-surimi)). */
+  --font-display: "Surimi", var(--font-comfortaa), ui-sans-serif, system-ui, sans-serif;
+  --font-ui: var(--font-comfortaa), ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
@@ -42,7 +43,9 @@
   --line-strong: #d6cfc3;
   --page-m: 16px;
 
-  --font-serif: var(--font-heading);
+  --font-heading: var(--font-display);
+  --font-sans: var(--font-ui);
+  --font-serif: var(--font-display);
 
   --gutter: 20px;
   --maxw: 1320px;
@@ -95,6 +98,7 @@ body {
   font-family: var(--font-sans);
   font-size: 1rem;
   line-height: 1.6;
+  font-synthesis: none; /* pas de faux italique ni faux gras */
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: clip;
@@ -122,7 +126,7 @@ p {
 h1,
 h2,
 h3 {
-  font-family: var(--font-heading), Georgia, serif;
+  font-family: var(--font-display);
   font-weight: 400;
   line-height: 1.1;
 }
@@ -432,4 +436,20 @@ html.splash-on {
 /* Les éléments absolus des carrousels ne doivent pas élargir la page. */
 main {
   overflow-x: clip;
+}
+
+/* ---- Typographie : Surimi (titres) + Comfortaa (interface) ---- */
+/* Sans fichier Surimi : titres en Comfortaa gras, un peu resserrés (Comfortaa est large). */
+html:not(.has-surimi) :is(h1, h2, h3, .h2, .font-display) {
+  font-weight: 700 !important;
+  letter-spacing: -0.015em;
+}
+/* Surimi est condensée : un peu plus d'air et d'interligne serré. */
+html.has-surimi :is(h1, h2, h3, .h2, .font-display) {
+  letter-spacing: 0.01em;
+}
+/* Comfortaa : pas de graisse 300 en petit, titres de section sans coupure maladroite. */
+h1, h2, h3, .h2 {
+  text-wrap: balance;
+  overflow-wrap: break-word;
 }

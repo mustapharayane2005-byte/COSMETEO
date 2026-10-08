@@ -1,0 +1,10 @@
+Polices COSMETEO
+
+Surimi (police d'affichage, titres) : ajouter ici les fichiers officiels
+  surimi-regular.woff2   (400)
+  surimi-bold.woff2      (700, facultatif)
+Source : le site officiel de la police, avec une licence web (@font-face / self-hosting).
+Aucune autre modification de code : le site détecte les fichiers au build et les charge tout seul.
+Tant qu'ils sont absents, les titres utilisent Comfortaa en gras (sans erreur 404).
+
+Comfortaa (interface) est chargée automatiquement par next/font : rien à ajouter.
