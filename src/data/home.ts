@@ -39,13 +39,22 @@ export type Univers = {
 
 export const univers: Univers[] = [
   {
-    name: "Soins visage et corps",
+    name: "Soins visage",
     href: "/boutique/visage",
     image: "/images/routine-soin.jpg",
     imageAlt: "",
     imagePosition: "center",
     art: "dropper",
     tone: "sage",
+  },
+  {
+    name: "Soins corps",
+    href: "/boutique/corps",
+    image: "/images/univers/hygiene.webp",
+    imageAlt: "Dos d'une personne sous la douche, nettoyé avec une éponge naturelle et de la mousse",
+    imagePosition: "center 40%",
+    art: "bottle",
+    tone: "sand",
   },
   {
     name: "Cheveux",
@@ -57,16 +66,7 @@ export const univers: Univers[] = [
     tone: "sage",
   },
   {
-    name: "Hygiène",
-    href: "/boutique/hygiene",
-    image: "/images/univers/hygiene.webp",
-    imageAlt: "Dos d'une personne sous la douche, nettoyé avec une éponge naturelle et de la mousse",
-    imagePosition: "center 40%",
-    art: "bottle",
-    tone: "sand",
-  },
-  {
-    name: "Bébé & enfant",
+    name: "Bébé & enfants",
     href: "/boutique/bebe-enfant",
     image: "/images/univers/bebe-enfant.webp",
     imageAlt: "Bébé souriant dans une serviette à capuche",
