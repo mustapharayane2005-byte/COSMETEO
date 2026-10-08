@@ -10,9 +10,11 @@ type Props = {
   product: Product;
   /** Masque la description (grilles denses). */
   compact?: boolean;
+  /** Carte visible dès l'affichage : image chargée sans lazy-load. */
+  priority?: boolean;
 };
 
-export default function ProductCard({ product, compact }: Props) {
+export default function ProductCard({ product, compact, priority }: Props) {
   const discount = discountPercent(product.price, product.oldPrice);
   const badge = product.badge ?? (discount ? { label: `-${discount}%`, kind: "promo" as const } : undefined);
   const href = `/produit/${product.slug}`;
@@ -26,13 +28,15 @@ export default function ProductCard({ product, compact }: Props) {
             alt={product.name}
             art={product.art}
             tone={product.tone}
+            contain
+            priority={priority}
             placeholder={{ brand: product.brand, name: product.name }}
             sizes="(min-width: 1280px) 300px, (min-width: 768px) 30vw, 46vw"
           />
           {/* 2e image au survol (appareils avec souris), seulement si elle existe */}
           {product.images[1] && (
             <div className={s.alt}>
-              <Media src={product.images[1]} alt="" sizes="(min-width: 1280px) 300px, 30vw" />
+              <Media src={product.images[1]} alt="" contain sizes="(min-width: 1280px) 300px, 30vw" />
             </div>
           )}
         </Link>

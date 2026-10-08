@@ -16,7 +16,7 @@ export default function ProductGrid({ products, columns = 4 }: Props) {
       {products.map((p, i) => (
         <li key={p.slug}>
           <Reveal delay={Math.min(i % columns, 5) * 0.07} className="h-full">
-            <ProductCard product={p} compact={columns === 6} />
+            <ProductCard product={p} compact={columns === 6} priority={i < 4} />
           </Reveal>
         </li>
       ))}

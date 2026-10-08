@@ -34,6 +34,7 @@ export default function ProductGallery({ product }: { product: Product }) {
               tone={product.tone}
               placeholder={{ brand: product.brand, name: product.name }}
               variant={f.variant}
+              contain
               priority={i === 0}
               sizes="(min-width: 768px) 50vw, 92vw"
             />

@@ -15,6 +15,8 @@ type Props = {
   sizes: string;
   priority?: boolean;
   className?: string;
+  /** Photo produit entière sur fond blanc (object-fit: contain) au lieu de recadrée. */
+  contain?: boolean;
   /** Sans photo : visuel neutre #F5F5F5 avec la marque et le nom du produit (au lieu d'une silhouette). */
   placeholder?: { brand: string; name: string };
 };
@@ -58,6 +60,7 @@ export default function Media({
   sizes,
   priority,
   className,
+  contain,
   placeholder,
 }: Props) {
   if (!src && placeholder) {
@@ -70,9 +73,9 @@ export default function Media({
   }
   const shapes = Array.isArray(art) ? art : [art];
   return (
-    <div className={`${s.media} ${src ? s.skeleton : ""} ${className ?? ""}`} data-tone={tone}>
+    <div className={`${s.media} ${src ? (contain ? s.white : s.skeleton) : ""} ${className ?? ""}`} data-tone={tone}>
       {src ? (
-        <Image src={src} alt={alt} fill sizes={sizes} priority={priority} className={s.photo} />
+        <Image src={src} alt={alt} fill sizes={sizes} priority={priority} className={contain ? s.photoContain : s.photo} />
       ) : variant === "scene" ? (
         <>
           <Scene />

@@ -91,7 +91,7 @@ for (const r of lines) {
     ...(old && { oldPrice: Number(old) }),
     stock,
     ...(g("description") && { description: g("description") }),
-    ...(def && { image: def }),
+    ...(def && { image: `/products/${def}` }),
     ...(badge && { badge }),
   });
 }

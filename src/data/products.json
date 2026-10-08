@@ -11,7 +11,8 @@
     "format": "400 ml",
     "price": 14000,
     "stock": "disponible",
-    "description": "Gel nettoyant sans savon pour visage et corps, pour peaux très sèches à tendance atopique. Flacon pompe."
+    "description": "Gel nettoyant sans savon pour visage et corps, pour peaux très sèches à tendance atopique. Flacon pompe.",
+    "image": "/products/001-ducray-dexyane-gel-nettoyant-400ml.webp"
   },
   {
     "id": "002",
@@ -25,7 +26,8 @@
     "format": "200 ml",
     "price": 14000,
     "stock": "disponible",
-    "description": "Crème émolliente nutritive visage et corps, pour peaux sèches à très sèches. Tube."
+    "description": "Crème émolliente nutritive visage et corps, pour peaux sèches à très sèches. Tube.",
+    "image": "/products/002-ducray-ictyane-creme-200ml.webp"
   },
   {
     "id": "005",
@@ -39,7 +41,8 @@
     "format": "454 g",
     "price": 17000,
     "stock": "disponible",
-    "description": "Baume hydratant sans parfum visage et corps, aux 3 céramides essentiels et acide hyaluronique, pour peaux sèches à très sèches. Pot."
+    "description": "Baume hydratant sans parfum visage et corps, aux 3 céramides essentiels et acide hyaluronique, pour peaux sèches à très sèches. Pot.",
+    "image": "/products/005-cerave-baume-hydratant-454g.webp"
   },
   {
     "id": "006",
@@ -53,7 +56,8 @@
     "format": "400 ml",
     "price": 14500,
     "stock": "disponible",
-    "description": "Lait hydratant visage et corps pour peaux sensibles sèches. Flacon pompe."
+    "description": "Lait hydratant visage et corps pour peaux sensibles sèches. Flacon pompe.",
+    "image": "/products/006-avene-xeracalm-lait-400ml.webp"
   },
   {
     "id": "007",
@@ -65,7 +69,8 @@
     "format": "400 ml",
     "price": 9000,
     "stock": "disponible",
-    "description": "Lait corps à l'huile et au beurre de karité, pour peaux très sèches et ternes. Hypoallergénique. Flacon pompe."
+    "description": "Lait corps à l'huile et au beurre de karité, pour peaux très sèches et ternes. Hypoallergénique. Flacon pompe.",
+    "image": "/products/007-mixa-lait-corps-nutritif-400ml.webp"
   },
   {
     "id": "008",
@@ -77,7 +82,8 @@
     "format": "300 ml",
     "price": 20000,
     "stock": "disponible",
-    "description": "Gel moussant purifiant, pour peaux grasses à tendance acnéique. Format économique."
+    "description": "Gel moussant purifiant, pour peaux grasses à tendance acnéique. Format économique.",
+    "image": "/products/008-la-roche-posay-effaclar-gel-300ml.webp"
   },
   {
     "id": "009",
@@ -89,7 +95,8 @@
     "format": "200 ml",
     "price": 18000,
     "stock": "disponible",
-    "description": "Soin corps double action à la niacinamide et au LHA, technologie d'absorption en 1 seconde. Tube."
+    "description": "Soin corps double action à la niacinamide et au LHA, technologie d'absorption en 1 seconde. Tube.",
+    "image": "/products/009-la-roche-posay-mela-b3-200ml.webp"
   },
   {
     "id": "012",
@@ -103,7 +110,8 @@
     "format": "200 ml",
     "price": 10500,
     "stock": "disponible",
-    "description": "Gel nettoyant doux sans savon, pour peaux grasses et à imperfections. Visage et corps. Flacon pompe."
+    "description": "Gel nettoyant doux sans savon, pour peaux grasses et à imperfections. Visage et corps. Flacon pompe.",
+    "image": "/products/012-acm-sebionex-gel-200ml.webp"
   },
   {
     "id": "013",
@@ -117,7 +125,8 @@
     "format": "473 ml",
     "price": 17000,
     "stock": "disponible",
-    "description": "Lait hydratant sans parfum visage et corps, aux 3 céramides essentiels et acide hyaluronique, pour peaux sèches à très sèches. Flacon pompe."
+    "description": "Lait hydratant sans parfum visage et corps, aux 3 céramides essentiels et acide hyaluronique, pour peaux sèches à très sèches. Flacon pompe.",
+    "image": "/products/013-cerave-lait-hydratant-473ml.webp"
   },
   {
     "id": "014",
@@ -131,6 +140,7 @@
     "format": "500 ml",
     "price": 13000,
     "stock": "disponible",
-    "description": "Soin émollient pour peaux sèches ou à tendance atopique. Visage et corps. Flacon pompe."
+    "description": "Soin émollient pour peaux sèches ou à tendance atopique. Visage et corps. Flacon pompe.",
+    "image": "/products/014-acm-sensitelial-500ml.webp"
   }
 ]

@@ -80,6 +80,18 @@
 .photo {
   object-fit: cover;
 }
+.photoContain {
+  object-fit: contain;
+}
+.white {
+  background: #fff;
+}
+.photoContain {
+  object-fit: contain;
+}
+.white {
+  background: #fff;
+}
 
 .packshot {
   position: absolute;
