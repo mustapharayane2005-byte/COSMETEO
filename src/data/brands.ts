@@ -32,7 +32,16 @@ const entries: { name: string; types: BrandTypeId[]; featured?: boolean }[] = [
   { name: "Bioderma", types: ["french-beauty"] },
   // À classer par univers avec le client
   { name: "MAKARI", types: [] },
-  { name: "SKIN BY ZARON", types: [] },
+  { name: "Skin by Zaron", types: [] },
+  { name: "Topicrem", types: [] },
+  { name: "SVR", types: [] },
+  { name: "PureLuxe", types: [] },
+  { name: "Cavaillès", types: [] },
+  { name: "Evoluderm", types: [] },
+  { name: "Dove", types: [] },
+  { name: "Dr Teal's", types: [] },
+  { name: "Clinique", types: [] },
+  { name: "Essential", types: [] },
 ];
 
 const slugify = (s: string) =>

@@ -22,7 +22,7 @@ export default function AddToCartButton({ product, className }: Props) {
       type="button"
       className={className}
       data-product-id={product.slug}
-      disabled={!product.inStock}
+      disabled={!product.inStock || product.price == null}
       onClick={() => {
         addItem(product, { variant: product.variants?.options[0] });
         setAdded(true);

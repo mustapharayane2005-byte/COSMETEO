@@ -31,7 +31,7 @@ export default async function OgImage({ params }: { params: Promise<{ slug: stri
           <div style={{ display: "flex", fontSize: 84, lineHeight: 1.05, marginTop: 16, letterSpacing: -2 }}>
             {p?.name ?? "Soins, beauté et bien-être"}
           </div>
-          {p && <div style={{ display: "flex", fontSize: 40, marginTop: 28 }}>{formatPrice(p.price)}</div>}
+          {p && <div style={{ display: "flex", fontSize: 40, marginTop: 28 }}>{p.price != null ? formatPrice(p.price) : "Prix bientôt disponible"}</div>}
         </div>
       </div>
     ),

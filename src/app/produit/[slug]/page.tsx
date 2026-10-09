@@ -60,12 +60,14 @@ export default async function ProductPage({ params }: Props) {
     brand: { "@type": "Brand", name: p.brand },
     description: p.shortDescription ?? p.description,
     ...(p.images.length > 0 && { image: p.images }),
-    offers: {
-      "@type": "Offer",
-      priceCurrency: "XOF",
-      price: p.price,
-      availability: p.inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
-    },
+    ...(p.price != null && {
+      offers: {
+        "@type": "Offer",
+        priceCurrency: "XOF",
+        price: p.price,
+        availability: p.inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+      },
+    }),
   };
 
   return (

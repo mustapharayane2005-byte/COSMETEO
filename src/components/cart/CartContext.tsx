@@ -65,13 +65,14 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   }, [lines, ready]);
 
   const addItem = useCallback((p: Product, { qty = 1, variant, openDrawer = true }: AddOptions = {}) => {
+    if (p.price == null) return; // sans prix : jamais dans le panier
     const id = variant ? `${p.slug}::${variant}` : p.slug;
     setLines((prev) => {
       const found = prev.find((l) => l.id === id);
       if (found) return prev.map((l) => (l.id === id ? { ...l, qty: l.qty + qty } : l));
       return [
         ...prev,
-        { id, slug: p.slug, name: p.name, brand: p.brand, price: p.price, image: p.images[0], art: p.art, tone: p.tone, variant, qty },
+        { id, slug: p.slug, name: p.name, brand: p.brand, price: p.price ?? 0, image: p.images[0], art: p.art, tone: p.tone, variant, qty },
       ];
     });
     if (openDrawer) setOpen(true);

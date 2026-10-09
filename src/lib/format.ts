@@ -9,7 +9,7 @@ export function formatPrice(amount: number): string {
 }
 
 /** Pourcentage de remise arrondi, ou null s'il n'y a pas de promotion. */
-export function discountPercent(price: number, compareAtPrice?: number): number | null {
-  if (!compareAtPrice || compareAtPrice <= price) return null;
+export function discountPercent(price?: number, compareAtPrice?: number): number | null {
+  if (!price || !compareAtPrice || compareAtPrice <= price) return null;
   return Math.round((1 - price / compareAtPrice) * 100);
 }

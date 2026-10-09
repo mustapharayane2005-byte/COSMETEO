@@ -1,5 +1,247 @@
 [
   {
+    "id": "012",
+    "slug": "acm-sebionex-gel-nettoyant",
+    "name": "Sébionex Gel nettoyant",
+    "brand": "ACM",
+    "famille": "visage",
+    "aussiDans": [
+      "corps"
+    ],
+    "format": "200 ml",
+    "price": 10500,
+    "stock": "disponible",
+    "description": "Gel nettoyant doux sans savon, pour peaux grasses et à imperfections. Visage et corps. Flacon pompe.",
+    "image": "/products/012-acm-sebionex-gel-200ml.webp"
+  },
+  {
+    "id": "017",
+    "slug": "blondepil-homme-gel-desincrustant-anti-impuretes-visage-et-barbe",
+    "name": "Homme Gel désincrustant anti-impuretés visage et barbe",
+    "brand": "Blondépil",
+    "famille": "visage",
+    "aussiDans": [],
+    "stock": "disponible",
+    "description": "Gel désincrustant aux micro-grains et au charbon, pour le visage et la barbe. 95 % d'origine naturelle. Fabrication française."
+  },
+  {
+    "id": "016",
+    "slug": "byphasse-lotion-tonique-sensi-fresh-a-l-aloe-vera",
+    "name": "Lotion tonique Sensi-fresh à l'aloe vera",
+    "brand": "Byphasse",
+    "famille": "visage",
+    "aussiDans": [],
+    "format": "500 ml",
+    "stock": "disponible",
+    "description": "Lotion tonique à l'aloe vera pour peaux sensibles. Formule vegan."
+  },
+  {
+    "id": "026",
+    "slug": "clinique-for-men-face-wash-nettoyant-visage",
+    "name": "For Men Face Wash (nettoyant visage)",
+    "brand": "Clinique",
+    "famille": "visage",
+    "aussiDans": [],
+    "format": "200 ml",
+    "stock": "disponible",
+    "description": "Nettoyant visage pour homme."
+  },
+  {
+    "id": "019",
+    "slug": "garnier-skinactive-micellar-vitamin-c-cleansing-water",
+    "name": "SkinActive Micellar Vitamin C Cleansing Water",
+    "brand": "Garnier",
+    "famille": "visage",
+    "aussiDans": [],
+    "stock": "disponible",
+    "description": "Eau micellaire à la vitamine C pour le visage, les yeux et les lèvres, sans rinçage. Hypoallergénique."
+  },
+  {
+    "id": "025",
+    "slug": "garnier-skinactive-vitamin-c-serum-creme-2-en-1-spf-25",
+    "name": "SkinActive Vitamin C Sérum-crème 2 en 1 SPF 25",
+    "brand": "Garnier",
+    "famille": "visage",
+    "aussiDans": [],
+    "stock": "disponible",
+    "description": "Sérum-crème 2 en 1 à la vitamine C, avec hydratant quotidien SPF 25."
+  },
+  {
+    "id": "032",
+    "slug": "garnier-solution-micellaire-tout-en-1-peaux-sensibles",
+    "name": "Solution micellaire tout en 1 peaux sensibles",
+    "brand": "Garnier",
+    "famille": "visage",
+    "aussiDans": [],
+    "format": "400 ml",
+    "stock": "disponible",
+    "description": "Eau micellaire pour peaux sensibles, pour le visage, les yeux et les lèvres, sans rinçage. Hypoallergénique. Formule vegan."
+  },
+  {
+    "id": "008",
+    "slug": "la-roche-posay-effaclar-gel-moussant-purifiant",
+    "name": "Effaclar Gel moussant purifiant",
+    "brand": "La Roche-Posay",
+    "famille": "visage",
+    "aussiDans": [],
+    "format": "300 ml",
+    "price": 20000,
+    "stock": "disponible",
+    "description": "Gel moussant purifiant, pour peaux grasses à tendance acnéique. Format économique.",
+    "image": "/products/008-la-roche-posay-effaclar-gel-300ml.webp"
+  },
+  {
+    "id": "018",
+    "slug": "skin-by-zaron-micellar-cleansing-water-herbal-oil-infused",
+    "name": "Micellar Cleansing Water Herbal + Oil Infused",
+    "brand": "Skin by Zaron",
+    "famille": "visage",
+    "aussiDans": [],
+    "format": "400 ml",
+    "stock": "disponible",
+    "description": "Eau micellaire pour le visage, les yeux et les lèvres, infusée aux plantes et aux huiles. Pour tous types de peaux."
+  },
+  {
+    "id": "034",
+    "slug": "svr-sebiaclear-eau-micellaire",
+    "name": "Sebiaclear Eau micellaire",
+    "brand": "SVR",
+    "famille": "visage",
+    "aussiDans": [],
+    "format": "400 ml",
+    "stock": "disponible",
+    "description": "Eau micellaire nettoyante pour peaux grasses à imperfections."
+  },
+  {
+    "id": "035",
+    "slug": "svr-sebiaclear-gel-moussant",
+    "name": "Sebiaclear Gel moussant",
+    "brand": "SVR",
+    "famille": "visage",
+    "aussiDans": [],
+    "format": "200 ml",
+    "stock": "disponible",
+    "description": "Gel moussant nettoyant pour peaux grasses à imperfections."
+  },
+  {
+    "id": "014",
+    "slug": "acm-sensitelial-soin-emollient",
+    "name": "Sensitélial Soin émollient",
+    "brand": "ACM",
+    "famille": "corps",
+    "aussiDans": [
+      "visage"
+    ],
+    "format": "500 ml",
+    "price": 13000,
+    "stock": "disponible",
+    "description": "Soin émollient pour peaux sèches ou à tendance atopique. Visage et corps. Flacon pompe.",
+    "image": "/products/014-acm-sensitelial-500ml.webp"
+  },
+  {
+    "id": "006",
+    "slug": "avene-xeracalm-nutrition-lait-hydratant",
+    "name": "Xeracalm Nutrition Lait hydratant",
+    "brand": "Avène",
+    "famille": "corps",
+    "aussiDans": [
+      "visage"
+    ],
+    "format": "400 ml",
+    "price": 14500,
+    "stock": "disponible",
+    "description": "Lait hydratant visage et corps pour peaux sensibles sèches. Flacon pompe.",
+    "image": "/products/006-avene-xeracalm-lait-400ml.webp"
+  },
+  {
+    "id": "033",
+    "slug": "byphasse-lait-corporel-illuminateur-glow-sunshine",
+    "name": "Lait corporel illuminateur Glow Sunshine",
+    "brand": "Byphasse",
+    "famille": "corps",
+    "aussiDans": [],
+    "format": "400 ml",
+    "stock": "disponible",
+    "description": "Lait corporel illuminateur aux prébiotiques. 95 % d'ingrédients d'origine naturelle."
+  },
+  {
+    "id": "031",
+    "slug": "byphasse-lait-eclaircissant-whitening-effect",
+    "name": "Lait éclaircissant Whitening Effect",
+    "brand": "Byphasse",
+    "famille": "corps",
+    "aussiDans": [
+      "visage"
+    ],
+    "format": "500 ml",
+    "stock": "disponible",
+    "description": "Lait visage et corps à l'extrait de kiwi 1 % et aux AHA, à l'extrait d'avoine, glycérine 4 % et esters de jojoba. Tous types de peaux."
+  },
+  {
+    "id": "005",
+    "slug": "cerave-baume-hydratant",
+    "name": "Baume hydratant",
+    "brand": "CeraVe",
+    "famille": "corps",
+    "aussiDans": [
+      "visage"
+    ],
+    "format": "454 g",
+    "price": 17000,
+    "stock": "disponible",
+    "description": "Baume hydratant sans parfum visage et corps, aux 3 céramides essentiels et acide hyaluronique, pour peaux sèches à très sèches. Pot.",
+    "image": "/products/005-cerave-baume-hydratant-454g.webp"
+  },
+  {
+    "id": "013",
+    "slug": "cerave-moisturising-lotion-lait-hydratant",
+    "name": "Moisturising Lotion (Lait hydratant)",
+    "brand": "CeraVe",
+    "famille": "corps",
+    "aussiDans": [
+      "visage"
+    ],
+    "format": "473 ml",
+    "price": 17000,
+    "stock": "disponible",
+    "description": "Lait hydratant sans parfum visage et corps, aux 3 céramides essentiels et acide hyaluronique, pour peaux sèches à très sèches. Flacon pompe.",
+    "image": "/products/013-cerave-lait-hydratant-473ml.webp"
+  },
+  {
+    "id": "004",
+    "slug": "cerave-sa-gel-nettoyant-anti-rugosites",
+    "name": "SA Gel nettoyant anti-rugosités",
+    "brand": "CeraVe",
+    "famille": "corps",
+    "aussiDans": [],
+    "format": "236 ml",
+    "price": 13500,
+    "stock": "disponible",
+    "description": "Gel nettoyant sans parfum aux 3 céramides essentiels, acide salicylique et acide hyaluronique, pour peaux sèches et rugueuses.",
+    "image": "/products/004-cerave-sa-gel-nettoyant-236ml.webp"
+  },
+  {
+    "id": "029",
+    "slug": "dove-body-love-glowing-care-body-lotion",
+    "name": "Body Love Glowing Care Body Lotion",
+    "brand": "Dove",
+    "famille": "corps",
+    "aussiDans": [],
+    "stock": "disponible",
+    "description": "Lait corps à l'extrait de fleur de lotus et au lait de riz, pour tous types de peaux."
+  },
+  {
+    "id": "030",
+    "slug": "dr-teal-s-shea-sugar-scrub-rose",
+    "name": "Shea Sugar Scrub Rose",
+    "brand": "Dr Teal's",
+    "famille": "corps",
+    "aussiDans": [],
+    "format": "538 g",
+    "stock": "disponible",
+    "description": "Gommage corps au sucre, au beurre de karité, à l'huile d'onagre et à l'huile de macadamia, à l'huile essentielle de rose. Sans paraben ni phtalates."
+  },
+  {
     "id": "001",
     "slug": "ducray-dexyane-gel-nettoyant-surgras",
     "name": "Dexyane Gel nettoyant surgras",
@@ -30,60 +272,39 @@
     "image": "/products/002-ducray-ictyane-creme-200ml.webp"
   },
   {
-    "id": "005",
-    "slug": "cerave-baume-hydratant",
-    "name": "Baume hydratant",
-    "brand": "CeraVe",
+    "id": "011",
+    "slug": "eucerin-aquaphor-baume-reparateur",
+    "name": "Aquaphor Baume réparateur",
+    "brand": "Eucerin",
     "famille": "corps",
-    "aussiDans": [
-      "visage"
-    ],
-    "format": "454 g",
+    "aussiDans": [],
     "price": 17000,
     "stock": "disponible",
-    "description": "Baume hydratant sans parfum visage et corps, aux 3 céramides essentiels et acide hyaluronique, pour peaux sèches à très sèches. Pot.",
-    "image": "/products/005-cerave-baume-hydratant-454g.webp"
+    "description": "Baume pour peau sèche, craquelée ou irritée. Tube.",
+    "image": "/products/011-eucerin-aquaphor-baume.webp"
   },
   {
-    "id": "006",
-    "slug": "avene-xeracalm-nutrition-lait-hydratant",
-    "name": "Xeracalm Nutrition Lait hydratant",
-    "brand": "Avène",
-    "famille": "corps",
-    "aussiDans": [
-      "visage"
-    ],
-    "format": "400 ml",
-    "price": 14500,
-    "stock": "disponible",
-    "description": "Lait hydratant visage et corps pour peaux sensibles sèches. Flacon pompe.",
-    "image": "/products/006-avene-xeracalm-lait-400ml.webp"
-  },
-  {
-    "id": "007",
-    "slug": "mixa-lait-corps-nutritif-satinant",
-    "name": "Lait corps nutritif satinant",
-    "brand": "Mixa",
+    "id": "010",
+    "slug": "eucerin-sun-gel-creme-oil-control-spf-50-toucher-sec",
+    "name": "Sun Gel-crème Oil Control SPF 50+ Toucher sec",
+    "brand": "Eucerin",
     "famille": "corps",
     "aussiDans": [],
-    "format": "400 ml",
-    "price": 9000,
+    "price": 18300,
     "stock": "disponible",
-    "description": "Lait corps à l'huile et au beurre de karité, pour peaux très sèches et ternes. Hypoallergénique. Flacon pompe.",
-    "image": "/products/007-mixa-lait-corps-nutritif-400ml.webp"
+    "description": "Gel-crème solaire SPF 50+ à texture ultra-légère et toucher sec. Résistant à l'eau et à la sueur.",
+    "image": "/products/010-eucerin-sun-gel-creme-spf50.webp"
   },
   {
-    "id": "008",
-    "slug": "la-roche-posay-effaclar-gel-moussant-purifiant",
-    "name": "Effaclar Gel moussant purifiant",
-    "brand": "La Roche-Posay",
-    "famille": "visage",
+    "id": "021",
+    "slug": "evoluderm-lait-corps-protecteur-douceur-d-amande",
+    "name": "Lait corps protecteur Douceur d'amande",
+    "brand": "Evoluderm",
+    "famille": "corps",
     "aussiDans": [],
-    "format": "300 ml",
-    "price": 20000,
+    "format": "500 ml",
     "stock": "disponible",
-    "description": "Gel moussant purifiant, pour peaux grasses à tendance acnéique. Format économique.",
-    "image": "/products/008-la-roche-posay-effaclar-gel-300ml.webp"
+    "description": "Lait corps à l'amande douce pour tous types de peaux, 96 % d'origine naturelle. Fabriqué en France."
   },
   {
     "id": "009",
@@ -99,48 +320,185 @@
     "image": "/products/009-la-roche-posay-mela-b3-200ml.webp"
   },
   {
-    "id": "012",
-    "slug": "acm-sebionex-gel-nettoyant",
-    "name": "Sébionex Gel nettoyant",
-    "brand": "ACM",
-    "famille": "visage",
+    "id": "003",
+    "slug": "mixa-creme-niacinamide-correction-eclat",
+    "name": "Crème Niacinamide Correction Éclat",
+    "brand": "Mixa",
+    "famille": "corps",
+    "aussiDans": [],
+    "price": 13500,
+    "stock": "disponible",
+    "description": "Crème hydratante anti-taches au beurre de karité, niacinamide et vitamine C, pour peaux très sèches. Pot.",
+    "image": "/products/003-mixa-creme-niacinamide.webp"
+  },
+  {
+    "id": "007",
+    "slug": "mixa-lait-corps-nutritif-satinant",
+    "name": "Lait corps nutritif satinant",
+    "brand": "Mixa",
+    "famille": "corps",
+    "aussiDans": [],
+    "format": "400 ml",
+    "price": 9000,
+    "stock": "disponible",
+    "description": "Lait corps à l'huile et au beurre de karité, pour peaux très sèches et ternes. Hypoallergénique. Flacon pompe.",
+    "image": "/products/007-mixa-lait-corps-nutritif-400ml.webp"
+  },
+  {
+    "id": "038",
+    "slug": "pureluxe-lait-hydratant-concombre",
+    "name": "Lait hydratant concombre",
+    "brand": "PureLuxe",
+    "famille": "corps",
+    "aussiDans": [],
+    "format": "500 ml",
+    "stock": "disponible",
+    "description": "Lait corps hydratant au concombre."
+  },
+  {
+    "id": "024",
+    "slug": "skin-by-zaron-skin-glow-therapy-ultra-moisturizing-body-lotion",
+    "name": "Skin Glow Therapy Ultra Moisturizing Body Lotion",
+    "brand": "Skin by Zaron",
+    "famille": "corps",
+    "aussiDans": [],
+    "format": "500 ml",
+    "stock": "disponible",
+    "description": "Lait corps ultra-hydratant à la vitamine E, à l'alpha-arbutine et au collagène."
+  },
+  {
+    "id": "015",
+    "slug": "topicrem-da-protect-baume-emollient",
+    "name": "DA Protect Baume émollient",
+    "brand": "Topicrem",
+    "famille": "corps",
+    "aussiDans": [],
+    "format": "500 ml",
+    "stock": "disponible",
+    "description": "Baume émollient au karité, à l'huile de lin et à l'allantoïne, pour peaux sensibles, très sèches et atopiques. Flacon pompe."
+  },
+  {
+    "id": "041",
+    "slug": "topicrem-da-protect-baume-emollient-tube",
+    "name": "DA Protect Baume émollient (tube)",
+    "brand": "Topicrem",
+    "famille": "corps",
+    "aussiDans": [],
+    "format": "200 ml",
+    "stock": "disponible",
+    "description": "Baume émollient pour peaux sensibles, très sèches et atopiques. Tube."
+  },
+  {
+    "id": "040",
+    "slug": "byphasse-lait-de-douche-caresse-noix-de-coco",
+    "name": "Lait de douche Caresse noix de coco",
+    "brand": "Byphasse",
+    "famille": "hygiene",
     "aussiDans": [
       "corps"
     ],
-    "format": "200 ml",
-    "price": 10500,
+    "format": "1 L",
     "stock": "disponible",
-    "description": "Gel nettoyant doux sans savon, pour peaux grasses et à imperfections. Visage et corps. Flacon pompe.",
-    "image": "/products/012-acm-sebionex-gel-200ml.webp"
+    "description": "Lait de douche à la noix de coco."
   },
   {
-    "id": "013",
-    "slug": "cerave-moisturising-lotion-lait-hydratant",
-    "name": "Moisturising Lotion (Lait hydratant)",
-    "brand": "CeraVe",
-    "famille": "corps",
+    "id": "039",
+    "slug": "cavailles-huile-lavante-dermato-haute-tolerance",
+    "name": "Huile lavante Dermato Haute tolérance",
+    "brand": "Cavaillès",
+    "famille": "hygiene",
     "aussiDans": [
-      "visage"
+      "corps"
     ],
-    "format": "473 ml",
-    "price": 17000,
     "stock": "disponible",
-    "description": "Lait hydratant sans parfum visage et corps, aux 3 céramides essentiels et acide hyaluronique, pour peaux sèches à très sèches. Flacon pompe.",
-    "image": "/products/013-cerave-lait-hydratant-473ml.webp"
+    "description": "Huile lavante pour peaux sensibles, haute tolérance."
   },
   {
-    "id": "014",
-    "slug": "acm-sensitelial-soin-emollient",
-    "name": "Sensitélial Soin émollient",
-    "brand": "ACM",
-    "famille": "corps",
+    "id": "028",
+    "slug": "cavailles-savon-surgras-amande-lactee",
+    "name": "Savon surgras Amande lactée",
+    "brand": "Cavaillès",
+    "famille": "hygiene",
+    "aussiDans": [],
+    "stock": "disponible",
+    "description": "Savon surgras à l'amande lactée, pour peaux sèches. 97 % d'origine naturelle."
+  },
+  {
+    "id": "020",
+    "slug": "evoluderm-gel-douche-onctueux-douceur-d-amande",
+    "name": "Gel douche onctueux Douceur d'amande",
+    "brand": "Evoluderm",
+    "famille": "hygiene",
     "aussiDans": [
-      "visage"
+      "corps"
     ],
     "format": "500 ml",
-    "price": 13000,
     "stock": "disponible",
-    "description": "Soin émollient pour peaux sèches ou à tendance atopique. Visage et corps. Flacon pompe.",
-    "image": "/products/014-acm-sensitelial-500ml.webp"
+    "description": "Gel douche sans savon à l'amande douce, 96 % d'origine naturelle. Fabriqué en France."
+  },
+  {
+    "id": "037",
+    "slug": "pureluxe-gel-douche-gommant-aux-grains-d-abricot",
+    "name": "Gel douche gommant aux grains d'abricot",
+    "brand": "PureLuxe",
+    "famille": "hygiene",
+    "aussiDans": [
+      "corps"
+    ],
+    "format": "500 ml",
+    "stock": "disponible",
+    "description": "Gel douche gommant aux grains d'abricot."
+  },
+  {
+    "id": "036",
+    "slug": "pureluxe-savon-douche-hydratant-concombre",
+    "name": "Savon douche hydratant concombre",
+    "brand": "PureLuxe",
+    "famille": "hygiene",
+    "aussiDans": [
+      "corps"
+    ],
+    "format": "180 g",
+    "stock": "disponible",
+    "description": "Savon douche hydratant au concombre."
+  },
+  {
+    "id": "022",
+    "slug": "skin-by-zaron-papaya-brightening-body-wash",
+    "name": "Papaya Brightening Body Wash",
+    "brand": "Skin by Zaron",
+    "famille": "hygiene",
+    "aussiDans": [
+      "corps"
+    ],
+    "format": "650 ml",
+    "stock": "disponible",
+    "description": "Gel douche à la papaye, à l'acide salicylique, à l'aloe vera, à l'huile d'arbre à thé et à la niacinamide. Pour tous types de peaux."
+  },
+  {
+    "id": "023",
+    "slug": "skin-by-zaron-vitamin-c-body-wash",
+    "name": "Vitamin C Body Wash",
+    "brand": "Skin by Zaron",
+    "famille": "hygiene",
+    "aussiDans": [
+      "corps"
+    ],
+    "format": "650 ml",
+    "stock": "disponible",
+    "description": "Gel douche à la vitamine C, à l'acide glycolique et à l'huile de ricin. Pour tous types de peaux."
+  },
+  {
+    "id": "027",
+    "slug": "essential-dual-speed-facial-cleansing-set-coffret-6-pieces",
+    "name": "Dual-Speed Facial Cleansing Set (coffret 6 pièces)",
+    "brand": "Essential",
+    "famille": "beaute",
+    "aussiDans": [
+      "visage"
+    ],
+    "format": "Coffret 6 pièces",
+    "stock": "disponible",
+    "description": "Coffret de nettoyage du visage : appareil à double vitesse, 2 brosses nettoyantes, 1 brosse de massage en silicone, crème jour et nuit 50 ml, gommage visage 50 ml."
   }
 ]

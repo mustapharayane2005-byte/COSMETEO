@@ -56,12 +56,12 @@ const slugs = new Set();
 for (const r of lines) {
   const g = (k) => (r[col[k]] ?? "").trim();
   const id = g("id");
-  if (g("a_verifier")) { skipped.push(`${id} ${g("nom")} → ${g("a_verifier")}`); continue; }
   const problems = [];
-  const price = Number(g("prix_fcfa"));
-  if (!Number.isInteger(price) || price <= 0) problems.push(`prix invalide « ${g("prix_fcfa")} »`);
+  // Prix vide = « Prix bientôt disponible » (achat désactivé) ; sinon entier > 0.
+  const price = g("prix_fcfa") === "" ? undefined : Number(g("prix_fcfa"));
+  if (price !== undefined && (!Number.isInteger(price) || price <= 0)) problems.push(`prix invalide « ${g("prix_fcfa")} »`);
   const old = g("ancien_prix_fcfa");
-  if (old && (!Number.isInteger(Number(old)) || Number(old) <= price)) problems.push(`ancien prix incohérent « ${old} »`);
+  if (old && (price === undefined || !Number.isInteger(Number(old)) || Number(old) <= price)) problems.push(`ancien prix incohérent « ${old} »`);
   const fam = familleBySlug(g("categorie"));
   if (!fam) problems.push(`catégorie inconnue « ${g("categorie")} »`);
   const aussi = g("aussi_dans").split(/[,/]/).map((s) => s.trim()).filter(Boolean).map((l) => {
@@ -73,7 +73,6 @@ for (const r of lines) {
   if (!["disponible", "indisponible"].includes(stock)) problems.push(`stock inconnu « ${g("stock")} »`);
   if (!g("nom") || !g("marque")) problems.push("nom ou marque vide");
   const def = g("image_definitive");
-  if (/\(|\bou\b/i.test(g("image_provisoire"))) problems.push(`image_provisoire ambiguë « ${g("image_provisoire")} »`);
   let slug = slugify(`${g("marque")} ${g("nom")}`);
   if (slugs.has(slug)) problems.push(`slug en double « ${slug} »`);
   if (problems.length) { issues.push(`${id} ${g("nom")} : ${problems.join(" ; ")}`); continue; }
@@ -87,7 +86,7 @@ for (const r of lines) {
     famille: fam.slug,
     aussiDans: aussi.filter((s) => s !== fam.slug),
     ...(g("format") && { format: g("format") }),
-    price,
+    ...(price !== undefined && { price }),
     ...(old && { oldPrice: Number(old) }),
     stock,
     ...(g("description") && { description: g("description") }),
@@ -95,6 +94,11 @@ for (const r of lines) {
     ...(badge && { badge }),
   });
 }
+
+// Ordre d'affichage : catégorie (ordre de la boutique), marque, nom.
+const famOrder = new Map(familles.map((f, i) => [f.slug, i]));
+const cmp = (a, b) => a.localeCompare(b, "fr", { sensitivity: "base" });
+out.sort((a, b) => (famOrder.get(a.famille) - famOrder.get(b.famille)) || cmp(a.brand, b.brand) || cmp(a.name, b.name));
 
 writeFileSync(join(root, "src/data/products.json"), JSON.stringify(out, null, 2) + "\n");
 console.log(`${out.length} produit(s) écrit(s) dans src/data/products.json`);

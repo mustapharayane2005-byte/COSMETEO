@@ -18,6 +18,7 @@ export default function ProductPurchase({ product }: { product: Product }) {
   const router = useRouter();
   const [variant, setVariant] = useState(product.variants?.options[0]);
   const [qty, setQty] = useState(1);
+  const hasPrice = product.price != null;
   const discount = discountPercent(product.price, product.oldPrice);
 
   const add = () => addItem(product, { qty, variant });
@@ -31,7 +32,7 @@ export default function ProductPurchase({ product }: { product: Product }) {
       <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">{product.brand}</p>
       <h1 className="h2 mt-3 !text-left">{product.name}</h1>
       <p className="mt-5 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-        <span className="text-2xl">{formatPrice(product.price)}</span>
+        <span className="text-2xl">{product.price != null ? formatPrice(product.price) : "Prix bientôt disponible"}</span>
         {product.oldPrice && (
           <>
             <span className="sr-only">Ancien prix :</span>
@@ -86,10 +87,10 @@ export default function ProductPurchase({ product }: { product: Product }) {
       </div>
 
       <div className="mt-7 grid gap-3">
-        <button type="button" className={primary} disabled={!product.inStock} onClick={add}>
+        <button type="button" className={primary} disabled={!product.inStock || !hasPrice} onClick={add}>
           {product.inStock ? "AJOUTER AU PANIER" : "INDISPONIBLE"}
         </button>
-        <button type="button" className={outline} disabled={!product.inStock} onClick={buyNow}>
+        <button type="button" className={outline} disabled={!product.inStock || !hasPrice} onClick={buyNow}>
           ACHETER MAINTENANT
         </button>
       </div>
@@ -97,10 +98,10 @@ export default function ProductPurchase({ product }: { product: Product }) {
       {/* mobile : barre d'ajout fixe en bas, à portée de pouce */}
       <div className="fixed inset-x-0 bottom-0 z-40 flex items-center gap-4 border-t border-[var(--line)] bg-ivory/95 px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 backdrop-blur-md md:hidden">
         <p className="shrink-0 leading-tight">
-          <span className="block text-base">{formatPrice(product.price)}</span>
+          <span className="block text-base">{product.price != null ? formatPrice(product.price) : "Prix bientôt disponible"}</span>
           {product.oldPrice && <s className="text-xs text-[var(--muted)]">{formatPrice(product.oldPrice)}</s>}
         </p>
-        <button type="button" className={primary} disabled={!product.inStock} onClick={add}>
+        <button type="button" className={primary} disabled={!product.inStock || !hasPrice} onClick={add}>
           {product.inStock ? "AJOUTER AU PANIER" : "INDISPONIBLE"}
         </button>
       </div>

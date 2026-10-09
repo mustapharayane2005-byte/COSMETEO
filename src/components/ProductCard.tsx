@@ -50,13 +50,13 @@ export default function ProductCard({ product, compact, priority }: Props) {
       <div className={s.body}>
         <p className={s.brand}>{product.brand}</p>
         <h3 className={s.name}>
-          <Link href={href}>{product.name}</Link>
+          <Link href={href}>{product.name}{product.format ? ` · ${product.format}` : ""}</Link>
         </h3>
         {!compact && (product.shortDescription ?? product.description) && (
           <p className={s.desc}>{product.shortDescription ?? product.description}</p>
         )}
         <p className={s.prices}>
-          <span className={s.price}>{formatPrice(product.price)}</span>
+          <span className={s.price}>{product.price != null ? formatPrice(product.price) : "Prix bientôt disponible"}</span>
           {product.oldPrice && (
             <>
               <span className="sr-only">Ancien prix :</span>

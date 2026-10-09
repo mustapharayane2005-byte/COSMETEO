@@ -13,7 +13,7 @@ type Entry = {
   famille: string;
   aussiDans: string[];
   format?: string;
-  price: number;
+  price?: number;
   oldPrice?: number;
   stock: string;
   description?: string;

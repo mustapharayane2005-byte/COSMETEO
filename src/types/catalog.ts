@@ -53,8 +53,8 @@ export type Product = {
   besoins?: string[];
   /** Contenance ou format (ex. « 400 ml »). */
   format?: string;
-  /** Prix en FCFA (entier). */
-  price: number;
+  /** Prix en FCFA (entier). Absent → « Prix bientôt disponible », achat désactivé. */
+  price?: number;
   /** Ancien prix en FCFA : présent uniquement en cas de promotion. */
   oldPrice?: number;
   badge?: Badge;
