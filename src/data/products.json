@@ -105,7 +105,8 @@
     "aussiDans": [],
     "format": "400 ml",
     "stock": "disponible",
-    "description": "Eau micellaire pour le visage, les yeux et les lèvres, infusée aux plantes et aux huiles. Pour tous types de peaux."
+    "description": "Eau micellaire pour le visage, les yeux et les lèvres, infusée aux plantes et aux huiles. Pour tous types de peaux.",
+    "image": "/products/018-skin-by-zaron-micellar-cleansing-water-400ml.webp"
   },
   {
     "id": "034",
@@ -358,6 +359,18 @@
     "image": "/products/007-mixa-lait-corps-nutritif-400ml.webp"
   },
   {
+    "id": "042",
+    "slug": "nivea-body-lotion-nourishing-cocoa-lait-corps-nourrissant-cacao",
+    "name": "Body Lotion Nourishing Cocoa (Lait corps Nourrissant Cacao)",
+    "brand": "Nivea",
+    "famille": "corps",
+    "aussiDans": [],
+    "format": "400 ml",
+    "stock": "disponible",
+    "description": "Lait corps nourrissant au cacao, soin hydratant intense 48 h, pour peaux sèches.",
+    "image": "/products/042-nivea-lait-corps-nourrissant-cacao-400ml.webp"
+  },
+  {
     "id": "038",
     "slug": "pureluxe-lait-hydratant-concombre",
     "name": "Lait hydratant concombre",
@@ -454,7 +467,8 @@
     ],
     "format": "500 ml",
     "stock": "disponible",
-    "description": "Gel douche sans savon à l'amande douce, 96 % d'origine naturelle. Fabriqué en France."
+    "description": "Gel douche sans savon à l'amande douce, 96 % d'origine naturelle. Fabriqué en France.",
+    "image": "/products/020-evoluderm-gel-douche-onctueux-douceur-amande-500ml.webp"
   },
   {
     "id": "037",

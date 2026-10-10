@@ -38,6 +38,7 @@ const entries: { name: string; types: BrandTypeId[]; featured?: boolean }[] = [
   { name: "PureLuxe", types: [] },
   { name: "Cavaillès", types: [] },
   { name: "Evoluderm", types: [] },
+  { name: "Nivea", types: [] },
   { name: "Dove", types: [] },
   { name: "Dr Teal's", types: [] },
   { name: "Clinique", types: [] },
