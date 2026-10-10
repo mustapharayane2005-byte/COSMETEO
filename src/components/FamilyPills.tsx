@@ -1,9 +1,9 @@
 import CategoryBubble from "@/components/CategoryBubble";
-import { categories } from "@/data/categories";
+import { famillesAvecProduits } from "@/data/products";
 
-/** Ordre de la rangée (Homme et Solaire n'y figurent pas, mais restent dans la boutique). */
+/** Ordre de la rangée (Homme et Solaire n'y figurent pas, mais restent dans la boutique). Une famille sans produit n'est pas affichée. */
 const ordre = ["visage", "corps", "cheveux", "bebe-enfant", "hygiene", "sante-bien-etre", "beaute"];
-const pastilles = ordre.flatMap((slug) => categories.filter((c) => c.slug === slug));
+const pastilles = ordre.flatMap((slug) => famillesAvecProduits.filter((c) => c.slug === slug));
 
 /** Pastilles rondes des familles. Rail horizontal natif (overflow-x, aucun JS de drag) ; centré en desktop. */
 export default function FamilyPills() {

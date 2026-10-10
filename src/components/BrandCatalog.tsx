@@ -41,7 +41,7 @@ export default function BrandCatalog({ brands }: { brands: BrandTileData[] }) {
         aria-label="Univers"
         className={`-mx-5 flex snap-x snap-proximity gap-3 overflow-x-auto overscroll-x-contain px-5 pb-2 [scrollbar-width:none] [touch-action:pan-x_pan-y] lg:mx-0 lg:grid lg:grid-cols-5 lg:gap-[14px] lg:overflow-visible lg:px-0 lg:pb-0 [&::-webkit-scrollbar]:hidden ${fade}`}
       >
-        {brandTypes.map((t) => {
+        {brandTypes.filter((t) => brands.some((b) => b.types.includes(t.id))).map((t) => {
           const n = brands.filter((b) => b.types.includes(t.id)).length;
           const on = active?.id === t.id;
           return (

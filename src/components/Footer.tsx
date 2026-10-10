@@ -3,6 +3,7 @@ import Icon from "@/components/ui/Icon";
 import Reveal from "@/components/ui/Reveal";
 import Logo from "@/components/ui/Logo";
 import { footerColumns, socials } from "@/data/site";
+import { lienVisible } from "@/data/products";
 import PaymentMethods from "@/components/PaymentMethods";
 import s from "./Footer.module.css";
 
@@ -35,7 +36,7 @@ export default function Footer() {
           <nav key={col.title} aria-label={col.title} className={s.col}>
             <h3 className={s.colTitle}>{col.title}</h3>
             <ul>
-              {col.links.map((l) => (
+              {col.links.filter((l) => lienVisible(l.href)).map((l) => (
                 <li key={l.href + l.label}>
                   <Link href={l.href}>{l.label}</Link>
                 </li>

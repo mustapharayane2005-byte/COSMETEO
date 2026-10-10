@@ -4,16 +4,14 @@ import { notFound } from "next/navigation";
 import PageShell from "@/components/PageShell";
 import ProductGrid from "@/components/ProductGrid";
 import Button from "@/components/ui/Button";
-import { brands, getBrand } from "@/data/brands";
+import { getBrand } from "@/data/brands";
 import { getBrandType } from "@/data/brandTypes";
-import { allProducts } from "@/data/products";
+import { allProducts, brandsAvecProduits } from "@/data/products";
 
 type Props = { params: Promise<{ slug: string }> };
 
-export const dynamicParams = false;
-
 export function generateStaticParams() {
-  return brands.map((b) => ({ slug: b.slug }));
+  return brandsAvecProduits.map((b) => ({ slug: b.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -24,8 +22,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function BrandPage({ params }: Props) {
   const { slug } = await params;
   const brand = getBrand(slug);
-  if (!brand) notFound();
-  const products = allProducts.filter((p) => p.brand === brand.name);
+  const products = brand ? allProducts.filter((p) => p.brand === brand.name) : [];
+  // Marque inconnue ou sans aucun produit : pas de page vide.
+  if (!brand || products.length === 0) notFound();
   return (
     <PageShell>
       <section className="container pb-[clamp(56px,8vw,112px)]">

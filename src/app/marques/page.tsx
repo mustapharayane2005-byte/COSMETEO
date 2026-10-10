@@ -4,18 +4,19 @@ import BrandCatalog from "@/components/BrandCatalog";
 import PageShell from "@/components/PageShell";
 import Button from "@/components/ui/Button";
 import { brandsAZ } from "@/data/brands";
-import { allProducts } from "@/data/products";
+import { brandCount } from "@/data/products";
 
 export const metadata: Metadata = { title: "Nos marques" };
 
 export default function BrandsPage() {
   // Nombre de produits RÉELS par marque (src/data/products.ts), jamais inventé.
-  const tiles = brandsAZ.map((b) => ({
+  // Les marques sans aucun produit ne sont pas proposées.
+  const tiles = brandsAZ.filter((b) => brandCount(b.name) > 0).map((b) => ({
     slug: b.slug,
     name: b.name,
     types: b.types,
     featured: b.featured,
-    count: allProducts.filter((p) => p.brand === b.name).length,
+    count: brandCount(b.name),
   }));
   return (
     <PageShell>

@@ -1,16 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
 import { sections, univers } from "@/data/home";
+import { lienVisible } from "@/data/products";
 
 /** « Par univers » : 3 grandes cartes photo (images actuelles ou visuels de substitution). */
 export default function UniversCards() {
+  // Une carte dont la famille n'a aucun produit n'est pas affichée.
+  const cartes = univers.filter((u) => lienVisible(u.href));
+  if (cartes.length === 0) return null;
   return (
     <section className="container pt-11 lg:pt-14" aria-labelledby="univers-title">
       <h2 id="univers-title" className="h2 mb-8" data-reveal>
         {sections.univers.title}
       </h2>
-      <ul data-reveal-stagger className="grid grid-cols-2 gap-3 md:grid-cols-4 lg:gap-6">
-        {univers.map((u) => (
+      <ul
+        data-reveal-stagger
+        style={{ "--n": cartes.length } as React.CSSProperties}
+        className="grid grid-cols-2 gap-3 md:mx-auto md:max-w-[calc(var(--n)*25%)] md:grid-cols-[repeat(var(--n),minmax(0,1fr))] lg:gap-6"
+      >
+        {cartes.map((u) => (
           <li key={u.name}>
             <Link href={u.href} className="group relative block aspect-[4/5] overflow-hidden rounded-3xl">
               {u.image ? (

@@ -39,6 +39,8 @@ export type ProductVariants = {
  * Tous les champs éditoriaux sont facultatifs : un bloc sans contenu n'est pas affiché.
  */
 export type Product = {
+  /** Numéro du catalogue (colonne id de products.csv). */
+  id?: string;
   /** Identifiant unique et URL : /produit/<slug>. */
   slug: string;
   name: string;

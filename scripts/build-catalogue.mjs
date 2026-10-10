@@ -101,6 +101,7 @@ const cmp = (a, b) => a.localeCompare(b, "fr", { sensitivity: "base" });
 out.sort((a, b) => (famOrder.get(a.famille) - famOrder.get(b.famille)) || cmp(a.brand, b.brand) || cmp(a.name, b.name));
 
 writeFileSync(join(root, "src/data/products.json"), JSON.stringify(out, null, 2) + "\n");
+writeFileSync(join(root, "src/data/catalogue-meta.json"), JSON.stringify({ promos: out.filter((p) => p.oldPrice).length }, null, 2) + "\n");
 console.log(`${out.length} produit(s) écrit(s) dans src/data/products.json`);
 if (skipped.length) console.log(`\nIgnorés (a_verifier) :\n- ${skipped.join("\n- ")}`);
 if (issues.length) console.log(`\nLignes incohérentes (non importées) :\n- ${issues.join("\n- ")}`);

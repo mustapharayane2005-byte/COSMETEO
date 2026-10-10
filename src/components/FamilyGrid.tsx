@@ -1,12 +1,12 @@
 import Link from "next/link";
 import Media from "@/components/ui/Media";
-import { categories } from "@/data/categories";
+import { byFamille, famillesAvecProduits } from "@/data/products";
 
 /** Grandes familles en cartes avec image (2 colonnes sur mobile). */
 export default function FamilyGrid() {
   return (
     <ul data-reveal-stagger className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5 lg:grid-cols-4">
-      {categories.map((c) => (
+      {famillesAvecProduits.map((c) => (
         <li key={c.slug}>
           <Link
             href={c.href}
@@ -24,7 +24,7 @@ export default function FamilyGrid() {
             </div>
             <div className="p-4">
               <h2 className="font-display text-xl leading-tight text-[#1A1A1A]">{c.name}</h2>
-              <p className="mt-1 text-xs text-[var(--muted)]">{c.sousCategories.length} sous-catégories</p>
+              <p className="mt-1 text-xs text-[var(--muted)]">{byFamille(c.slug).length} produit{byFamille(c.slug).length > 1 ? "s" : ""}</p>
             </div>
           </Link>
         </li>

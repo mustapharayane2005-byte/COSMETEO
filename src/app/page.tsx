@@ -13,7 +13,7 @@ import UniversCards from "@/components/UniversCards";
 import GrandesMarques from "@/components/GrandesMarques";
 import RevealObserver from "@/components/ui/RevealObserver";
 import { sections } from "@/data/home";
-import { allProducts } from "@/data/products";
+import { bestSellers } from "@/data/products";
 
 export default function HomePage() {
   return (
@@ -30,7 +30,7 @@ export default function HomePage() {
           title={sections.bestSellers.title}
           subtitle={sections.bestSellers.subtitle}
           link={{ label: "Voir tout →", href: "/boutique" }}
-          products={allProducts}
+          products={bestSellers}
           layout="carousel"
         />
         <UniversCards />

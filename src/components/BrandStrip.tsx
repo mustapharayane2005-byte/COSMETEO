@@ -1,4 +1,4 @@
-import { brands } from "@/data/brands";
+import { brandsAvecProduits } from "@/data/products";
 import { sections } from "@/data/home";
 import s from "./BrandStrip.module.css";
 
@@ -16,7 +16,7 @@ export default function BrandStrip() {
           <div className={s.track}>
             {[false, true].map((copy) => (
               <ul key={String(copy)} className={`${s.list} ${copy ? s.copy : ""}`} aria-hidden={copy || undefined}>
-                {brands.map((b) => (
+                {brandsAvecProduits.map((b) => (
                   <li key={b.id} className={s.cell}>
                     <span className={`${s.wordmark} ${s[b.wordmark ?? "serif"]}`}>{b.name}</span>
                   </li>

@@ -1,4 +1,5 @@
 import type { NavItem } from "@/types/catalog";
+import meta from "./catalogue-meta.json";
 
 /** Montant d'achat à partir duquel la livraison est gratuite : à changer ici uniquement. */
 /** Accroche sous le logo (un seul endroit pour la changer). */
@@ -14,6 +15,7 @@ export const announcements = [
   "Conseils d'experts",
 ];
 
+/** Le lien « Promotions » n'apparaît que s'il y a au moins un produit en promotion (catalogue-meta.json, généré par npm run catalogue). */
 export const mainNav: NavItem[] = [
   { label: "Accueil", href: "/" },
   { label: "Boutique", href: "/boutique" },
@@ -22,7 +24,7 @@ export const mainNav: NavItem[] = [
   { label: "Conseils", href: "/conseils" },
   { label: "À propos", href: "/a-propos" },
   { label: "Contact", href: "/contact" },
-];
+].filter((i) => i.href !== "/promotions" || meta.promos > 0);
 
 export const trustItems = [
   { icon: "truck", title: "Livraison gratuite", text: seuilLivraisonTexte },

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import BesoinCard from "@/components/BesoinCard";
-import { besoins } from "@/data/besoins";
+import { besoinsAvecProduits } from "@/data/products";
 
 /** En-tête commun : label, titre, sous-titre et lien « Voir tous les besoins » (desktop, à droite). */
 export function BesoinsHeader({ h = "h2", showLink = true }: { h?: "h1" | "h2"; showLink?: boolean }) {
@@ -31,13 +31,15 @@ export function BesoinsHeader({ h = "h2", showLink = true }: { h?: "h1" | "h2"; 
 
 /** Bloc « Que recherchez-vous ? » : accueil et tête de /boutique. Rail natif à 2 rangées sur mobile. */
 export default function BesoinsBlock() {
+  // Aucun besoin relié à un produit du catalogue : on n'affiche pas de cartes qui mènent à des pages vides.
+  if (besoinsAvecProduits.length === 0) return null;
   return (
     <section className="py-11 lg:py-14" aria-labelledby="besoins-title">
       <div className="container max-w-[1200px]">
         <BesoinsHeader />
       </div>
       <ul data-reveal className="grid auto-cols-[62vw] grid-flow-col grid-rows-[repeat(2,auto)] gap-3 overflow-x-auto overflow-y-hidden overscroll-x-contain scroll-px-5 snap-x snap-proximity px-5 pb-2 [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [touch-action:pan-x_pan-y] md:auto-cols-[34vw] lg:mx-auto lg:w-[min(100%-64px,1200px)] lg:auto-cols-auto lg:grid-flow-row lg:grid-cols-4 lg:grid-rows-none lg:gap-4 lg:overflow-visible lg:px-0 lg:pb-0 [&::-webkit-scrollbar]:hidden">
-        {besoins.map((b, i) => (
+        {besoinsAvecProduits.map((b, i) => (
           <li key={b.slug} className={`snap-start ${i >= 8 ? "lg:hidden" : ""}`}>
             <BesoinCard besoin={b} index={i} />
           </li>
