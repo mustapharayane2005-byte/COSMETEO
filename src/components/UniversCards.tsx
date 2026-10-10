@@ -16,7 +16,7 @@ export default function UniversCards() {
       <ul
         data-reveal-stagger
         style={{ "--n": cartes.length } as React.CSSProperties}
-        className="grid grid-cols-2 gap-3 md:mx-auto md:max-w-[calc(var(--n)*25%)] md:grid-cols-[repeat(var(--n),minmax(0,1fr))] lg:gap-6"
+        className="grid grid-cols-2 gap-3 xl:mx-auto xl:max-w-[calc(var(--n)*25%)] xl:grid-cols-[repeat(var(--n),minmax(0,1fr))] lg:gap-6"
       >
         {cartes.map((u) => (
           <li key={u.name}>

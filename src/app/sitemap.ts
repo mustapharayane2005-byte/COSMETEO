@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { categories } from "@/data/categories";
 import { articles } from "@/data/conseils";
-import { allProducts, besoinsAvecProduits, brandsAvecProduits, byFamille, lienVisible } from "@/data/products";
+import { allProducts, besoinsAvecProduits, brandsAvecProduits, byFamille, familleVisible, lienVisible } from "@/data/products";
 
 const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://cosmeteo.vercel.app";
 
@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const urls = [
     ...pages,
     ...categories.flatMap((c) => [
-      ...(byFamille(c.slug).length > 0 ? [`/boutique/${c.slug}`] : []),
+      ...(familleVisible(c.slug) ? [`/boutique/${c.slug}`] : []),
       ...c.sousCategories
         .filter((s) => byFamille(c.slug).some((p) => p.sousCategorie === s.slug))
         .map((s) => `/boutique/${c.slug}/${s.slug}`),

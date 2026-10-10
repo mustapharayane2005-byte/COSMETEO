@@ -74,7 +74,10 @@ export const inFamille = (p: Product, famille: string) => p.famille === famille 
 export const byFamille = (famille: string) => products.filter((p) => inFamille(p, famille));
 
 /** Familles, besoins et marques qui ont au moins un produit : seuls ceux-là sont proposés dans la navigation. */
-export const famillesAvecProduits = categories.filter((c) => byFamille(c.slug).length > 0);
+/** Cheveux et Bébé & Enfant restent toujours en place (bannière, cercles, menu, filtres) : leurs produits arriveront plus tard. */
+const famillesToujoursVisibles = ["cheveux", "bebe-enfant"];
+export const familleVisible = (slug: string) => famillesToujoursVisibles.includes(slug) || byFamille(slug).length > 0;
+export const famillesAvecProduits = categories.filter((c) => familleVisible(c.slug));
 export const besoinsAvecProduits = besoins.filter((b) => products.some((p) => p.besoins?.includes(b.slug)));
 export const brandCount = (name: string) => products.filter((p) => p.brand === name).length;
 export const brandsAvecProduits = brands.filter((b) => brandCount(b.name) > 0);
@@ -84,7 +87,7 @@ export const lienVisible = (href: string) => {
   if (href === "/promotions") return promoProducts.length > 0;
   if (href === "/nouveautes") return newProducts.length > 0;
   const fam = href.match(/^\/boutique\/([^/]+)$/)?.[1];
-  return fam ? byFamille(fam).length > 0 : true;
+  return fam ? familleVisible(fam) : true;
 };
 
 /** « Vous aimerez aussi » : liste explicite, sinon produits de la même famille, sinon des autres familles où le produit figure. */

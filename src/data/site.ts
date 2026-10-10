@@ -51,6 +51,7 @@ export const footerColumns = [
       { label: "Corps", href: "/boutique/corps" },
       { label: "Homme", href: "/boutique/homme" },
       { label: "Cheveux", href: "/boutique/cheveux" },
+      { label: "Bébé & Enfant", href: "/boutique/bebe-enfant" },
       { label: "Promotions", href: "/promotions" },
       { label: "Nouveautés", href: "/nouveautes" },
     ],

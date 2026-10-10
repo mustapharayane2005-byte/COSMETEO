@@ -24,7 +24,9 @@ export default function FamilyGrid() {
             </div>
             <div className="p-4">
               <h2 className="font-display text-xl leading-tight text-[#1A1A1A]">{c.name}</h2>
-              <p className="mt-1 text-xs text-[var(--muted)]">{byFamille(c.slug).length} produit{byFamille(c.slug).length > 1 ? "s" : ""}</p>
+              <p className="mt-1 text-xs text-[var(--muted)]">{byFamille(c.slug).length > 0
+                  ? `${byFamille(c.slug).length} produit${byFamille(c.slug).length > 1 ? "s" : ""}`
+                  : "Bientôt disponible"}</p>
             </div>
           </Link>
         </li>
