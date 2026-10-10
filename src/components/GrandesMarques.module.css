@@ -42,6 +42,23 @@
   object-fit: contain;
   mix-blend-mode: multiply;
 }
+/* Zoom doux au survol (souris uniquement) : l'image grossit dans la carte (overflow: hidden + coins arrondis), le cadre et le nom de marque ne bougent pas. */
+@media (hover: hover) {
+  .img {
+    transition: transform 0.35s ease-out;
+  }
+  .card:hover .img {
+    transform: scale(1.07);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .img {
+    transition: none;
+  }
+  .card:hover .img {
+    transform: none;
+  }
+}
 .brand {
   font-family: var(--font-sans), system-ui, sans-serif;
   font-size: 10px;
