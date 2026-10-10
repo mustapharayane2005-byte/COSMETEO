@@ -26,10 +26,10 @@ export default function ProductGallery({ product }: { product: Product }) {
         className="flex snap-x snap-mandatory overflow-x-auto overscroll-x-contain [scrollbar-width:none] md:grid md:gap-4 md:overflow-visible [&::-webkit-scrollbar]:hidden"
       >
         {frames.map((f, i) => (
-          <div key={i} className="aspect-[4/5] w-full shrink-0 snap-center overflow-hidden rounded-3xl md:w-auto">
+          <div key={i} className="aspect-square w-full shrink-0 snap-center overflow-hidden rounded-3xl md:w-auto">
             <Media
               src={f.src}
-              alt={`${product.name} — vue ${i + 1}`}
+              alt={[product.brand, product.name, product.format].filter(Boolean).join(" ") + (frames.length > 1 ? ` — vue ${i + 1}` : "")}
               art={f.art}
               tone={product.tone}
               placeholder={{ brand: product.brand, name: product.name }}

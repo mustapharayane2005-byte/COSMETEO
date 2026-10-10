@@ -82,6 +82,8 @@
 }
 .photoContain {
   object-fit: contain;
+  /* marge intérieure ~8 % : produit entier, jamais collé au cadre */
+  padding: 8%;
 }
 .white {
   background: #fff;

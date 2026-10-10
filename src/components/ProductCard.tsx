@@ -25,7 +25,7 @@ export default function ProductCard({ product, compact, priority }: Props) {
         <Link href={href} tabIndex={-1} aria-hidden="true" className={s.mediaLink}>
           <Media
             src={product.images[0]}
-            alt={product.name}
+            alt={[product.brand, product.name, product.format].filter(Boolean).join(" ")}
             art={product.art}
             tone={product.tone}
             contain

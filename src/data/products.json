@@ -22,7 +22,8 @@
     "famille": "visage",
     "aussiDans": [],
     "stock": "disponible",
-    "description": "Gel désincrustant aux micro-grains et au charbon, pour le visage et la barbe. 95 % d'origine naturelle. Fabrication française."
+    "description": "Gel désincrustant aux micro-grains et au charbon, pour le visage et la barbe. 95 % d'origine naturelle. Fabrication française.",
+    "image": "/products/017-blondepil-homme-gel-desincrustant.webp"
   },
   {
     "id": "016",
@@ -33,7 +34,8 @@
     "aussiDans": [],
     "format": "500 ml",
     "stock": "disponible",
-    "description": "Lotion tonique à l'aloe vera pour peaux sensibles. Formule vegan."
+    "description": "Lotion tonique à l'aloe vera pour peaux sensibles. Formule vegan.",
+    "image": "/products/016-byphasse-lotion-tonique-sensi-fresh-500ml.webp"
   },
   {
     "id": "026",
@@ -44,7 +46,8 @@
     "aussiDans": [],
     "format": "200 ml",
     "stock": "disponible",
-    "description": "Nettoyant visage pour homme."
+    "description": "Nettoyant visage pour homme.",
+    "image": "/products/026-clinique-for-men-face-wash-200ml.webp"
   },
   {
     "id": "019",
@@ -54,7 +57,8 @@
     "famille": "visage",
     "aussiDans": [],
     "stock": "disponible",
-    "description": "Eau micellaire à la vitamine C pour le visage, les yeux et les lèvres, sans rinçage. Hypoallergénique."
+    "description": "Eau micellaire à la vitamine C pour le visage, les yeux et les lèvres, sans rinçage. Hypoallergénique.",
+    "image": "/products/019-garnier-skinactive-micellar-vitamin-c.webp"
   },
   {
     "id": "025",
@@ -64,7 +68,8 @@
     "famille": "visage",
     "aussiDans": [],
     "stock": "disponible",
-    "description": "Sérum-crème 2 en 1 à la vitamine C, avec hydratant quotidien SPF 25."
+    "description": "Sérum-crème 2 en 1 à la vitamine C, avec hydratant quotidien SPF 25.",
+    "image": "/products/025-garnier-skinactive-vitamin-c-serum-creme-spf25.webp"
   },
   {
     "id": "032",
@@ -75,7 +80,8 @@
     "aussiDans": [],
     "format": "400 ml",
     "stock": "disponible",
-    "description": "Eau micellaire pour peaux sensibles, pour le visage, les yeux et les lèvres, sans rinçage. Hypoallergénique. Formule vegan."
+    "description": "Eau micellaire pour peaux sensibles, pour le visage, les yeux et les lèvres, sans rinçage. Hypoallergénique. Formule vegan.",
+    "image": "/products/032-garnier-solution-micellaire-tout-en-1-400ml.webp"
   },
   {
     "id": "008",
@@ -110,7 +116,8 @@
     "aussiDans": [],
     "format": "400 ml",
     "stock": "disponible",
-    "description": "Eau micellaire nettoyante pour peaux grasses à imperfections."
+    "description": "Eau micellaire nettoyante pour peaux grasses à imperfections.",
+    "image": "/products/034-svr-sebiaclear-eau-micellaire-400ml.webp"
   },
   {
     "id": "035",
@@ -121,7 +128,8 @@
     "aussiDans": [],
     "format": "200 ml",
     "stock": "disponible",
-    "description": "Gel moussant nettoyant pour peaux grasses à imperfections."
+    "description": "Gel moussant nettoyant pour peaux grasses à imperfections.",
+    "image": "/products/035-svr-sebiaclear-gel-moussant-200ml.webp"
   },
   {
     "id": "014",
@@ -162,7 +170,8 @@
     "aussiDans": [],
     "format": "400 ml",
     "stock": "disponible",
-    "description": "Lait corporel illuminateur aux prébiotiques. 95 % d'ingrédients d'origine naturelle."
+    "description": "Lait corporel illuminateur aux prébiotiques. 95 % d'ingrédients d'origine naturelle.",
+    "image": "/products/033-byphasse-lait-corporel-glow-sunshine-400ml.webp"
   },
   {
     "id": "031",
@@ -175,7 +184,8 @@
     ],
     "format": "500 ml",
     "stock": "disponible",
-    "description": "Lait visage et corps à l'extrait de kiwi 1 % et aux AHA, à l'extrait d'avoine, glycérine 4 % et esters de jojoba. Tous types de peaux."
+    "description": "Lait visage et corps à l'extrait de kiwi 1 % et aux AHA, à l'extrait d'avoine, glycérine 4 % et esters de jojoba. Tous types de peaux.",
+    "image": "/products/031-byphasse-lait-eclaircissant-whitening-effect-500ml.webp"
   },
   {
     "id": "005",
@@ -228,7 +238,8 @@
     "famille": "corps",
     "aussiDans": [],
     "stock": "disponible",
-    "description": "Lait corps à l'extrait de fleur de lotus et au lait de riz, pour tous types de peaux."
+    "description": "Lait corps à l'extrait de fleur de lotus et au lait de riz, pour tous types de peaux.",
+    "image": "/products/029-dove-body-love-glowing-care-body-lotion.webp"
   },
   {
     "id": "030",
@@ -239,7 +250,8 @@
     "aussiDans": [],
     "format": "538 g",
     "stock": "disponible",
-    "description": "Gommage corps au sucre, au beurre de karité, à l'huile d'onagre et à l'huile de macadamia, à l'huile essentielle de rose. Sans paraben ni phtalates."
+    "description": "Gommage corps au sucre, au beurre de karité, à l'huile d'onagre et à l'huile de macadamia, à l'huile essentielle de rose. Sans paraben ni phtalates.",
+    "image": "/products/030-dr-teals-shea-sugar-scrub-rose-538g.webp"
   },
   {
     "id": "001",
@@ -304,7 +316,8 @@
     "aussiDans": [],
     "format": "500 ml",
     "stock": "disponible",
-    "description": "Lait corps à l'amande douce pour tous types de peaux, 96 % d'origine naturelle. Fabriqué en France."
+    "description": "Lait corps à l'amande douce pour tous types de peaux, 96 % d'origine naturelle. Fabriqué en France.",
+    "image": "/products/021-evoluderm-lait-corps-douceur-amande-500ml.webp"
   },
   {
     "id": "009",
@@ -353,7 +366,8 @@
     "aussiDans": [],
     "format": "500 ml",
     "stock": "disponible",
-    "description": "Lait corps hydratant au concombre."
+    "description": "Lait corps hydratant au concombre.",
+    "image": "/products/038-pureluxe-lait-hydratant-concombre-500ml.webp"
   },
   {
     "id": "024",
@@ -364,7 +378,8 @@
     "aussiDans": [],
     "format": "500 ml",
     "stock": "disponible",
-    "description": "Lait corps ultra-hydratant à la vitamine E, à l'alpha-arbutine et au collagène."
+    "description": "Lait corps ultra-hydratant à la vitamine E, à l'alpha-arbutine et au collagène.",
+    "image": "/products/024-skin-by-zaron-skin-glow-therapy-body-lotion-500ml.webp"
   },
   {
     "id": "015",
@@ -375,7 +390,8 @@
     "aussiDans": [],
     "format": "500 ml",
     "stock": "disponible",
-    "description": "Baume émollient au karité, à l'huile de lin et à l'allantoïne, pour peaux sensibles, très sèches et atopiques. Flacon pompe."
+    "description": "Baume émollient au karité, à l'huile de lin et à l'allantoïne, pour peaux sensibles, très sèches et atopiques. Flacon pompe.",
+    "image": "/products/015-topicrem-da-protect-baume-emollient-500ml.webp"
   },
   {
     "id": "041",
@@ -386,7 +402,8 @@
     "aussiDans": [],
     "format": "200 ml",
     "stock": "disponible",
-    "description": "Baume émollient pour peaux sensibles, très sèches et atopiques. Tube."
+    "description": "Baume émollient pour peaux sensibles, très sèches et atopiques. Tube.",
+    "image": "/products/041-topicrem-da-protect-baume-emollient-tube-200ml.webp"
   },
   {
     "id": "040",
@@ -399,7 +416,8 @@
     ],
     "format": "1 L",
     "stock": "disponible",
-    "description": "Lait de douche à la noix de coco."
+    "description": "Lait de douche à la noix de coco.",
+    "image": "/products/040-byphasse-lait-de-douche-noix-de-coco-1l.webp"
   },
   {
     "id": "039",
@@ -411,7 +429,8 @@
       "corps"
     ],
     "stock": "disponible",
-    "description": "Huile lavante pour peaux sensibles, haute tolérance."
+    "description": "Huile lavante pour peaux sensibles, haute tolérance.",
+    "image": "/products/039-cavailles-huile-lavante-dermato-haute-tolerance.webp"
   },
   {
     "id": "028",
@@ -421,7 +440,8 @@
     "famille": "hygiene",
     "aussiDans": [],
     "stock": "disponible",
-    "description": "Savon surgras à l'amande lactée, pour peaux sèches. 97 % d'origine naturelle."
+    "description": "Savon surgras à l'amande lactée, pour peaux sèches. 97 % d'origine naturelle.",
+    "image": "/products/028-cavailles-savon-surgras-amande-lactee.webp"
   },
   {
     "id": "020",
@@ -447,7 +467,8 @@
     ],
     "format": "500 ml",
     "stock": "disponible",
-    "description": "Gel douche gommant aux grains d'abricot."
+    "description": "Gel douche gommant aux grains d'abricot.",
+    "image": "/products/037-pureluxe-gel-douche-gommant-abricot-500ml.webp"
   },
   {
     "id": "036",
@@ -460,7 +481,8 @@
     ],
     "format": "180 g",
     "stock": "disponible",
-    "description": "Savon douche hydratant au concombre."
+    "description": "Savon douche hydratant au concombre.",
+    "image": "/products/036-pureluxe-savon-douche-concombre-180g.webp"
   },
   {
     "id": "022",
@@ -473,7 +495,8 @@
     ],
     "format": "650 ml",
     "stock": "disponible",
-    "description": "Gel douche à la papaye, à l'acide salicylique, à l'aloe vera, à l'huile d'arbre à thé et à la niacinamide. Pour tous types de peaux."
+    "description": "Gel douche à la papaye, à l'acide salicylique, à l'aloe vera, à l'huile d'arbre à thé et à la niacinamide. Pour tous types de peaux.",
+    "image": "/products/022-skin-by-zaron-papaya-brightening-body-wash-650ml.webp"
   },
   {
     "id": "023",
@@ -486,7 +509,8 @@
     ],
     "format": "650 ml",
     "stock": "disponible",
-    "description": "Gel douche à la vitamine C, à l'acide glycolique et à l'huile de ricin. Pour tous types de peaux."
+    "description": "Gel douche à la vitamine C, à l'acide glycolique et à l'huile de ricin. Pour tous types de peaux.",
+    "image": "/products/023-skin-by-zaron-vitamin-c-body-wash-650ml.webp"
   },
   {
     "id": "027",
@@ -499,6 +523,7 @@
     ],
     "format": "Coffret 6 pièces",
     "stock": "disponible",
-    "description": "Coffret de nettoyage du visage : appareil à double vitesse, 2 brosses nettoyantes, 1 brosse de massage en silicone, crème jour et nuit 50 ml, gommage visage 50 ml."
+    "description": "Coffret de nettoyage du visage : appareil à double vitesse, 2 brosses nettoyantes, 1 brosse de massage en silicone, crème jour et nuit 50 ml, gommage visage 50 ml.",
+    "image": "/products/027-essential-dual-speed-facial-cleansing-set-coffret-6-pieces.webp"
   }
 ]
