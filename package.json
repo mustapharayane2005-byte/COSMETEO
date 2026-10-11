@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "catalogue": "node scripts/build-catalogue.mjs"
+    "catalogue": "node scripts/build-catalogue.mjs",
+    "check:grids": "node scripts/check-grids.mjs"
   },
   "dependencies": {
     "framer-motion": "^13.4.6",
