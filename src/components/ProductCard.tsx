@@ -48,7 +48,7 @@ export default function ProductCard({ product, compact, priority }: Props) {
       </div>
 
       <div className={s.body}>
-        <p className={s.brand}>{product.brand}</p>
+        {product.brand && <p className={s.brand}>{product.brand}</p>}
         <h3 className={s.name}>
           <Link href={href}>{product.name}{product.format ? ` · ${product.format}` : ""}</Link>
         </h3>

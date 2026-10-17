@@ -84,9 +84,11 @@ export default function CartDrawer() {
                         <Media src={l.image} alt={`${l.brand} ${l.name}`} contain art={l.art} tone={l.tone} placeholder={{ brand: l.brand, name: l.name }} sizes="96px" />
                       </div>
                       <div className="flex min-w-0 flex-1 flex-col">
-                        <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-brown/60">
-                          {l.brand}
-                        </p>
+                        {l.brand && (
+                          <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-brown/60">
+                            {l.brand}
+                          </p>
+                        )}
                         <p className="mt-0.5 text-sm font-medium leading-snug">{l.name}</p>
                         {l.variant && <p className="text-xs text-brown/60">{l.variant}</p>}
                         <p className="mt-1 text-sm font-bold text-[#1A1A1A]">{formatPrice(l.price)}</p>
@@ -120,7 +122,6 @@ export default function CartDrawer() {
                     <span>Sous-total</span>
                     <span className="text-lg font-bold text-[#1A1A1A]">{formatPrice(subtotal)}</span>
                   </p>
-                  <p className="mt-1 text-xs text-brown/60">Livraison calculée à l&apos;étape suivante.</p>
                   {/* Checkout : à brancher (Mobile Money / carte). */}
                   <button
                     type="button"

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useCart } from "@/components/cart/CartContext";
@@ -29,7 +30,7 @@ export default function ProductPurchase({ product }: { product: Product }) {
 
   return (
     <div>
-      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">{product.brand}</p>
+      {product.brand && <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">{product.brand}</p>}
       <h1 className="h2 mt-3 !text-left">{product.name}</h1>
       <p className="mt-5 flex flex-wrap items-baseline gap-x-3 gap-y-1">
         <span className="text-2xl">{product.price != null ? formatPrice(product.price) : "Prix bientôt disponible"}</span>
@@ -93,6 +94,12 @@ export default function ProductPurchase({ product }: { product: Product }) {
         <button type="button" className={outline} disabled={!product.inStock || !hasPrice} onClick={buyNow}>
           ACHETER MAINTENANT
         </button>
+        <p className="text-center text-sm text-[var(--muted)]">
+          Livraison et retours :{" "}
+          <Link href="/livraison" className="underline underline-offset-4 hover:text-green">
+            voir les conditions
+          </Link>
+        </p>
       </div>
 
       {/* mobile : barre d'ajout fixe en bas, à portée de pouce */}

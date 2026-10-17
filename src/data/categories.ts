@@ -143,6 +143,17 @@ export const categories: Category[] = [
     ],
   },
   {
+    id: "accessoires",
+    slug: "accessoires",
+    name: "Accessoires",
+    href: "/boutique/accessoires",
+    art: "compact",
+    tone: "cream",
+    fond: "#E8E4F0",
+    trait: "#4B3F72",
+    sousCategories: [],
+  },
+  {
     id: "solaire",
     slug: "solaire",
     name: "Solaire",

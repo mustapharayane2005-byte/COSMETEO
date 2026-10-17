@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const p = getProduct(slug);
   if (!p) return { title: "Produit introuvable" };
-  const title = `${p.name} — ${p.brand}`;
+  const title = p.brand ? `${p.name} — ${p.brand}` : p.name;
   return {
     title,
     description: p.shortDescription,
@@ -49,7 +49,7 @@ export default async function ProductPage({ params }: Props) {
     {
       title: "Livraison & retours",
       // À valider avec les vraies conditions (délais, frais, politique de retour).
-      body: "Livraison au Bénin et à l'international. Délais et frais calculés à l'étape suivante. Retrouvez nos conditions de retour sur la page Retours.",
+      body: "Nous livrons partout au Bénin. Retrouvez toutes les conditions sur la page Livraison & retours.",
     },
   ].filter((s): s is { title: string; body: string; open?: boolean } => Boolean(s.body));
 
@@ -57,7 +57,7 @@ export default async function ProductPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "Product",
     name: p.name,
-    brand: { "@type": "Brand", name: p.brand },
+    ...(p.brand && { brand: { "@type": "Brand", name: p.brand } }),
     description: p.shortDescription ?? p.description,
     ...(p.images.length > 0 && { image: p.images }),
     ...(p.price != null && {

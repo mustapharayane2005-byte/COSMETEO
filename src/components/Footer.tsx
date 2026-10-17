@@ -16,7 +16,7 @@ export default function Footer() {
             <Logo tone="light" />
           </Reveal>
           <p className={s.about}>
-            Soins, beauté et bien-être, sélectionnés avec exigence. Livraison au Bénin et à l&apos;international.
+            Soins, beauté et bien-être, sélectionnés avec exigence. Livraison partout au Bénin.
           </p>
           <div className={s.brandRow}>
             <PaymentMethods className={s.payDesktop} />

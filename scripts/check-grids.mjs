@@ -10,7 +10,7 @@ const base = process.env.BASE_URL ?? "http://localhost:3000";
 const products = JSON.parse(readFileSync(join(root, "src/data/products.json"), "utf8"));
 const slugify = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 const cats = [...readFileSync(join(root, "src/data/categories.ts"), "utf8").matchAll(/slug: "([^"]+)",\r?\n\s+name: "[^"]+",\r?\n\s+href: "\/boutique\//g)].map((m) => m[1]);
-const brands = [...new Set(products.map((p) => p.brand))];
+const brands = [...new Set(products.filter((p) => p.brand).map((p) => p.brand))];
 
 const pages = [
   ...cats.map((c) => ({ url: `/boutique/${c}`, expected: products.filter((p) => p.famille === c || p.aussiDans.includes(c)).length })),

@@ -1,14 +1,18 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 import Icon from "@/components/ui/Icon";
 import Media from "@/components/ui/Media";
 import { formatPrice } from "@/lib/format";
 import { useCart } from "./CartContext";
 
+const CHECKOUT_PRET = false;
+
 /** Contenu de la page /panier (même état que le tiroir). */
 export default function CartView() {
   const { lines, subtotal, count, setQty } = useCart();
+  const [accepte, setAccepte] = useState(false);
 
   if (lines.length === 0) {
     return (
@@ -34,7 +38,7 @@ export default function CartView() {
               <Media src={l.image} alt={`${l.brand} ${l.name}`} contain art={l.art} tone={l.tone} placeholder={{ brand: l.brand, name: l.name }} sizes="128px" />
             </div>
             <div className="flex min-w-0 flex-1 flex-col">
-              <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">{l.brand}</p>
+              {l.brand && <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">{l.brand}</p>}
               <p className="mt-1 font-medium">{l.name}</p>
               {l.variant && <p className="text-sm text-[var(--muted)]">{l.variant}</p>}
               <p className="mt-1 text-sm">{formatPrice(l.price)}</p>
@@ -67,15 +71,34 @@ export default function CartView() {
           <span>{count} article{count > 1 ? "s" : ""}</span>
           <span>{formatPrice(subtotal)}</span>
         </p>
-        <p className="mt-2 text-sm text-[var(--muted)]">Livraison calculée à l&apos;étape suivante.</p>
         <p className="mt-5 flex items-baseline justify-between border-t border-[var(--line)] pt-5">
           <span className="text-[1.125rem] font-semibold uppercase tracking-[0.02em]">Sous-total</span>
           <span className="text-xl">{formatPrice(subtotal)}</span>
         </p>
-        {/* Checkout : à brancher (Mobile Money / carte). */}
+        <p className="mt-3 text-sm">
+          <Link href="/livraison" className="underline underline-offset-4 hover:text-green">
+            Livraison &amp; retours
+          </Link>
+        </p>
+        <label className="mt-5 flex items-start gap-3 text-sm leading-snug">
+          <input
+            type="checkbox"
+            required
+            checked={accepte}
+            onChange={(e) => setAccepte(e.target.checked)}
+            className="mt-0.5 size-5 shrink-0 accent-[#173C32]"
+          />
+          <span>
+            J&apos;ai lu et j&apos;accepte les{" "}
+            <Link href="/livraison" className="underline underline-offset-4 hover:text-green">
+              conditions de livraison et de retour
+            </Link>
+          </span>
+        </label>
+        {/* Checkout : à brancher (Mobile Money / carte). Passer CHECKOUT_PRET à true une fois la validation reliée au paiement. */}
         <button
           type="button"
-          disabled
+          disabled={!accepte || !CHECKOUT_PRET}
           className="mt-6 min-h-12 w-full cursor-not-allowed rounded-full border border-green text-[1.125rem] font-semibold uppercase tracking-[0.02em] text-green opacity-60"
         >
           Commander — Bientôt disponible

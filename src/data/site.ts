@@ -1,15 +1,11 @@
 import type { NavItem } from "@/types/catalog";
 import meta from "./catalogue-meta.json";
 
-/** Montant d'achat à partir duquel la livraison est gratuite : à changer ici uniquement. */
 /** Accroche sous le logo (un seul endroit pour la changer). */
 export const accrocheLogo = "BEAUTÉ & SOINS";
 
-export const seuilLivraisonGratuite = 25000;
-export const seuilLivraisonTexte = `À partir de ${seuilLivraisonGratuite.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} FCFA d'achat`;
-
 export const announcements = [
-  "Livraison au Bénin & à l'international",
+  "Livraison partout au Bénin",
   "Paiement par Mobile Money et carte bancaire",
   "Produits authentiques",
   "Conseils d'experts",
@@ -27,7 +23,7 @@ export const mainNav: NavItem[] = [
 ].filter((i) => i.href !== "/promotions" || meta.promos > 0);
 
 export const trustItems = [
-  { icon: "truck", title: "Livraison gratuite", text: seuilLivraisonTexte },
+  { icon: "truck", title: "Livraison partout au Bénin", text: "Voir les conditions de livraison et de retour." },
   { icon: "badge", title: "Produits authentiques", text: "Une sélection vérifiée." },
   { icon: "chat", title: "Conseils & service client", text: "Une équipe à votre écoute." },
   { icon: "lock", title: "Paiement sécurisé", text: "Mobile Money et carte bancaire." },
@@ -52,6 +48,7 @@ export const footerColumns = [
       { label: "Homme", href: "/boutique/homme" },
       { label: "Cheveux", href: "/boutique/cheveux" },
       { label: "Bébé & Enfant", href: "/boutique/bebe-enfant" },
+      { label: "Accessoires", href: "/boutique/accessoires" },
       { label: "Promotions", href: "/promotions" },
       { label: "Nouveautés", href: "/nouveautes" },
     ],
@@ -59,9 +56,7 @@ export const footerColumns = [
   {
     title: "Service client",
     links: [
-      { label: "Livraison", href: "/livraison" },
-      { label: "Paiement", href: "/paiement" },
-      { label: "Retours", href: "/retours" },
+      { label: "Livraison & retours", href: "/livraison" },
       { label: "Nous contacter", href: "/contact" },
     ],
   },

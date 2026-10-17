@@ -35,7 +35,8 @@ const products: Product[] = (raw as Entry[]).map((e) => ({
   id: e.id,
   slug: e.slug,
   name: e.name,
-  brand: e.brand,
+  // Règle : un accessoire n'a jamais de marque (ni carte, ni fiche, ni liste de marques).
+  brand: e.famille === "accessoires" ? "" : e.brand,
   famille: e.famille,
   aussiDans: e.aussiDans,
   format: e.format,
@@ -79,7 +80,7 @@ const famillesToujoursVisibles = ["cheveux", "bebe-enfant"];
 export const familleVisible = (slug: string) => famillesToujoursVisibles.includes(slug) || byFamille(slug).length > 0;
 export const famillesAvecProduits = categories.filter((c) => familleVisible(c.slug));
 export const besoinsAvecProduits = besoins.filter((b) => products.some((p) => p.besoins?.includes(b.slug)));
-export const brandCount = (name: string) => products.filter((p) => p.brand === name).length;
+export const brandCount = (name: string) => products.filter((p) => p.famille !== "accessoires" && p.brand === name).length;
 export const brandsAvecProduits = brands.filter((b) => brandCount(b.name) > 0);
 
 /** Lien de menu ou de pied de page : masqué tant que la page qu'il ouvre n'a aucun produit. */

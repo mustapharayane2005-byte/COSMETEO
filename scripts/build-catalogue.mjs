@@ -71,9 +71,12 @@ for (const r of lines) {
   }).filter(Boolean);
   const stock = norm(g("stock"));
   if (!["disponible", "indisponible"].includes(stock)) problems.push(`stock inconnu « ${g("stock")} »`);
-  if (!g("nom") || !g("marque")) problems.push("nom ou marque vide");
+  // Accessoires : jamais de marque (même si la colonne est remplie par erreur).
+  const accessoire = fam?.slug === "accessoires";
+  const marque = accessoire ? "" : g("marque");
+  if (!g("nom") || (!marque && !accessoire)) problems.push("nom ou marque vide");
   const def = g("image_definitive");
-  let slug = slugify(`${g("marque")} ${g("nom")}`);
+  let slug = slugify(`${marque} ${g("nom")}`);
   if (slugs.has(slug)) problems.push(`slug en double « ${slug} »`);
   if (problems.length) { issues.push(`${id} ${g("nom")} : ${problems.join(" ; ")}`); continue; }
   slugs.add(slug);
@@ -82,7 +85,7 @@ for (const r of lines) {
     id,
     slug,
     name: g("nom"),
-    brand: g("marque"),
+    brand: marque,
     famille: fam.slug,
     aussiDans: aussi.filter((s) => s !== fam.slug),
     ...(g("format") && { format: g("format") }),

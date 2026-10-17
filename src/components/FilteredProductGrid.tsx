@@ -10,7 +10,7 @@ const chip =
 /** Liste produits avec filtre par marque (pastilles affichées s'il y a au moins 2 marques). */
 export default function FilteredProductGrid({ products, columns = 4 }: { products: Product[]; columns?: 4 | 6 }) {
   const [brand, setBrand] = useState<string | null>(null);
-  const brands = [...new Set(products.map((p) => p.brand))].sort((a, b) => a.localeCompare(b, "fr", { sensitivity: "base" }));
+  const brands = [...new Set(products.filter((p) => p.famille !== "accessoires" && p.brand).map((p) => p.brand))].sort((a, b) => a.localeCompare(b, "fr", { sensitivity: "base" }));
   const shown = brand ? products.filter((p) => p.brand === brand) : products;
 
   return (

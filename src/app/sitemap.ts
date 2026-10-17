@@ -7,7 +7,7 @@ const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://cosmeteo.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Pages sans produit (familles, sous-catégories, besoins, marques, promotions…) : absentes du plan du site.
-  const pages = ["", "/boutique", "/nouveautes", "/promotions", "/marques", "/conseils", "/a-propos", "/contact"].filter(lienVisible);
+  const pages = ["", "/boutique", "/nouveautes", "/promotions", "/marques", "/conseils", "/a-propos", "/contact", "/livraison"].filter(lienVisible);
   const urls = [
     ...pages,
     ...categories.flatMap((c) => [

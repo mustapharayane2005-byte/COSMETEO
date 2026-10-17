@@ -42,7 +42,6 @@ const entries: { name: string; types: BrandTypeId[]; featured?: boolean }[] = [
   { name: "Dove", types: [] },
   { name: "Dr Teal's", types: [] },
   { name: "Clinique", types: [] },
-  { name: "Essential", types: [] },
 ];
 
 const slugify = (s: string) =>

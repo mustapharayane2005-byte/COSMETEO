@@ -9,7 +9,7 @@ export const metadata: Metadata = { title: "À propos" };
 const values = [
   { icon: "badge", title: "Produits authentiques", text: "Une sélection vérifiée, choisie avec exigence." },
   { icon: "chat", title: "Conseil", text: "Une équipe à votre écoute pour vous guider dans vos choix." },
-  { icon: "truck", title: "Livraison", text: "Au Bénin et à l'international, avec soin." },
+  { icon: "truck", title: "Livraison", text: "Partout au Bénin, avec soin." },
 ] as const;
 
 export default function AboutPage() {

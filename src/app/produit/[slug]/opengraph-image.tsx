@@ -27,7 +27,7 @@ export default async function OgImage({ params }: { params: Promise<{ slug: stri
       >
         <div style={{ display: "flex", fontSize: 30, letterSpacing: 8, fontWeight: 600, color: "#173B25" }}>COSMÉTÉO</div>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ display: "flex", fontSize: 28, letterSpacing: 4, textTransform: "uppercase" }}>{p?.brand ?? "Beauté & bien-être"}</div>
+          <div style={{ display: "flex", fontSize: 28, letterSpacing: 4, textTransform: "uppercase" }}>{p ? p.brand : "Beauté & bien-être"}</div>
           <div style={{ display: "flex", fontSize: 84, lineHeight: 1.05, marginTop: 16, letterSpacing: -2 }}>
             {p?.name ?? "Soins, beauté et bien-être"}
           </div>

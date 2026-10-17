@@ -32,7 +32,7 @@ const surimiCss = surimiFiles
 
 const title = "COSMÉTÉO – Boutique beauté et soins au Bénin";
 const description =
-  "Soins et produits de beauté authentiques pour toutes les peaux. Livraison au Bénin et à l'international.";
+  "Soins et produits de beauté authentiques pour toutes les peaux. Livraison partout au Bénin.";
 const ogImage = { url: "/og-cosmeteo.png?v=4", width: 1200, height: 630, alt: "COSMÉTÉO" };
 
 export const metadata: Metadata = {
