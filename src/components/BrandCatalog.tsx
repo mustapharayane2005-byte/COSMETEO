@@ -53,7 +53,7 @@ export default function BrandCatalog({ brands }: { brands: BrandTileData[] }) {
                 aria-pressed={on}
                 style={{ backgroundColor: t.bg }}
                 className={`relative flex h-[150px] flex-col justify-between rounded-2xl border p-5 transition-colors motion-reduce:transition-none ${
-                  on ? "border-[#173C32] shadow-[inset_0_0_0_2px_#C9A24B]" : "border-transparent hover:border-[#C9A24B]"
+                  on ? "border-[#173C32] shadow-[inset_0_0_0_1px_#173C32]" : "border-[#EDE8E0] hover:border-[#173C32]"
                 }`}
               >
                 <span className="grid size-10 place-items-center rounded-full bg-white">
@@ -64,10 +64,10 @@ export default function BrandCatalog({ brands }: { brands: BrandTileData[] }) {
                     ✓
                   </span>
                 )}
-                <span className="font-display text-[1.35rem] font-normal leading-tight text-white">{t.label}</span>
-                <span className="flex items-end justify-between font-ui text-[13px] leading-none text-white/85">
+                <span className="font-display text-[1.35rem] font-normal leading-tight text-[#1A1A1A]">{t.label}</span>
+                <span className="flex items-end justify-between font-ui text-[13px] leading-none text-[#252525]/70">
                   {n > 0 ? `${n} marque${n > 1 ? "s" : ""}` : "Bientôt"}
-                  <span aria-hidden="true" className="text-base text-white">
+                  <span aria-hidden="true" className="text-base text-[#1A1A1A]">
                     →
                   </span>
                 </span>
@@ -118,9 +118,7 @@ export default function BrandCatalog({ brands }: { brands: BrandTileData[] }) {
         {list.length === 0 ? (
           <div className="grid place-items-center gap-5 rounded-2xl border border-[#EDE8E0] bg-[#FAF8F4] px-6 py-16 text-center">
             <p className="font-display text-2xl text-[#1A1A1A]">
-              {(active?.id === "nutribeauty" || active?.id === "k-beauty") && !needle
-                ? `Les marques ${active.label} arrivent bientôt.`
-                : "Aucune marque ne correspond."}
+              {active?.id === "nutribeauty" && !needle ? "Les marques Nutribeauty arrivent bientôt." : "Aucune marque ne correspond."}
             </p>
             <Link href="/marques" replace scroll={false} onClick={() => setQ("")} className={btn}>
               Voir toutes les marques
