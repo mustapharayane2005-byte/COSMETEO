@@ -18,42 +18,50 @@ const sections: { title: string; body: React.ReactNode }[] = [
   },
   {
     title: "À la réception du colis",
-    body: <p>Vérifiez l&apos;état du colis devant le livreur et signalez tout problème tout de suite.</p>,
-  },
-  {
-    title: "Colis endommagé, erroné ou manquant",
     body: (
       <p>
-        À signaler dans un délai de 24 à 48 heures après la réception, avec une photo, par WhatsApp ou par téléphone.
+        Vérifiez l&apos;état du colis devant le livreur, avant de le déballer, et signalez tout problème tout de suite.
       </p>
     ),
   },
   {
+    title: "Colis endommagé, erroné ou manquant",
+    body: <p>À signaler dans un délai de 24 heures après la réception, avec une photo, par e-mail.</p>,
+  },
+  {
     title: "Retours acceptés",
-    body: <p>Produit erroné ou abîmé à la livraison, signalé dans le même délai de 24 à 48 heures après la réception.</p>,
+    body: (
+      <p>
+        Produit erroné ou abîmé à la livraison, signalé par e-mail dans un délai de 24 heures après la réception, avant
+        déballage du colis.
+      </p>
+    ),
   },
   {
     title: "Retours refusés",
-    body: <p>Produit ouvert, utilisé ou descellé, pour des raisons d&apos;hygiène et de santé.</p>,
+    body: (
+      <ul className="grid list-disc gap-1 pl-5">
+        <li>Dès que le colis a été déballé, aucun retour ni remboursement n&apos;est accepté.</li>
+        <li>Produit ouvert, utilisé ou descellé, pour des raisons d&apos;hygiène et de santé.</li>
+        <li>Signalement fait après le délai de 24 heures.</li>
+      </ul>
+    ),
   },
   {
-    title: "Remboursement ou échange",
+    title: "Remboursement",
     body: (
-      <ul className="grid gap-1">
-        <li>Délai : {aCompleter}</li>
-        <li>Mode de remboursement : {aCompleter}</li>
-      </ul>
+      <p>
+        Le remboursement se fait entre 3 et 7 jours, par le même moyen de paiement que celui utilisé pour la commande
+        (Mobile Money MTN, carte bancaire, etc.).
+      </p>
     ),
   },
   {
     title: "Contact",
     body: (
       <>
-        <p>Par WhatsApp ou par téléphone.</p>
-        <ul className="mt-2 grid gap-1">
-          <li>Numéro : {aCompleter}</li>
-          <li>Horaires : {aCompleter}</li>
-        </ul>
+        <p>Par e-mail uniquement.</p>
+        <p className="mt-2">Adresse : {aCompleter}</p>
       </>
     ),
   },
