@@ -16,7 +16,9 @@
 }
 
 :root {
-  --ivory: #ffffff; /* fond de page */
+  --fond-page: #f4f1eb; /* fond de toutes les pages (blanc cassé chaud) : à changer ici uniquement */
+  --fond-section: #ece7dd; /* bandes alternées de l'accueil */
+  --ivory: #ffffff; /* blanc pur : en-tête, boutons (texte), cartes */
   --surface: #ffffff; /* cartes produit */
   --green: #173c32;
   --green-deep: #173c32;
@@ -93,7 +95,7 @@ html {
 }
 body {
   margin: 0;
-  background: var(--ivory);
+  background: var(--fond-page);
   color: var(--ink);
   font-family: var(--font-sans);
   font-size: 1rem;

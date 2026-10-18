@@ -33,7 +33,9 @@ export default function HomePage() {
           products={bestSellers}
           layout="carousel"
         />
-        <UniversCards />
+        <div className="bg-[var(--fond-section)] pb-11 lg:pb-14">
+          <UniversCards />
+        </div>
         <BrandStrip />
         <ConseilsHighlights />
         <TrustSection />

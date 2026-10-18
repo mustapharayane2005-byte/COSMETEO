@@ -34,7 +34,7 @@ export default function BesoinsBlock() {
   // Aucun besoin relié à un produit du catalogue : on n'affiche pas de cartes qui mènent à des pages vides.
   if (besoinsAvecProduits.length === 0) return null;
   return (
-    <section className="py-11 lg:py-14" aria-labelledby="besoins-title">
+    <section className="bg-[var(--fond-section)] py-11 lg:py-14" aria-labelledby="besoins-title">
       <div className="container max-w-[1200px]">
         <BesoinsHeader />
       </div>
