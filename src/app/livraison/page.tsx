@@ -4,8 +4,6 @@ import Button from "@/components/ui/Button";
 
 export const metadata: Metadata = { title: "Livraison & retours" };
 
-const aCompleter = "[À COMPLÉTER]";
-
 const sections: { title: string; body: React.ReactNode }[] = [
   {
     title: "Paiement",
@@ -58,12 +56,7 @@ const sections: { title: string; body: React.ReactNode }[] = [
   },
   {
     title: "Contact",
-    body: (
-      <>
-        <p>Par e-mail uniquement.</p>
-        <p className="mt-2">Adresse : {aCompleter}</p>
-      </>
-    ),
+    body: <p>Par e-mail uniquement.</p>,
   },
 ];
 
