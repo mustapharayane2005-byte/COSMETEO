@@ -15,6 +15,7 @@ const entries: { name: string; types: BrandTypeId[]; featured?: boolean }[] = [
   { name: "Medicube", types: ["k-beauty"] },
   { name: "SKIN1004", types: ["k-beauty"] },
   { name: "Some By Mi", types: ["k-beauty"] },
+  { name: "Missha", types: ["k-beauty"] },
   // US-beauty
   { name: "CeraVe", types: ["us-beauty"], featured: true },
   // French beauty
@@ -42,6 +43,17 @@ const entries: { name: string; types: BrandTypeId[]; featured?: boolean }[] = [
   { name: "Dove", types: [] },
   { name: "Dr Teal's", types: [] },
   { name: "Clinique", types: [] },
+  { name: "Ushuaïa", types: [] },
+  { name: "Uriage", types: [] },
+  { name: "Olay", types: [] },
+  { name: "Medix 5.5", types: [] },
+  { name: "Sivoderm Expert", types: [] },
+  { name: "DCP", types: [] },
+  { name: "Château Rouge", types: [] },
+  { name: "Aroma-Zone", types: [] },
+  { name: "Kojie San", types: [] },
+  { name: "Yves Rocher", types: [] },
+  { name: "Estée Lauder", types: [] },
 ];
 
 const slugify = (s: string) =>
