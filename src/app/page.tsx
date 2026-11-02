@@ -7,7 +7,6 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import NewsletterSection from "@/components/NewsletterSection";
 import ProductSection from "@/components/ProductSection";
-import PromoBanners from "@/components/PromoBanners";
 import TrustSection from "@/components/TrustSection";
 import UniversCards from "@/components/UniversCards";
 import GrandesMarques from "@/components/GrandesMarques";
@@ -24,7 +23,6 @@ export default function HomePage() {
         <FamilyPills />
         <GrandesMarques />
         <BesoinsBlock />
-        <PromoBanners />
         <ProductSection
           id="best-title"
           title={sections.bestSellers.title}

@@ -48,7 +48,7 @@ export default function Footer() {
       </div>
 
       <div className={`container ${s.legal}`}>
-        <p>© {new Date().getFullYear()} COSMÉTÉO. Tous droits réservés.</p>
+        <p>© {new Date().getFullYear()} COSMETEO. Tous droits réservés.</p>
         <ul>
           <li>
             <Link href="/mentions-legales">Mentions légales</Link>

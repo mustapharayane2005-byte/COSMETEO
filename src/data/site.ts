@@ -31,7 +31,7 @@ export const trustItems = [
 
 export const footerColumns = [
   {
-    title: "COSMÉTÉO",
+    title: "COSMETEO",
     links: [
       { label: "À propos", href: "/a-propos" },
       { label: "Contact", href: "/contact" },

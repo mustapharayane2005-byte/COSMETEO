@@ -15,16 +15,6 @@ export const hero = {
   imageAlt: "Famille réunie sur un lit blanc",
 };
 
-export const banners = [
-  {
-    id: "octobre-rose",
-    title: "Octobre rose : Prévenir c'est prendre soin de soi",
-    cta: "DÉCOUVRIR",
-    href: "/conseils",
-    image: "/images/banniere-octobre-rose-desktop.webp",
-  },
-] as const;
-
 /** Grandes cartes « Par univers ». `art` / `tone` : visuel de secours si l'image manque. */
 export type Univers = {
   name: string;

@@ -15,7 +15,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { page } = await params;
   const title = placeholderPages[page.join("/")];
-  return { title: title ?? "COSMÉTÉO" };
+  return { title: title ?? "COSMETEO" };
 }
 
 /** Pages « Bientôt disponible » : compte, favoris, infos légales, routines… */

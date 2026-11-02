@@ -19,7 +19,7 @@ export default function ChatBubble() {
             className="w-[260px] rounded-2xl bg-ivory p-4 text-sm shadow-xl ring-1 ring-brown/10"
             role="status"
           >
-            <p className="font-display text-lg text-[#1A1A1A]">Conseillère COSMÉTÉO</p>
+            <p className="font-display text-lg text-[#1A1A1A]">Conseillère COSMETEO</p>
             <p className="mt-1 text-brown/70">Notre assistant beauté arrive bientôt.</p>
           </m.div>
         )}
@@ -28,7 +28,7 @@ export default function ChatBubble() {
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
-        aria-label="Assistant COSMÉTÉO (bientôt disponible)"
+        aria-label="Assistant COSMETEO (bientôt disponible)"
         className="grid size-14 place-items-center rounded-full bg-green text-ivory shadow-lg transition hover:scale-105"
       >
         <Icon name={open ? "close" : "chat"} size={24} />

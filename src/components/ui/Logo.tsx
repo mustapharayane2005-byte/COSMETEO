@@ -33,7 +33,7 @@ export default function Logo({
     <>
       <Image
         src={tone === "light" ? "/images/logo/cosmeteo-mono-blanc.svg" : "/images/logo/cosmeteo-mono-noir.svg"}
-        alt="cosméteo"
+        alt="cosmeteo"
         width={W}
         height={H}
         unoptimized
@@ -44,7 +44,7 @@ export default function Logo({
     </>
   );
   return link ? (
-    <Link href="/" className={classes} aria-label="cosméteo – accueil">
+    <Link href="/" className={classes} aria-label="cosmeteo – accueil">
       {content}
     </Link>
   ) : (

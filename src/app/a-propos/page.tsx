@@ -5,7 +5,7 @@ import Icon from "@/components/ui/Icon";
 
 export const metadata: Metadata = { title: "À propos" };
 
-/** Texte fictif : à remplacer par l'histoire réelle de COSMÉTÉO. */
+/** Texte fictif : à remplacer par l'histoire réelle de COSMETEO. */
 const values = [
   { icon: "badge", title: "Produits authentiques", text: "Une sélection vérifiée, choisie avec exigence." },
   { icon: "chat", title: "Conseil", text: "Une équipe à votre écoute pour vous guider dans vos choix." },
@@ -23,7 +23,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-2xl">
           <h2 className="font-display text-2xl text-[#1A1A1A]">Notre histoire</h2>
           <p className="mt-3 leading-relaxed">
-            COSMÉTÉO est née d&apos;une envie simple : rendre accessibles des soins et des produits de beauté de
+            COSMETEO est née d&apos;une envie simple : rendre accessibles des soins et des produits de beauté de
             confiance, pensés pour toutes les peaux. Notre boutique en ligne réunit des soins du visage, du corps
             et des cheveux, ainsi que des produits de bien-être, sélectionnés un à un.
           </p>

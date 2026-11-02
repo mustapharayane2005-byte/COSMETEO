@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: p.shortDescription,
     alternates: { canonical: `/produit/${p.slug}` },
     // l'image de partage est générée par ./opengraph-image.tsx
-    openGraph: { title, description: p.shortDescription, type: "website", locale: "fr_FR", siteName: "COSMÉTÉO" },
+    openGraph: { title, description: p.shortDescription, type: "website", locale: "fr_FR", siteName: "COSMETEO" },
     twitter: { card: "summary_large_image", title, description: p.shortDescription ?? p.description },
   };
 }
