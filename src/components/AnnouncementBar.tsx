@@ -33,6 +33,12 @@ export default function AnnouncementBar() {
       </div>
       <ul className={s.links}>
         <li>
+          <Link href="/a-propos">À propos</Link>
+        </li>
+        <li>
+          <Link href="/contact">Contact</Link>
+        </li>
+        <li>
           <Link href="/contact">Aide</Link>
         </li>
         <li>

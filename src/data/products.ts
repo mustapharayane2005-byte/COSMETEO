@@ -52,6 +52,7 @@ const products: Product[] = (raw as Entry[]).map((e) => ({
 
 export const allProducts: Product[] = products;
 export const promoProducts = products.filter((p) => p.oldPrice);
+const norm = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
 const avecPhoto = (p: Product) => p.images.length > 0;
 
 /**
@@ -68,6 +69,10 @@ export const newProducts = (() => {
  * Le catalogue ne contient aucune donnée de ventes : la sélection suit l'ordre du catalogue.
  */
 export const bestSellers = [...products.filter(avecPhoto)].sort((a, b) => Number(b.price != null) - Number(a.price != null)).slice(0, 12);
+/** Badges « Top vente » et « Cadeau » (champ badge du catalogue) : alimentent les rubriques du menu, masquées tant qu'aucun produit ne les porte. */
+const badgeIs = (p: Product, mot: string) => norm(p.badge?.label ?? "").includes(mot);
+export const topVentesProducts = products.filter((p) => badgeIs(p, "top vente"));
+export const cadeauxProducts = products.filter((p) => badgeIs(p, "cadeau"));
 export const getProduct = (slug: string) => products.find((p) => p.slug === slug);
 
 /** Un produit est dans sa famille principale ET dans celles de `aussiDans`. */
@@ -87,6 +92,8 @@ export const brandsAvecProduits = brands.filter((b) => brandCount(b.name) > 0);
 export const lienVisible = (href: string) => {
   if (href === "/promotions") return promoProducts.length > 0;
   if (href === "/nouveautes") return newProducts.length > 0;
+  if (href === "/top-ventes") return topVentesProducts.length > 0;
+  if (href === "/cadeaux") return cadeauxProducts.length > 0;
   const fam = href.match(/^\/boutique\/([^/]+)$/)?.[1];
   return fam ? familleVisible(fam) : true;
 };
@@ -99,8 +106,6 @@ export const getRelated = (p: Product) =>
         .map((f) => byFamille(f).filter((x) => x.slug !== p.slug))
         .find((liste) => liste.length > 0) ?? []
   ).slice(0, 8);
-
-const norm = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
 
 /** Recherche simple : nom, marque, catégorie(s). Tous les mots doivent être trouvés. */
 export const searchProducts = (query: string): Product[] => {

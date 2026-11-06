@@ -64,7 +64,7 @@
   }
   /* la zone de défilement s'arrête avant les liens fixes */
   .viewport {
-    margin-right: 200px;
+    margin-right: 360px;
   }
   .links {
     position: absolute;

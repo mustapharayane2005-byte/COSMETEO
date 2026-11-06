@@ -1,6 +1,3 @@
-import type { NavItem } from "@/types/catalog";
-import meta from "./catalogue-meta.json";
-
 /** Accroche sous le logo (un seul endroit pour la changer). */
 export const accrocheLogo = "BEAUTÉ & SOINS";
 
@@ -10,17 +7,6 @@ export const announcements = [
   "Produits authentiques",
   "Conseils d'experts",
 ];
-
-/** Le lien « Promotions » n'apparaît que s'il y a au moins un produit en promotion (catalogue-meta.json, généré par npm run catalogue). */
-export const mainNav: NavItem[] = [
-  { label: "Accueil", href: "/" },
-  { label: "Boutique", href: "/boutique" },
-  { label: "Promotions", href: "/promotions" },
-  { label: "Nos marques", href: "/marques" },
-  { label: "Conseils", href: "/conseils" },
-  { label: "À propos", href: "/a-propos" },
-  { label: "Contact", href: "/contact" },
-].filter((i) => i.href !== "/promotions" || meta.promos > 0);
 
 export const trustItems = [
   { icon: "truck", title: "Livraison partout au Bénin", text: "Voir les conditions de livraison et de retour." },
