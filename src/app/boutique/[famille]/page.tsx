@@ -2,9 +2,13 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import CatalogPage from "@/components/CatalogPage";
 import { categories, getFamille } from "@/data/categories";
-import { allProducts, byFamille } from "@/data/products";
+import { byFamille } from "@/data/products";
+import { filtrerProduits, lireFiltres } from "@/data/taxonomie-filtres";
 
-type Props = { params: Promise<{ famille: string }> };
+type Props = {
+  params: Promise<{ famille: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+};
 
 export const dynamicParams = false;
 
@@ -17,11 +21,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return { title: getFamille(famille)?.name ?? "Boutique" };
 }
 
-export default async function FamillePage({ params }: Props) {
+export default async function FamillePage({ params, searchParams }: Props) {
   const { famille } = await params;
   const fam = getFamille(famille);
   if (!fam) notFound();
-  const products = byFamille(fam.slug);
+  // Filtres d'adresse facultatifs (?sous_categorie=…), appliqués dans la rubrique (le paramètre categorie est celui de la page).
+  const filtres = { ...lireFiltres(await searchParams), categorie: fam.slug };
+  const products = filtrerProduits(byFamille(fam.slug), filtres);
   // Sous-catégories : seulement si le catalogue les renseigne (sinon pastilles vers des pages vides).
   const hasSubs = products.some((p) => p.sousCategorie);
   return (

@@ -23,7 +23,20 @@
     "price": 10500,
     "stock": "disponible",
     "description": "Gel nettoyant doux sans savon, pour peaux grasses et à imperfections. Visage et corps. Flacon pompe.",
-    "image": "/products/012-acm-sebionex-gel-200ml.webp"
+    "image": "/products/012-acm-sebionex-gel-200ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "nettoyants-demaquillants-toniques",
+        "gels-douche-cremes-lavantes"
+      ],
+      "type_peau": [
+        "peau-grasse"
+      ],
+      "preoccupation": [
+        "boutons-imperfections"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "077",
@@ -34,7 +47,13 @@
     "aussiDans": [],
     "format": "250 ml",
     "stock": "disponible",
-    "image": "/products/077-acm-sebionex-lotion-micellaire-250-ml.webp"
+    "image": "/products/077-acm-sebionex-lotion-micellaire-250-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "nettoyants-demaquillants-toniques"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "044",
@@ -90,7 +109,16 @@
     "format": "500 ml",
     "stock": "disponible",
     "description": "Lotion tonique à l'aloe vera pour peaux sensibles. Formule vegan.",
-    "image": "/products/016-byphasse-lotion-tonique-sensi-fresh-500ml.webp"
+    "image": "/products/016-byphasse-lotion-tonique-sensi-fresh-500ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "nettoyants-demaquillants-toniques"
+      ],
+      "type_peau": [
+        "peau-sensible"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "053",
@@ -101,7 +129,16 @@
     "aussiDans": [],
     "format": "473 ml",
     "stock": "disponible",
-    "image": "/products/053-cerave-blemish-control-cleanser-gel-moussant-473-ml.webp"
+    "image": "/products/053-cerave-blemish-control-cleanser-gel-moussant-473-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "nettoyants-demaquillants-toniques"
+      ],
+      "preoccupation": [
+        "boutons-imperfections"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "052",
@@ -112,7 +149,13 @@
     "aussiDans": [],
     "format": "52 ml",
     "stock": "disponible",
-    "image": "/products/052-cerave-creme-hydratante-visage-52-ml.webp"
+    "image": "/products/052-cerave-creme-hydratante-visage-52-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "cremes-soins-hydratants"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "067",
@@ -123,7 +166,14 @@
     "aussiDans": [],
     "format": "150 ml",
     "stock": "disponible",
-    "image": "/products/067-clinique-all-about-clean-gelee-nettoyante-exfoliante-150-ml.webp"
+    "image": "/products/067-clinique-all-about-clean-gelee-nettoyante-exfoliante-150-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "nettoyants-demaquillants-toniques",
+        "masques-gommages"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "054",
@@ -133,7 +183,13 @@
     "famille": "visage",
     "aussiDans": [],
     "stock": "disponible",
-    "image": "/products/054-clinique-all-about-clean-gommage-masque.webp"
+    "image": "/products/054-clinique-all-about-clean-gommage-masque.webp",
+    "tags": {
+      "sous_categorie": [
+        "masques-gommages"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "026",
@@ -145,7 +201,13 @@
     "format": "200 ml",
     "stock": "disponible",
     "description": "Nettoyant visage pour homme.",
-    "image": "/products/026-clinique-for-men-face-wash-200ml.webp"
+    "image": "/products/026-clinique-for-men-face-wash-200ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "nettoyants-demaquillants-toniques"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "063",
@@ -178,7 +240,13 @@
     "aussiDans": [],
     "format": "150 ml",
     "stock": "disponible",
-    "image": "/products/066-cosrx-advanced-snail-mucin-gel-cleanser-150-ml.webp"
+    "image": "/products/066-cosrx-advanced-snail-mucin-gel-cleanser-150-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "nettoyants-demaquillants-toniques"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "058",
@@ -189,7 +257,13 @@
     "aussiDans": [],
     "format": "100 ml",
     "stock": "disponible",
-    "image": "/products/058-dcp-sunscreen-hydro-creme-solaire-invisible-spf-100-ml.webp"
+    "image": "/products/058-dcp-sunscreen-hydro-creme-solaire-invisible-spf-100-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "protection-solaire-visage"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "060",
@@ -202,7 +276,14 @@
     ],
     "format": "400 ml",
     "stock": "disponible",
-    "image": "/products/060-ducray-keracnyl-gel-moussant-visage-et-corps-400-ml.webp"
+    "image": "/products/060-ducray-keracnyl-gel-moussant-visage-et-corps-400-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "nettoyants-demaquillants-toniques",
+        "gels-douche-cremes-lavantes"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "061",
@@ -213,7 +294,13 @@
     "aussiDans": [],
     "format": "30 ml",
     "stock": "disponible",
-    "image": "/products/061-ducray-keracnyl-pp-soin-anti-imperfections-30-ml.webp"
+    "image": "/products/061-ducray-keracnyl-pp-soin-anti-imperfections-30-ml.webp",
+    "tags": {
+      "preoccupation": [
+        "boutons-imperfections"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "093",
@@ -224,7 +311,14 @@
     "aussiDans": [],
     "format": "150 ml",
     "stock": "disponible",
-    "image": "/products/093-estee-lauder-perfectly-clean-creme-nettoyante-masque-hydratant-150-ml.webp"
+    "image": "/products/093-estee-lauder-perfectly-clean-creme-nettoyante-masque-hydratant-150-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "nettoyants-demaquillants-toniques",
+        "masques-gommages"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "019",
@@ -235,7 +329,13 @@
     "aussiDans": [],
     "stock": "disponible",
     "description": "Eau micellaire à la vitamine C pour le visage, les yeux et les lèvres, sans rinçage. Hypoallergénique.",
-    "image": "/products/019-garnier-skinactive-micellar-vitamin-c.webp"
+    "image": "/products/019-garnier-skinactive-micellar-vitamin-c.webp",
+    "tags": {
+      "sous_categorie": [
+        "nettoyants-demaquillants-toniques"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "025",
@@ -246,7 +346,14 @@
     "aussiDans": [],
     "stock": "disponible",
     "description": "Sérum-crème 2 en 1 à la vitamine C, avec hydratant quotidien SPF 25.",
-    "image": "/products/025-garnier-skinactive-vitamin-c-serum-creme-spf25.webp"
+    "image": "/products/025-garnier-skinactive-vitamin-c-serum-creme-spf25.webp",
+    "tags": {
+      "sous_categorie": [
+        "serums-visage",
+        "cremes-soins-hydratants"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "032",
@@ -258,7 +365,16 @@
     "format": "400 ml",
     "stock": "disponible",
     "description": "Eau micellaire pour peaux sensibles, pour le visage, les yeux et les lèvres, sans rinçage. Hypoallergénique. Formule vegan.",
-    "image": "/products/032-garnier-solution-micellaire-tout-en-1-400ml.webp"
+    "image": "/products/032-garnier-solution-micellaire-tout-en-1-400ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "nettoyants-demaquillants-toniques"
+      ],
+      "type_peau": [
+        "peau-sensible"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "070",
@@ -269,7 +385,13 @@
     "aussiDans": [],
     "format": "30 ml",
     "stock": "disponible",
-    "image": "/products/070-kojie-san-skin-lightening-super-serum-classic-30-ml.webp"
+    "image": "/products/070-kojie-san-skin-lightening-super-serum-classic-30-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "serums-visage"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "071",
@@ -280,7 +402,13 @@
     "aussiDans": [],
     "format": "50 ml",
     "stock": "disponible",
-    "image": "/products/071-la-roche-posay-anthelios-uvmune-400-fluide-invisible-spf-50-ml.webp"
+    "image": "/products/071-la-roche-posay-anthelios-uvmune-400-fluide-invisible-spf-50-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "protection-solaire-visage"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "008",
@@ -293,7 +421,19 @@
     "price": 20000,
     "stock": "disponible",
     "description": "Gel moussant purifiant, pour peaux grasses à tendance acnéique. Format économique.",
-    "image": "/products/008-la-roche-posay-effaclar-gel-300ml.webp"
+    "image": "/products/008-la-roche-posay-effaclar-gel-300ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "nettoyants-demaquillants-toniques"
+      ],
+      "type_peau": [
+        "peau-grasse"
+      ],
+      "preoccupation": [
+        "boutons-imperfections"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "072",
@@ -304,7 +444,16 @@
     "aussiDans": [],
     "format": "30 ml",
     "stock": "disponible",
-    "image": "/products/072-la-roche-posay-mela-b3-serum-anti-taches-30-ml.webp"
+    "image": "/products/072-la-roche-posay-mela-b3-serum-anti-taches-30-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "serums-visage"
+      ],
+      "preoccupation": [
+        "taches-brunes-hyperpigmentation"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "081",
@@ -315,7 +464,13 @@
     "aussiDans": [],
     "format": "50 ml",
     "stock": "disponible",
-    "image": "/products/081-missha-all-around-safe-block-aqua-sun-50-ml.webp"
+    "image": "/products/081-missha-all-around-safe-block-aqua-sun-50-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "protection-solaire-visage"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "055",
@@ -326,7 +481,13 @@
     "aussiDans": [],
     "format": "80 ml",
     "stock": "disponible",
-    "image": "/products/055-sivoderm-expert-anti-acne-cream-creme-anti-acne-80-ml.webp"
+    "image": "/products/055-sivoderm-expert-anti-acne-cream-creme-anti-acne-80-ml.webp",
+    "tags": {
+      "preoccupation": [
+        "boutons-imperfections"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "018",
@@ -338,7 +499,13 @@
     "format": "400 ml",
     "stock": "disponible",
     "description": "Eau micellaire pour le visage, les yeux et les lèvres, infusée aux plantes et aux huiles. Pour tous types de peaux.",
-    "image": "/products/018-skin-by-zaron-micellar-cleansing-water-400ml.webp"
+    "image": "/products/018-skin-by-zaron-micellar-cleansing-water-400ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "nettoyants-demaquillants-toniques"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "089",
@@ -349,7 +516,13 @@
     "aussiDans": [],
     "format": "40 ml",
     "stock": "disponible",
-    "image": "/products/089-svr-sebiaclear-creme-spf50-40-ml.webp"
+    "image": "/products/089-svr-sebiaclear-creme-spf50-40-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "protection-solaire-visage"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "034",
@@ -361,7 +534,19 @@
     "format": "400 ml",
     "stock": "disponible",
     "description": "Eau micellaire nettoyante pour peaux grasses à imperfections.",
-    "image": "/products/034-svr-sebiaclear-eau-micellaire-400ml.webp"
+    "image": "/products/034-svr-sebiaclear-eau-micellaire-400ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "nettoyants-demaquillants-toniques"
+      ],
+      "type_peau": [
+        "peau-grasse"
+      ],
+      "preoccupation": [
+        "boutons-imperfections"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "035",
@@ -373,7 +558,19 @@
     "format": "200 ml",
     "stock": "disponible",
     "description": "Gel moussant nettoyant pour peaux grasses à imperfections.",
-    "image": "/products/035-svr-sebiaclear-gel-moussant-200ml.webp"
+    "image": "/products/035-svr-sebiaclear-gel-moussant-200ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "nettoyants-demaquillants-toniques"
+      ],
+      "type_peau": [
+        "peau-grasse"
+      ],
+      "preoccupation": [
+        "boutons-imperfections"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "014",
@@ -388,7 +585,17 @@
     "price": 13000,
     "stock": "disponible",
     "description": "Soin émollient pour peaux sèches ou à tendance atopique. Visage et corps. Flacon pompe.",
-    "image": "/products/014-acm-sensitelial-500ml.webp"
+    "image": "/products/014-acm-sensitelial-500ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "cremes-soins-hydratants",
+        "cremes-laits-baumes-corps"
+      ],
+      "type_peau": [
+        "peau-seche"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "006",
@@ -403,7 +610,18 @@
     "price": 14500,
     "stock": "disponible",
     "description": "Lait hydratant visage et corps pour peaux sensibles sèches. Flacon pompe.",
-    "image": "/products/006-avene-xeracalm-lait-400ml.webp"
+    "image": "/products/006-avene-xeracalm-lait-400ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "cremes-soins-hydratants",
+        "cremes-laits-baumes-corps"
+      ],
+      "type_peau": [
+        "peau-sensible",
+        "peau-seche"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "033",
@@ -415,7 +633,13 @@
     "format": "400 ml",
     "stock": "disponible",
     "description": "Lait corporel illuminateur aux prébiotiques. 95 % d'ingrédients d'origine naturelle.",
-    "image": "/products/033-byphasse-lait-corporel-glow-sunshine-400ml.webp"
+    "image": "/products/033-byphasse-lait-corporel-glow-sunshine-400ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "cremes-laits-baumes-corps"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "031",
@@ -429,7 +653,14 @@
     "format": "500 ml",
     "stock": "disponible",
     "description": "Lait visage et corps à l'extrait de kiwi 1 % et aux AHA, à l'extrait d'avoine, glycérine 4 % et esters de jojoba. Tous types de peaux.",
-    "image": "/products/031-byphasse-lait-eclaircissant-whitening-effect-500ml.webp"
+    "image": "/products/031-byphasse-lait-eclaircissant-whitening-effect-500ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "cremes-soins-hydratants",
+        "cremes-laits-baumes-corps"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "005",
@@ -444,7 +675,17 @@
     "price": 17000,
     "stock": "disponible",
     "description": "Baume hydratant sans parfum visage et corps, aux 3 céramides essentiels et acide hyaluronique, pour peaux sèches à très sèches. Pot.",
-    "image": "/products/005-cerave-baume-hydratant-454g.webp"
+    "image": "/products/005-cerave-baume-hydratant-454g.webp",
+    "tags": {
+      "sous_categorie": [
+        "cremes-soins-hydratants",
+        "cremes-laits-baumes-corps"
+      ],
+      "type_peau": [
+        "peau-seche"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "013",
@@ -459,7 +700,17 @@
     "price": 17000,
     "stock": "disponible",
     "description": "Lait hydratant sans parfum visage et corps, aux 3 céramides essentiels et acide hyaluronique, pour peaux sèches à très sèches. Flacon pompe.",
-    "image": "/products/013-cerave-lait-hydratant-473ml.webp"
+    "image": "/products/013-cerave-lait-hydratant-473ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "cremes-soins-hydratants",
+        "cremes-laits-baumes-corps"
+      ],
+      "type_peau": [
+        "peau-seche"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "004",
@@ -472,7 +723,13 @@
     "price": 13500,
     "stock": "disponible",
     "description": "Gel nettoyant sans parfum aux 3 céramides essentiels, acide salicylique et acide hyaluronique, pour peaux sèches et rugueuses.",
-    "image": "/products/004-cerave-sa-gel-nettoyant-236ml.webp"
+    "image": "/products/004-cerave-sa-gel-nettoyant-236ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "gels-douche-cremes-lavantes"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "074",
@@ -483,7 +740,13 @@
     "aussiDans": [],
     "format": "400 ml",
     "stock": "disponible",
-    "image": "/products/074-chateau-rouge-lait-de-beaute-hydratant-eclaircissant-soin-400-ml.webp"
+    "image": "/products/074-chateau-rouge-lait-de-beaute-hydratant-eclaircissant-soin-400-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "cremes-laits-baumes-corps"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "075",
@@ -494,7 +757,13 @@
     "aussiDans": [],
     "format": "500 ml",
     "stock": "disponible",
-    "image": "/products/075-chateau-rouge-lait-de-beaute-ultra-hydratant-500-ml.webp"
+    "image": "/products/075-chateau-rouge-lait-de-beaute-ultra-hydratant-500-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "cremes-laits-baumes-corps"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "029",
@@ -505,7 +774,13 @@
     "aussiDans": [],
     "stock": "disponible",
     "description": "Lait corps à l'extrait de fleur de lotus et au lait de riz, pour tous types de peaux.",
-    "image": "/products/029-dove-body-love-glowing-care-body-lotion.webp"
+    "image": "/products/029-dove-body-love-glowing-care-body-lotion.webp",
+    "tags": {
+      "sous_categorie": [
+        "cremes-laits-baumes-corps"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "068",
@@ -516,7 +791,13 @@
     "aussiDans": [],
     "format": "225 ml",
     "stock": "disponible",
-    "image": "/products/068-dove-exfoliating-body-scrub-macadamia-concassee-lait-225-ml.webp"
+    "image": "/products/068-dove-exfoliating-body-scrub-macadamia-concassee-lait-225-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "gommages-corps"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "059",
@@ -529,7 +810,13 @@
     ],
     "format": "260 ml",
     "stock": "disponible",
-    "image": "/products/059-dr-teal-s-moisture-prebiotic-lemon-balm-essential-oils-260-ml.webp"
+    "image": "/products/059-dr-teal-s-moisture-prebiotic-lemon-balm-essential-oils-260-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "huiles-corps"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "030",
@@ -541,7 +828,13 @@
     "format": "538 g",
     "stock": "disponible",
     "description": "Gommage corps au sucre, au beurre de karité, à l'huile d'onagre et à l'huile de macadamia, à l'huile essentielle de rose. Sans paraben ni phtalates.",
-    "image": "/products/030-dr-teals-shea-sugar-scrub-rose-538g.webp"
+    "image": "/products/030-dr-teals-shea-sugar-scrub-rose-538g.webp",
+    "tags": {
+      "sous_categorie": [
+        "gommages-corps"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "001",
@@ -556,7 +849,17 @@
     "price": 14000,
     "stock": "disponible",
     "description": "Gel nettoyant sans savon pour visage et corps, pour peaux très sèches à tendance atopique. Flacon pompe.",
-    "image": "/products/001-ducray-dexyane-gel-nettoyant-400ml.webp"
+    "image": "/products/001-ducray-dexyane-gel-nettoyant-400ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "nettoyants-demaquillants-toniques",
+        "gels-douche-cremes-lavantes"
+      ],
+      "type_peau": [
+        "peau-seche"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "002",
@@ -571,7 +874,17 @@
     "price": 14000,
     "stock": "disponible",
     "description": "Crème émolliente nutritive visage et corps, pour peaux sèches à très sèches. Tube.",
-    "image": "/products/002-ducray-ictyane-creme-200ml.webp"
+    "image": "/products/002-ducray-ictyane-creme-200ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "cremes-soins-hydratants",
+        "cremes-laits-baumes-corps"
+      ],
+      "type_peau": [
+        "peau-seche"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "011",
@@ -583,7 +896,13 @@
     "price": 17000,
     "stock": "disponible",
     "description": "Baume pour peau sèche, craquelée ou irritée. Tube.",
-    "image": "/products/011-eucerin-aquaphor-baume.webp"
+    "image": "/products/011-eucerin-aquaphor-baume.webp",
+    "tags": {
+      "sous_categorie": [
+        "cremes-laits-baumes-corps"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "010",
@@ -595,7 +914,13 @@
     "price": 18300,
     "stock": "disponible",
     "description": "Gel-crème solaire SPF 50+ à texture ultra-légère et toucher sec. Résistant à l'eau et à la sueur.",
-    "image": "/products/010-eucerin-sun-gel-creme-spf50.webp"
+    "image": "/products/010-eucerin-sun-gel-creme-spf50.webp",
+    "tags": {
+      "sous_categorie": [
+        "soins-solaires"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "021",
@@ -607,7 +932,13 @@
     "format": "500 ml",
     "stock": "disponible",
     "description": "Lait corps à l'amande douce pour tous types de peaux, 96 % d'origine naturelle. Fabriqué en France.",
-    "image": "/products/021-evoluderm-lait-corps-douceur-amande-500ml.webp"
+    "image": "/products/021-evoluderm-lait-corps-douceur-amande-500ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "cremes-laits-baumes-corps"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "009",
@@ -620,7 +951,13 @@
     "price": 18000,
     "stock": "disponible",
     "description": "Soin corps double action à la niacinamide et au LHA, technologie d'absorption en 1 seconde. Tube.",
-    "image": "/products/009-la-roche-posay-mela-b3-200ml.webp"
+    "image": "/products/009-la-roche-posay-mela-b3-200ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "cremes-laits-baumes-corps"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "079",
@@ -631,7 +968,13 @@
     "aussiDans": [],
     "format": "444 ml",
     "stock": "disponible",
-    "image": "/products/079-medix-5-5-argan-oil-shea-butter-age-rewind-444-ml.webp"
+    "image": "/products/079-medix-5-5-argan-oil-shea-butter-age-rewind-444-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "cremes-laits-baumes-corps"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "082",
@@ -641,7 +984,13 @@
     "famille": "corps",
     "aussiDans": [],
     "stock": "disponible",
-    "image": "/products/082-mixa-cica-lait-reparation-avancee.webp"
+    "image": "/products/082-mixa-cica-lait-reparation-avancee.webp",
+    "tags": {
+      "sous_categorie": [
+        "cremes-laits-baumes-corps"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "056",
@@ -654,7 +1003,13 @@
     ],
     "format": "400 ml",
     "stock": "disponible",
-    "image": "/products/056-mixa-creme-cica-reparation-10-d-uree-400-ml.webp"
+    "image": "/products/056-mixa-creme-cica-reparation-10-d-uree-400-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "cremes-laits-baumes-corps"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "003",
@@ -666,7 +1021,16 @@
     "price": 13500,
     "stock": "disponible",
     "description": "Crème hydratante anti-taches au beurre de karité, niacinamide et vitamine C, pour peaux très sèches. Pot.",
-    "image": "/products/003-mixa-creme-niacinamide.webp"
+    "image": "/products/003-mixa-creme-niacinamide.webp",
+    "tags": {
+      "sous_categorie": [
+        "cremes-laits-baumes-corps"
+      ],
+      "preoccupation": [
+        "taches-brunes-hyperpigmentation-corps"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "007",
@@ -679,7 +1043,13 @@
     "price": 9000,
     "stock": "disponible",
     "description": "Lait corps à l'huile et au beurre de karité, pour peaux très sèches et ternes. Hypoallergénique. Flacon pompe.",
-    "image": "/products/007-mixa-lait-corps-nutritif-400ml.webp"
+    "image": "/products/007-mixa-lait-corps-nutritif-400ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "cremes-laits-baumes-corps"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "042",
@@ -691,7 +1061,13 @@
     "format": "400 ml",
     "stock": "disponible",
     "description": "Lait corps nourrissant au cacao, soin hydratant intense 48 h, pour peaux sèches.",
-    "image": "/products/042-nivea-lait-corps-nourrissant-cacao-400ml.webp"
+    "image": "/products/042-nivea-lait-corps-nourrissant-cacao-400ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "cremes-laits-baumes-corps"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "073",
@@ -702,7 +1078,13 @@
     "aussiDans": [],
     "format": "400 ml",
     "stock": "disponible",
-    "image": "/products/073-nivea-men-deep-lait-corps-400-ml.webp"
+    "image": "/products/073-nivea-men-deep-lait-corps-400-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "cremes-laits-baumes-corps"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "038",
@@ -714,7 +1096,13 @@
     "format": "500 ml",
     "stock": "disponible",
     "description": "Lait corps hydratant au concombre.",
-    "image": "/products/038-pureluxe-lait-hydratant-concombre-500ml.webp"
+    "image": "/products/038-pureluxe-lait-hydratant-concombre-500ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "cremes-laits-baumes-corps"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "024",
@@ -726,7 +1114,13 @@
     "format": "500 ml",
     "stock": "disponible",
     "description": "Lait corps ultra-hydratant à la vitamine E, à l'alpha-arbutine et au collagène.",
-    "image": "/products/024-skin-by-zaron-skin-glow-therapy-body-lotion-500ml.webp"
+    "image": "/products/024-skin-by-zaron-skin-glow-therapy-body-lotion-500ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "cremes-laits-baumes-corps"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "090",
@@ -739,7 +1133,13 @@
     ],
     "format": "100 ml",
     "stock": "disponible",
-    "image": "/products/090-topicrem-cica-creme-apaisante-reparatrice-100-ml.webp"
+    "image": "/products/090-topicrem-cica-creme-apaisante-reparatrice-100-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "cremes-laits-baumes-corps"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "015",
@@ -751,7 +1151,13 @@
     "format": "500 ml",
     "stock": "disponible",
     "description": "Baume émollient au karité, à l'huile de lin et à l'allantoïne, pour peaux sensibles, très sèches et atopiques. Flacon pompe.",
-    "image": "/products/015-topicrem-da-protect-baume-emollient-500ml.webp"
+    "image": "/products/015-topicrem-da-protect-baume-emollient-500ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "cremes-laits-baumes-corps"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "041",
@@ -763,7 +1169,13 @@
     "format": "200 ml",
     "stock": "disponible",
     "description": "Baume émollient pour peaux sensibles, très sèches et atopiques. Tube.",
-    "image": "/products/041-topicrem-da-protect-baume-emollient-tube-200ml.webp"
+    "image": "/products/041-topicrem-da-protect-baume-emollient-tube-200ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "cremes-laits-baumes-corps"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "091",
@@ -774,7 +1186,13 @@
     "aussiDans": [],
     "format": "75 ml",
     "stock": "disponible",
-    "image": "/products/091-topicrem-dermo-specific-ur-30-creme-75-ml.webp"
+    "image": "/products/091-topicrem-dermo-specific-ur-30-creme-75-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "cremes-laits-baumes-corps"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "092",
@@ -785,7 +1203,13 @@
     "aussiDans": [],
     "format": "500 ml",
     "stock": "disponible",
-    "image": "/products/092-topicrem-mela-lait-unifiant-ultra-hydratant-500-ml.webp"
+    "image": "/products/092-topicrem-mela-lait-unifiant-ultra-hydratant-500-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "cremes-laits-baumes-corps"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "051",
@@ -798,7 +1222,13 @@
     ],
     "format": "500 ml",
     "stock": "disponible",
-    "image": "/products/051-uriage-xemose-c8-baume-relipidant-anti-grattage-500-ml.webp"
+    "image": "/products/051-uriage-xemose-c8-baume-relipidant-anti-grattage-500-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "cremes-laits-baumes-corps"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "069",
@@ -809,7 +1239,13 @@
     "aussiDans": [],
     "format": "250 ml",
     "stock": "disponible",
-    "image": "/products/069-aroma-zone-huile-de-soin-cheveux-aux-7-250-ml.webp"
+    "image": "/products/069-aroma-zone-huile-de-soin-cheveux-aux-7-250-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "huiles-cheveux"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "087",
@@ -820,7 +1256,13 @@
     "aussiDans": [],
     "format": "520 ml",
     "stock": "disponible",
-    "image": "/products/087-byphasse-shampooing-keratine-liquide-520-ml.webp"
+    "image": "/products/087-byphasse-shampooing-keratine-liquide-520-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "shampoings"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "046",
@@ -831,7 +1273,13 @@
     "aussiDans": [],
     "format": "250 ml",
     "stock": "disponible",
-    "image": "/products/046-garnier-ultra-doux-apres-shampooing-nourrissant-lait-250-ml.webp"
+    "image": "/products/046-garnier-ultra-doux-apres-shampooing-nourrissant-lait-250-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "apres-shampoings-masques"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "078",
@@ -842,7 +1290,13 @@
     "aussiDans": [],
     "format": "320 ml",
     "stock": "disponible",
-    "image": "/products/078-garnier-ultra-doux-masque-multi-usages-3-320-ml.webp"
+    "image": "/products/078-garnier-ultra-doux-masque-multi-usages-3-320-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "apres-shampoings-masques"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "088",
@@ -853,7 +1307,13 @@
     "aussiDans": [],
     "format": "300 ml",
     "stock": "disponible",
-    "image": "/products/088-yves-rocher-shampooing-micellaire-detox-anti-pollution-300-ml.webp"
+    "image": "/products/088-yves-rocher-shampooing-micellaire-detox-anti-pollution-300-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "shampoings"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "040",
@@ -867,7 +1327,13 @@
     "format": "1 L",
     "stock": "disponible",
     "description": "Lait de douche à la noix de coco.",
-    "image": "/products/040-byphasse-lait-de-douche-noix-de-coco-1l.webp"
+    "image": "/products/040-byphasse-lait-de-douche-noix-de-coco-1l.webp",
+    "tags": {
+      "sous_categorie": [
+        "gels-douche-cremes-lavantes"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "039",
@@ -880,7 +1346,13 @@
     ],
     "stock": "disponible",
     "description": "Huile lavante pour peaux sensibles, haute tolérance.",
-    "image": "/products/039-cavailles-huile-lavante-dermato-haute-tolerance.webp"
+    "image": "/products/039-cavailles-huile-lavante-dermato-haute-tolerance.webp",
+    "tags": {
+      "sous_categorie": [
+        "gels-douche-cremes-lavantes"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "028",
@@ -891,7 +1363,13 @@
     "aussiDans": [],
     "stock": "disponible",
     "description": "Savon surgras à l'amande lactée, pour peaux sèches. 97 % d'origine naturelle.",
-    "image": "/products/028-cavailles-savon-surgras-amande-lactee.webp"
+    "image": "/products/028-cavailles-savon-surgras-amande-lactee.webp",
+    "tags": {
+      "sous_categorie": [
+        "savons"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "085",
@@ -901,7 +1379,13 @@
     "famille": "hygiene",
     "aussiDans": [],
     "stock": "disponible",
-    "image": "/products/085-cavailles-savon-surgras-nectar-de-miel.webp"
+    "image": "/products/085-cavailles-savon-surgras-nectar-de-miel.webp",
+    "tags": {
+      "sous_categorie": [
+        "savons"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "065",
@@ -914,7 +1398,13 @@
     ],
     "format": "400 ml",
     "stock": "disponible",
-    "image": "/products/065-chateau-rouge-gel-douche-surgras-unifiant-agrume-400-ml.webp"
+    "image": "/products/065-chateau-rouge-gel-douche-surgras-unifiant-agrume-400-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "gels-douche-cremes-lavantes"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "049",
@@ -954,7 +1444,13 @@
     "format": "500 ml",
     "stock": "disponible",
     "description": "Gel douche sans savon à l'amande douce, 96 % d'origine naturelle. Fabriqué en France.",
-    "image": "/products/020-evoluderm-gel-douche-onctueux-douceur-amande-500ml.webp"
+    "image": "/products/020-evoluderm-gel-douche-onctueux-douceur-amande-500ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "gels-douche-cremes-lavantes"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "080",
@@ -967,7 +1463,13 @@
     ],
     "format": "444 ml",
     "stock": "disponible",
-    "image": "/products/080-medix-5-5-glycolic-lactic-acid-skin-perfecting-body-444-ml.webp"
+    "image": "/products/080-medix-5-5-glycolic-lactic-acid-skin-perfecting-body-444-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "gels-douche-cremes-lavantes"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "083",
@@ -980,7 +1482,13 @@
     ],
     "format": "591 ml",
     "stock": "disponible",
-    "image": "/products/083-olay-cleansing-renewing-nighttime-body-wash-retinol-591-ml.webp"
+    "image": "/products/083-olay-cleansing-renewing-nighttime-body-wash-retinol-591-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "gels-douche-cremes-lavantes"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "064",
@@ -993,7 +1501,13 @@
     ],
     "format": "591 ml",
     "stock": "disponible",
-    "image": "/products/064-olay-tone-brightening-gel-douche-vitamine-c-591-ml.webp"
+    "image": "/products/064-olay-tone-brightening-gel-douche-vitamine-c-591-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "gels-douche-cremes-lavantes"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "037",
@@ -1007,7 +1521,14 @@
     "format": "500 ml",
     "stock": "disponible",
     "description": "Gel douche gommant aux grains d'abricot.",
-    "image": "/products/037-pureluxe-gel-douche-gommant-abricot-500ml.webp"
+    "image": "/products/037-pureluxe-gel-douche-gommant-abricot-500ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "gels-douche-cremes-lavantes",
+        "gommages-corps"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "036",
@@ -1021,7 +1542,13 @@
     "format": "180 g",
     "stock": "disponible",
     "description": "Savon douche hydratant au concombre.",
-    "image": "/products/036-pureluxe-savon-douche-concombre-180g.webp"
+    "image": "/products/036-pureluxe-savon-douche-concombre-180g.webp",
+    "tags": {
+      "sous_categorie": [
+        "savons"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "084",
@@ -1034,7 +1561,13 @@
     ],
     "format": "100 g",
     "stock": "disponible",
-    "image": "/products/084-sivoderm-expert-savon-purifiant-100-g.webp"
+    "image": "/products/084-sivoderm-expert-savon-purifiant-100-g.webp",
+    "tags": {
+      "sous_categorie": [
+        "savons"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "022",
@@ -1048,7 +1581,13 @@
     "format": "650 ml",
     "stock": "disponible",
     "description": "Gel douche à la papaye, à l'acide salicylique, à l'aloe vera, à l'huile d'arbre à thé et à la niacinamide. Pour tous types de peaux.",
-    "image": "/products/022-skin-by-zaron-papaya-brightening-body-wash-650ml.webp"
+    "image": "/products/022-skin-by-zaron-papaya-brightening-body-wash-650ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "gels-douche-cremes-lavantes"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "023",
@@ -1062,7 +1601,13 @@
     "format": "650 ml",
     "stock": "disponible",
     "description": "Gel douche à la vitamine C, à l'acide glycolique et à l'huile de ricin. Pour tous types de peaux.",
-    "image": "/products/023-skin-by-zaron-vitamin-c-body-wash-650ml.webp"
+    "image": "/products/023-skin-by-zaron-vitamin-c-body-wash-650ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "gels-douche-cremes-lavantes"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "057",
@@ -1075,7 +1620,13 @@
     ],
     "format": "250 ml",
     "stock": "disponible",
-    "image": "/products/057-ushuaia-bahia-do-brasil-creme-de-douche-250-ml.webp"
+    "image": "/products/057-ushuaia-bahia-do-brasil-creme-de-douche-250-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "gels-douche-cremes-lavantes"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "050",
@@ -1088,7 +1639,13 @@
     ],
     "format": "300 ml",
     "stock": "disponible",
-    "image": "/products/050-ushuaia-polynesie-baume-de-douche-apaisant-vanille-300-ml.webp"
+    "image": "/products/050-ushuaia-polynesie-baume-de-douche-apaisant-vanille-300-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "gels-douche-cremes-lavantes"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "043",
@@ -1102,7 +1659,14 @@
     ],
     "format": "280 ml",
     "stock": "disponible",
-    "image": "/products/043-ushuaia-shampooing-douche-effet-glacant-roche-volcanique-280-ml.webp"
+    "image": "/products/043-ushuaia-shampooing-douche-effet-glacant-roche-volcanique-280-ml.webp",
+    "tags": {
+      "sous_categorie": [
+        "shampoings",
+        "gels-douche-cremes-lavantes"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "086",
@@ -1115,7 +1679,14 @@
       "corps"
     ],
     "stock": "disponible",
-    "image": "/products/086-ushuaia-shampooing-douche-rafraichissant-eucalyptus.webp"
+    "image": "/products/086-ushuaia-shampooing-douche-rafraichissant-eucalyptus.webp",
+    "tags": {
+      "sous_categorie": [
+        "shampoings",
+        "gels-douche-cremes-lavantes"
+      ]
+    },
+    "tagsAVerifier": true
   },
   {
     "id": "027",

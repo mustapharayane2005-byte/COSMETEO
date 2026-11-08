@@ -51,6 +51,10 @@ export type Product = {
   aussiDans: string[];
   /** Slug de sous-catégorie de la famille. */
   sousCategorie?: string;
+  /** Étiquettes de la taxonomie du menu (src/data/taxonomie.ts), par colonne du catalogue. */
+  tags?: Partial<Record<"sous_categorie" | "type_peau" | "type_cheveux" | "preoccupation", string[]>>;
+  /** Étiquettes posées automatiquement : à valider par la pharmacienne. */
+  tagsAVerifier?: boolean;
   /** Slugs des besoins (voir data/besoins.ts). */
   besoins?: string[];
   /** Contenance ou format (ex. « 400 ml »). */

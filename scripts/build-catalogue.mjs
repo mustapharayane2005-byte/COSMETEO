@@ -42,6 +42,13 @@ const familleBySlug = (label) => {
   return familles.find((f) => norm(f.name) === n || f.slug === slugify(label));
 };
 
+// Taxonomie (src/data/taxonomie.ts) : colonne -> slugs autorisés, lue sans dépendance TypeScript.
+const taxSrc = readFileSync(join(root, "src/data/taxonomie.ts"), "utf8");
+const taxo = { sous_categorie: new Set(), type_peau: new Set(), type_cheveux: new Set(), preoccupation: new Set() };
+for (const m of taxSrc.matchAll(/colonne: "([a-z_]+)",\s+entrees: \[([\s\S]*?)\n\s+\],/g))
+  for (const e of m[2].matchAll(/slug: "([^"]+)"/g)) taxo[m[1]]?.add(e[1]);
+const warnings = [];
+
 const [head, ...lines] = parse(csv);
 const col = Object.fromEntries(head.map((h, i) => [h.trim(), i]));
 for (const k of ["id", "nom", "marque", "categorie", "prix_fcfa", "stock"]) {
@@ -81,6 +88,18 @@ for (const r of lines) {
   if (problems.length) { issues.push(`${id} ${g("nom")} : ${problems.join(" ; ")}`); continue; }
   slugs.add(slug);
   const badge = g("badge");
+  // Colonnes de taxonomie (facultatives) : plusieurs valeurs séparées par « | » ; un slug inconnu est ignoré avec avertissement.
+  const tags = {};
+  for (const colonne of Object.keys(taxo)) {
+    if (!(colonne in col)) continue;
+    const vals = [...new Set(g(colonne).split("|").map((v) => v.trim()).filter(Boolean))].filter((v) => {
+      if (taxo[colonne].has(v)) return true;
+      warnings.push(`${id} ${g("nom")} : ${colonne} « ${v} » absent de la taxonomie (ignoré)`);
+      return false;
+    });
+    if (vals.length) tags[colonne] = vals;
+  }
+  const tagsAVerifier = norm(g("tags_a_verifier")) === "oui" && Object.keys(tags).length > 0;
   out.push({
     id,
     slug,
@@ -95,6 +114,8 @@ for (const r of lines) {
     ...(g("description") && { description: g("description") }),
     ...(def && { image: `/products/${def}` }),
     ...(badge && { badge }),
+    ...(Object.keys(tags).length && { tags }),
+    ...(tagsAVerifier && { tagsAVerifier: true }),
   });
 }
 
@@ -107,4 +128,5 @@ writeFileSync(join(root, "src/data/products.json"), JSON.stringify(out, null, 2)
 writeFileSync(join(root, "src/data/catalogue-meta.json"), JSON.stringify({ promos: out.filter((p) => p.oldPrice).length }, null, 2) + "\n");
 console.log(`${out.length} produit(s) écrit(s) dans src/data/products.json`);
 if (skipped.length) console.log(`\nIgnorés (a_verifier) :\n- ${skipped.join("\n- ")}`);
+if (warnings.length) console.log(`\nAvertissements taxonomie :\n- ${warnings.join("\n- ")}`);
 if (issues.length) console.log(`\nLignes incohérentes (non importées) :\n- ${issues.join("\n- ")}`);

@@ -2,6 +2,7 @@ import type { Badge, Product } from "@/types/catalog";
 import { besoins } from "@/data/besoins";
 import { brands } from "@/data/brands";
 import { categories } from "@/data/categories";
+import type { Colonne } from "@/data/taxonomie";
 import raw from "./products.json";
 
 /**
@@ -22,6 +23,8 @@ type Entry = {
   description?: string;
   image?: string;
   badge?: string;
+  tags?: Partial<Record<Colonne, string[]>>;
+  tagsAVerifier?: boolean;
 };
 
 const toBadge = (label?: string): Badge | undefined => {
@@ -43,6 +46,8 @@ const products: Product[] = (raw as Entry[]).map((e) => ({
   price: e.price,
   oldPrice: e.oldPrice,
   badge: toBadge(e.badge),
+  tags: e.tags,
+  tagsAVerifier: e.tagsAVerifier,
   images: e.image ? [e.image] : [],
   description: e.description,
   inStock: e.stock !== "indisponible",
