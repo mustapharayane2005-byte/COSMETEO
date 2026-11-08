@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, m } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
@@ -19,6 +20,8 @@ export default function HeaderClient({ nav }: { nav: NavData }) {
   const [mounted, setMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [openKey, setOpenKey] = useState<string | null>(null);
+  const [accordion, setAccordion] = useState<string | null>(null);
+  const delay = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const mobileSearchRef = useRef<HTMLInputElement>(null);
   const searchId = useId();
   const router = useRouter();
@@ -50,6 +53,7 @@ export default function HeaderClient({ nav }: { nav: NavData }) {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         setMenuOpen(false);
+        clearTimeout(delay.current);
         setOpenKey(null);
       }
     };
@@ -87,6 +91,16 @@ export default function HeaderClient({ nav }: { nav: NavData }) {
     `flex h-full items-center whitespace-nowrap border-b-2 px-0.5 text-[0.75rem] font-medium uppercase tracking-[0.08em] text-[#1A1A1A] transition-colors hover:border-green focus-visible:border-green ${
       active ? "border-green" : "border-transparent"
     }`;
+  // Ouverture au survol avec un léger délai (évite les ouvertures accidentelles) ; si un panneau est déjà ouvert, on change tout de suite.
+  const survol = (key: string | null) => {
+    clearTimeout(delay.current);
+    if (key === null || openKey !== null) setOpenKey(key);
+    else delay.current = setTimeout(() => setOpenKey(key), 120);
+  };
+  const fermer = () => {
+    clearTimeout(delay.current);
+    setOpenKey(null);
+  };
   const closeOnLeave = (ev: React.FocusEvent<HTMLLIElement>) => {
     if (!ev.currentTarget.contains(ev.relatedTarget as Node | null)) setOpenKey(null);
   };
@@ -177,8 +191,8 @@ export default function HeaderClient({ nav }: { nav: NavData }) {
                   <li
                     key={e.href}
                     className="flex"
-                    onMouseEnter={() => setOpenKey(hasPanel ? e.href : null)}
-                    onMouseLeave={() => setOpenKey(null)}
+                    onMouseEnter={() => survol(hasPanel ? e.href : null)}
+                    onMouseLeave={fermer}
                     onBlur={closeOnLeave}
                   >
                     <Link
@@ -191,7 +205,8 @@ export default function HeaderClient({ nav }: { nav: NavData }) {
                     >
                       {e.label}
                     </Link>
-                    {hasPanel && openKey === e.href && (
+                    {e.rubrique && openKey === e.href && <GrandMenu entry={e} onNavigate={fermer} />}
+                    {hasPanel && !e.rubrique && openKey === e.href && (
                       <div className="absolute inset-x-0 top-full border-b border-t border-line bg-ivory shadow-[0_12px_24px_rgba(0,0,0,0.06)]">
                         <div className="container flex items-start justify-between gap-8 py-6">
                           <div>
@@ -296,6 +311,45 @@ export default function HeaderClient({ nav }: { nav: NavData }) {
                     <ul>
                       {[...barre, ...nav.more].map((e) => (
                         <li key={e.href} className="border-b border-line">
+                          {e.rubrique && e.rubrique.groupes.length > 0 && (
+                            <div>
+                              <button
+                                type="button"
+                                aria-expanded={accordion === e.href}
+                                aria-controls={`acc-${e.href}`}
+                                onClick={() => setAccordion(accordion === e.href ? null : e.href)}
+                                className="flex min-h-11 w-full items-center justify-between py-3.5 text-left text-[0.8125rem] font-medium uppercase tracking-[0.08em] text-[#1A1A1A]"
+                              >
+                                {e.label}
+                                <span
+                                  aria-hidden="true"
+                                  className={`ml-3 size-2 flex-none border-b-2 border-r-2 border-green transition-transform ${accordion === e.href ? "-rotate-[135deg]" : "rotate-45"}`}
+                                />
+                              </button>
+                              {accordion === e.href && (
+                                <div id={`acc-${e.href}`} className="pb-4">
+                                  <Link href={e.href} onClick={() => setMenuOpen(false)} className="mb-3 block text-sm font-semibold text-green underline underline-offset-4">
+                                    Voir tout {e.label}
+                                  </Link>
+                                  {e.rubrique.groupes.map((g) => (
+                                    <div key={g.id} className="mb-3">
+                                      <p className="mb-1 text-[0.6875rem] font-bold uppercase tracking-[0.12em] text-green">{g.label}</p>
+                                      <ul>
+                                        {g.entrees.map((en) => (
+                                          <li key={en.href}>
+                                            <Link href={en.href} onClick={() => setMenuOpen(false)} className="block break-words py-2 text-sm text-[#1A1A1A]">
+                                              {en.label}
+                                            </Link>
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    </div>
+                                  ))}
+                                </div>
+                              )}
+                            </div>
+                          )}
+                          {!(e.rubrique && e.rubrique.groupes.length > 0) && (
                           <Link
                             href={e.href}
                             onClick={() => setMenuOpen(false)}
@@ -306,6 +360,7 @@ export default function HeaderClient({ nav }: { nav: NavData }) {
                           >
                             {e.label}
                           </Link>
+                          )}
                         </li>
                       ))}
                     </ul>
@@ -331,5 +386,85 @@ export default function HeaderClient({ nav }: { nav: NavData }) {
           document.body,
         )}
     </>
+  );
+}
+
+/** Grand menu d'une rubrique (ordinateur) : groupes de la taxonomie à gauche, cartes à droite. Tout est calculé côté serveur (nav.ts). */
+function GrandMenu({ entry, onNavigate }: { entry: NavEntry; onNavigate: () => void }) {
+  const r = entry.rubrique!;
+  const focus = "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green";
+  const lien = `text-sm text-[#1A1A1A] hover:text-green hover:underline hover:underline-offset-4 focus-visible:underline focus-visible:underline-offset-4 ${focus}`;
+  const marques = entry.brands ?? [];
+  return (
+    <div className="absolute inset-x-0 top-full z-10 max-h-[calc(100vh-9rem)] overflow-y-auto border-t border-line bg-white shadow-[0_16px_32px_rgba(0,0,0,0.08)]">
+      <div className="container flex items-start gap-10 py-8">
+        {r.groupes.length > 0 ? (
+          <div className="grid min-w-0 flex-1 gap-x-8 gap-y-6" style={{ gridTemplateColumns: `repeat(${r.groupes.length}, minmax(0, 1fr))` }}>
+            {r.groupes.map((g) => (
+              <div key={g.id}>
+                <p className="mb-3 text-[0.75rem] font-bold uppercase tracking-[0.12em] text-green">{g.label}</p>
+                <ul className="space-y-2">
+                  {g.entrees.map((en) => (
+                    <li key={en.href}>
+                      <Link href={en.href} onClick={onNavigate} className={lien}>
+                        {en.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="min-w-0 flex-1">
+            {marques.length > 0 && (
+              <>
+                <p className="mb-3 text-[0.75rem] font-bold uppercase tracking-[0.12em] text-green">Marques</p>
+                <ul className="grid grid-flow-col grid-rows-5 gap-x-10 gap-y-2">
+                  {marques.map((b) => (
+                    <li key={b.href}>
+                      <Link href={b.href} onClick={onNavigate} className={lien}>
+                        {b.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
+          </div>
+        )}
+        <div className="flex w-[300px] flex-none flex-col gap-4">
+          <Link
+            href={entry.href}
+            onClick={onNavigate}
+            className={`group relative flex h-36 items-end overflow-hidden rounded-xl bg-green p-4 text-ivory ${focus}`}
+          >
+            {r.image && <Image src={r.image} alt={r.imageAlt ?? ""} fill sizes="300px" className="object-cover transition-transform duration-300 group-hover:scale-105" />}
+            {r.image && <span aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />}
+            <span className="relative text-sm font-semibold uppercase tracking-[0.1em]">Voir tout {entry.label} →</span>
+          </Link>
+          {r.produit && (
+            <Link href={r.produit.href} onClick={onNavigate} className={`flex items-center gap-3 rounded-xl border border-line p-3 hover:border-green ${focus}`}>
+              {r.produit.image && (
+                <span className="relative size-16 flex-none overflow-hidden rounded-lg bg-white">
+                  <Image src={r.produit.image} alt="" fill sizes="64px" className="object-contain" />
+                </span>
+              )}
+              <span className="min-w-0">
+                <span className="block text-[0.6875rem] font-bold uppercase tracking-[0.12em] text-green">{r.produit.badge}</span>
+                <span className="block truncate text-xs text-[#6B6B68]">{r.produit.brand}</span>
+                <span className="line-clamp-2 text-sm text-[#1A1A1A]">{r.produit.name}</span>
+              </span>
+            </Link>
+          )}
+          {r.conseil && (
+            <Link href={r.conseil.href} onClick={onNavigate} className={`rounded-xl border border-line p-3 hover:border-green ${focus}`}>
+              <span className="block text-[0.6875rem] font-bold uppercase tracking-[0.12em] text-green">Conseil</span>
+              <span className="line-clamp-2 text-sm text-[#1A1A1A]">{r.conseil.title}</span>
+            </Link>
+          )}
+        </div>
+      </div>
+    </div>
   );
 }
