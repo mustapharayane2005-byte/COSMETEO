@@ -18,13 +18,15 @@ type Props = {
   children?: React.ReactNode;
   /** Contenu libre après la liste. */
   after?: React.ReactNode;
+  /** Pastilles de marques au-dessus de la grille (défaut : oui). */
+  pastillesMarques?: boolean;
 };
 
 const chipCls =
   "inline-flex min-h-11 shrink-0 items-center rounded-full border px-5 text-sm font-medium transition-colors";
 
 /** Liste produits partagée par /boutique/…, /besoins/…, /marques/…, /promotions et /nouveautes. */
-export default function CatalogPage({ title, intro, products, chips, crumbs, children, after }: Props) {
+export default function CatalogPage({ title, intro, products, chips, crumbs, children, after, pastillesMarques = true }: Props) {
   return (
     <PageShell>
       <section className="container pb-[clamp(56px,8vw,112px)]">
@@ -69,7 +71,7 @@ export default function CatalogPage({ title, intro, products, chips, crumbs, chi
         {children}
 
         {products.length > 0 ? (
-          <FilteredProductGrid products={products} columns={4} />
+          <FilteredProductGrid products={products} columns={4} pastillesMarques={pastillesMarques} />
         ) : (
           <div className="panel grid place-items-center gap-5 px-6 py-20 text-center">
             <p className="h2">Bientôt disponible</p>

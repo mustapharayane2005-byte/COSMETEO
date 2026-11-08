@@ -1,5 +1,4 @@
 import BesoinsBlock from "@/components/BesoinsBlock";
-import BrandStrip from "@/components/BrandStrip";
 import ConseilsHighlights from "@/components/ConseilsHighlights";
 import FamilyPills from "@/components/FamilyPills";
 import Footer from "@/components/Footer";
@@ -34,7 +33,6 @@ export default function HomePage() {
         <div className="bg-[var(--fond-section)] pb-11 lg:pb-14">
           <UniversCards />
         </div>
-        <BrandStrip />
         <ConseilsHighlights />
         <TrustSection />
         <NewsletterSection />

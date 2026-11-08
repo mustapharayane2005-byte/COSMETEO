@@ -82,5 +82,4 @@ export const sections = {
     href: "/boutique?tri=meilleures-ventes",
   },
   newArrivals: { title: "Nos nouveautés", cta: "Voir tout →", href: "/nouveautes" },
-  brands: { title: "Les grandes marques au meilleur prix", cta: "Toutes les marques →", href: "/marques" },
 };

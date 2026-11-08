@@ -3,7 +3,7 @@ import { COLONNES, taxonomie, trouverEntree, type Colonne, type Rubrique } from 
 import type { Product } from "@/types/catalog";
 
 /** Filtres lus dans l'adresse : ?categorie=visage&sous_categorie=serums-visage (une valeur par paramètre). */
-export type Filtres = { categorie?: string } & Partial<Record<Colonne, string>>;
+export type Filtres = { categorie?: string; marque?: string } & Partial<Record<Colonne, string>>;
 
 type SearchParams = Record<string, string | string[] | undefined>;
 
@@ -13,6 +13,8 @@ export function lireFiltres(sp: SearchParams): Filtres {
   const f: Filtres = {};
   const categorie = un(sp.categorie);
   if (categorie) f.categorie = categorie;
+  const marque = un(sp.marque);
+  if (marque) f.marque = marque;
   for (const c of COLONNES) {
     const v = un(sp[c]);
     if (v) f[c] = v;
@@ -20,12 +22,15 @@ export function lireFiltres(sp: SearchParams): Filtres {
   return f;
 }
 
+/** Slug d'une marque pour l'adresse : ?marque=la-roche-posay. */
+const slugMarque = (b: string) => b.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
 export const aDesFiltres = (f: Filtres) => Object.keys(f).length > 0;
 
 /** Produits qui respectent tous les filtres : la rubrique (famille principale ou « aussi dans ») puis chaque colonne. */
 export function filtrerProduits(produits: Product[], f: Filtres): Product[] {
   return produits.filter(
-    (p) => (!f.categorie || inFamille(p, f.categorie)) && COLONNES.every((c) => !f[c] || p.tags?.[c]?.includes(f[c]!)),
+    (p) => (!f.categorie || inFamille(p, f.categorie)) && (!f.marque || slugMarque(p.brand) === f.marque) && COLONNES.every((c) => !f[c] || p.tags?.[c]?.includes(f[c]!)),
   );
 }
 
