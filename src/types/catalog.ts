@@ -24,7 +24,7 @@ export type Tone = "sage" | "sand" | "coral" | "cream" | "green" | "brown";
 
 export type Badge = {
   label: string;
-  kind: "new" | "promo" | "highlight";
+  kind: "new" | "promo" | "highlight" | "gift";
 };
 
 export type ProductVariants = {

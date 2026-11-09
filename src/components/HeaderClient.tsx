@@ -7,6 +7,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import AnnouncementBar from "@/components/AnnouncementBar";
+import NoelBanner from "@/components/NoelBanner";
 import { useCart } from "@/components/cart/CartContext";
 import Icon from "@/components/ui/Icon";
 import Logo from "@/components/ui/Logo";
@@ -121,6 +122,7 @@ export default function HeaderClient({ nav }: { nav: NavData }) {
 
   return (
     <>
+      <NoelBanner />
       <AnnouncementBar />
       {/* collé en haut au défilement, sans flou ; se réduit légèrement (desktop) */}
       <header className="sticky top-0 z-50 border-b border-line bg-ivory font-ui text-ink">

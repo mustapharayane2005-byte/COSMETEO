@@ -62,3 +62,23 @@ export const paiements = [
   { nom: "Mastercard", fichier: "/images/paiement/mastercard-symbole.png", alt: "Mastercard", hauteur: 28, actif: true },
   { nom: "MTN MoMo", fichier: "/images/paiement/mtn-momo.png", alt: "MTN MoMo", hauteur: 30, actif: true },
 ];
+
+/**
+ * Thème de Noël. Pour l'éteindre : passer `actif` à false (ligne « actif » ci-dessous).
+ * Il s'éteint aussi tout seul après `dateFin` (incluse) ; hors dates, le site est exactement comme avant.
+ */
+export const NOEL = {
+  actif: true,
+  dateDebut: "2026-11-01",
+  dateFin: "2026-12-31",
+  message: "Idées cadeaux de Noël",
+  lien: "/cadeaux",
+};
+
+/** Vrai si le thème est actif et que la date du jour est comprise entre dateDebut et dateFin (inclus). */
+export function noelActif(now: Date = new Date()): boolean {
+  if (!NOEL.actif) return false;
+  const debut = new Date(`${NOEL.dateDebut}T00:00:00`);
+  const fin = new Date(`${NOEL.dateFin}T23:59:59.999`);
+  return now >= debut && now <= fin;
+}

@@ -1,0 +1,28 @@
+.layer {
+  display: none;
+}
+@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+  .layer {
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    display: block;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .flake {
+    position: absolute;
+    top: -10px;
+    border-radius: 50%;
+    background: rgba(201, 162, 74, 0.45);
+    animation: tombe linear infinite;
+  }
+}
+@keyframes tombe {
+  from {
+    transform: translate3d(0, -10px, 0);
+  }
+  to {
+    transform: translate3d(24px, 105vh, 0);
+  }
+}

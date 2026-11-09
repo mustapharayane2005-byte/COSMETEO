@@ -30,7 +30,7 @@ type Entry = {
 const toBadge = (label?: string): Badge | undefined => {
   if (!label) return undefined;
   const n = label.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
-  const kind = n.includes("nouv") ? "new" : n.includes("promo") || n.includes("%") ? "promo" : "highlight";
+  const kind = n.includes("nouv") ? "new" : n.includes("promo") || n.includes("%") ? "promo" : n.includes("cadeau") ? "gift" : "highlight";
   return { label, kind };
 };
 

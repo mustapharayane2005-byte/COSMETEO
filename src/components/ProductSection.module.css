@@ -45,3 +45,22 @@
     padding-block: 40px;
   }
 }
+
+/* section « Idées cadeaux » : filet doré discret sous l'en-tête */
+.gift h2::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 2px;
+  margin: 12px auto 0;
+  background: #c9a24a;
+}
+.gift .more {
+  color: #7a1f2b;
+  border-color: #c9a24a;
+}
+@media (max-width: 480px) {
+  .gift h2::after {
+    margin-left: 0;
+  }
+}

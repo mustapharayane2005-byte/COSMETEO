@@ -60,6 +60,15 @@
   background: var(--ivory);
   color: var(--green);
 }
+/* badge « Cadeau » : identique à « highlight » ; rouge profond et doré uniquement quand le thème de Noël est actif */
+.gift {
+  background: var(--ivory);
+  color: var(--green);
+}
+:global(html[data-noel]) .gift {
+  background: #7a1f2b;
+  color: #f3e3b3;
+}
 .wish {
   position: absolute;
   top: 6px;

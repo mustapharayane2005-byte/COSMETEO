@@ -11,7 +11,12 @@ import UniversCards from "@/components/UniversCards";
 import GrandesMarques from "@/components/GrandesMarques";
 import RevealObserver from "@/components/ui/RevealObserver";
 import { sections } from "@/data/home";
-import { bestSellers } from "@/data/products";
+import NoelFlocons from "@/components/NoelFlocons";
+import { bestSellers, cadeauxProducts } from "@/data/products";
+import { noelActif } from "@/data/site";
+
+/** Régénération horaire : la section cadeaux disparaît toute seule après la date de fin du thème. */
+export const revalidate = 3600;
 
 export default function HomePage() {
   return (
@@ -19,6 +24,16 @@ export default function HomePage() {
       <Header />
       <main>
         <Hero />
+        {noelActif() && cadeauxProducts.length > 0 && (
+          <ProductSection
+            id="cadeaux-title"
+            title="Idées cadeaux"
+            link={{ label: "Voir tout →", href: "/cadeaux" }}
+            products={cadeauxProducts.slice(0, 6)}
+            layout="carousel"
+            gift
+          />
+        )}
         <FamilyPills />
         <GrandesMarques />
         <BesoinsBlock />
@@ -39,6 +54,7 @@ export default function HomePage() {
       </main>
       <Footer />
       <RevealObserver />
+      <NoelFlocons />
     </>
   );
 }

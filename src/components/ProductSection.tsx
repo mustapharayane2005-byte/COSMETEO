@@ -14,14 +14,16 @@ type Props = {
   /** "grid" : 2 → 4 colonnes. "carousel" : rail horizontal. */
   layout?: "grid" | "carousel";
   tinted?: boolean;
+  /** Section cadeaux de Noël : filet doré sous le titre. */
+  gift?: boolean;
 };
 
 /** En-tête de section + grille ou carrousel : « incontournables » et « nouveautés ». */
-export default function ProductSection({ id, title, subtitle, link, products, layout = "grid", tinted }: Props) {
+export default function ProductSection({ id, title, subtitle, link, products, layout = "grid", tinted, gift }: Props) {
   return (
     <section className={`section ${tinted ? s.tinted : ""}`} aria-labelledby={id}>
       <div className="container">
-        <header className={s.head} data-reveal>
+        <header className={`${s.head} ${gift ? s.gift : ""}`} data-reveal>
           <div>
             <h2 id={id} className="h2">
               {title}
