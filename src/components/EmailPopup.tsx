@@ -1,12 +1,13 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { useCart } from "@/components/cart/CartContext";
-import { POPUP_EMAIL_ACTIF } from "@/data/site";
+import { POPUP_EMAIL_ACTIF, POPUP_EMAIL_DELAI_SECONDES } from "@/data/site";
 import s from "./EmailPopup.module.css";
 
-const DELAI_MS = 50_000;
+const DELAI_MS = POPUP_EMAIL_DELAI_SECONDES * 1000;
+const SORTIE_MS = 400;
 const PAUSE_MS = 30 * 24 * 60 * 60 * 1000;
 const CLE_ARRIVEE = "popup-email-arrivee";
 const CLE_VU = "popup-email-vu";
@@ -35,7 +36,8 @@ export default function EmailPopup() {
   const [email, setEmail] = useState("");
   const [accepte, setAccepte] = useState(false);
   const [done, setDone] = useState(false);
-  const dialogRef = useRef<HTMLDivElement>(null);
+  const [entre, setEntre] = useState(false);
+  const [sortant, setSortant] = useState(false);
 
   const exclu = pageExclue(pathname);
 
@@ -61,36 +63,25 @@ export default function EmailPopup() {
   const visible = POPUP_EMAIL_ACTIF && pret && !ferme && !exclu && !tiroirOuvert;
 
   const fermer = useCallback(() => {
-    setFerme(true);
+    setSortant(true);
+    setTimeout(() => setFerme(true), SORTIE_MS);
     if (apercu) return;
     try {
       localStorage.setItem(CLE_VU, String(Date.now()));
     } catch {}
   }, [apercu]);
 
+  // Entrée : on laisse le panneau se monter hors écran, puis on le fait glisser.
   useEffect(() => {
     if (!visible) return;
-    dialogRef.current?.focus();
+    const id = requestAnimationFrame(() => requestAnimationFrame(() => setEntre(true)));
+    return () => cancelAnimationFrame(id);
+  }, [visible]);
+
+  useEffect(() => {
+    if (!visible) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        fermer();
-        return;
-      }
-      if (e.key !== "Tab" || !dialogRef.current) return;
-      const f = Array.from(
-        dialogRef.current.querySelectorAll<HTMLElement>("button:not(:disabled), input, a[href]"),
-      );
-      if (!f.length) return;
-      const premier = f[0];
-      const dernier = f[f.length - 1];
-      const actif = document.activeElement;
-      if (e.shiftKey && (actif === premier || actif === dialogRef.current)) {
-        e.preventDefault();
-        dernier.focus();
-      } else if (!e.shiftKey && actif === dernier) {
-        e.preventDefault();
-        premier.focus();
-      }
+      if (e.key === "Escape") fermer();
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
@@ -101,14 +92,11 @@ export default function EmailPopup() {
   const valide = EMAIL_OK.test(email.trim()) && accepte;
 
   return (
-    <div className={s.overlay} onClick={(e) => e.target === e.currentTarget && fermer()}>
+    <div className={s.zone}>
       <div
-        ref={dialogRef}
-        className={s.dialog}
+        className={`${s.dialog} ${entre && !sortant ? s.ouvert : ""}`}
         role="dialog"
-        aria-modal="true"
         aria-labelledby="popup-email-titre"
-        tabIndex={-1}
       >
         <button type="button" className={s.close} onClick={fermer} aria-label="Fermer">
           ×

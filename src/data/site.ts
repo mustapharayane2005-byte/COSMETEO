@@ -85,3 +85,6 @@ export function noelActif(now: Date = new Date()): boolean {
 
 /** Pop-up d'inscription e-mail : passer à false pour l'éteindre. */
 export const POPUP_EMAIL_ACTIF = true;
+
+/** Délai avant l'affichage du pop-up e-mail, en secondes après l'arrivée sur le site. */
+export const POPUP_EMAIL_DELAI_SECONDES = 30;
