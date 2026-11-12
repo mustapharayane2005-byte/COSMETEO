@@ -4,7 +4,6 @@ import FamilyPills from "@/components/FamilyPills";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import NewsletterSection from "@/components/NewsletterSection";
 import ProductSection from "@/components/ProductSection";
 import TrustSection from "@/components/TrustSection";
 import UniversCards from "@/components/UniversCards";
@@ -50,7 +49,6 @@ export default function HomePage() {
         </div>
         <ConseilsHighlights />
         <TrustSection />
-        <NewsletterSection />
       </main>
       <Footer />
       <RevealObserver />

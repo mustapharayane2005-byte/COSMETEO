@@ -7,6 +7,7 @@ import CartDrawer from "@/components/cart/CartDrawer";
 import ChatBubble from "@/components/ChatBubble";
 import MobileDock from "@/components/MobileDock";
 import SplashScreen, { splashScript } from "@/components/SplashScreen";
+import EmailPopup from "@/components/EmailPopup";
 import MotionProvider from "@/components/ui/MotionProvider";
 import "./globals.css";
 
@@ -77,6 +78,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <CartDrawer />
           <MobileDock />
           <ChatBubble />
+          <EmailPopup />
         </CartProvider>
         </MotionProvider>
       </body>

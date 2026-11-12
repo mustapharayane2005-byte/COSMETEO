@@ -82,3 +82,6 @@ export function noelActif(now: Date = new Date()): boolean {
   const fin = new Date(`${NOEL.dateFin}T23:59:59.999`);
   return now >= debut && now <= fin;
 }
+
+/** Pop-up d'inscription e-mail : passer à false pour l'éteindre. */
+export const POPUP_EMAIL_ACTIF = true;
