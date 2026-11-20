@@ -1,4 +1,4 @@
-import Image, { getImageProps } from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import Icon, { type IconName } from "@/components/ui/Icon";
 import { hero } from "@/data/home";
@@ -25,38 +25,32 @@ const fade = "motion-safe:animate-[heroFade_0.6s_ease-out_both]";
 /** Desktop : photo plein cadre, texte à droite. Mobile : photo en haut, texte dessous. */
 export default function Hero() {
   const noel = noelActif();
-  const { props: desktopProps } = getImageProps({
-    src: hero.imageDesktop,
-    alt: NOEL_ALT,
-    width: 1600,
-    height: 1333,
-    quality: 90,
-    sizes: "100vw",
-  });
   return (
     <section
-      className="relative bg-[#F8F5F0] lg:relative lg:m-4 lg:h-[clamp(460px,44vw,640px)] lg:overflow-hidden lg:rounded-3xl"
+      className={`relative bg-[#F8F5F0] ${noel ? "lg:bg-[#F3EADD] " : ""}lg:relative lg:m-4 lg:h-[clamp(460px,44vw,640px)] lg:overflow-hidden lg:rounded-3xl`}
       aria-labelledby="hero-title"
     >
       <div
-        className={`relative mx-4 mt-4 overflow-hidden rounded-2xl lg:absolute lg:inset-0 lg:m-0 lg:aspect-auto lg:rounded-none lg:[mask-image:linear-gradient(to_left,transparent_0%,#000_10%)] ${
-          noel ? "aspect-[4/5] md:aspect-[6/5]" : "aspect-[6/5]"
+        className={`relative mx-4 mt-4 overflow-hidden rounded-2xl ${
+          noel
+            ? "aspect-[4/5] md:aspect-[6/5] lg:absolute lg:inset-y-0 lg:right-0 lg:m-0 lg:aspect-auto lg:w-[72%] lg:rounded-none lg:[mask-image:linear-gradient(to_right,transparent_0%,#000_26%)]"
+            : "aspect-[6/5] lg:absolute lg:inset-0 lg:m-0 lg:aspect-auto lg:rounded-none lg:[mask-image:linear-gradient(to_left,transparent_0%,#000_10%)]"
         }`}
       >
         {noel ? (
           <picture>
             <source media="(max-width: 767px)" srcSet="/images/hero-mobile.webp" type="image/webp" />
             <source media="(max-width: 767px)" srcSet="/images/hero-mobile.jpg" type="image/jpeg" />
-            <source media="(min-width: 768px)" srcSet={desktopProps.srcSet} />
+            <source media="(min-width: 768px)" srcSet="/images/hero-pc.webp" type="image/webp" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={desktopProps.src}
+              src="/images/hero-pc.jpg"
               alt={NOEL_ALT}
-              width={1194}
-              height={1492}
+              width={1600}
+              height={893}
               fetchPriority="high"
               decoding="async"
-              className="absolute inset-0 size-full object-cover object-[left_center] lg:object-[left_35%]"
+              className="absolute inset-0 size-full object-cover object-center md:object-right"
             />
           </picture>
         ) : (
@@ -72,8 +66,14 @@ export default function Hero() {
         )}
       </div>
 
-      <div className="p-5 text-center lg:absolute lg:inset-y-0 lg:right-0 lg:flex lg:w-[34%] lg:flex-col lg:items-center lg:justify-center lg:py-0 lg:pl-6 lg:pr-12">
-        <p className={`${noel ? "max-md:absolute max-md:inset-x-4 max-md:top-8 max-md:justify-center " : ""}flex items-center justify-center gap-2.5 whitespace-nowrap font-ui text-xs font-medium uppercase tracking-[0.2em] text-[#1A1A1A]/70`}>
+      <div
+        className={`p-5 text-center ${
+          noel
+            ? "lg:absolute lg:inset-y-0 lg:left-[68px] lg:flex lg:w-[500px] lg:flex-col lg:items-start lg:justify-center lg:p-0 lg:text-left"
+            : "lg:absolute lg:inset-y-0 lg:right-0 lg:flex lg:w-[34%] lg:flex-col lg:items-center lg:justify-center lg:py-0 lg:pl-6 lg:pr-12"
+        }`}
+      >
+        <p className={`${noel ? "max-md:absolute max-md:inset-x-4 max-md:top-8 lg:justify-start " : ""}flex items-center justify-center gap-2.5 whitespace-nowrap font-ui text-xs font-medium uppercase tracking-[0.2em] text-[#1A1A1A]/70`}>
           <span aria-hidden="true" className="h-px w-5 bg-[#1A1A1A]/70" />
           {hero.label.replace(/^—\s*/, "")}
         </p>
