@@ -72,7 +72,13 @@ export const NOEL = {
   dateDebut: "2026-11-01",
   dateFin: "2026-12-31",
   message: "Idées cadeaux de Noël",
-  lien: "/cadeaux",
+  messageSuite: "Offrez du soin à toute la famille",
+  /** Images (chemin sans extension : le site charge le .webp et le .jpg). Pour en changer : remplacer la ligne, et déposer les fichiers dans public/images/. */
+  images: {
+    heroPc: "/images/hero-pc", // héros ordinateur (1600 x 893)
+    heroMobile: "/images/hero-mobile", // héros mobile (1194 x 1492)
+    cadeaux: null as string | null, // image « Famille réunie autour des cadeaux de Noël » (chemin sans extension, ex. "/images/noel-cadeaux") ; null = fond vert sans photo
+  },
 };
 
 /** Vrai si le thème est actif et que la date du jour est comprise entre dateDebut et dateFin (inclus). */

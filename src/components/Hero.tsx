@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import Icon, { type IconName } from "@/components/ui/Icon";
 import { hero } from "@/data/home";
-import { noelActif } from "@/data/site";
+import { NOEL, noelActif } from "@/data/site";
 
-const NOEL_ALT = "Famille africaine souriante";
+const NOEL_ALT = "Famille africaine souriante, réunie à Noël";
 
 const chipIcons: IconName[] = ["leaf", "cross", "truck", "shield"];
 
@@ -39,12 +39,12 @@ export default function Hero() {
       >
         {noel ? (
           <picture>
-            <source media="(max-width: 767px)" srcSet="/images/hero-mobile.webp" type="image/webp" />
-            <source media="(max-width: 767px)" srcSet="/images/hero-mobile.jpg" type="image/jpeg" />
-            <source media="(min-width: 768px)" srcSet="/images/hero-pc.webp" type="image/webp" />
+            <source media="(max-width: 767px)" srcSet={`${NOEL.images.heroMobile}.webp`} type="image/webp" />
+            <source media="(max-width: 767px)" srcSet={`${NOEL.images.heroMobile}.jpg`} type="image/jpeg" />
+            <source media="(min-width: 768px)" srcSet={`${NOEL.images.heroPc}.webp`} type="image/webp" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/hero-pc.jpg"
+              src={`${NOEL.images.heroPc}.jpg`}
               alt={NOEL_ALT}
               width={1600}
               height={893}
@@ -79,10 +79,10 @@ export default function Hero() {
         </p>
         <h1
           id="hero-title"
-          className={`${noel ? "max-md:absolute max-md:inset-x-4 max-md:top-[3.75rem] max-md:text-[1.75rem] " : ""}mt-4 font-display text-[2rem] font-normal leading-[1.08] tracking-[-0.01em] text-[#1A1A1A] lg:text-[clamp(2rem,3.2vw,3.1rem)]`}
+          className={`${noel ? "max-md:absolute max-md:inset-x-4 max-md:top-[3.75rem] max-md:text-[1.75rem] " : ""}mt-4 font-display text-[2rem] font-normal leading-[1.08] tracking-[-0.01em] text-[#1A1A1A] ${noel ? "lg:text-[clamp(2.25rem,4vw,58px)]" : "lg:text-[clamp(2rem,3.2vw,3.1rem)]"}`}
         >
           {lines.map((l, i) => (
-            <span key={i} className="block overflow-hidden pb-[0.06em]">
+            <span key={i} className={`${noel && i < 2 ? "max-md:mr-[0.25em] max-md:inline-block " : ""}block overflow-hidden pb-[0.06em]`}>
               <span
                 className="block motion-safe:animate-[heroMask_0.7s_cubic-bezier(0.22,1,0.36,1)_both]"
                 style={delay(LINE_START + i * STEP)}

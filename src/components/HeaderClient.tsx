@@ -13,7 +13,7 @@ import Icon from "@/components/ui/Icon";
 import Logo from "@/components/ui/Logo";
 import type { NavData, NavEntry } from "@/data/nav";
 
-export default function HeaderClient({ nav }: { nav: NavData }) {
+export default function HeaderClient({ nav, noelLien }: { nav: NavData; noelLien: string }) {
   const { count: cartCount, openCart } = useCart();
   const pathname = usePathname();
   const isHome = pathname === "/";
@@ -88,8 +88,8 @@ export default function HeaderClient({ nav }: { nav: NavData }) {
   const barre: NavEntry[] = [...(isHome ? [] : [{ label: "Accueil", href: "/" }]), ...nav.primary];
   const current = (href: string) => (isActive(href) ? ("page" as const) : undefined);
 
-  const navLink = (active: boolean) =>
-    `flex h-full items-center whitespace-nowrap border-b-2 px-0.5 text-[0.75rem] font-medium uppercase tracking-[0.08em] text-[#1A1A1A] transition-colors hover:border-green focus-visible:border-green ${
+  const navLink = (active: boolean, cadeaux?: boolean) =>
+    `flex h-full items-center whitespace-nowrap border-b-2 px-0.5 text-[0.75rem] font-medium uppercase tracking-[0.08em] ${cadeaux ? "font-semibold text-[var(--bordeaux)]" : "text-[#1A1A1A]"} transition-colors hover:border-green focus-visible:border-green ${
       active ? "border-green" : "border-transparent"
     }`;
   // Ouverture au survol avec un léger délai (évite les ouvertures accidentelles) ; si un panneau est déjà ouvert, on change tout de suite.
@@ -122,7 +122,7 @@ export default function HeaderClient({ nav }: { nav: NavData }) {
 
   return (
     <>
-      <NoelBanner />
+      <NoelBanner lien={noelLien} />
       <AnnouncementBar />
       {/* collé en haut au défilement, sans flou ; se réduit légèrement (desktop) */}
       <header className="sticky top-0 z-50 border-b border-line bg-ivory font-ui text-ink">
@@ -199,7 +199,7 @@ export default function HeaderClient({ nav }: { nav: NavData }) {
                   >
                     <Link
                       href={e.href}
-                      className={navLink(isActive(e.href))}
+                      className={navLink(isActive(e.href), e.cadeaux)}
                       aria-current={current(e.href)}
                       aria-haspopup={hasPanel ? "true" : undefined}
                       aria-expanded={hasPanel ? openKey === e.href : undefined}
@@ -356,7 +356,7 @@ export default function HeaderClient({ nav }: { nav: NavData }) {
                             href={e.href}
                             onClick={() => setMenuOpen(false)}
                             aria-current={current(e.href)}
-                            className={`block py-3.5 text-[0.8125rem] font-medium uppercase tracking-[0.08em] text-[#1A1A1A] ${
+                            className={`block py-3.5 text-[0.8125rem] font-medium uppercase tracking-[0.08em] ${e.cadeaux ? "font-semibold text-[var(--bordeaux)]" : "text-[#1A1A1A]"} ${
                               isActive(e.href) ? "underline decoration-green decoration-2 underline-offset-8" : ""
                             }`}
                           >
@@ -457,6 +457,12 @@ function GrandMenu({ entry, onNavigate }: { entry: NavEntry; onNavigate: () => v
                 <span className="block truncate text-xs text-[#6B6B68]">{r.produit.brand}</span>
                 <span className="line-clamp-2 text-sm text-[#1A1A1A]">{r.produit.name}</span>
               </span>
+            </Link>
+          )}
+          {r.cadeaux && (
+            <Link href="/cadeaux" onClick={onNavigate} className={`rounded-xl border border-[var(--or)] p-3 hover:border-[var(--bordeaux)] ${focus}`}>
+              <span className="block text-[0.6875rem] font-bold uppercase tracking-[0.12em] text-[var(--bordeaux)]">Noël</span>
+              <span className="text-sm text-[#1A1A1A]">Idées cadeaux →</span>
             </Link>
           )}
           {r.conseil && (

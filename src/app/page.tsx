@@ -10,7 +10,6 @@ import UniversCards from "@/components/UniversCards";
 import GrandesMarques from "@/components/GrandesMarques";
 import RevealObserver from "@/components/ui/RevealObserver";
 import { sections } from "@/data/home";
-import NoelFlocons from "@/components/NoelFlocons";
 import { bestSellers, cadeauxProducts } from "@/data/products";
 import { noelActif } from "@/data/site";
 
@@ -52,7 +51,6 @@ export default function HomePage() {
       </main>
       <Footer />
       <RevealObserver />
-      <NoelFlocons />
     </>
   );
 }

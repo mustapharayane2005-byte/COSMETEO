@@ -7,26 +7,37 @@ import s from "./NoelBanner.module.css";
 
 const CLE = "noel-bandeau-ferme";
 
-/** Bandeau de Noël au-dessus de l'en-tête. Pose aussi `data-noel` sur <html> (couleurs du badge « Cadeau »). */
-export default function NoelBanner() {
+const Etoile = () => (
+  <svg className={s.star} width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
+    <path d="M5 0l1.2 3.8L10 5 6.2 6.2 5 10 3.8 6.2 0 5l3.8-1.2z" fill="currentColor" />
+  </svg>
+);
+
+/** Bandeau de Noël au-dessus de l'en-tête : vert foncé, texte crème, étoiles dorées. Fermeture mémorisée pour la session. */
+export default function NoelBanner({ lien }: { lien: string }) {
   const [actif] = useState(noelActif);
   const [ferme, setFerme] = useState(false);
 
   useEffect(() => {
-    if (!noelActif()) return;
-    document.documentElement.setAttribute("data-noel", "");
     try {
       if (sessionStorage.getItem(CLE)) setFerme(true);
     } catch {}
-    return () => document.documentElement.removeAttribute("data-noel");
   }, []);
 
   if (!actif || ferme) return null;
   return (
     <div className={s.bar} role="region" aria-label="Annonce">
-      <Link href={NOEL.lien} className={s.link}>
-        {NOEL.message}
-      </Link>
+      <p className={s.text}>
+        <Etoile />
+        <span>
+          {NOEL.message}
+          <span className={s.suite}> · {NOEL.messageSuite}</span>
+        </span>
+        <Link href={lien} className={s.link}>
+          Découvrir →
+        </Link>
+        <Etoile />
+      </p>
       <button
         type="button"
         className={s.close}

@@ -3,12 +3,15 @@ import { categories } from "@/data/categories";
 import { articles } from "@/data/conseils";
 import { univers } from "@/data/home";
 import { taxonomieAvecProduits, type RubriqueAvecNombre } from "@/data/taxonomie-filtres";
+import { cadeauxActif } from "@/data/noel";
 import { allProducts, byFamille, cadeauxProducts, familleVisible, newProducts, promoProducts, topVentesProducts } from "@/data/products";
 
 /** Entrée de la barre principale (calculée côté serveur, sérialisable pour le composant client). */
 export type NavEntry = {
   label: string;
   href: string;
+  /** Entrée « Cadeaux » (Noël) : affichée en bordeaux. */
+  cadeaux?: boolean;
   /** Marques présentes dans la catégorie (panneau au survol) ; absent pour les rubriques sans panneau. */
   brands?: { name: string; href: string }[];
   /** Grand menu de la rubrique (Visage, Corps, Cheveux, Soin bébé) : groupes non vides et cartes. Absent : petit panneau de marques. */
@@ -22,6 +25,8 @@ export type NavEntry = {
     produit?: { name: string; brand: string; href: string; image?: string; badge: string };
     /** Dernier conseil de la rubrique (article dont la famille correspond). */
     conseil?: { title: string; href: string; image?: string };
+    /** Vrai si la rubrique contient au moins un produit « Cadeau » pendant Noël : affiche la carte « Idées cadeaux ». */
+    cadeaux?: boolean;
   };
 };
 
@@ -49,6 +54,7 @@ const rubriqueOf = (slug: string): NavEntry["rubrique"] => {
     image: u?.image,
     imageAlt: u?.imageAlt,
     produit: p && { name: p.name, brand: p.brand, href: `/produit/${p.slug}`, image: p.images[0], badge: p.badge!.label },
+    cadeaux: cadeauxActif() && byFamille(slug).some((x) => cadeauxProducts.some((c) => c.slug === x.slug)),
     conseil: a && { title: a.title, href: `/conseils/${a.slug}`, image: a.image },
   };
 };
@@ -62,17 +68,17 @@ const cat = (slug: string, label?: string): NavEntry | null => {
 
 const notNull = <T,>(x: T | null): x is T => x !== null;
 
-/** Barre principale : Top ventes · Cadeaux · Visage · Corps · Cheveux · Soin bébé · Hygiène · Santé & Bien-être · Marques · Conseils. */
+/** Barre principale : Top ventes · Visage · Corps · Cheveux · Soin bébé · Hygiène · Santé & Bien-être · Cadeaux (Noël) · Marques · Conseils. */
 export function buildNav(): NavData {
   const primary: NavEntry[] = [
     topVentesProducts.length > 0 ? { label: "Top ventes", href: "/top-ventes" } : null,
-    cadeauxProducts.length > 0 ? { label: "Cadeaux", href: "/cadeaux" } : null,
     cat("visage"),
     cat("corps"),
     cat("cheveux"),
     cat("bebe-enfant", "Soin bébé"),
     cat("hygiene"),
     cat("sante-bien-etre"),
+    cadeauxActif() ? { label: "Cadeaux", href: "/cadeaux", cadeaux: true } : null,
     { label: "Marques", href: "/marques" },
     { label: "Conseils", href: "/conseils" },
   ].filter(notNull);

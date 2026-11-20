@@ -44,6 +44,10 @@
   --line: #ede8e0;
   --line-strong: #d6cfc3;
   --page-m: 16px;
+  /* Noël (couche réversible) */
+  --or: #c9a45c;
+  --or-clair: #e6cf9a;
+  --bordeaux: #7a2e3a;
 
   --font-heading: var(--font-display);
   --font-sans: var(--font-ui);

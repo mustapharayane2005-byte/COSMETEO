@@ -9,6 +9,7 @@ import MobileDock from "@/components/MobileDock";
 import SplashScreen, { splashScript } from "@/components/SplashScreen";
 import EmailPopup from "@/components/EmailPopup";
 import MotionProvider from "@/components/ui/MotionProvider";
+import { noelActif } from "@/data/site";
 import "./globals.css";
 
 // Interface et contenu : Comfortaa (variable, 300 à 700), auto-hébergée par next/font.
@@ -61,7 +62,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="fr" className={`${comfortaa.variable}${surimiFiles.length ? " has-surimi" : ""}`} suppressHydrationWarning>
+    <html lang="fr" className={`${comfortaa.variable}${surimiFiles.length ? " has-surimi" : ""}`} data-noel={noelActif() ? "" : undefined} suppressHydrationWarning>
       <head>
         {surimiFiles.length > 0 && <style dangerouslySetInnerHTML={{ __html: surimiCss }} />}
         {surimiFiles.map((f) => (
