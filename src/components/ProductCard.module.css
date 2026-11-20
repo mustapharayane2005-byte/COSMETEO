@@ -60,14 +60,29 @@
   background: var(--ivory);
   color: var(--green);
 }
-/* badge « Cadeau » : identique à « highlight » ; rouge profond et doré uniquement quand le thème de Noël est actif */
-.gift {
+.gift,
+.top {
   background: var(--ivory);
   color: var(--green);
 }
+/* Noël : étiquettes à ruban (Cadeau doré, Nouveauté vert, Top vente bordeaux) ; hors Noël, styles d'origine */
+:global(html[data-noel]) .badge:is(.gift, .new, .top) {
+  padding: 5px 10px 5px 8px;
+  border-radius: 4px;
+  border-left: 4px solid transparent;
+}
 :global(html[data-noel]) .gift {
-  background: #7a1f2b;
-  color: #f3e3b3;
+  background: linear-gradient(135deg, #d8b66f, #c19a4d);
+  color: #2a2113;
+  border-left-color: var(--bordeaux);
+}
+:global(html[data-noel]) .new {
+  border-left-color: var(--or-clair);
+}
+:global(html[data-noel]) .top {
+  background: linear-gradient(135deg, #8a3a47, #6e2631);
+  color: #fff;
+  border-left-color: rgb(255 255 255 / 0.3);
 }
 .wish {
   position: absolute;

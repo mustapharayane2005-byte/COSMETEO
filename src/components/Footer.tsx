@@ -2,7 +2,7 @@ import Link from "next/link";
 import Icon from "@/components/ui/Icon";
 import Reveal from "@/components/ui/Reveal";
 import Logo from "@/components/ui/Logo";
-import { footerColumns, socials } from "@/data/site";
+import { footerColumns, noelActif, socials } from "@/data/site";
 import { lienVisible } from "@/data/products";
 import PaymentMethods from "@/components/PaymentMethods";
 import s from "./Footer.module.css";
@@ -10,6 +10,19 @@ import s from "./Footer.module.css";
 export default function Footer() {
   return (
     <footer className={s.footer}>
+      {noelActif() && (
+        <svg className={s.lights} width="100%" height="26" aria-hidden="true" focusable="false">
+          <defs>
+            <pattern id="noel-lumieres" width="64" height="26" patternUnits="userSpaceOnUse">
+              <path d="M0 2Q32 12 64 2" fill="none" stroke="#c9a45c" strokeWidth="1" />
+              <path d="M32 7v4" stroke="#c9a45c" strokeWidth="1" />
+              <circle cx="32" cy="14" r="3" fill="#e6cf9a" />
+              <circle cx="0" cy="3" r="1.4" fill="#c9a45c" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="26" fill="url(#noel-lumieres)" />
+        </svg>
+      )}
       <div data-reveal className={`container ${s.main}`}>
         <div className={s.brand}>
           <Reveal>

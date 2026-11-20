@@ -1,0 +1,150 @@
+.section {
+  position: relative;
+  overflow: hidden;
+}
+.decor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+  width: 120px;
+  height: 60px;
+  pointer-events: none;
+}
+.head {
+  margin-bottom: 24px;
+}
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--bordeaux);
+}
+.titleRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 20px;
+  margin-top: 6px;
+}
+.titleRow :global(.h2) {
+  text-align: left;
+}
+.more {
+  padding: 4px 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green);
+  text-decoration: underline;
+  text-decoration-color: var(--or);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+.more:hover {
+  text-decoration-color: var(--green);
+}
+.layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 16px;
+}
+.hero {
+  position: relative;
+  display: block;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #173c32;
+}
+.shade {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 65%;
+  background: linear-gradient(to top, rgb(14 36 30 / 0.85), transparent);
+}
+.caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  display: grid;
+  gap: 4px;
+  padding: 20px;
+  color: #fff;
+}
+.captionTitle {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  line-height: 1.15;
+}
+.captionSub {
+  font-size: 0.875rem;
+  color: var(--or-clair);
+}
+/* mobile : rail horizontal dans sa zone, sans défilement de la page */
+.products {
+  display: flex;
+  gap: 14px;
+  min-width: 0;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.products::-webkit-scrollbar {
+  display: none;
+}
+.products > li {
+  flex: none;
+  width: 66%;
+  scroll-snap-align: start;
+}
+/* bouton d'ajout : liseré doré pendant Noël */
+.products article button[class*="add"],
+.products article button[class*="quick"] {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 3.5px var(--or);
+}
+@media (min-width: 1024px) {
+  .decor {
+    width: 240px;
+    height: 120px;
+  }
+  .layout {
+    grid-template-columns: 5fr 6fr;
+    gap: 28px;
+    align-items: stretch;
+  }
+  .hero {
+    height: auto;
+    min-height: 560px;
+  }
+  .captionTitle {
+    font-size: 2rem;
+  }
+  .caption {
+    padding: 32px;
+  }
+  .products {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    overflow: visible;
+  }
+  .products > li {
+    width: auto;
+  }
+}
+@media (min-width: 1280px) {
+  .layout {
+    grid-template-columns: 640px minmax(0, 1fr);
+  }
+  .hero {
+    min-height: 640px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .products {
+    scroll-behavior: auto;
+  }
+}
