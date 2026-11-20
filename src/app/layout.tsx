@@ -55,7 +55,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#FFFFFF",
+  // Noël : barre du navigateur (mobile) en vert foncé, comme le bandeau ; sinon blanc.
+  themeColor: noelActif() ? "#214237" : "#FFFFFF",
   width: "device-width",
   initialScale: 1,
 };

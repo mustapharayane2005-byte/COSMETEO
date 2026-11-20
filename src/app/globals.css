@@ -439,6 +439,55 @@ html.splash-on {
   .splash-fill { animation: none; }
 }
 
+/* Noël : fond crème, fil doré (même mécanisme que la barre), lumières qui s'allument de gauche à droite, retrait en 1,2 s */
+.splash-noel {
+  background: #f8f5f0;
+  animation: splash-out 0.3s ease 0.9s forwards;
+}
+html[data-noel].splash-on {
+  animation: splash-unlock 0s linear 1.2s forwards;
+}
+.splash-thread {
+  position: relative;
+  display: block;
+  width: min(220px, 70vw);
+  height: 14px;
+}
+.splash-noel .splash-track {
+  width: 100%;
+  background: rgb(201 164 92 / 0.25);
+}
+.splash-noel .splash-fill {
+  background: #c9a45c;
+  animation-duration: 0.9s;
+  animation-delay: 0.15s;
+}
+.splash-bulb {
+  position: absolute;
+  top: 5px;
+  width: 6px;
+  height: 6px;
+  margin-left: -3px;
+  border-radius: 50%;
+  background: #e6cf9a;
+  box-shadow: 0 0 6px 1px rgb(201 164 92 / 0.6);
+  opacity: 0;
+  animation: splash-bulb 0.25s ease forwards;
+}
+.splash-star {
+  position: absolute;
+  top: -6px;
+  right: -9px;
+}
+@keyframes splash-bulb {
+  to { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .splash.splash-noel { animation-delay: 0.6s; }
+  .splash-noel .splash-fill { transform: none; }
+  .splash-bulb { opacity: 1; animation: none; }
+}
+
 /* Les éléments absolus des carrousels ne doivent pas élargir la page. */
 main {
   overflow-x: clip;
