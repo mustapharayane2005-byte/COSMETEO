@@ -14,7 +14,7 @@ const outline =
   "inline-flex min-h-[52px] w-full items-center justify-center rounded-full border border-green text-[1.125rem] font-semibold uppercase tracking-[0.02em] text-green transition-colors hover:bg-green hover:text-ivory disabled:cursor-not-allowed disabled:opacity-50";
 
 /** Bloc d'achat de la fiche produit : variantes, quantité, ajout au panier / achat direct. */
-export default function ProductPurchase({ product }: { product: Product }) {
+export default function ProductPurchase({ product, idee }: { product: Product; idee?: boolean }) {
   const { addItem } = useCart();
   const router = useRouter();
   const [variant, setVariant] = useState(product.variants?.options[0]);
@@ -32,6 +32,7 @@ export default function ProductPurchase({ product }: { product: Product }) {
     <div>
       {product.brand && <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">{product.brand}</p>}
       <h1 className="h2 mt-3 !text-left">{product.name}</h1>
+      {idee && <p className="mt-2 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--bordeaux)]">Idée cadeau</p>}
       <p className="mt-5 flex flex-wrap items-baseline gap-x-3 gap-y-1">
         <span className="text-2xl">{product.price != null ? formatPrice(product.price) : "Prix bientôt disponible"}</span>
         {product.oldPrice && (

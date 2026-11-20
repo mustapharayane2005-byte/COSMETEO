@@ -1,13 +1,16 @@
 import type { MetadataRoute } from "next";
 import { categories } from "@/data/categories";
 import { articles } from "@/data/conseils";
+import { cadeauxActif } from "@/data/noel";
 import { allProducts, besoinsAvecProduits, brandsAvecProduits, byFamille, familleVisible, lienVisible } from "@/data/products";
 
 const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://cosmeteo.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Pages sans produit (familles, sous-catégories, besoins, marques, promotions…) : absentes du plan du site.
-  const pages = ["", "/boutique", "/nouveautes", "/promotions", "/marques", "/conseils", "/a-propos", "/contact", "/livraison"].filter(lienVisible);
+  const pages: string[] = ["", "/boutique", "/nouveautes", "/promotions", "/marques", "/conseils", "/a-propos", "/contact", "/livraison"].filter(lienVisible);
+  // /cadeaux : seulement pendant Noël et s'il y a au moins un produit « Cadeau »
+  if (cadeauxActif()) pages.push("/cadeaux");
   const urls = [
     ...pages,
     ...categories.flatMap((c) => [

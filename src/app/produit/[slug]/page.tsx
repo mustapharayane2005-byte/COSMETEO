@@ -8,6 +8,7 @@ import ProductSection from "@/components/ProductSection";
 import Icon from "@/components/ui/Icon";
 import { categories } from "@/data/categories";
 import { allProducts, getProduct, getRelated } from "@/data/products";
+import { noelActif } from "@/data/site";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -40,6 +41,7 @@ export default async function ProductPage({ params }: Props) {
   const p = getProduct(slug);
   if (!p) notFound();
 
+  const idee = noelActif() && p.badge?.kind === "gift";
   const category = categories.find((c) => c.slug === p.famille);
   const related = getRelated(p);
   const sections = [
@@ -85,9 +87,9 @@ export default async function ProductPage({ params }: Props) {
         </nav>
 
         <div className="grid gap-8 pb-[clamp(48px,7vw,96px)] md:grid-cols-2 md:gap-12 lg:gap-20">
-          <ProductGallery product={p} />
+          <ProductGallery product={p} badge={idee ? p.badge!.label : undefined} />
           <div className="self-start md:sticky md:top-32">
-            <ProductPurchase product={p} />
+            <ProductPurchase product={p} idee={idee} />
             <div className="mt-10 border-t border-[var(--line)]">
               {sections.map((s) => (
                 <details key={s.title} className={panel} open={s.open}>
