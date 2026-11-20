@@ -1,7 +1,10 @@
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 import Link from "next/link";
 import Icon, { type IconName } from "@/components/ui/Icon";
 import { hero } from "@/data/home";
+import { noelActif } from "@/data/site";
+
+const NOEL_ALT = "Famille africaine souriante";
 
 const chipIcons: IconName[] = ["leaf", "cross", "truck", "shield"];
 
@@ -21,31 +24,62 @@ const fade = "motion-safe:animate-[heroFade_0.6s_ease-out_both]";
 
 /** Desktop : photo plein cadre, texte à droite. Mobile : photo en haut, texte dessous. */
 export default function Hero() {
+  const noel = noelActif();
+  const { props: desktopProps } = getImageProps({
+    src: hero.imageDesktop,
+    alt: NOEL_ALT,
+    width: 1600,
+    height: 1333,
+    quality: 90,
+    sizes: "100vw",
+  });
   return (
     <section
-      className="bg-[#F8F5F0] lg:relative lg:m-4 lg:h-[clamp(460px,44vw,640px)] lg:overflow-hidden lg:rounded-3xl"
+      className="relative bg-[#F8F5F0] lg:relative lg:m-4 lg:h-[clamp(460px,44vw,640px)] lg:overflow-hidden lg:rounded-3xl"
       aria-labelledby="hero-title"
     >
-      <div className="relative mx-4 mt-4 aspect-[6/5] overflow-hidden rounded-2xl lg:absolute lg:inset-0 lg:m-0 lg:aspect-auto lg:rounded-none lg:[mask-image:linear-gradient(to_left,transparent_0%,#000_10%)]">
-        <Image
-          src={hero.imageDesktop}
-          alt={hero.imageAlt}
-          fill
-          priority
-          quality={90}
-          sizes="100vw"
-          className="object-cover object-[left_center] lg:object-[left_35%]"
-        />
+      <div
+        className={`relative mx-4 mt-4 overflow-hidden rounded-2xl lg:absolute lg:inset-0 lg:m-0 lg:aspect-auto lg:rounded-none lg:[mask-image:linear-gradient(to_left,transparent_0%,#000_10%)] ${
+          noel ? "aspect-[4/5] md:aspect-[6/5]" : "aspect-[6/5]"
+        }`}
+      >
+        {noel ? (
+          <picture>
+            <source media="(max-width: 767px)" srcSet="/images/hero-mobile.webp" type="image/webp" />
+            <source media="(max-width: 767px)" srcSet="/images/hero-mobile.jpg" type="image/jpeg" />
+            <source media="(min-width: 768px)" srcSet={desktopProps.srcSet} />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={desktopProps.src}
+              alt={NOEL_ALT}
+              width={1194}
+              height={1492}
+              fetchPriority="high"
+              decoding="async"
+              className="absolute inset-0 size-full object-cover object-[left_center] lg:object-[left_35%]"
+            />
+          </picture>
+        ) : (
+          <Image
+            src={hero.imageDesktop}
+            alt={hero.imageAlt}
+            fill
+            priority
+            quality={90}
+            sizes="100vw"
+            className="object-cover object-[left_center] lg:object-[left_35%]"
+          />
+        )}
       </div>
 
       <div className="p-5 text-center lg:absolute lg:inset-y-0 lg:right-0 lg:flex lg:w-[34%] lg:flex-col lg:items-center lg:justify-center lg:py-0 lg:pl-6 lg:pr-12">
-        <p className="flex items-center justify-center gap-2.5 whitespace-nowrap font-ui text-xs font-medium uppercase tracking-[0.2em] text-[#1A1A1A]/70">
+        <p className={`${noel ? "max-md:absolute max-md:inset-x-4 max-md:top-8 max-md:justify-center " : ""}flex items-center justify-center gap-2.5 whitespace-nowrap font-ui text-xs font-medium uppercase tracking-[0.2em] text-[#1A1A1A]/70`}>
           <span aria-hidden="true" className="h-px w-5 bg-[#1A1A1A]/70" />
           {hero.label.replace(/^—\s*/, "")}
         </p>
         <h1
           id="hero-title"
-          className="mt-4 font-display text-[2rem] font-normal leading-[1.08] tracking-[-0.01em] text-[#1A1A1A] lg:text-[clamp(2rem,3.2vw,3.1rem)]"
+          className={`${noel ? "max-md:absolute max-md:inset-x-4 max-md:top-[3.75rem] max-md:text-[1.75rem] " : ""}mt-4 font-display text-[2rem] font-normal leading-[1.08] tracking-[-0.01em] text-[#1A1A1A] lg:text-[clamp(2rem,3.2vw,3.1rem)]`}
         >
           {lines.map((l, i) => (
             <span key={i} className="block overflow-hidden pb-[0.06em]">
