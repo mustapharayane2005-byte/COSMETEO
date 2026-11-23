@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useMemo, useState } from "react";
 import BrandTile, { type BrandTileData } from "@/components/BrandTile";
-import UniverseIcon from "@/components/UniverseIcon";
 import Icon from "@/components/ui/Icon";
 import { brandTypes } from "@/data/brandTypes";
 
@@ -14,7 +13,7 @@ const btn =
   "inline-flex min-h-12 items-center rounded-full bg-[#173C32] px-8 font-ui text-sm font-semibold uppercase tracking-[0.04em] text-white hover:bg-[#0f2a22]";
 
 /**
- * Univers (filtre dans l'URL : ?univers=k-beauty), recherche en direct, « À la une » et grille complète.
+ * Filtre par univers via l'URL (?univers=k-beauty, sans cartes), recherche en direct, « À la une » et grille complète.
  * Rendu côté client : fondu en CSS pur, aucun écouteur scroll/wheel/touchmove.
  */
 export default function BrandCatalog({ brands }: { brands: BrandTileData[] }) {
@@ -36,49 +35,8 @@ export default function BrandCatalog({ brands }: { brands: BrandTileData[] }) {
 
   return (
     <>
-      {/* 1. Les 5 univers : défilement horizontal natif sur mobile */}
-      <ul
-        aria-label="Univers"
-        className={`-mx-5 flex snap-x snap-proximity gap-3 overflow-x-auto overscroll-x-contain px-5 pb-2 [scrollbar-width:none] [touch-action:pan-x_pan-y] lg:mx-0 lg:grid lg:grid-cols-5 lg:gap-[14px] lg:overflow-visible lg:px-0 lg:pb-0 [&::-webkit-scrollbar]:hidden ${fade}`}
-      >
-        {brandTypes.filter((t) => t.id === "k-beauty" || brands.some((b) => b.types.includes(t.id))).map((t) => {
-          const n = brands.filter((b) => b.types.includes(t.id)).length;
-          const on = active?.id === t.id;
-          return (
-            <li key={t.id} className="w-[64vw] shrink-0 snap-start sm:w-[44vw] lg:w-auto">
-              <Link
-                href={on ? "/marques" : `/marques?univers=${t.id}`}
-                replace
-                scroll={false}
-                aria-pressed={on}
-                style={{ backgroundColor: t.bg }}
-                className={`relative flex h-[150px] flex-col justify-between rounded-2xl border p-5 transition-colors motion-reduce:transition-none ${
-                  on ? "border-[#173C32] shadow-[inset_0_0_0_1px_#173C32]" : "border-[#EDE8E0] hover:border-[#173C32]"
-                }`}
-              >
-                <span className="grid size-10 place-items-center rounded-full bg-white">
-                  <UniverseIcon id={t.id} />
-                </span>
-                {on && (
-                  <span aria-hidden="true" className="absolute right-4 top-4 grid size-6 place-items-center rounded-full bg-[#173C32] text-xs text-white">
-                    ✓
-                  </span>
-                )}
-                <span className="font-display text-[1.35rem] font-normal leading-tight text-[#1A1A1A]">{t.label}</span>
-                <span className="flex items-end justify-between font-ui text-[13px] leading-none text-[#252525]/70">
-                  {n > 0 ? `${n} marque${n > 1 ? "s" : ""}` : "Bientôt"}
-                  <span aria-hidden="true" className="text-base text-[#1A1A1A]">
-                    →
-                  </span>
-                </span>
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-
       {/* 2. Recherche */}
-      <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div className="relative w-full sm:max-w-[460px]">
           <label htmlFor="brand-search" className="sr-only">
             Rechercher une marque

@@ -27,7 +27,7 @@ export default function BrandsPage() {
             Toutes nos marques, un seul endroit
           </h1>
           <p className="mt-3 max-w-[540px] font-ui text-base text-[#252525]">
-            Choisissez un univers ou cherchez une marque, puis découvrez toute sa sélection.
+            Cherchez une marque, puis découvrez toute sa sélection.
           </p>
         </header>
 
