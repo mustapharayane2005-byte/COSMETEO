@@ -36,19 +36,19 @@ export default function EmailPopup() {
   const [email, setEmail] = useState("");
   const [accepte, setAccepte] = useState(false);
   const [done, setDone] = useState(false);
-  const [entre, setEntre] = useState(false);
   const [sortant, setSortant] = useState(false);
 
   const exclu = pageExclue(pathname);
 
   // Décompte : l'heure d'arrivée est gardée en sessionStorage, il continue d'une page à l'autre.
   useEffect(() => {
-    if (!POPUP_EMAIL_ACTIF || pret || ferme) return;
+    if (!POPUP_EMAIL_ACTIF || ferme) return;
     if (new URLSearchParams(window.location.search).get("popup") === "apercu") {
       setApercu(true);
       setPret(true);
       return;
     }
+    if (pret) return;
     if (dejaVu()) return;
     let arrivee = Date.now();
     try {
@@ -58,7 +58,7 @@ export default function EmailPopup() {
     } catch {}
     const t = setTimeout(() => setPret(true), Math.max(0, DELAI_MS - (Date.now() - arrivee)));
     return () => clearTimeout(t);
-  }, [pret, ferme]);
+  }, [pret, ferme, pathname]);
 
   const visible = POPUP_EMAIL_ACTIF && pret && !ferme && !exclu && !tiroirOuvert;
 
@@ -70,13 +70,6 @@ export default function EmailPopup() {
       localStorage.setItem(CLE_VU, String(Date.now()));
     } catch {}
   }, [apercu]);
-
-  // Entrée : on laisse le panneau se monter hors écran, puis on le fait glisser.
-  useEffect(() => {
-    if (!visible) return;
-    const id = requestAnimationFrame(() => requestAnimationFrame(() => setEntre(true)));
-    return () => cancelAnimationFrame(id);
-  }, [visible]);
 
   useEffect(() => {
     if (!visible) return;
@@ -94,7 +87,7 @@ export default function EmailPopup() {
   return (
     <div className={s.zone}>
       <div
-        className={`${s.dialog} ${entre && !sortant ? s.ouvert : ""}`}
+        className={`${s.dialog} ${sortant ? s.sortie : ""}`}
         role="dialog"
         aria-labelledby="popup-email-titre"
       >

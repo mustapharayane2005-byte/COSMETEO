@@ -1,26 +1,36 @@
 .zone {
   position: fixed;
   right: 12px;
-  bottom: calc(12px + env(safe-area-inset-bottom));
+  /* Mobile : au-dessus de la barre fixe du bas (64 px) */
+  bottom: calc(76px + env(safe-area-inset-bottom));
   z-index: 70;
-  width: min(360px, 92vw);
+  width: min(360px, calc(100% - 24px));
   pointer-events: none; /* seul le panneau est cliquable */
 }
 .dialog {
   position: relative;
   pointer-events: auto;
-  max-height: 50dvh;
+  max-height: 60vh;
+  max-height: 60dvh;
   overflow-y: auto;
   padding: 24px 20px 20px;
   border-radius: 20px;
   background: #faf9f4;
   color: #1a1a1a;
   box-shadow: 0 12px 40px rgb(0 0 0 / 0.22);
-  transform: translateX(calc(100% + 24px));
-  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  /* Animation CSS au montage (plus fiable sur Safari qu'une transition déclenchée en JS) */
+  animation: entree 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
-.ouvert {
-  transform: translateX(0);
+.sortie {
+  animation: sortie 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes entree {
+  from { transform: translateX(calc(100% + 24px)); }
+  to { transform: translateX(0); }
+}
+@keyframes sortie {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(100% + 24px)); }
 }
 .close {
   position: absolute;
@@ -111,12 +121,13 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .dialog {
-    transform: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+  .dialog,
+  .sortie {
+    animation-name: fondu-entree;
   }
-  .ouvert {
-    opacity: 1;
+  .sortie {
+    animation-name: fondu-sortie;
   }
+  @keyframes fondu-entree { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes fondu-sortie { from { opacity: 1; } to { opacity: 0; } }
 }
